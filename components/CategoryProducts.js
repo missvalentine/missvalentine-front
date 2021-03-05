@@ -10,22 +10,29 @@ import { addToCart } from '../redux/actions/cart';
 import { directAddToCart, getProductTitle } from '../services/helpers/product';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { showCartBar } from '../redux/actions/drawers';
-
-const CategoryProducts = ({
-  heading,
-  subHeading,
-  categoryList,
-  activeCategory,
-  addToCart,
-  onCategoryChange,
-  showCartBar,
-  products,
-  bg,
-  btnText,
-}) => {
+import Product from './Product';
+import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
+const CategoryProducts = (
+  props,
+  {
+    heading,
+    subHeading,
+    // categoryList,
+    // activeCategory,
+    addToCart,
+    // onCategoryChange,
+    showCartBar,
+    // products,
+    bg,
+    btnText,
+  }
+) => {
   const className = classNames('c-category-products', {
     [`c-category-products--${bg}`]: bg,
   });
+  const [activeCategory, setActiveCategory] = useState('0');
+
   const flickityInit = () => {
     setTimeout(() => {
       if (flkty) {
@@ -49,6 +56,10 @@ const CategoryProducts = ({
     }
   };
 
+  const onCategoryChange = (id) => setActiveCategory(id);
+
+  const products = useSelector((s) => s.products);
+
   let flkty = undefined;
   return (
     <div className={className}>
@@ -70,18 +81,30 @@ const CategoryProducts = ({
         )}
       </div>
       <div className="c-category-products__list">
-        {categoryList.map((el, i) => (
+        <span
+          onClick={() => {
+            onCategoryChange('0');
+          }}
+          className={classNames('c-category-products__list-item', {
+            'c-category-products__list-item--active': activeCategory === '0',
+          })}
+          key={0}
+        >
+          All
+        </span>
+
+        {products.categories.map((el, i) => (
           <span
             onClick={() => {
-              onCategoryChange(el);
+              onCategoryChange(el._id);
             }}
             className={classNames('c-category-products__list-item', {
               'c-category-products__list-item--active':
-                activeCategory === el.title,
+                activeCategory === el._id,
             })}
             key={i}
           >
-            {el.title}
+            {el.name}
           </span>
         ))}
       </div>
@@ -103,40 +126,11 @@ const CategoryProducts = ({
           reloadOnUpdate={true}
           className="c-category-products__slider "
         >
-          {products
-            .filter((product) => product.visibilitytype)
-            .map((el, i) => {
-              // console.log(el);
-              return (
-                <div className="col-lg-4 col-sm-12 col-xs-12 c-category-products__product" key={i}>
-                  <Link
-                    key={i}
-                    href={`/shop/${getProductTitle(el).replace(/ /g, '-')}`}
-                  >
-                    <div>
-                      <LazyLoadImage
-                        src={projectSettings.serverUrl + el.productImage}
-                        alt={el.title ? el.title : 'product'}
-                        onLoad={() => {
-                          flResize();
-                        }}
-                        className="c-category-products__img img-fluid d-flex mx-auto"
-                      />
-                      <span className="w-100 text-center">
-                        {getProductTitle(el).replace(/ /g, '-')}
-                      </span>
-                    </div>
-                  </Link>
-                  <Button
-                    onClick={() => addToCartFn(el)}
-                    parentClass="c-product-card"
-                    theme="dark"
-                  >
-                    Add to Cart
-                  </Button>
-                </div>
-              );
-            })}
+          {products.products
+            .filter((product) => product.hidden === false)
+            .map((item, index) => (
+              <Product {...props} key={index} data={item} />
+            ))}
         </Flickity>
       </div>
       <div
@@ -148,8 +142,8 @@ const CategoryProducts = ({
             className="top-btn"
             style={{ fontSize: 'x-large', fontWeight: '500' }}
           >
-            {btnText}{' '}
-            <LazyLoadImage
+            {'See all products '} &nbsp;
+            <img
               className="top"
               style={{ height: '20px', marginBottom: '5px' }}
               src="/images/right-arrow-32px.png"
@@ -160,13 +154,6 @@ const CategoryProducts = ({
       </div>
     </div>
   );
-};
-
-CategoryProducts.defaultProps = {
-  categoryList: [],
-  products: [],
-  activeCategory: '',
-  onCategoryChange: () => {},
 };
 
 export default connect(null, { addToCart, showCartBar })(CategoryProducts);

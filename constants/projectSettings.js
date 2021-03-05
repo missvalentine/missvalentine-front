@@ -1,5 +1,5 @@
 export const projectName = 'Miss Valentine';
-export const baseUrl = 'https://admin.cbdbene.com';
+export const baseUrl = 'https://missval.herokuapp.com/api';
 //export const baseUrl = "http://localhost:4003";
 export const docMzUrl = 'http://localhost:3001';
 export const contentUrl = 'https://server1.cbdbene.com';

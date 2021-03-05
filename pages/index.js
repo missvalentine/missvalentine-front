@@ -11,7 +11,7 @@ const CategoryProducts = dynamic(
   }
 );
 import categoryList from '../constants/categoryList';
-import { getProducts, homeData } from '../redux/actions';
+import { getProducts, homeData, getCategories } from '../redux/actions';
 import { connect } from 'react-redux';
 const Button = dynamic(() => import('../components/form-components/Button'), {
   ssr: false,
@@ -25,14 +25,18 @@ import Link from 'next/link';
 import Flickity from 'react-flickity-component';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Banner from '../components/Banner';
+import slide1 from '../assets/images/homeSlides/slider1.webp';
+import slide2 from '../assets/images/homeSlides/slider2.webp';
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeCategory: 'Featured',
+      activeCategory: 0,
       allProducts: props.products.products || [],
-      products: props.products.featured || [],
+      products: props.products.products || [],
       combos: [],
+      categories: props.products.categories,
       isLrSection: false,
       isWillness: false,
       show: false,
@@ -122,17 +126,13 @@ class Home extends React.Component {
       };
     } else return null;
   }
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.products.products !== this.props.products.products) {
-      this.changeCategory({ title: this.state.activeCategory });
-    }
-  }
 
   componentDidMount() {
     if (localStorage.getItem('homeData')) {
       this.setState({ homeData: JSON.parse(localStorage.getItem('homeData')) });
     }
     this.props.getProducts();
+    this.props.getCategories();
     homeData().then((data) => {
       let stringData = JSON.stringify(data);
       if (localStorage.getItem('homeData') != stringData) {
@@ -144,37 +144,15 @@ class Home extends React.Component {
         localStorage.setItem('homeData', stringData);
       }
     });
-    getAllCombos().then((res) => {
-      if (res.data && res.data.combos) {
-        this.setState({
-          combos: res.data.combos,
-        });
-      }
-    });
+    // getAllCombos().then((res) => {
+    //   if (res.data && res.data.combos) {
+    //     this.setState({
+    //       combos: res.data.combos,
+    //     });
+    //   }
+    // });
   }
-  changeCategory = (activeCategory) => {
-    const { products } = this.props;
-    if (activeCategory.title === 'Featured') {
-      this.setState({
-        products: products.featured,
-        activeCategory: activeCategory.title,
-      });
-    } else if (activeCategory.title === 'All') {
-      this.setState({
-        products: products.products,
-        activeCategory: activeCategory.title,
-      });
-    } else {
-      const activeCategoryArr =
-        products.categories.find(
-          (el) => el.category.categorytitle === activeCategory.title
-        ) || {};
-      this.setState({
-        products: activeCategoryArr.products,
-        activeCategory: activeCategory.title,
-      });
-    }
-  };
+
   toTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
@@ -186,6 +164,48 @@ class Home extends React.Component {
       return Object.values(e);
     });
 
+    const homedata = {
+      // logo: { images: logoImages },
+      banner: [
+        {
+          images: { src: slide1 },
+          hide: false,
+          title: '',
+          content: '',
+          btnText: 'View Products',
+        },
+        {
+          images: { src: slide2 },
+          hide: false,
+          title: '',
+          content: '',
+          btnText: 'Explore',
+        },
+      ],
+      // categorySlider: {
+      //   title: categoryTitle,
+      //   btnText: categoryBtnText,
+      //   hide: categorySliderHide,
+      // },
+      // secondSection: {
+      //   title: secondTitle,
+      //   bigTitle: secondBigTitle,
+      //   hide: secondSectionHide,
+      // },
+      // thirdSection: {
+      //   bigTitle: thirdBirTitle,
+      //   title: thirdTitle,
+      //   content: thirdContent,
+      //   btnText: thirdBtnText,
+      //   hide: thirdSectionHide,
+      //   images: thirdSectionImage,
+      // },
+      // fourthSection: {
+      //   content: fourthContent,
+      //   title: fourthTitle,
+      //   hide: fourthSectionHide,
+      // },
+    };
     const {
       logo: { images: logoImages },
       banner: bannerContent,
@@ -214,6 +234,7 @@ class Home extends React.Component {
       },
     } = this.state.homeData;
     let description = [bannerContent, thirdContent];
+
     return (
       <Layout
         title="Home"
@@ -237,7 +258,7 @@ class Home extends React.Component {
             reloadOnUpdate={true}
             className="c-banner__slider "
           >
-            {bannerContent.map((el, i) => {
+            {homedata.banner.map((el, i) => {
               return (
                 <Banner
                   key={i}
@@ -261,19 +282,18 @@ class Home extends React.Component {
             })}
           </Flickity>
         </div>
-        {!categorySliderHide && products && products.length > 0 && (
+        {console.log('zest', categoryList, this.state.categories, products)}
+
+        {!categorySliderHide && (
           <Fade>
             <CategoryProducts
-              // bg="light-2"
-              categoryList={categoryList}
-              activeCategory={activeCategory}
-              onCategoryChange={this.changeCategory}
               products={products}
               heading={parser(categoryTitle)}
               btnText={parser(categoryBtnText)}
             />
           </Fade>
         )}
+
         {!secondSectionHide && (
           <Link href="/blog">
             <div className="blog-link-banner" style={{ cursor: 'pointer' }}>
@@ -334,4 +354,4 @@ class Home extends React.Component {
   }
 }
 
-export default connect((state) => state, { getProducts })(Home);
+export default connect((state) => state, { getProducts, getCategories })(Home);

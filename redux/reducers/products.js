@@ -1,11 +1,20 @@
-import { SET_PRODUCTS, SET_PRODUCT, CLEAR_PRODUCT } from "../actions/type";
+import {
+  SET_PRODUCTS,
+  SET_PRODUCT,
+  CLEAR_PRODUCT,
+  SET_CATEGORIES,
+} from '../actions/type';
 
-import {getVisibleProducts, getFeaturedProduct, getCategoriesProducts} from '../../services/helpers/product'
+import {
+  getVisibleProducts,
+  getFeaturedProduct,
+  getCategoriesProducts,
+} from '../../services/helpers/product';
 const initialState = {
   products: [],
   product: null,
   featured: [],
-  categories: []
+  categories: [],
 };
 
 export default (state = initialState, action) => {
@@ -14,23 +23,32 @@ export default (state = initialState, action) => {
     case SET_PRODUCTS:
       return {
         ...state,
-        products: [
-          ...getVisibleProducts(payload)
-        ],
-        featured: getFeaturedProduct(payload),
-        categories: getCategoriesProducts(payload)
+        products: payload,
+        // products: payload,
+      };
+    case SET_CATEGORIES:
+      // const c = payload.map((p) => {
+      //   return {
+      //     title: p.name,
+      //   };
+      // });
+
+      return {
+        ...state,
+        categories: payload,
+        // products: payload,
       };
 
     case SET_PRODUCT:
       return {
         ...state,
-        product: payload
+        product: payload,
       };
 
     case CLEAR_PRODUCT:
       return {
         ...state,
-        product: null
+        product: null,
       };
 
     default:

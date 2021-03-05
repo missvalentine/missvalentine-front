@@ -1,7 +1,8 @@
-import projectSettings from "../../constants/projectSettings";
+import projectSettings from '../../constants/projectSettings';
 const { baseUrl, docMzUrl, contentUrl } = projectSettings;
 const apiList = {
-  getAllProducts: `${baseUrl}/products/api/all/`,
+  getAllProducts: `${baseUrl}/product/all`,
+  getAllCategories: `${baseUrl}/category/all`,
   getAllCombos: `${baseUrl}/products/api/combos/all/`,
   getProductById: `${baseUrl}/products/api/getbyid/`,
   getProductByName: `${baseUrl}/products/api/getbyname/`,
@@ -43,7 +44,7 @@ const apiList = {
   placeOrderNew: `${baseUrl}/order/process/order/`,
   allOrderList: `${baseUrl}/order/getorders/`,
   orderList: `${baseUrl}/order/api/getbyuser/`,
-  trackOrder:`${baseUrl}/ship/track`,
+  trackOrder: `${baseUrl}/ship/track`,
   getAllCreatives: `${baseUrl}/ambassador-portal/creatives/api/all/`,
   getAmbassadorDetails: `${baseUrl}/ambassador-portal/stats/`,
   updateAff: `${baseUrl}/ambassador-portal/update/`,

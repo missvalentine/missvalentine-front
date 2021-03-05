@@ -1,51 +1,34 @@
-import { SET_PRODUCTS } from "./type";
-import { addSlugToProduct } from "../../services/helpers/product";
-import { getAllProducts } from "../../services/apis/products";
+import { SET_PRODUCTS, SET_CATEGORIES } from './type';
+import { addSlugToProduct } from '../../services/helpers/product';
+import { getAllProducts, getAllCategories } from '../../services/apis/products';
 
-// export const setProducts = products => dispatch => {
-//   // console.log("asdfasdf", products);
-//   const parsedProduct = products.products.map(el => addSlugToProduct(el));
-//   // console.log({
-//   //   parsedProduct
-//   // });
-//   dispatch({
-//     type: SET_PRODUCTS,
-//     payload: {
-//       ...products,
-//       products: parsedProduct
-//     }
-//   });
-// };
-// export const setProduct = product => dispatch => {
-//   if (product.productSlug) {
-//     dispatch({
-//       type: SET_PRODUCT,
-//       payload: product
-//     });
-//   } else {
-//     dispatch({
-//       type: SET_PRODUCT,
-//       payload: addSlugToProduct(product)
-//     });
-//   }
-// };
-// export const clearProduct = () => ({
-//   type: CLEAR_PRODUCT,
-//   payload: null
-// });
-
-export const getProducts = () => dispatch => {
+export const getProducts = () => (dispatch) => {
   getAllProducts()
-  .then(res => {
-    console.log({res})
-    if(res.data && res.data.products){
-      dispatch({
-        type: SET_PRODUCTS,
-        payload: res.data.products.map(el => addSlugToProduct(el))
-      })
-    }
-  })
-  .catch(err => {
-    console.log({err})
-  })
-}
+    .then((res) => {
+      if (res.data && res.data.success) {
+        console.log('hellllo', res.data.data);
+
+        dispatch({
+          type: SET_PRODUCTS,
+          payload: res.data.data,
+        });
+      }
+    })
+    .catch((err) => {
+      console.log({ err });
+    });
+};
+export const getCategories = () => (dispatch) => {
+  getAllCategories()
+    .then((res) => {
+      if (res.data && res.data.success) {
+        dispatch({
+          type: SET_CATEGORIES,
+          payload: res.data.data,
+        });
+      }
+    })
+    .catch((err) => {
+      console.log({ err });
+    });
+};

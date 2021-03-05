@@ -41740,6 +41740,57 @@ input#login_password {
       grid-template-columns: 1fr;
       grid-template-rows: 5rem 1fr 2rem; } }
 
+.c-product-card {
+  width: 95%;
+  height: 500px;
+  margin: 0 20px;
+  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.104914);
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white; }
+  .c-product-card__image {
+    height: 320px;
+    width: 100%;
+    max-height: 100%;
+    border-radius: 5px 5px 0 0; }
+  .c-product-card__image-wrapper {
+    position: relative; }
+  .c-product-card__image-text {
+    position: absolute;
+    top: 8px;
+    left: 16px; }
+  .c-product-card__details {
+    text-align: center;
+    padding: 10px; }
+    .c-product-card__details-name {
+      text-transform: capitalize;
+      padding-bottom: 5px;
+      font-weight: 600; }
+    .c-product-card__details-desc {
+      font-weight: 400;
+      font-size: 14px; }
+    .c-product-card__details-price {
+      color: #999;
+      font-size: 18px;
+      font-style: italic;
+      padding: 5px 0; }
+    .c-product-card__details-color {
+      display: inline-block;
+      padding: 2px;
+      border: 1px solid #333;
+      margin: 5px; }
+      .c-product-card__details-color div {
+        width: 15px;
+        height: 15px; }
+
+/* Animation */
+/* text animation */
+@keyframes animated-text {
+  from {
+    width: 0; }
+  to {
+    width: 250px; } }
+
 .c-less-more__less {
   line-height: 2em;
   overflow: hidden;

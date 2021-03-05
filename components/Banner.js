@@ -1,7 +1,7 @@
-import Logo from "./Logo";
-import classNames from "classnames";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import {imageUrl} from "../constants/projectSettings"
+import Logo from './Logo';
+import classNames from 'classnames';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { imageUrl } from '../constants/projectSettings';
 
 const Banner = ({
   image,
@@ -16,28 +16,26 @@ const Banner = ({
   extraButton,
   mobileImage,
 }) => {
-  const componentClass = "c-banner";
+  const componentClass = 'c-banner';
   const versionClass = versions
     .map((el) => `${componentClass}--${el}`)
-    .join(" ");
-  const parent = `${parentClass}__${componentClass.replace("c-", "")}`;
+    .join(' ');
+  const parent = `${parentClass}__${componentClass.replace('c-', '')}`;
   const className = classNames(componentClass, {
     [versionClass]: versions,
     [parent]: parentClass,
   });
   const className1 =
-    versions[1] == "faq"
-      ? "c-banner__content c-banner-content--faq"
-      : "c-banner__content";
+    versions[1] == 'faq'
+      ? 'c-banner__content c-banner-content--faq'
+      : 'c-banner__content';
   return (
     <div className={className}>
       {/* <div className="c-banner__overlay" /> */}
       <div className={className1}>
         {/* {heading && <h2 className="c-banner__heading">{heading}</h2>} */}
         {heading}
-        {content && (
-          <div className="c-banner__text">{content}</div>
-        )}
+        {content && <div className="c-banner__text">{content}</div>}
         {children}
         {bottomLogo && <Logo parentClass={componentClass} />}
       </div>
@@ -55,10 +53,14 @@ const Banner = ({
         // 	alt={imgAlt ? imgAlt : "banner"}
         // />
         <div className="c-banner__bg--desktop">
-          <LazyLoadImage
+          <img
             // className="img-fluid c-lr-section__img"
-            src={`${image2x.replace("public",`${imageUrl}`)} 2x, ${image.replace("public",`${imageUrl}`) || image2x.replace("public",`${imageUrl}`)} 1x`}
-            alt={imgAlt ? imgAlt : "banner"}
+            src={`${image2x.replace(
+              'public',
+              `${imageUrl}`
+            )} 2x, ${image.replace('public', `${imageUrl}`) ||
+              image2x.replace('public', `${imageUrl}`)} 1x`}
+            alt={imgAlt ? imgAlt : 'banner'}
           />
         </div>
       )}
@@ -72,19 +74,19 @@ const Banner = ({
         // 	alt={imgAlt ? imgAlt : "banner"}
         // />
         <div className="c-banner__bg--desktop">
-          <LazyLoadImage
+          <img
             // className="img-fluid c-lr-section__img"
-            src={image.replace("public",`${imageUrl}`)}
-            alt={imgAlt ? imgAlt : "banner"}
+            src={image.replace('public', `${imageUrl}`)}
+            alt={imgAlt ? imgAlt : 'banner'}
           />
         </div>
       )}
       {mobileImage && (
-        <LazyLoadImage
+        <img
           effect="opacity"
           className="c-banner__bg c-banner__bg--mobile"
-          src={mobileImage.replace("public",`${imageUrl}`)}
-          alt={imgAlt ? imgAlt : "banner"}
+          src={mobileImage.replace('public', `${imageUrl}`)}
+          alt={imgAlt ? imgAlt : 'banner'}
         />
       )}
     </div>
