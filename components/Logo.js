@@ -1,36 +1,36 @@
-import Link from "next/link";
-import classNames from "classnames";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { projectName, imageUrl } from "../constants/projectSettings";
+import Link from 'next/link';
+import classNames from 'classnames';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { projectName, imageUrl } from '../constants/projectSettings';
 const Logo = ({ versions, parentClass, full, text, logo, url }) => {
   const componentClass = `c-logo`;
   const versionClass = versions
     .map((el) => `${componentClass}--${el}`)
-    .join(" ");
-  const parent = `${parentClass}__${componentClass.replace("c-", "")}`;
+    .join(' ');
+  const parent = `${parentClass}__${componentClass.replace('c-', '')}`;
   const className = classNames(componentClass, {
     [versionClass]: versions,
     [parent]: parentClass,
   });
 
-  if (text) {
+  if (versions == 'footer') {
     return (
       <Link href="/">
         <a className={className}>
           <LazyLoadImage
-            src={logo ? logo.src : `${imageUrl}/Logo-nav.png`}
+            src={`${imageUrl}/Footer-Logo.png`}
             className="c-logo__img"
             alt={projectName}
+            style={{ width: 'auto', height: 'auto' }}
           />
         </a>
       </Link>
     );
-  }
-  if (versions == "footer") {
+  } else if (versions == 'navbar') {
     return (
       <Link href="/">
         <a className={className}>
-          <LazyLoadImage src={`${imageUrl}/Footer-Logo.png`} className="c-logo__img" alt={projectName} style={{width:"auto",height:"auto"}}/>
+          <div className="c-logo__text">{projectName}</div>
         </a>
       </Link>
     );
@@ -38,20 +38,7 @@ const Logo = ({ versions, parentClass, full, text, logo, url }) => {
   return (
     <Link href="/">
       <a className={className}>
-        {!full && (
-          <LazyLoadImage
-            src={`${imageUrl}/Logo-chat.png`}
-            className="c-logo__img"
-            alt={projectName}
-          />
-        )}
-        {full && (
-          <LazyLoadImage
-            src={`${imageUrl}/Logo.png`}
-            className="c-logo__img"
-            alt={projectName}
-          />
-        )}
+        <div className="c-logo__text">{projectName}</div>
       </a>
     </Link>
   );

@@ -24,7 +24,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Link from 'next/link';
 import Flickity from 'react-flickity-component';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import Banner from "../components/Banner"
+import Banner from '../components/Banner';
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -114,7 +114,6 @@ class Home extends React.Component {
       },
       loading: true,
     };
-   
   }
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.products.products !== prevState.allProducts) {
@@ -130,20 +129,20 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    if(localStorage.getItem("homeData")){
-      this.setState({homeData:JSON.parse(localStorage.getItem("homeData"))})
+    if (localStorage.getItem('homeData')) {
+      this.setState({ homeData: JSON.parse(localStorage.getItem('homeData')) });
     }
     this.props.getProducts();
     homeData().then((data) => {
-        let stringData = JSON.stringify(data);
-        if(localStorage.getItem("homeData")!= stringData){
-          this.setState({
-            homeData: data,
-            loading: false,
-          });
-        }else{
-          localStorage.setItem('homeData',stringData);
-        }
+      let stringData = JSON.stringify(data);
+      if (localStorage.getItem('homeData') != stringData) {
+        this.setState({
+          homeData: data,
+          loading: false,
+        });
+      } else {
+        localStorage.setItem('homeData', stringData);
+      }
     });
     getAllCombos().then((res) => {
       if (res.data && res.data.combos) {
@@ -181,17 +180,12 @@ class Home extends React.Component {
   };
 
   render() {
+    const { activeCategory, products, isLrSection } = this.state;
 
-    const {
-      activeCategory,
-      products,
-      isLrSection,
-    } = this.state;
-  
     let keywords = categoryList.map((e) => {
       return Object.values(e);
     });
-  
+
     const {
       logo: { images: logoImages },
       banner: bannerContent,

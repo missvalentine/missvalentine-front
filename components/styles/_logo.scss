@@ -1,13 +1,21 @@
-.c-logo{
-    &__img{
-        display: block;
-        width: 50px;
+.c-logo {
+  &__img {
+    display: block;
+    width: 50px;
+  }
+  &__text {
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+
+    display: block;
+  }
+  &--non-home {
+    width: -webkit-fill-available;
+    text-align: center;
+    .c-logo {
+      &__img {
+        width: 80px;
+      }
     }
-    &--non-home{
-        .c-logo{
-            &__img{
-                width: 80px;
-            }
-        }
-    }
+  }
 }

@@ -21,6 +21,11 @@
       "static/chunks/styles.js",
       "static/chunks/pages/index.js"
     ],
+    "/404": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/404.js"
+    ],
     "/_app": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
@@ -30,11 +35,6 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
-    ],
-    "/category/[cid]": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/category/[cid].js"
     ]
   },
   "ampFirstPages": []
