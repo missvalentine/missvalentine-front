@@ -200,7 +200,7 @@
 
   @include bpm-sm {
     &__heading {
-      font-size: 8rem;
+      // font-size: 8rem;
       margin-bottom: 3rem;
     }
     &__sub-heading {
@@ -211,7 +211,7 @@
   }
   @include bpm-xs {
     &__heading {
-      font-size: 20vw;
+      // font-size: 20vw;
       margin-bottom: 3rem;
     }
     &__sub-heading {
