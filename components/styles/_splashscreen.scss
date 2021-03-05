@@ -1,0 +1,119 @@
+.ss {
+  input.ant-input.c-input__input {
+   font-size: xx-large;
+    
+  }
+  &__banner {
+    width: 100%;
+  }
+  &__rightCol {
+    // height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  input.ant-input.c-input__input {
+   font-size: xx-large;
+  }
+  &-row {
+    @include bp-md {
+      display: grid;
+      grid-template-columns: 4fr 6fr;
+      .right {
+        .c-btn {
+          margin-top: 2rem;
+          width: 190px;
+        }
+        .c-btn + .c-btn {
+          margin-left: 2rem;
+        }
+      }
+    }
+    @include bpm-md {
+      grid-template-columns: 1fr;
+      grid-template-rows: 3fr 6fr;
+      // padding: 4rem 0;
+      .left {
+        margin-top: 5rem;
+        img {
+          width: 40% !important;
+        }
+      }
+      .right {
+        .c-btn {
+          margin-top: 2rem;
+        }
+        .c-btn + .c-btn {
+          margin-left: 2rem;
+        }
+      }
+    }
+    @include bpm-sm {
+      .left {
+        img {
+          width: 50% !important;
+        }
+      }
+      .right {
+        .modal__logo-wrapper {
+          padding: 0;
+        }
+        .row {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .c-btn + .c-btn {
+            margin-left: 0;
+            // margin-top: 2rem;
+          }
+          .c-btn {
+            margin-top: 2rem;
+          }
+        }
+
+        input.ant-input.c-input__input {
+          width: 80%;
+          
+        }
+        .ss__subhead {
+          margin: 0 2rem !important;
+          br {
+            display: grid;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 450px) {
+      span.c-btn {
+        margin-left: 0 !important;
+      }
+    }
+  }
+}
+
+.ss {
+  .right {
+    // visibility: hidden;
+    // width: 60%;
+    // padding-right: 9rem;
+    // transform: scale(0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5rem;
+    // .modal__heading {
+    //   margin-left: 0rem;
+    // }
+    // .c-susbmit-r__wrapper {
+    //   h1.ss__heading {
+    //     margin-bottom: 4rem;
+    //     font-family: $sub-font;
+    //     font-size: 3rem;
+    //   }
+    //   .ss__close {
+    //     display: flex;
+    //     justify-content: end;
+    //   }
+    // }
+  }
+}

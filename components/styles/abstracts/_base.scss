@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; // 1
+}
+
+html {
+  font-size: 62.5%;
+  width: 100vw !important;
+  overflow-x: hidden;
+  body {
+    margin: 0 auto;
+
+    font-size: 1.6rem;
+    // font-family: "Sriracha", cursive;
+    // font-family: "Muli", sans-serif;
+    font-family: $main-font;
+    // font-family: futuraBT;
+    background-color: white;
+  }
+}
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+.loader {
+  text-align: center;
+  border-radius: 4px;
+  padding: 25%;
+  vertical-align: middle;
+  height: 100vh;
+}
+
+// @media only screen and (max-width: 600px) {
+//   html {
+//     font-size: 50%;
+//   }
+// }
+
+input#registration_password,
+input#login_password {
+  padding: 0px !important;
+}

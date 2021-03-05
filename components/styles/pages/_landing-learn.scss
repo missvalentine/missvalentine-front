@@ -1,0 +1,154 @@
+@media (min-width: 992px) {
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5 {
+    margin: 4rem 0;
+    width: 80%;
+    ul {
+      li {
+        &::marker {
+          color: #aaa;
+        }
+      }
+      margin-left: -2rem;
+      margin-bottom: 1rem;
+    }
+  }
+  .mainDiv {
+    margin: 20px auto;
+    @include bp-lg {
+      padding-left: 15rem;
+    }
+    padding-left: 10rem;
+  }
+
+  .div1 li,
+  .div2 li,
+  .div3 li,
+  .div4 li,
+  .div5 li {
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family: futuraBT-book;
+    color: #000000;
+  }
+
+  a.modified {
+    font-size: 20px !important;
+    padding-top: 2rem;
+  }
+  .div1 h1,
+  .div2 h1,
+  .div3 h1,
+  .div4 h1,
+  .div5 h1 {
+    font-size: 30px !important;
+    letter-spacing: 1.2px;
+    text-transform: lowercase;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1295px) {
+  .div1 h1,
+  .div2 h1,
+  .div3 h1,
+  .div4 h1,
+  .div5 h1 {
+    font-size: 25px !important;
+  }
+
+  .div1 li,
+  .div2 li,
+  .div3 li,
+  .div4 li,
+  .div5 li {
+    font-size: 18px;
+    font-family: futuraBT-book;
+    color: #000000;
+  }
+  a.modified {
+    font-size: 19px !important;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 768px) {
+  .mainDiv {
+    margin: 20px 50px;
+  }
+
+  .div1 h1,
+  .div2 h1,
+  .div3 h1,
+  .div4 h1,
+  .div5 h1 {
+    font-size: 20px !important;
+  }
+
+  .div1 li,
+  .div2 li,
+  .div3 li,
+  .div4 li,
+  .div5 li {
+    font-size: 16px;
+    font-family: futuraBT-book;
+    color: #000000;
+  }
+  a.modified {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .mainDiv {
+    margin: 20px 50px;
+  }
+
+  .div1 h1,
+  .div2 h1,
+  .div3 h1,
+  .div4 h1,
+  .div5 h1 {
+    font-size: 18px !important;
+  }
+
+  .div1 li,
+  .div2 li,
+  .div3 li,
+  .div4 li,
+  .div5 li {
+    font-size: 16px;
+    font-family: futuraBT-book;
+    color: #000000;
+  }
+  a.modified {
+    font-size: 14px !important;
+  }
+}
+
+.div1 li,
+.div2 li,
+.div3 li,
+.div4 li,
+.div5 li {
+  margin-left: 4px;
+}
+
+a.modified {
+  font-size: 16px;
+  font-family: futuraBT-medium;
+  // font-weight: 500;
+  color: #aaaaaa !important;
+  text-decoration: underline !important;
+  margin-top: 15px !important;
+}
+
+a.links {
+  text-decoration: none;
+  color: #000000;
+}
+
+a.links:hover {
+  color: #000000;
+}

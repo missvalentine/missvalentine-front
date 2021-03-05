@@ -1,0 +1,148 @@
+.articlecard {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid lightgrey;
+
+  @include bpm-sm {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  &-wrapper {
+    display: flex;
+    margin-bottom: 3em;
+    &-image {
+      margin-top: 2rem;
+
+      height: 43rem;
+      width: 34%;
+      margin-right: 6rem;
+      &--item {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+    }
+    &-info {
+      width: 66.66%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &-small {
+        font-size: 2rem;
+        // font-weight: 600;
+        font-family: $sub-font;
+        letter-spacing: 1.4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: 376px) {
+          font-size: 1.5rem;
+        }
+        &--left {
+          &--first {
+            color: #aaaaaa;
+          }
+          &--second {
+            color: $dark;
+            padding-left: 1rem;
+          }
+        }
+        &--right {
+          img {
+            width: 3rem;
+          }
+        }
+        &-link {
+          cursor: pointer;
+          font-size: 2rem;
+        }
+      }
+      &-primary {
+        font-family: $sub-font;
+        letter-spacing: 1.3px;
+        margin-top: 1em;
+        font-size: 3rem;
+        color: $color-font-black;
+        // font-weight: 600;
+        line-height: 1.2;
+        cursor: pointer;
+      }
+      &-secondary {
+        margin-top: 1em;
+        font-size: 2rem;
+        color: $color-font-black;
+        font-family: $main-font;
+      }
+      // position: relative;
+      &-link {
+        margin-top: 3em;
+        font-size: 2.5rem;
+        font-family: $sub-font;
+        letter-spacing: 1px;
+        color: $color-font-black;
+        cursor: pointer;
+        width: fit-content;
+        position: relative;
+        // right: 0;
+        // transform: scale(1);
+        &::after {
+          content: '';
+          height: 32px;
+          width: 32px;
+          background: url('/images/double-right-arrow.png');
+          position: absolute;
+          top: 0rem;
+          right: -4rem;
+          z-index: 3;
+        }
+        &:hover {
+          transform: scale(1.1) !important;
+          transition: 300ms ease-in-out;
+        }
+      }
+    }
+    @include bpm-md {
+      flex-direction: column;
+      &-image {
+        width: 100%;
+        height: 50rem;
+        margin: 0;
+      }
+      &-info {
+        width: 100%;
+        margin: 0;
+      }
+    }
+    @include bpm-xs {
+      &-image {
+        width: 100%;
+        height: 35rem;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.divider-down {
+  margin-top: 1em;
+  width: 100%;
+  background-color: $color-primary2;
+  height: 2.5px;
+}
+
+@media screen and (max-width: 480px) {
+  .articlecard {
+    &-wrapper {
+      flex-direction: column;
+      &-image {
+        width: 100%;
+      }
+      &-info {
+        width: 100%;
+      }
+    }
+  }
+}

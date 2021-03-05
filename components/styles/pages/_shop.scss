@@ -1,0 +1,146 @@
+.c-shop-page {
+  @include bpm-md {
+    margin-top: 45rem;
+  }
+  @include bpm-sm {
+    margin-top: 5rem;
+    .col-xs-12 {
+      margin-top: 0rem;
+    }
+  }
+  @include bpm-xs {
+    margin-top: 15px;
+    .col-xs-12 {
+      margin-top: 0rem;
+    }
+  }
+  &__products-wrapper {
+    padding: 0 40px 40px 40px;
+    background-color: $light-color;
+    @include bpm-xs {
+      padding: 0 20px 40px 20px;
+    }
+  }
+  &__row {
+    padding: 0px 40px 0 40px;
+    &--light-bg {
+      background-color: $light-color;
+    }
+    > div {
+      @include bp-md {
+        margin-top: 9rem;
+      }
+      margin-top: 9rem;
+    }
+  }
+  &__filter-item {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    text-align: right;
+    opacity: 0.8;
+    transition: all 0.4s;
+    &--active {
+      // font-weight: 600;
+
+      opacity: 1;
+    }
+  }
+  &__filter-heading {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // font-weight: 600;
+  }
+  &__filter {
+    border-bottom: 1px solid;
+  }
+  &__filter-box {
+    width: 250px;
+    margin-left: auto;
+    margin-right: 0;
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  }
+  &__heading {
+    text-transform: uppercase;
+    // font-weight: 500;
+    line-height: 1.3;
+    font-size: xx-large;
+    @media (max-width: 500px) {
+      font-size: 24px;
+    }
+  }
+
+  > .react-reveal {
+    .c-lr-section {
+      padding: 0 4rem;
+      &__image {
+        flex: 0.5;
+      }
+      &__content {
+        flex: 0.5;
+        margin-left: 4rem;
+        .c-less-more__less,
+        .c-less-more__whole {
+          width: 95%;
+        }
+      }
+      &__heading {
+        font-size: 5vw;
+        font-family: $book;
+        margin-left: 1rem;
+      }
+      &__sub-heading {
+        font-size: 3vw;
+      }
+    }
+    @include bpm-md {
+      .c-lr-section {
+        &__content {
+          margin-left: 0;
+        }
+        &__heading {
+          margin-left: 0;
+        }
+      }
+    }
+
+    @include bpm-sm {
+      .c-lr-section {
+        &__heading {
+          font-size: 7vw;
+        }
+        &__sub-heading {
+          font-size: 4vw;
+        }
+      }
+    }
+    @include bpm-xs {
+      .c-lr-section {
+        padding: 0;
+        &__heading {
+          font-size: 9vw;
+        }
+        &__sub-heading {
+          font-size: 6vw;
+        }
+      }
+    }
+  }
+  // .c-category-products--bundles {
+  //   visibility: hidden;
+  //   .c-category-products__product-list {
+  //     display: grid !important;
+  //     grid-template-columns: 1fr 1fr 1fr;
+  //     @include bpm-lg {
+  //       display: flex;
+  //       flex-direction: column;
+  //       align-items: center;
+  //     }
+  //   }
+  // }
+}

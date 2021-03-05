@@ -1,0 +1,189 @@
+$dark: #000000;
+$light: #ffffff;
+$color-1: #f9faf7;
+$color-2: #aaaaaa;
+$color-3: #e4e4e4;
+$color-4: #f0f3f0;
+
+@import "~breakpoint-sass/stylesheets/breakpoint";
+@import "~susy/sass/susy";
+@import "variables";
+@import "mixins/mixins";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+@import "~bootstrap/scss/bootstrap";
+@import "~antd/dist/antd.css";
+@import "~animate.css/animate.min.css";
+@import "override";
+@import "../form-components/styles/all";
+@import "../forms/styles/all";
+@import "fonts";
+@import "base";
+@import "logo";
+@import "heading";
+@import "nav";
+// @import 'button';
+@import "title-list";
+@import "tabs";
+@import "subscribe-form";
+@import "header";
+@import "footer";
+@import "banner";
+@import "banner-new";
+@import "product-info";
+@import "product-slider";
+@import "product-card";
+@import "lr-section";
+@import "cart-item";
+@import "cart-drawer";
+@import "drawer";
+@import "hh-section";
+@import "h-img-section";
+@import "slider-line";
+@import "address-form";
+@import "category-products";
+@import "checkout-layout";
+@import "checkout-payment";
+@import "registration";
+@import "login";
+@import "modal";
+@import "consultTabs";
+@import "userDetails";
+@import "personalDetails";
+@import "success";
+@import "scheduling";
+@import "intakeDetails";
+@import "order-list-item";
+@import "account-inner";
+@import "pages/all";
+@import "wellness";
+@import "reviews";
+@import "fetchloader";
+@import "productRating";
+@import "loader";
+@import "ambassator/login";
+@import "../doctors/appointment/all";
+@import "chatbot";
+@import "top-alert";
+@import "./get-in-touch-banner";
+@import "./pages/reviews-page"; //------------Blog----------
+@import "./abstracts/base";
+//@import "../styles/";
+
+//components
+@import "./blogheader";
+@import "./mainsection";
+@import "blognav";
+@import "articlecard";
+@import "article";
+@import "./accountsidebar";
+@import "./honest-section";
+@import "./blog-link-banner";
+@import "./consult-doc-banner";
+@import "./articlecard2";
+@import "./consult-banner";
+@import "./faq.scss";
+@import "./learn.scss";
+@import "./splashscreen";
+@import "./my-order-card";
+@import "./review-page-card";
+// extra can be transfer in file
+.c-less-more__less {
+  line-height: 2em;
+  //height: 2em;
+  overflow: hidden;
+  // opacity: 0.9;
+  font-family: $main-font;
+  font-size: 16px;
+  // font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: 0.78px;
+  text-align: justify;
+  color: #000000;
+
+  @include bp-xxl {
+    font-size: $font-size-xxl;
+  }
+  &--large {
+    height: 10em;
+    @include bpm-xs {
+      height: 10em;
+    }
+  }
+}
+
+.c-less-more__whole {
+  overflow: hidden;
+
+  @media (min-width: 1200px) {
+    margin-left: 10px;
+  }
+}
+
+.c-less-more__whole-inner {
+  //   margin-top: -2em;
+  //   line-height: 5em;
+  opacity: 0.9;
+  font-family: $main-font;
+  font-size: 16px;
+  // font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  //   line-height: 1.38;
+  letter-spacing: 0.78px;
+  text-align: left;
+  color: #000000;
+  @include bp-xxl {
+    font-size: $font-size-xxl;
+  }
+
+  &--large {
+    //margin-top: -6em;
+    @include bpm-xs {
+      // margin-top: -10em;
+    }
+  }
+}
+
+.modal-open {
+  overflow: auto;
+  padding-right: 0 !important;
+  // padding-top: 2rem !important;
+}
+
+.col {
+  min-width: auto;
+}
+
+a {
+  text-decoration: none;
+  color: $base-color;
+}
+
+a:hover {
+  color: $brand-color-1;
+  text-decoration: none;
+}
+.c-btn {
+  border-radius: 5px;
+  // padding: 10px 0px;
+  &--dark {
+    background-color: $dark;
+    min-width: 150px;
+    letter-spacing: 0.5px;
+    width: 220px;
+    height: 50px;
+    padding: 15px;
+    // display: block
+  }
+  &--new {
+    padding: 3px;
+    // font-weight: normal;
+    font-size: 12px;
+  }
+
+  margin-right: 0;
+}

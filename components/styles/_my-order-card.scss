@@ -1,0 +1,138 @@
+.my-order-card,
+.my-subscription-card,
+.my-favourites-card {
+  .product-card {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    border-bottom: 2px solid #e4e4e4;
+    padding: 3rem 0;
+    @include bp-md {
+      width: 80%;
+    }
+    @include bpm-xs {
+      grid-template-columns: 3fr 7fr;
+      position: relative;
+      padding-bottom: 5rem;
+    }
+
+    &__image-column {
+      width: 90%;
+      margin-top: 2rem;
+      @include bp-md {
+        width: 80%;
+      }
+      border-radius: 1rem;
+      background-color: rgba(87, 143, 181, 0.3);
+    }
+    &__content-column {
+      margin-top: 2rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      * {
+        font-size: 1.8rem;
+        font-family: $book;
+      }
+
+      &--top-row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 4fr 2fr 3fr;
+        align-items: center;
+        @include bpm-xs {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr 1fr;
+          justify-items: center;
+
+          .product-price {
+            font-size: 2.2rem;
+          }
+        }
+        .product-price {
+          //   text-align: center;
+          font-family: $sub-font;
+        }
+        .action-button-group {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          @include bp-xs {
+            justify-items: end;
+          }
+
+          @include bpm-sm {
+            grid-gap: 1rem;
+          }
+          button {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .bottom-row {
+      width: 100%;
+      margin-top: 2rem;
+      * {
+        color: #aaa;
+        font-size: 1.8rem;
+      }
+      display: flex;
+      justify-content: space-between;
+      @include bpm-xs {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        * {
+          padding-top: 2rem;
+        }
+      }
+    }
+  }
+}
+.border-my-order {
+  border-bottom: 1px solid;
+  @include bpm-xs {
+    border: none;
+  }
+  @include bpm-sm {
+    border: none;
+  }
+}
+.my-order-header {
+  font-family: $sub-font;
+  margin: 1rem 0;
+}
+.my-subscription-card {
+  .product-card {
+    padding: 0 0 3rem 0;
+  }
+}
+.my-favourites-card {
+  .product-card {
+    @include bp-md {
+      padding: 1rem 0;
+    }
+  }
+  .bottom-row {
+    margin-top: 0rem !important;
+  }
+}
+.continue-shopping-btn {
+  @include bpm-md {
+    width: 100% !important;
+  }
+}
+
+.mar {
+  margin-left: 12rem;
+  @include bpm-sm {
+    margin-left: 0rem;
+  }
+  .row {
+    margin-left: 0px;
+  }
+}

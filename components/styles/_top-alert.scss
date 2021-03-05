@@ -1,0 +1,13 @@
+.c-top-alert {
+  padding: 10px;
+
+  background: $dark-color-2;
+  color: $base-color;
+  text-align: center;
+  transition: all 0.4s;
+  font-family: $book;
+  &:hover {
+    background: $base-color;
+    color: $dark-color-2;
+  }
+}

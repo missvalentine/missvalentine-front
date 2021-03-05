@@ -1,0 +1,101 @@
+.c-h-img-section {
+  .c-h-img-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &__content-wrapper {
+      padding: 0 2rem;
+      .c-heading--default {
+        text-align: left;
+      }
+      @include bp-sm {
+        padding: 0rem 5rem;
+      }
+    }
+    &__content {
+      .c-product-single__list {
+        * {
+          font-size: 1.8rem;
+        }
+        .c-title-list.c-title-list__responsive {
+          display: grid;
+          grid-template-columns: 1fr 3fr;
+          grid-gap: 3rem;
+          @include bpm-xs {
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.5fr 1fr;
+          }
+          .c-title-list__title-wrap--responsive {
+            width: 100% !important;
+          }
+          .c-title-list__detail-wrap {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+    @include bpm-md {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.5fr 1fr;
+      &__content-wrapper {
+        margin-top: 3rem;
+        order: 2;
+      }
+      &__img-wrapper {
+        width: 70%;
+        margin: auto;
+        @include bpm-xs {
+          width: 90% !important;
+        }
+      }
+    }
+    @include bpm-xs {
+      grid-template-rows: 0.5fr 1fr;
+    }
+  }
+
+  padding: 50px 65px;
+  @include bpm-xl {
+    padding: 40px 2rem;
+  }
+  margin: auto;
+  // align-items: center;
+  justify-content: space-between;
+  // @media (max-width: 500px) {
+  //   padding: 20px 10px 40px 10px !important;
+  // }
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+  @media (max-width: 1296px) {
+    padding: 20px 10px 40px 10px;
+  }
+  @include bpm-md {
+    padding: 20px 10px 0px 10px;
+  }
+  &__content-wrapper {
+    flex: 0.5;
+  }
+  &__img-wrapper {
+    width: 80%;
+    margin: auto;
+    flex: 0.5;
+  }
+  &__img {
+    @media (min-width: 992px) {
+      margin-left: 20px !important;
+    }
+  }
+  &--full {
+    // min-height: 100vh;
+    background: $light-color-2;
+  }
+  &--content-bottom {
+    // .c-h-img-section {
+    //   &__content-wrapper {
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: flex-end;
+    //   }
+    // }
+  }
+}

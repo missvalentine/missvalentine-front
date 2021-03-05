@@ -1,0 +1,55 @@
+.blog-link-banner {
+  text-align: center;
+  background-color: #f0f8f0;
+  padding: 4rem 0 3rem 0;
+  margin: 8rem 0 0;
+  @include bpm-sm {
+    margin: 2rem 0;
+  }
+  .top-text {
+    font-size: 2.5rem;
+    // font-weight: 400;
+    margin-bottom: -1rem;
+    letter-spacing: 0.3rem;
+  }
+  .bottom-text {
+    color: #7eb3b4;
+    font-size: 5rem;
+    font-family: $heavy;
+    &:hover {
+      transition: 250ms ease-in-out;
+      text-shadow: 3px 3px 5px #b8c6c5d5;
+    }
+  }
+
+  @include bpm-md {
+    .top-text {
+      font-size: 2.5rem;
+    }
+    .bottom-text {
+      font-size: 4rem;
+    }
+  }
+  @include bpm-sm {
+    .top-text {
+      font-size: 2.2rem;
+    }
+    .bottom-text {
+      font-size: 3.5rem;
+    }
+  }
+  @include bpm-xs {
+    .top-text {
+      font-size: 1.8rem;
+    }
+    .bottom-text {
+      font-size: 3.2rem;
+    }
+  }
+
+  @media screen and(max-width: 400px) {
+    .bottom-text {
+      font-size: 2.8rem;
+    }
+  }
+}

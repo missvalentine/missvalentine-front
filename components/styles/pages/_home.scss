@@ -1,0 +1,17 @@
+.c-home {
+  &__btn {
+    @include bp-xxl {
+      padding: 10px 80px;
+    }
+  }
+  .c-header {
+    &__wrapper {
+      // @include bp-md {
+      //   position: absolute;
+      //   left: 0;
+      //   right: 0;
+      //   top: 0;
+      // }
+    }
+  }
+}

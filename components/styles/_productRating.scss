@@ -1,0 +1,46 @@
+.pr-rating{
+    @include bp-md{
+        padding: 40px 80px 110px;
+    }
+    padding-top: 0;
+    // &__left-sec {
+    //     border-right: 1px solid $brand-color-1;
+    // }
+    &__wrapper{
+        width: 200px;
+        text-align: right;
+    }
+    &__para {
+        font-size: 14px;
+        margin-top: 10px;
+        padding-left: 24px;
+    }
+    &__heading {
+        font-size: 70px;
+        padding-left: 18px;
+        font-weight: 600;
+    }
+    &__list-warpper {
+        list-style: none;
+        padding: 0;
+    }
+    &__list{
+        &--rate {
+        font-size: 11px;
+        // font-weight: 500;
+        margin-left: 30px;
+        }
+        svg {
+            font-size: 19px;
+        }
+    }
+    &__rate-wrapper svg {
+        font-size: 33px;
+    }
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

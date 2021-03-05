@@ -1,0 +1,96 @@
+// .c-search-page {
+//   padding-top: 90px;
+//   &__products-wrapper {
+//     padding: 40px;
+//     background-color: $light-color;
+//     @include bpm-xs {
+//       padding: 40px 20px;
+//     }
+//   }
+//   &__row {
+//     padding: 40px;
+//     &--light-bg {
+//       background-color: $light-color;
+//     }
+//   }
+//   &__filter-item {
+//     cursor: pointer;
+//     padding: 5px 10px;
+//     margin-bottom: 5px;
+//     text-align: right;
+//     opacity: 0.8;
+//     transition: all 0.4s;
+//     &--active {
+//       // font-weight: 600;
+//       // font-weight: bold;
+//       opacity: 1;
+//     }
+//   }
+//   &__filter-heading {
+//     cursor: pointer;
+//     padding: 10px;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     // font-weight: 600;
+//   }
+//   &__filter {
+//     border-bottom: 1px solid;
+//   }
+//   &__filter-box {
+//     width: 250px;
+//     margin-left: auto;
+//     margin-right: 0;
+//     @media (max-width: 500px) {
+//       width: 100%;
+//     }
+//   }
+//   &__heading {
+//     text-transform: uppercase;
+//     // font-weight: 500;
+//     line-height: 1.3;
+//     font-size: xx-large;
+//     @media (max-width: 500px) {
+//       font-size: 24px;
+//     }
+
+//     .c-input__input {
+//       border: none !important;
+//     }
+//   }
+//   &__sub-heading {
+//     margin-top: 30px;
+//     font-size: xx-large;
+//     text-align: center;
+//     letter-spacing: 5px;
+//     color: $brand-color-1;
+//   }
+// }
+// .search-text {
+//   color: $dark-color-2;
+// }
+
+// .search-container {
+//   // border: 2px solid rgb(129, 129, 129);
+//   position: relative;
+//   &::before {
+//     content: "";
+//     position: fixed;
+//     top: 98px;
+//     width: 356px;
+//     transform: translate(25px, 0);
+
+//     // height: 2px;
+//     // background-color: rgb(129, 129, 129);
+//     z-index: 2;
+//     box-shadow: 0 10px 15px 25px white;
+//   }
+//   // &::after {
+//   //   content: "";
+//   //   position: fixed;
+//   //   top: 580px;
+//   //   width: 396px;
+//   //   height: 2px;
+//   //   background-color: rgb(129, 129, 129);
+//   // }
+// }

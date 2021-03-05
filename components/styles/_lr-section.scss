@@ -1,0 +1,222 @@
+.c-lr-section {
+  padding: 0 4rem;
+  display: flex;
+  //   flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  @include bp-md {
+    min-height: 75vh;
+    background: $light-color;
+    &__heading {
+      text-align: left !important;
+    }
+  }
+  &__heading {
+    font-family: $book;
+    font-size: 7vw;
+    letter-spacing: 1px;
+    line-height: 1;
+    @media (min-width: 1200px) {
+      font-size: 5vw;
+    }
+  }
+  &__sub-heading {
+    text-transform: uppercase;
+    font-size: 28px;
+    color: $brand-color-1;
+    letter-spacing: 0.5px;
+    font-family: $book;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    &__review-subheading {
+      font-size: 2vw;
+      color: $brand-color-1;
+      letter-spacing: 2.5px;
+      // font-weight: 1000;
+      font-family: $main-font;
+      text-transform: lowercase;
+    }
+  }
+  &__content {
+    .c-less-more__less,
+    .c-less-more__whole {
+      * {
+        text-align: justify;
+      }
+      font-size: 1vw;
+      width: 90%;
+      @media screen and(max-width: 1350px) {
+        font-size: 1.5vw;
+      }
+    }
+    .c-less-more__whole-inner {
+      font-size: 1.25vw;
+      @media screen and(max-width: 1350px) {
+        font-size: 1.5vw;
+      }
+    }
+    .c-less-more__less {
+      margin-bottom: 1rem;
+    }
+  }
+  &__image {
+    flex: 0.4;
+    margin-left: 6rem;
+    @include bpm-md {
+      flex: 1;
+      img {
+        width: 100%;
+        padding: 0 2rem;
+      }
+
+      margin: 0;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 10rem 0 10rem 10rem;
+    flex: 0.6;
+  }
+
+  &__col {
+    &--text {
+      padding-left: 70px;
+    }
+  }
+  &__row .align-items-center {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  &__btn-wrapper {
+    text-align: right;
+    @include bp-md {
+      padding-left: 40px;
+    }
+
+    margin-right: 14rem;
+    position: relative;
+    @include bpm-lg {
+      margin-right: 5rem;
+    }
+    .c-btn {
+      border-bottom: 2.35px solid black !important;
+      border-radius: 0 !important;
+      padding: 0;
+      font-size: 1.7rem;
+    }
+  }
+
+  @include bpm-lg {
+    padding: 0;
+
+    flex-direction: column;
+    &__image {
+      width: 100%;
+    }
+
+    &__heading {
+      font-size: 11vw;
+      margin-bottom: 5rem;
+    }
+    &__sub-heading {
+      font-size: 3.5vw;
+      padding-bottom: 0;
+    }
+
+    &__content {
+      padding: 5rem 5rem 8rem 5rem;
+      @include bpm-sm {
+        padding: 3rem 5rem 4rem 5rem;
+      }
+      align-items: center;
+      justify-content: center;
+
+      text-align: justify;
+      .c-less-more {
+        margin: auto;
+      }
+
+      .c-less-more__less,
+      .c-less-more__whole {
+        margin: 0 auto !important;
+        width: 70vw;
+        font-size: 2.25vw;
+        text-align: justify;
+        @include bpm-sm {
+          font-size: 2.8vw;
+        }
+        @include bpm-xs {
+          font-size: 3.4vw;
+        }
+        @include bpm-xs {
+          font-size: 4vw;
+        }
+      }
+      .c-less-more__whole-inner {
+        font-size: 2.25vw;
+        @include bpm-sm {
+          font-size: 2.8vw;
+        }
+        @include bpm-xs {
+          font-size: 3.4vw;
+        }
+        @include bpm-xs {
+          font-size: 4vw;
+        }
+      }
+      .c-less-more__less {
+        margin: 2rem auto !important;
+      }
+    }
+    &__btn-wrapper {
+      .c-btn {
+        position: absolute;
+        right: -30rem;
+        top: 1rem;
+        font-size: 2rem;
+        @include bpm-xs {
+          font-size: 1.8rem;
+        }
+        // width: 15rem;
+        &::after {
+          top: 0.3rem;
+          right: -1rem;
+        }
+
+        @media screen and(max-width:610px) {
+          right: -22rem;
+        }
+        @media screen and(max-width:450px) {
+          right: -17rem;
+        }
+        @media screen and(max-width:370px) {
+          right: -12rem;
+        }
+      }
+    }
+  }
+
+  @include bpm-sm {
+    &__heading {
+      font-size: 8rem;
+      margin-bottom: 3rem;
+    }
+    &__sub-heading {
+      text-align: left;
+
+      font-size: 2.4rem;
+    }
+  }
+  @include bpm-xs {
+    &__heading {
+      font-size: 20vw;
+      margin-bottom: 3rem;
+    }
+    &__sub-heading {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+}

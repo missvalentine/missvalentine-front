@@ -1,0 +1,177 @@
+.c-hh-section {
+  padding: 6rem 6rem 3rem 6rem;
+
+  &--light-2 {
+    background-color: $light-color-2;
+  }
+  &__heading-wrapper {
+    padding-top: 5rem;
+    @include bpm-sm {
+      padding-top: 0rem;
+    }
+  }
+  &__img-wrapper {
+    text-align: center;
+    max-width: 70%;
+    margin: auto;
+  }
+  &__heading {
+    @include bp-xxl {
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+
+    text-transform: lowercase;
+    font-family: $heavy;
+    //font-weight: 900;
+  }
+
+  &__sub-heading {
+    @include bp-md {
+      font-size: 1.5vw;
+      line-height: 1.4;
+      width: 104%;
+      margin-bottom: 3rem;
+    }
+    @include bp-lg {
+      width: 100%;
+      margin-bottom: 5rem;
+    }
+    @include bp-xl {
+      font-size: 1.35vw;
+      width: 86%;
+      margin-bottom: 8rem;
+    }
+    font-family: $main-font;
+    line-height: 1.17;
+    letter-spacing: 0.78px;
+    text-align: left;
+    // height: 10rem;
+  }
+
+  &__sub-heading-wrapper {
+    .c-btn {
+      background-color: $dark-color-2;
+      color: $base-color;
+      font-family: $main-font;
+      // font-weight: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-size: 1.5rem !important;
+      }
+    }
+
+    .c-sub-heading {
+      // visibility: hidden;
+      span {
+        b {
+          // visibility: hidden;
+          margin-top: 2rem;
+          line-height: 2rem;
+        }
+      }
+    }
+  }
+  // ! tab sizes
+
+  @include bpm-md {
+    padding: 3rem 3rem 20rem 3rem;
+
+    &__heading {
+      width: 200%;
+      text-align: center;
+      span {
+        font-size: 4rem;
+      }
+      padding-top: 0;
+      padding-bottom: 3rem;
+      margin-top: -10rem;
+      margin-bottom: 2vw;
+      @media screen and(max-width: 610px) {
+        span {
+          font-size: 3rem;
+        }
+      }
+    }
+    &__sub-heading--wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+    }
+    &__sub-heading {
+      margin: 0 0 2rem 0;
+      margin: auto;
+      width: 70vw;
+      text-align: center;
+      font-size: 2.5vw;
+      @include bpm-sm {
+        // top: 15vw;
+        font-size: 3vw;
+      }
+    }
+    &__img-wrapper {
+      img {
+        max-width: 70%;
+      }
+    }
+    &__row {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      margin-bottom: -18rem;
+      justify-items: center;
+
+      .c-hh-section__heading-wrapper {
+        order: 1;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center !important;
+        .c-hh-section__sub-heading-wrapper {
+          margin-bottom: 2rem;
+          h4 {
+            margin-bottom: 2rem;
+          }
+          a.c-btn--dark {
+            margin: 2rem 0;
+            margin: auto !important;
+          }
+        }
+      }
+    }
+  }
+
+  @include bpm-xs {
+    &__heading {
+      span {
+        font-size: 3rem;
+      }
+    }
+    &__sub-heading {
+      font-size: 1.7rem !important;
+    }
+  }
+
+  @media screen and(max-width: 420px) {
+    &__heading-wrapper {
+      // width: 100vw !important;
+      position: relative;
+      padding-top: 10rem;
+    }
+    &__heading {
+      position: absolute;
+      top: 8rem;
+      word-wrap: normal;
+      span {
+        font-size: 6.5vw;
+      }
+    }
+    &__sub-heading {
+      font-size: 1.5rem !important;
+    }
+  }
+}

@@ -1,0 +1,129 @@
+ul {
+  padding: 0px !important;
+}
+
+.c-header {
+  padding: 8px 35px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+  position: relative;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.095);
+  z-index: 99;
+
+  &__affix {
+    position: relative;
+    z-index: 99;
+  }
+  &__nav {
+    * {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
+    width: 50%;
+    &.nav--right {
+      text-align: right;
+    }
+    .c-nav__list {
+      // fixed navbar hover
+
+      .c-nav__link {
+        font-family: $book;
+      }
+
+      .c-nav__link:hover {
+        color: $dark-color-2;
+        border-bottom: 2.5px solid $dark-color-2;
+        line-height: 1.2em;
+      }
+    }
+    .c-input.c-input--default {
+      width: 23rem;
+    }
+  }
+  .c-nav--right {
+    * {
+      text-transform: capitalize;
+    }
+    .c-nav__link:hover {
+      border: none !important;
+      line-height: 2.7;
+    }
+
+    .ant-input {
+      border: none !important;
+    }
+  }
+
+  &__logo,
+  &__nav {
+    @include bpm-md {
+      flex: 1;
+    }
+  }
+  &__wrapper {
+    .c-header {
+      translate: all 0.4s;
+      transform: translateY(0);
+    }
+    &--hidden {
+      .c-header {
+        translate: all 0.4s;
+        transform: translateY(-100%);
+      }
+    }
+  }
+  &--active {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    visibility: visible;
+    transition: all 200ms ease-in;
+    border-bottom: 1px solid $border-color;
+  }
+  &--hidden {
+    transition: all 200ms ease-out;
+    transform: translate(0, -100%);
+  }
+  &--top {
+    border-bottom: none;
+    transition: all 200ms ease-out;
+  }
+  &--fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 99;
+    // background: $light-color-2;
+    color: black;
+  }
+  &--scrollup {
+    transform: translateY(20px);
+  }
+  &--pinned {
+    background-color: $dark-color-1;
+  }
+  &--light {
+    * {
+      color: $light-color-2;
+    }
+  }
+  &--black * {
+    color: black;
+  }
+  &--dark {
+    * {
+      color: $dark;
+    }
+    &.c-header {
+      &--pinned {
+        background-color: $light-color-2;
+      }
+    }
+  }
+  &--bg-light {
+    background-color: $light-color-2;
+  }
+}

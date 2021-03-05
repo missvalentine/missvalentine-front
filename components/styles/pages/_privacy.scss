@@ -1,0 +1,51 @@
+.c-privacy {
+  &__page-title {
+    padding: 4rem 4rem 0 6rem;
+    @media (max-width: 768px) {
+      padding: 10px 20px;
+    }
+  }
+  &__heading {
+    font-family: $sub-font;
+    font-size: 22px;
+    text-align: left;
+    // font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 2rem !important;
+    padding-top: 4rem;
+    // padding-bottom: 1.5rem;
+    @media (max-width: 400px) {
+      font-size: 18px !important;
+    }
+    &--large {
+      @media (max-width: 400px) {
+        font-size: 24px !important;
+      }
+    }
+  }
+  &__content {
+    padding: 0rem 10rem 4rem;
+    @include bpm-sm {
+      padding: 0rem 2rem 4rem;
+    }
+  }
+}
+
+div.container {
+  // margin: 20px 0 !important;
+  font-family: $main-font !important;
+  font-size: 18px !important;
+  text-align: justify;
+  text-justify: auto;
+  // padding: 0 0 0 3rem !important;
+  @media (max-width: 400px) {
+    font-size: 14px !important;
+  }
+}
+
+ul {
+  padding-left: 18px;
+}
+ul.ant-dropdown-menu {
+  padding-left: 0px !important;
+}

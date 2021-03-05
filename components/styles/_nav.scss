@@ -1,0 +1,258 @@
+.c-nav {
+  @include bpm-md {
+    display: none;
+  }
+  &__list {
+    font-family: $main-font;
+    // font-weight: 200;
+    display: flex;
+    padding: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    @include bpm-md {
+      position: absolute;
+      left: 20px;
+      right: 0;
+      padding: 20px;
+      flex-direction: column;
+      z-index: 10;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: $dark-color-2;
+    padding-left: 5px;
+    padding-right: 5px;
+    // font-weight: 500;
+    @include bpm-md {
+      color: $brand-color-1;
+    }
+    cursor: pointer;
+  }
+
+  &__list-item {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 2.7;
+
+    @include bp-lg {
+      padding-left: 15px;
+      padding-right: 35px;
+      &:first-child {
+        padding-left: 2px;
+      }
+      &:last-child {
+        padding-right: 2px;
+      }
+    }
+    svg {
+      font-size: 1.9rem;
+      width: auto;
+      height: 1em;
+      &:hover {
+        path,
+        circle {
+          color: $brand-color-1;
+        }
+      }
+    }
+  }
+
+  &__sub-menu {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    list-style: none;
+    flex-wrap: wrap;
+    @include bpm-md {
+      padding-left: 0;
+      margin-top: 25px;
+    }
+  }
+  &__sub-menu-item {
+    @include bpm-md {
+      width: 100%;
+    }
+  }
+  &__sub-menu-tgl {
+    padding-left: 5px;
+    cursor: pointer;
+  }
+
+  //
+  &__menu-tgl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+    height: 25px;
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      height: 2px;
+      // background-color: $dark-color-1;
+      background-color: currentColor;
+      border-radius: 5px;
+    }
+    &:before {
+      width: 20px;
+    }
+    &:after {
+      margin-top: 10px;
+      width: 25px;
+    }
+  }
+  &__icon-menu-wrapper {
+    &--mobile {
+      display: flex;
+      justify-content: flex-end;
+      flex: 1;
+      @include bp-md {
+        display: none;
+      }
+    }
+  }
+  //versions
+  &--right {
+    .c-nav {
+      &__list {
+        justify-content: flex-end;
+        &-item:first-child {
+          .ant-input-prefix {
+            * {
+              color: rgb(156, 156, 156) !important;
+            }
+          }
+          input {
+            padding-left: 4rem;
+          }
+        }
+      }
+    }
+  }
+  &--mobile {
+    display: block;
+    @include bp-md {
+      display: none;
+    }
+    .c-nav {
+      &__list {
+        pointer-events: none;
+        &--opened {
+          pointer-events: all;
+        }
+      }
+    }
+  }
+}
+.c-cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__count {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 0;
+    top: -0.4rem;
+    margin: auto;
+    padding-top: 0.6em;
+    pointer-events: none;
+    font-size: 1.9rem;
+    @include bp-md {
+      font-size: 0.8em;
+    }
+  }
+
+  svg {
+    height: 2.5em;
+    @include bp-md {
+      height: 1.5em;
+    }
+  }
+}
+
+.c-header--light .c-cart-icon__count {
+  color: white;
+  @include bpm-md {
+    font-size: 1.9rem;
+  }
+}
+.c-header--dark .c-cart-icon__count {
+  color: white;
+  @include bpm-md {
+    font-size: 1.9rem;
+  }
+}
+
+.sidebar {
+  min-width: 350px;
+  background-color: #f4f4f4;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: inherit;
+  position: fixed;
+  z-index: -1;
+  /* display: none; */
+  transform: translateX(-100%);
+  transition: 0.3s;
+  top: 6rem;
+  /* padding: 30px; */
+}
+
+.sidebarLeftDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+
+  // homescreen side nav underline
+  ul {
+    li {
+      a {
+        padding: 0 0;
+        &:hover {
+          border-bottom: 2.25px solid $dark-color-2;
+        }
+      }
+    }
+  }
+}
+
+.navbarDiv {
+  display: flex;
+  /* background-color: #f4f4f4; */
+  /* padding: 20px; */
+  /* width: 250px; */
+  /* heigh/t: 20px; */
+}
+
+.c-nav__list-item--has-sub-menu:hover .sidebar {
+  /* display: block; */
+  transform: translateX(0);
+  transition: 0.3s;
+  top: 6rem;
+}
+
+.shopHref {
+  padding: 30px;
+}
+
+.learnHref {
+  padding: 30px;
+}
+
+.consultHref {
+  padding: 30px;
+}
+
+.sidebar:hover {
+  transform: translateX(0);
+}

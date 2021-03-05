@@ -1,0 +1,112 @@
+.c-learn-page {
+  .w-100:last-child {
+    padding: 2rem 5rem;
+    @include bpm-md {
+      padding: 0rem;
+    }
+    .pb-5.col-lg-3 {
+      .pr-3.border-right-gold {
+        span.d-flex {
+          padding-bottom: 1.5rem;
+        }
+        > div {
+          .learn-collapse-list {
+            padding-left: 2rem;
+            p {
+              position: relative;
+              margin-left: 2rem;
+              font-family: $light;
+              transition: 200ms ease-in-out;
+              &::before {
+                content: '';
+                background-color: #aaa;
+                position: absolute;
+                width: 5px;
+                height: 5px;
+                border-radius: 2rem;
+                left: -1rem;
+                top: 1.3rem;
+              }
+            }
+
+            p.active {
+              font-family: $heavy;
+              //   position: relative;
+              margin-left: 3.5rem;
+              color: #75a58a;
+              //   transition-duration: 300ms;
+              &::before {
+                content: '';
+                width: 15px;
+                height: 15px;
+                background: url('/images/double-right-arrow-green.png')
+                  no-repeat center center/cover;
+                position: absolute;
+                z-index: 2;
+                left: -2.5rem;
+                top: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .col-lg-9 {
+      .learn-view {
+        .learn-view-inner {
+          h4::before {
+            content: '•';
+            margin-right: 8px;
+            margin-left: -20px;
+          }
+        }
+        * {
+          font-size: 2rem;
+        }
+        background-color: rgba(211, 237, 219, 0.3);
+
+        padding: 2rem 4rem 3rem 8rem !important;
+        @include bpm-xs {
+          padding: 2rem 4rem 3rem 4rem !important;
+        }
+        > div {
+          margin-top: 2rem;
+          * {
+            font-size: 2rem;
+            font-family: $sub-font;
+          }
+          // position: relative;
+          //   margin-left: 2rem;
+          // &::before {
+          //   content: "";
+          //   background-color: #aaa;
+          //   position: absolute;
+          //   width: 7px;
+          //   height: 7px;
+          //   border-radius: 2rem;
+          //   left: -1.5rem;
+          //   top: 0.9rem;
+          // }
+        }
+        > div {
+          > p {
+            margin-bottom: 3rem;
+          }
+          .boxed-collapse-wrapper {
+            margin-left: 6rem !important;
+            margin-bottom: -8px !important;
+            padding-bottom: 0 !important;
+            border: none;
+            font-family: $sub-font;
+            @include bpm-xs {
+              margin-left: 0rem !important;
+            }
+            .boxed-collapse-item {
+              font-family: $main-font;
+            }
+          }
+        }
+      }
+    }
+  }
+}

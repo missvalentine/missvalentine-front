@@ -1,0 +1,91 @@
+.consult-doc-banner-wrapper {
+  text-align: center;
+  padding: 4rem 0 4rem 0;
+  .heading {
+    font-size: 4rem;
+    // font-weight: 700;
+    letter-spacing: 0.1rem;
+    //font-family: $heavy;
+  }
+  .sub-heading {
+    font-size: 2rem;
+    font-family: $sub-font;
+    padding: 1rem 0 6rem 0;
+  }
+  .consult-doc-img {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 20rem;
+    img {
+      max-width: 80%;
+      padding-bottom: 7rem;
+    }
+    @include bpm-lg {
+      padding: 0 15rem;
+    }
+    @include bpm-md {
+      //   visibility: hidden;
+      padding: 0 10rem !important;
+    }
+    @include bpm-sm {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include bpm-xs {
+      padding: 0 0 !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      img {
+        max-width: 100%;
+        padding-bottom: 7rem;
+        width: auto;
+      }
+    }
+  }
+  .top-btn {
+    margin: 2rem 0;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: x-large;
+    color: $dark-color-2;
+    font-family: $sub-font;
+    &:hover {
+      transform: scale(1.1);
+      transition: 300ms ease-in-out;
+    }
+
+    @include bpm-xs {
+      text-transform: lowercase;
+      font-family: $book;
+      img {
+        height: 15px !important;
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  @include bpm-md {
+    padding: 0;
+    .heading {
+      font-size: 3rem;
+    }
+    .sub-heading {
+      br {
+        display: none;
+      }
+      font-size: 1.8rem;
+      padding: 1rem 2rem 6rem 2rem !important;
+    }
+  }
+
+  @include bpm-xs {
+    .heading {
+      padding: 0 3rem;
+    }
+    .sub-heading {
+      font-size: 1.6rem;
+    }
+  }
+}

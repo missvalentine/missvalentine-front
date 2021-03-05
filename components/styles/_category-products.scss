@@ -1,0 +1,324 @@
+.c-category-products {
+  padding: 40px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include bp-md {
+    min-height: 85vh;
+  }
+  @include bpm-sm {
+    padding: 7rem 3rem 0rem 3rem;
+  }
+  &__list {
+    display: flex;
+
+    justify-content: center;
+    overflow: auto;
+    padding: 0 0 3rem 0;
+    margin: 0 8rem 0 8rem;
+    border-bottom: 3px solid #e4e4e4;
+    @include bpm-sm {
+      margin: 0;
+      flex-wrap: wrap;
+    }
+    @include bpm-xs {
+      margin: 0;
+      padding: 1.5rem 0;
+
+      flex-wrap: wrap;
+    }
+  }
+  &__list-item {
+    color: $brand-color-1;
+    display: inline-block;
+    margin-right: 20px;
+    padding-bottom: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    cursor: pointer;
+    font-family: $sub-font;
+    // font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    @include bpm-md {
+      font-size: 1.8rem;
+    }
+    @include bp-md {
+      margin-right: 7rem;
+    }
+    &:last-child {
+      @include bp-md {
+        margin-right: 0;
+      }
+    }
+
+    &:hover {
+      color: $dark-color-2;
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+  &__heading-wrapper {
+    @include bpm-xs {
+      border-bottom: 2px solid rgb(212, 212, 212);
+    }
+  }
+  &__heading {
+    letter-spacing: 0.4rem;
+    font-family: $book;
+    margin-bottom: 40px;
+    @include bp-md {
+      flex: 1 0 100%;
+    }
+    @include bp-lg {
+      flex: 1 0 50%;
+    }
+    &-wrapper {
+      @include bpm-xs {
+        * {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+  &__sub-heading {
+    flex: 1 0 100%;
+    @include bp-lg {
+      flex: 1 0 50%;
+    }
+  }
+  &__product {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    //margin-top: 100px;
+    .c-btn {
+      @include bpm-xs {
+        width: 50%;
+      }
+    }
+    span {
+      margin-bottom: 14px;
+      visibility: hidden;
+      display: flex;
+      justify-content: center;
+    }
+    &:hover {
+      background-color: $high-light;
+      border-radius: 10px;
+      span {
+        font-family: $main-font !important;
+        visibility: visible;
+        @include bpm-xs {
+          font-size: small;
+        }
+      }
+    }
+    @include bpm-md {
+      span {
+        font-family: $main-font !important;
+        display: block;
+        font-size: 2.2rem !important;
+      }
+    }
+    @include bpm-sm {
+      span {
+        font-family: $main-font !important;
+        display: block;
+        font-size: 2rem !important;
+      }
+    }
+    @include bpm-xs {
+      span {
+        font-family: $main-font !important;
+        display: block;
+        font-size: 1.8rem !important;
+      }
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    overflow: hidden;
+    //padding-bottom: 50px;
+    padding: 0;
+    @include bp-md {
+      //margin-top: -20rem;
+      padding: 125px 60px 85px 60px;
+      margin: 0 95px;
+    }
+    @include bpm-md {
+      // margin-top: -15rem;
+      padding: 90px 60px 0px 60px;
+      .is-selected {
+        &:hover {
+          background: none !important;
+        }
+      }
+    }
+    // @include bpm-xs {
+    //   padding: 45px 40px 10px 40px;
+    // }
+    // @media screen and (max-width: 400px) {
+    //   padding: 45px 10px 10px 10px;
+    // }
+    &:focus {
+      outline: none;
+    }
+    .flickity-slider {
+      @include bp-md {
+        > div {
+          max-width: 33rem;
+
+          img {
+            max-width: 85%;
+            margin: 0;
+          }
+        }
+      }
+      @include bpm-md {
+        > div {
+          img {
+            max-width: 55%;
+          }
+        }
+      }
+      @include bpm-xs {
+        margin: auto;
+        > div {
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+      @media screen and (max-width: 400px) {
+        > div {
+          img {
+            max-width: 105%;
+          }
+        }
+      }
+    }
+    .flickity-button {
+      background-color: #c7c7c6;
+      border-radius: 50%;
+      padding: 10px;
+      border-color: transparent;
+      position: absolute;
+
+      &:hover {
+        background-color: $dark-color-2;
+      }
+      @include bp-xs {
+        .flickity-button {
+          display: none;
+        }
+      }
+    }
+
+    .flickity-button-icon {
+      width: 24px;
+      height: 20px;
+      color: $base-color;
+      fill: currentColor;
+    }
+    .flickity-prev-next-button {
+      top: 50%;
+      border-radius: 100%;
+      transform: translateY(-50%);
+      @include bpm-md {
+        top: 50% !important;
+      }
+    }
+    .next {
+      right: 25px;
+      &:disabled {
+        display: none;
+      }
+    }
+    .previous {
+      left: 35px;
+      &:disabled {
+        display: none;
+      }
+    }
+  }
+  &__heading-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @include bp-lg {
+      align-items: flex-start;
+      flex-direction: row;
+    }
+  }
+  &__product-list {
+    display: flex;
+    // align-items: center;
+
+    flex: 1;
+    position: relative;
+    .flickity-prev-next-button {
+      top: 50%;
+
+      @include bpm-md {
+        top: 28%;
+      }
+      @include bpm-xs {
+        display: none;
+      }
+    }
+  }
+  .consult-doc-banner-wrapper {
+    button.top-btn {
+      font-family: $sub-font;
+      @include bpm-sm {
+        text-transform: lowercase;
+        font-family: $book;
+        img {
+          height: 15px !important;
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+  }
+  //versions
+  &--light-2 {
+    background-color: $light-color-2;
+  }
+  &--bggrey {
+    background-color: $light-color-2;
+  }
+  &--no-padding {
+    padding: 0;
+  }
+  &--h-auto {
+    min-height: auto;
+  }
+
+  &--bundles {
+    // visibility: hidden;
+    .c-category-products__product-list {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr 1fr;
+      @include bpm-lg {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        .c-category-products__product {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.c-home {
+  .consult-doc-banner-wrapper {
+    padding: 0;
+  }
+}

@@ -1,0 +1,95 @@
+$container-width: 1200px;
+
+//sizes
+$nav-size: 14px;
+$base-font-size: 17px;
+$font-size-xxl: 20px;
+$header-height: 124px;
+
+$g-bp-xxs: 375px;
+$g-bp-xs: 544px;
+$g-bp-sm: 769px;
+$g-bp-md: 992px;
+$g-bp-lg: 1200px;
+$g-bp-xl: 1400px;
+$g-bp-xxl: 1750px;
+
+// maxwidth breakpoints for mobile and tab
+
+$g-bpm-xxs: (max-width 375px); // mobile small
+$g-bpm-xs: (max-width 544px); // small tab and mobile landscape
+$g-bpm-sm: (max-width 769px); // small tabs
+$g-bpm-md: (max-width 992px); // large tabs
+$g-bpm-lg: (max-width 1200px);
+$g-bpm-xl: (max-width 1400px);
+$g-bpm-xxl: (max-width 1750px);
+// breakpoint for height
+$g-bp-h-1: (max-height 630px);
+$g-bp-h-2: (max-height 530px);
+
+$list-item-padding: 10px;
+
+// fonts
+@font-face {
+  font-family: "futuraBT-medium";
+  src: url("/fonts/futura-md-bt-medium.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "futuraBT-book";
+  src: url("/fonts/futura-book-bt-22240.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: futuraBT-heavy;
+  src: url("/fonts/futura-hv-bt-heavy.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: futuraBT-light;
+  src: url("/fonts/futura-light-bt.ttf") format("truetype");
+  font-display: swap;
+}
+//@import url("../../assets/fonts/futura-book-bt-22240.ttf");
+// $main-font: "Montserrat", sans-serif;
+$main-font: futuraBT-light;
+$sub-font: futuraBT-medium;
+$book: futuraBT-book;
+$heavy: futuraBT-heavy;
+
+//colors
+$base-color: #fff;
+$high-light: #f1f1f1;
+$light-color: #ffffff;
+$light-color-2: #f9faf7;
+$light-color-4: #f9f9f9;
+$brand-color-1: #aaaaaa;
+$dark-color-1: #f5f5f5;
+$dark-color-2: #000000;
+$error-color: red;
+$error-color-2: #c40000;
+$border-color: #d0c9c9;
+$black: #000;
+$light-brown: #fcf6ee;
+$dark-brown: #b89171;
+// extra colors
+$light-color-3: #fdfdfd;
+$cart-bg-color: #e4e4e4;
+
+//  new design colors
+$drawer-background: #fcf6ee;
+//---blog------------------
+$color-primary: #b7c7c9;
+$color-secondary: #f7f1e9;
+$color-secondary2: #e8972c;
+$color-font-muted: rgba(0, 0, 0, 0.44);
+$color-font-black: rgba(0, 0, 0, 0.88);
+$color-primary2: rgb(238, 226, 215);
+
+$font-large: 20px;
+$font-small: 12px;
+
+//Font weight
+$wg-normal: 400;
+$wg-bolder: 700;
+$wg-bold: 600;

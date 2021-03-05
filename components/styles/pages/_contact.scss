@@ -1,0 +1,49 @@
+.c-contact {
+  &__container {
+    padding: 20px;
+    @include bp-lg {
+      padding-top: 100px;
+      padding: 40px;
+    }
+    @include bp-md {
+      > h2 {
+        margin-left: 4rem;
+        font-family: futuraBT-book;
+        font-size: 45px;
+      }
+      > p {
+        margin-left: 4rem;
+        font-family: futuraBT-book;
+        font-size: 26px;
+      }
+      .c-heading {
+        text-align: left;
+      }
+    }
+    .c-heading {
+      text-align: left;
+      font-family: $sub-font;
+    }
+    > p {
+      @include bp-md {
+        margin-left: 10rem;
+      }
+    }
+    @include bpm-md {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .c-heading {
+        font-size: 3rem;
+        text-align: center;
+      }
+    }
+  }
+}
+.forget-password-wrapper {
+  width: 600px;
+  display: block;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: calc(100% - 15px);
+}

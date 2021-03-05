@@ -1,0 +1,109 @@
+.c-registration {
+  &__heading {
+    color: $dark-color-2;
+    font-size: 28px;
+    font-family: $heavy;
+    // font-weight: 900;
+    text-align: center;
+    text-transform: lowercase;
+    color: #cb8d3a;
+    @include bp-xl {
+      // font-size: 40px;
+    }
+    @media (min-width: 992px) {
+      margin-bottom: 0px;
+    }
+  }
+  &__sub-heading {
+    text-align: center;
+    margin-top: 10px;
+    font-family: $book;
+    font-size: 22px;
+    // font-weight: 600;
+    margin-bottom: 30px;
+  }
+  &__info {
+    text-align: center;
+    color: $dark-color-2;
+    font-family: $book;
+    // font-weight: 600;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    @include bp-xl {
+      font-size: 20px;
+    }
+  }
+  &__form {
+    margin-top: 30px;
+    .ant-row.ant-form-item {
+      * input {
+        max-width: 80%;
+        outline: none;
+        border: none;
+      }
+    }
+    div.row {
+      .c-btn--dark {
+        &::hover {
+          background-color: $drawer-background !important;
+        }
+      }
+    }
+  }
+  &__input {
+    display: flex;
+    justify-content: center;
+    #registration_email,
+    #registration_password {
+      border-radius: 0px;
+    }
+  }
+  &__error-block {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $error-color;
+  }
+  &__error {
+    text-transform: uppercase;
+  }
+  &__spinner {
+    color: $brand-color-1;
+  }
+  &__inst {
+    // padding: 10px;
+    margin-top: 0;
+    text-align: center;
+    color: $dark-color-2;
+  }
+  &__link {
+    color: $dark-color-2;
+    // font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: $sub-font;
+  }
+
+  &__terms {
+    text-align: center;
+    font-family: $main-font;
+    color: $dark-color-2;
+    // font-weight: 500;
+    .c-checkbox__label {
+      padding-left: 3rem;
+    }
+  }
+}
+#registration_password {
+  background-color: transparent;
+  -webkit-box-shadow: 0 0 0 2px transparent;
+}
+
+.w-sm-100 {
+  width: 100%;
+  margin: 0;
+}

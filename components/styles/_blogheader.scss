@@ -1,0 +1,120 @@
+.main-header {
+  height: 70vh;
+  background-size: auto 100%;
+  text-align: left;
+  background-repeat: no-repeat;
+  background-position: right center;
+  margin-bottom: 90rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  @include bpm-md {
+    margin-bottom: 25rem;
+  }
+  @include bpm-sm {
+    margin-bottom: 10rem;
+  }
+  @include bpm-xs {
+    margin-bottom: 3rem;
+  }
+  @include bpm-xxs {
+    margin-bottom: -2rem;
+  }
+  &-heading {
+    text-align: center;
+    font-size: 3rem;
+    color: $color-font-black;
+    padding: 1em 0em;
+    // font-weight: 800;
+  }
+  &-title {
+    padding: 4rem 0rem;
+    text-align: center;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    &-primary {
+      font-family: $heavy;
+      font-size: 8rem;
+      color: $color-font-black;
+      // font-weight: 600;
+      line-height: 1.09;
+      padding-right: 10rem;
+    }
+    &-primary-2 {
+      font-family: $heavy;
+      font-size: 8rem;
+      color: #81adae;
+      // font-weight: 600;
+      line-height: 1.09;
+      padding-bottom: 2rem;
+      padding-left: 18rem;
+      margin-bottom: 5rem;
+    }
+    &-secondary {
+      font-size: 2.3rem;
+      color: $color-font-black;
+      width: 60rem;
+      // text-align: justify;
+      margin: auto;
+    }
+    @include bpm-md {
+      &-primary {
+        font-family: $heavy;
+        font-size: 4rem;
+      }
+      &-primary-2 {
+        font-family: $heavy;
+        font-size: 4rem;
+      }
+      &-secondary {
+        font-size: 1.8rem;
+        color: $color-font-black;
+        width: 80%;
+      }
+    }
+    @include bpm-sm {
+      padding: 4rem;
+
+      &-primary {
+        font-family: $heavy;
+        font-size: 4rem;
+      }
+      &-primary-2 {
+        font-family: $heavy;
+        font-size: 4rem;
+        padding-left: 7rem;
+      }
+      &-secondary {
+        font-size: 1.8rem;
+        color: $color-font-black;
+        width: 80%;
+      }
+    }
+    @include bpm-xs {
+      padding: 2rem;
+
+      &-primary {
+        font-family: $heavy;
+        font-size: 3rem;
+        padding-right: 0;
+      }
+      &-primary-2 {
+        font-family: $heavy;
+        font-size: 3rem;
+        padding-left: 0;
+      }
+      &-secondary {
+        font-size: 1.8rem;
+        color: $color-font-black;
+        width: 80%;
+      }
+    }
+  }
+}
+
+// @media screen and (max-width: 480px) {
+//   .main-header {
+//     height: 100vh;
+//   }
+// }

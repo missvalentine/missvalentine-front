@@ -1,0 +1,159 @@
+.c-heading {
+  font-family: $main-font;
+  color: $dark-color-2;
+  //font-weight: 400;
+  //versions
+  &--shop-all {
+    text-align: center !important;
+    font-family: $book;
+    font-size: 40px;
+    opacity: 0.9;
+    // font-weight: normal;
+    text-transform: uppercase;
+    // @media (max-width: 400px) {
+    //   font-size: 20px;
+    // }
+    @include bpm-xs {
+      font-size: 20px;
+      margin-top: 5rem !important;
+    }
+    @media (min-width: 401px) and (max-width: 768px) {
+      font-size: 25px;
+      margin-top: 30rem;
+    }
+  }
+  &--faq {
+    text-align: center;
+    font-family: $book;
+    opacity: 0.9;
+    // font-weight: normal;
+  }
+  &--default {
+    //font-size: 28px;
+    //letter-spacing: 1px;
+    @media (min-width: 992px) {
+      font-size: 36px;
+      font-family: futuraBT-book;
+      //letter-spacing: 2.65px;
+    }
+    @media only screen and (min-width: 1024px) {
+      text-align: center;
+    }
+  }
+  &--product {
+    text-align: left !important;
+    word-spacing: 5px;
+  }
+  &--light {
+    // font-weight: 300;
+  }
+  &--large {
+    @media (min-width: 1400px) {
+      font-size: 30px;
+    }
+  }
+
+  &--transform {
+    text-transform: uppercase;
+  }
+
+  &--search {
+    padding: 0 !important;
+  }
+
+  &--order {
+    @include bpm-xs {
+      font-size: 22px;
+    }
+  }
+  &--order-no {
+    font-size: 24px;
+    @include bpm-lg {
+      font-size: 22px;
+    }
+    @include bpm-xs {
+      font-size: 18px;
+    }
+  }
+}
+.c-sub-heading {
+  font-family: $sub-font;
+  //color: $base-color;
+
+  //versions
+  &--default {
+    //font-size: 16px;
+    // letter-spacing: 0.8px;
+    font-family: $book;
+    @media (min-width: 992px) {
+      font-size: 32px;
+    }
+  }
+}
+.c-heading,
+.c-sub-heading {
+  //versions
+  &--upper {
+    text-transform: uppercase;
+  }
+  &--gold {
+    color: $brand-color-1;
+  }
+  &--white {
+    color: $light-color;
+  }
+  &--dark {
+    color: $dark-color-2;
+  }
+
+  &--rgt-br {
+    padding-left: 20px;
+  }
+  &--btm-br {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $brand-color-1;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--btm-br {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $brand-color-1;
+  }
+
+  &--weight {
+    &-100 {
+      // font-weight: 100;
+    }
+    &-200 {
+      // font-weight: 200;
+    }
+    &-300 {
+      // font-weight: 300;
+    }
+    &-400 {
+      // font-weight: 400;
+    }
+    &-500 {
+      // font-weight: 500;
+    }
+    &-600 {
+      // font-weight: 600;
+    }
+    &-700 {
+      // font-weight: 700;
+    }
+    &-800 {
+      // font-weight: 800;
+    }
+    &-900 {
+      // font-weight: 900;
+    }
+    &-bold {
+      // font-weight: bold;
+    }
+    &-normal {
+      // font-weight: normal;
+    }
+  }
+}

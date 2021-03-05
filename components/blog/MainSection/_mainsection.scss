@@ -1,0 +1,25 @@
+.main-section {
+  // background-color: $color-secondary;
+  padding-top: 44px;
+  padding-bottom: 44px;
+  // &-small {
+  //   font-size: 3.8rem;
+  //   color: $dark-color-2;
+  //   text-align: center;
+  //   font-weight: 600;
+  // }
+
+  // @include bpm-sm {
+  //   padding-top: 88px;
+  //   padding-bottom: 44px;
+  // }
+  &-heading-primary {
+    margin-top: 0.5em;
+    font-size: 6rem;
+    color: black;
+    // font-weight: 800;
+    line-height: 1.09;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

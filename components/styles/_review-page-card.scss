@@ -1,0 +1,75 @@
+.review-page-card {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  width: 85%;
+  margin: auto;
+  padding: 2.5rem 0;
+  border-bottom: 1.5px solid #e4e4e4;
+  &__user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &-name {
+      font-size: 1.8rem;
+      margin-bottom: 3rem;
+    }
+
+    &-stars {
+      display: flex;
+      transform: scale(0.6) translateX(-10rem);
+      .blank-star {
+        padding-left: 1.5rem;
+      }
+      width: 100%;
+      justify-content: flex-end;
+    }
+    @include bpm-xs {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      &-name {
+        margin: 0;
+      }
+    }
+    &-stars {
+      display: flex;
+      transform: scale(0.7);
+      .blank-star {
+        padding-left: 1.5rem;
+      }
+    }
+  }
+  &__details {
+    &-title {
+      font-size: 2.1rem;
+      margin-bottom: 3rem;
+    }
+    &-review {
+      font-size: 1.8rem;
+    }
+  }
+  &__date {
+    h2 {
+      color: #aaa;
+      text-align: right;
+      padding-right: 20px;
+      @include bpm-md {
+        padding-right: 0;
+      }
+      @include bpm-xs {
+        text-align: center;
+      }
+    }
+    @include bpm-xs {
+      text-align: right;
+    }
+  }
+  @include bpm-lg {
+    grid-template-columns: 15rem 8fr 3fr;
+  }
+  @include bpm-xs {
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 2rem;
+  }
+}

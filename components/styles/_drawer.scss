@@ -1,0 +1,177 @@
+.c-drawer {
+  .ant-drawer-header {
+    border-bottom: none;
+    background-color: $drawer-background;
+    color: $brand-color-1;
+    padding-top: 50px;
+    .c-heading {
+      margin-left: -4rem;
+      font-family: $book;
+      letter-spacing: 2.5px;
+    }
+  }
+  .ant-drawer-content {
+    background-color: $drawer-background;
+    // opacity: 0.9;
+    padding: 4rem 4rem 0 4rem;
+
+    .ant-drawer-body {
+      padding: 0px 2.5rem !important;
+    }
+  }
+  &--cart {
+    .ant-drawer {
+      &-content,
+      &-wrapper-body,
+      &-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      &-wrapper-body {
+        overflow: visible;
+      }
+    }
+    .c-cart-drawer {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+  }
+
+  @include bpm-md {
+    &.ant-drawer-left {
+      .ant-drawer-content-wrapper {
+        width: 300px !important;
+      }
+      .ant-drawer-content {
+        max-width: 100vw;
+        .ant-drawer-body {
+          padding: 0 !important;
+          .c-nav__list {
+            *.c-nav__link {
+              color: $dark-color-2;
+              font-size: 2vw;
+              @include bpm-sm {
+                font-size: 2.5vw;
+              }
+              @media screen and(max-width: 630px) {
+                font-size: 3vw;
+              }
+              @media screen and(max-width: 470px) {
+                font-size: 4vw;
+              }
+              @media screen and(max-width: 360px) {
+                font-size: 5vw;
+              }
+              &:focus,
+              &:active {
+                border-bottom: 2.25px solid $dark-color-2;
+                transform: scale(1.1);
+              }
+            }
+
+            &-item {
+              align-items: flex-start;
+              justify-content: flex-start;
+            }
+            font-family: $sub-font;
+
+            padding: 0;
+            position: relative;
+            .c-nav__list-item--has-sub-menu {
+              position: absolute;
+              top: 7rem;
+
+              display: flex;
+              flex-direction: column;
+
+              > a {
+                margin-bottom: -3rem;
+                font-size: 3vw;
+                @include bpm-sm {
+                  font-size: 4vw;
+                }
+                @media screen and(max-width: 630px) {
+                  font-size: 5vw;
+                }
+                @media screen and(max-width: 470px) {
+                  font-size: 6vw;
+                }
+                @media screen and(max-width: 360px) {
+                  font-size: 9vw;
+                }
+              }
+              width: 100%;
+              ul.c-nav__sub-menu {
+                max-width: 100%;
+                display: grid;
+                grid-template-rows: repeat(6, 1fr);
+                justify-items: baseline;
+                text-align: left;
+              }
+            }
+            @media screen and(max-width: 991px) {
+              position: static;
+              flex-direction: column;
+              margin: 0;
+              // border-bottom: 2px solid black;
+
+              .c-nav__list-item--has-sub-menu {
+                margin-top: 3rem;
+                position: static;
+                order: 5;
+
+                margin-bottom: 10rem;
+                border-top: 2px solid black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    &.ant-drawer-left {
+      > .ant-drawer-content-wrapper {
+        width: 100vw !important;
+        .ant-drawer-content {
+          max-width: 100vw !important;
+        }
+      }
+    }
+  }
+}
+.c-drawer-title {
+  &__logo {
+    .c-logo {
+      &__img {
+        width: 40px;
+      }
+    }
+  }
+  &__go-back-wrapper {
+    color: $brand-color-1;
+    cursor: pointer;
+    // padding-top: 15%;
+    padding-bottom: 10px;
+  }
+  &__back {
+    font-size: 30px;
+    color: $dark-color-2;
+    margin-top: -50px;
+  }
+}
+
+.c-cart-title {
+  &__heading {
+    opacity: 0.9;
+    font-family: $sub-font;
+    font-size: 30px;
+    // font-weight: 500;
+    text-align: center;
+    color: #000000;
+    margin-top: 7px;
+  }
+}

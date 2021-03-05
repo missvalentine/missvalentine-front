@@ -1,0 +1,139 @@
+.get-in-touch-banner-wrapper {
+  padding: 48rem 0rem 10rem 4rem;
+  @include bp-md {
+    width: 90%;
+    margin: 4rem auto 4rem auto;
+  }
+
+  background-image: url(/images/getintouch.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @media screen and (max-width: 1640px) {
+    padding: 38rem 0rem 10rem 4rem;
+  }
+  @media screen and (max-width: 1440px) {
+    padding: 29rem 0rem 10rem 4rem;
+  }
+  @include bpm-lg {
+    padding: 25rem 0rem 10rem 4rem;
+  }
+  @include bpm-md {
+    padding: 25rem 0rem 10rem 4rem;
+    margin: 0;
+  }
+
+  @include bpm-sm {
+    padding: 20rem 0rem 4rem 2rem;
+  }
+  @include bpm-xs {
+    padding: 12rem 0rem 4rem 2rem;
+  }
+  @include bpm-xxs {
+    padding: 10rem 0rem 2rem 1rem;
+  }
+  &-content {
+    width: 80%;
+    letter-spacing: 0px;
+    &-heading {
+      font-family: $heavy;
+      font-size: 50px;
+      letter-spacing: 0px;
+    }
+    &-subHeading {
+      font-family: $heavy;
+      font-size: 50px;
+      letter-spacing: 0px;
+      color: #d5871b;
+      padding-left: 5rem;
+      margin-top: -1rem;
+    }
+    @include bp-xl {
+      transform: translate(22rem, -10rem);
+    }
+    @media screen and (max-width: 1640px) {
+      transform: translate(9rem, -7rem);
+    }
+    @media screen and (max-width: 1440px) {
+      transform: translate(0, 0);
+    }
+    @include bpm-lg {
+      &-heading {
+        font-size: 4rem;
+      }
+      &-subHeading {
+        font-size: 4rem;
+      }
+    }
+    @include bpm-md {
+      &-heading {
+        font-size: 3rem;
+      }
+      &-subHeading {
+        font-size: 3rem;
+      }
+    }
+    @include bpm-sm {
+      &-heading {
+        font-size: 2.5rem;
+      }
+      &-subHeading {
+        font-size: 2.5rem;
+        padding-left: 0;
+      }
+    }
+    @include bpm-xs {
+      &-heading {
+        font-size: 2rem;
+      }
+      &-subHeading {
+        font-size: 1.8rem;
+        padding-left: 0;
+      }
+    }
+    @include bpm-xxs {
+      &-heading {
+        font-size: 1.8rem;
+      }
+      &-subHeading {
+        font-size: 1.6rem;
+        padding-left: 0;
+      }
+    }
+  }
+  &-img-wrapper {
+    margin-right: -200px;
+    img {
+      width: 70%;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .get-in-touch-banner-wrapper-content {
+    position: absolute;
+    margin-top: 100px;
+    text-align: center;
+    width: 92%;
+  }
+  .get-in-touch-banner-wrapper-content-heading {
+    font-size: 24px;
+  }
+  .get-in-touch-banner-wrapper-content-subHeading {
+    font-size: 24px;
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .get-in-touch-banner-wrapper-content {
+    width: 80%;
+    margin-top: -50px;
+  }
+  .get-in-touch-banner-wrapper-content-heading {
+    font-size: 14px;
+  }
+  .get-in-touch-banner-wrapper-content-subHeading {
+    font-size: 14px;
+  }
+}

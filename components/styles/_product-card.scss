@@ -1,0 +1,157 @@
+.c-product-card {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+
+  // display: grid !important;
+  // grid-template-rows: 40rem 10rem;
+  // @include bpm-md {
+  //   grid-template-rows: 30rem 10rem;
+  // }
+  // @include bpm-sm {
+  //   grid-template-rows: 20rem 10rem;
+  // }
+  &__img-wrapper {
+    height: 315px;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    @include bpm-md {
+      height: auto;
+    }
+  }
+  &__img {
+    width: 95%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    object-fit: contain;
+    object-position: bottom;
+    @include bpm-md {
+      position: static;
+      object-position: center;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  &__btn {
+    padding: 15px;
+    width: 80%;
+  }
+  &__title {
+    margin-bottom: 0;
+    font-size: 1.3em;
+    // font-weight: 500;
+    font-family: $sub-font;
+    @include bp-xxl {
+      font-size: 18px;
+    }
+    @media (min-width: 769px) and (max-width: 1440px) {
+      font-size: 18px !important;
+    }
+  }
+  &__price {
+    font-family: $sub-font;
+    font-size: 1.3em;
+  }
+  &__sub-title {
+    // font-weight: 300;
+    font-family: $book;
+    color: $brand-color-1;
+  }
+  &__info,
+  &__btn-wrapper {
+    opacity: 0;
+    transition: all 0.3s;
+    @include bpm-md {
+      opacity: 1;
+    }
+    @include bpm-xxs {
+      .c-btn {
+        width: 19rem;
+      }
+    }
+  }
+  &__btn-wrapper {
+    margin-top: auto;
+  }
+  &__overlay-link {
+    color: $dark-color-2;
+    // height: 50% !important;
+    &:hover {
+      text-decoration: none;
+      color: $dark-color-2;
+      background: none !important;
+    }
+  }
+
+  //versions
+  &--show-price {
+    .c-product-card {
+      &__info,
+      &__btn-wrapper {
+        opacity: 1;
+      }
+      &__btn-wrapper {
+        position: relative;
+      }
+      &__price {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        transition: all 0.3s;
+        margin-bottom: 20px;
+        @include bp-md {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+      }
+
+      &__btn {
+        @media (min-width: 769px) and (max-width: 1024px) {
+          width: 100px;
+        }
+      }
+    }
+  }
+  &--full-height {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  &--bundle {
+    &:hover {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.c-shop-page {
+  .c-product-card {
+    &:hover {
+      .c-product-card {
+        &__info,
+        &__btn-wrapper {
+          opacity: 1;
+        }
+        &__img {
+          background-color: $light-color-4;
+        }
+      }
+    }
+  }
+}

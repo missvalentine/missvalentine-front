@@ -1,0 +1,153 @@
+.c-checkout-payment {
+  .ant-collapse-header {
+    display: none !important;
+  }
+  .ant-collapse-content-box {
+    padding: 0 !important;
+  }
+  .ant-collapse-item {
+    border: none !important;
+  }
+  .ant-collapse-borderless {
+    background-color: transparent !important;
+  }
+
+  &__title-list {
+    .ant-form-item-control {
+      .ant-form-item-children {
+        // position: relative;
+
+        width: 100%;
+        input {
+          border-top: 0px;
+          border-left: 0px;
+          border-right: 0px;
+        }
+        .ant-radio {
+          display: none;
+          position: relative;
+
+          ~ span {
+            position: absolute;
+            top: -2.5rem;
+            margin-left: -10px;
+            border-bottom: none;
+            font-size: 16px;
+            font-weight: 500;
+            font-family: 'FuturaBT-Medium', sans-serif;
+            color: #000000;
+            // font-weight: 600;
+            @include bpm-md {
+              position: static;
+            }
+          }
+        }
+      }
+      &-wrapper {
+        .c-checkbox__label-text {
+          visibility: visible;
+        }
+      }
+    }
+  }
+  &__title-list ~ .col-12 {
+    .ant-form-item-control {
+      &-wrapper {
+        .c-checkbox {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &__label {
+            .ant-checkbox-inner {
+              display: none;
+            }
+            .c-checkbox__input {
+              display: block;
+              position: static;
+              opacity: 1;
+              height: 1.5rem;
+              width: 1.5rem;
+              position: relative;
+              // visibility: hidden;
+              // display: none;
+              &::after {
+                content: "";
+                height: 1.5rem;
+                width: 1.5rem;
+                // background-color: red;
+                background: url("/images/checkbox-empty.png") center
+                  center/cover;
+                position: absolute;
+                top: 0;
+              }
+              &:checked {
+                &::after {
+                  content: "";
+                  height: 1.5rem;
+                  width: 1.5rem;
+                  // background-color: red;
+                  background: url("/images/checkbox-checked.jpg") center
+                    center/cover;
+                  position: absolute;
+                  top: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__title-list ~ .col-12 ~ .c-title-list {
+    // visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title-list:nth-child(3) {
+    .c-title-list__detail-wrap {
+      .container-fluid {
+        // visibility: hidden;
+
+        position: relative;
+        margin-bottom: 5rem;
+        &::after {
+          content: "";
+          height: 5rem;
+          width: 25rem;
+          // background-color: black;
+          background: url("/images/strip.png") no-repeat;
+          position: absolute;
+        }
+      }
+    }
+  }
+
+  .ant-form.ant-form-horizontal {
+    @include bpm-md {
+      .c-title-list:last-child {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .c-title-list__detail-wrap {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+//
+.suggestion-item,
+.suggestion-item--active {
+  background: transparent !important;
+  padding: 3px 5px !important;
+}
+.suggestion-item--active {
+  background: $light-color-3 !important;
+}
+
+.c-hidden {
+  display: none;
+}

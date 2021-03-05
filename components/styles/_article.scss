@@ -1,0 +1,151 @@
+.article {
+  margin: 10rem 15rem 5rem 15rem;
+  display: inline-table;
+
+  &-nav {
+    font-family: $sub-font;
+    letter-spacing: 1.2px;
+    margin-top: 5rem;
+    display: flex;
+    width: 100%;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid grey;
+    &-tag {
+      cursor: pointer;
+      color: $dark-color-2;
+      width: 50%;
+      text-transform: uppercase;
+      &--left {
+        float: left;
+        color: #aaa;
+        font-size: 2rem;
+      }
+      &--right {
+        text-align: right;
+        text-transform: none;
+        font-family: $sub-font;
+      }
+    }
+  }
+  &-heading {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    font-size: $font-large;
+    font-family: $sub-font;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    h1 {
+      display: block;
+      font-size: 2em;
+      margin-block-start: 0.67em;
+      margin-block-end: 0.67em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      // font-weight: bold;
+    }
+  }
+  &-image-wrapper {
+    &--image {
+      width: 100%;
+    }
+  }
+  &-review-wrapper {
+    font-family: $sub-font;
+    letter-spacing: 1px;
+    margin-top: 2rem;
+    display: flex;
+    height: 10%;
+    &--image {
+      display: none;
+    }
+    &--item {
+      font-size: 14px;
+
+      margin-top: 0.5rem;
+
+      color: #aaa;
+      .highlight {
+        color: black;
+      }
+    }
+  }
+  &-content {
+    margin-top: 3rem;
+    line-height: 2;
+    * {
+      font-family: $book;
+      color: black;
+      // font-weight: 600;
+      // letter-spacing: 0.8px;
+    }
+    p {
+      a {
+        color: black !important;
+
+        border-bottom: 2px solid $dark-color-2;
+      }
+    }
+  }
+  &-footer {
+    display: none;
+    margin-top: 3rem;
+    font-size: $font-small;
+    opacity: 0.4;
+  }
+
+  h2 {
+    font-family: $sub-font;
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    // font-weight: bold;
+    color: #37829d;
+  }
+}
+
+.highlight {
+  color: $brand-color-1;
+  // font-weight: $wg-bold;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 500px) {
+  .article {
+    margin-top: 14rem;
+    &-review-wrapper {
+      &--image {
+        width: 8rem;
+        height: 8rem;
+      }
+      &--item {
+        font-size: 8px;
+      }
+    }
+  }
+  .highlight {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .article {
+    h1 {
+      font-size: calc(2rem + (4 * (100vw - 768px)) / 671);
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .article {
+    margin-left: 10%;
+    width: 80%;
+    &-heading {
+      h1 {
+        font-size: calc(2.75rem + (4 * (100vw - 360px)) / 407);
+      }
+    }
+  }
+}

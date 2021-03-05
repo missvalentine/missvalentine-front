@@ -1,0 +1,541 @@
+.c-checkout-layout.container-fluid {
+  @media screen and(max-width: 400px) {
+    padding: 0;
+  }
+}
+.c-checkout-layout {
+  display: flex;
+  background: white;
+  @include bp-md {
+    min-height: 100vh;
+  }
+
+  &__row.row {
+    @media screen and(max-width: 400px) {
+      padding: 0;
+    }
+  }
+  &__row {
+    width: calc(100% + 60px);
+  }
+  &__main {
+    padding: 5rem 4rem 4rem 3rem;
+    background-color: $light-color;
+    @media (min-width: 1400px) {
+      padding-left: 50px;
+      padding-right: 100px;
+    }
+    @include bpm-md {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      padding-top: 2rem;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 40px;
+    display: none;
+    .c-logo__img {
+      width: 100px;
+    }
+  }
+  &__cart-col {
+    margin: 7rem 0px;
+    background: $drawer-background;
+    padding: 0 6rem 3rem 6rem;
+    //margin-bottom: 7rem;
+    height: fit-content;
+    @include bpm-md {
+      padding: 8rem 3rem;
+      margin: 0;
+    }
+    @include bpm-sm {
+      padding: 3rem 2rem;
+      .d-block {
+        // visibility: hidden !important;
+        > h2.c-heading {
+          text-transform: lowercase;
+          font-size: 4rem;
+          font-family: $heavy;
+        }
+      }
+    }
+
+    .c-cart-drawer {
+      position: relative;
+
+      @include bpm-md {
+        * {
+          font-size: 2.25vw;
+        }
+      }
+      @include bpm-sm {
+        margin-top: 2rem;
+        * {
+          font-size: 2.5vw;
+        }
+      }
+      @include bpm-xs {
+        * {
+          font-size: 4vw;
+        }
+      }
+      @include bpm-xxs {
+        * {
+          font-size: 5vw;
+        }
+      }
+      .mt-auto {
+        width: 100%;
+        height: 1.5px;
+        background-color: black;
+      }
+      // .c-cart-item {
+      //   &__heading {
+      //     text-align: left;
+      //   }
+      // }
+      // .c-cart-item__card {
+      //   @include bpm-sm {
+      //     height: 13.8rem;
+      //   }
+      //   .row {
+      //     .c-cart-item__title-wrapper {
+      //       @include bpm-xl {
+      //         padding-bottom: 3rem;
+      //       }
+      //       @media only screen and (max-width: 768px) and (min-width: 600px) {
+      //         width: 53%;
+      //       }
+      //     }
+      //   }
+
+      //   margin-bottom: 3rem;
+
+      //   .c-cart-item__img-wrapper {
+      //     transform: translate(1rem, 0rem) scale(1.02);
+      //     // border-top-left-radius: 1rem;
+      //     // border-bottom-left-radius: 1rem;
+      //     width: 100%;
+      //     // @include bpm-xl {
+      //     //   width: 120%;
+      //     // }
+      //     @include bpm-sm {
+      //       position: relative;
+
+      //       height: 13.8rem;
+      //       img {
+      //         position: absolute;
+      //         bottom: 0;
+      //         left: 25%;
+      //         height: 13.8rem;
+      //         width: auto;
+      //         @include bpm-xs {
+      //           left: 12%;
+      //         }
+      //       }
+      //     }
+      //     @media screen and (max-width: 400px) {
+      //       transform: translate(-1rem, -1rem) scale(1.02) !important;
+      //     }
+      //   }
+      //   .c-cart-item__title-wrapper {
+      //     padding-left: 3rem;
+      //     // visibility: hidden;
+
+      //     @include bpm-sm {
+      //       margin-left: 4rem;
+      //       h2.c-heading {
+      //         margin-top: 1.5rem;
+      //         font-size: 2.5rem;
+      //       }
+      //       @media only screen and (max-width: 768px) and (min-width: 600px) {
+      //         h2.c-heading {
+      //           font-size: 1.3rem;
+      //         }
+      //       }
+      //     }
+      //     @include bpm-xs {
+      //       padding-left: 0;
+      //       h2.c-heading {
+      //         margin-top: 0.8rem;
+      //         font-size: 1.8rem;
+      //       }
+      //     }
+      //     h2.c-heading {
+      //       padding-top: 2rem;
+      //     }
+      //     @include bpm-lg {
+      //       * {
+      //         font-size: 1.6rem;
+      //       }
+      //     }
+      //   }
+      //   .c-cart-item__actions {
+      //     .c-cart-item__price-wrapper {
+      //       top: 8rem;
+      //     }
+      //   }
+      // }
+    }
+
+    .collapse {
+      position: relative;
+    }
+  }
+  &__heading {
+    &.c-heading {
+      &--small {
+        font-size: 15px;
+      }
+    }
+  }
+  &__cart-icon svg {
+    width: 30px;
+    height: 15px;
+  }
+
+  // override and design
+
+  .ant-steps-item-icon {
+    display: none !important;
+  }
+  .ant-steps-item-title::after {
+    display: none !important;
+  }
+  .ant-steps-item {
+    flex: none !important;
+    @include bpm-xs {
+      margin-right: -8rem;
+    }
+  }
+  .ant-steps-item-title {
+    cursor: pointer;
+
+    padding: 0 !important;
+    margin-right: 16px !important;
+  }
+
+  @include bpm-md {
+    .ant-steps-horizontal.ant-steps-label-horizontal {
+      display: flex;
+      justify-content: space-between;
+      // flex-wrap: wrap;
+    }
+  }
+}
+* .c-checkout-layout__btn {
+  padding: 2rem 0;
+}
+.c-checkout {
+  .c-heading {
+    font-family: $heavy;
+    text-transform: lowercase;
+    font-size: 40px !important;
+    margin-bottom: 6rem;
+    text-align: left;
+  }
+
+  &__nav-wrapper {
+    font-family: $sub-font;
+    .ant-steps-horizontal {
+      display: flex;
+      @include bpm-md {
+        // padding-right: 6rem;
+      }
+      @include bpm-sm {
+        padding: 0;
+      }
+    }
+
+    margin-bottom: 4rem;
+    .ant-steps-item-content {
+      position: relative;
+      margin: 0 8rem 0 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+
+        width: 1.7rem;
+        height: 1.7rem;
+        background: url("/images/right-arrow-32px.png") no-repeat center
+          center/cover;
+
+        text-align: center;
+        top: 30%;
+        right: -50%;
+      }
+
+      @include bpm-md {
+        margin: 0;
+      }
+    }
+
+    .ant-steps > .ant-steps-item:nth-child(3) .ant-steps-item-content {
+      // background-color: red;
+      &::after {
+        content: "";
+        visibility: hidden !important;
+      }
+    }
+
+    .ant-steps-item-active .ant-steps-item-title {
+      // font-weight: 600;
+      border-bottom: 2px solid black;
+    }
+  }
+
+  &__main-wrapper {
+    font-family: $sub-font;
+    .c-checkout-info__title-list,
+    .c-checkout-shipping__title-list,
+    .c-checkout-payment__title-list,
+    .c-title-list {
+      // .ant-row {
+      //   display: none;
+      // }
+      .c-checkbox {
+        // display: none;
+        padding: 20px 0;
+        &__label {
+          .ant-checkbox-inner {
+            display: none;
+          }
+          .c-checkbox__input {
+            display: block;
+            position: static;
+            opacity: 1;
+            height: 1.5rem;
+            width: 1.5rem;
+            position: relative;
+            // visibility: hidden;
+            // display: none;
+            &::after {
+              content: "";
+              height: 1.5rem;
+              width: 1.5rem;
+              // background-color: red;
+              background: url("/images/checkbox-empty.png") center center/cover;
+              position: absolute;
+              top: 0;
+            }
+            &:checked {
+              &::after {
+                content: "";
+                height: 1.5rem;
+                width: 1.5rem;
+                // background-color: red;
+                background: url("/images/checkbox-checked.jpg") center
+                  center/cover;
+                position: absolute;
+                top: 0;
+              }
+            }
+          }
+        }
+        &__label-text {
+          font-family: $book;
+          color: $dark-color-2;
+          // font-weight: 600;
+          @include bp-xl {
+            font-size: 16px;
+            // padding-left: 15px;
+          }
+          margin-left: 9px;
+        }
+        @media (max-width: 1200px) {
+          // order: 2;
+        }
+      }
+      .ant-radio-wrapper {
+        // visibility: hidden;
+        font-family: $sub-font;
+      }
+    }
+    @include bpm-md {
+      .c-checkout-info__title-list,
+      .c-checkout-shipping__title-list,
+      .c-checkout-payment__title-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+        .c-title-list__title-wrap {
+          width: fit-content;
+          padding: 0;
+          border-bottom: 2px solid black;
+          margin-bottom: 2rem;
+        }
+        .c-title-list__detail-wrap {
+          margin: 0;
+          // width: max-content;
+          input {
+            padding: 0;
+            outline: none;
+          }
+        }
+      }
+      .c-checkout-shipping {
+        .ant-form {
+          div:nth-child(3) {
+            .c-title-list__detail-wrap {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              .ant-radio-group {
+                display: flex;
+                .ant-radio-wrapper {
+                  display: flex;
+                  padding: 12px 2.14vw;
+                  span:last-child {
+                    margin-top: -2rem;
+                    // visibility: hidden;
+                  }
+                }
+                @include bpm-xs {
+                  flex-direction: column;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .c-title-list {
+      .row {
+        input[type="checkbox"] {
+          position: static;
+          opacity: 1;
+          height: 1.5rem;
+          width: 1.5rem;
+          position: relative;
+          // visibility: hidden;
+          // display: none;
+          &::after {
+            content: "";
+            height: 1.5rem;
+            width: 1.5rem;
+            // background-color: red;
+            background: url("/images/checkbox-empty.png") center center/cover;
+            position: absolute;
+            top: 0;
+          }
+          &:checked {
+            &::after {
+              content: "";
+              height: 1.5rem;
+              width: 1.5rem;
+              // background-color: red;
+              background: url("/images/checkbox-checked.jpg") center
+                center/cover;
+              position: absolute;
+              top: 0;
+            }
+          }
+        }
+      }
+      &__content {
+        div.row:last-child {
+          // visibility: hidden;
+          p {
+            font-family: $book;
+          }
+        }
+      }
+    }
+  }
+  // &__btn {
+
+  // }
+  .c-title-list {
+    // &__title {
+
+    // }
+    &__title-wrap {
+      margin-bottom: 10px;
+    }
+
+    &__content {
+      position: relative;
+
+      .c-checkout-info__login-wrapper--check {
+        position: absolute;
+        bottom: -3vh;
+        right: 0;
+      }
+
+      input {
+        font-size: 18px !important;
+      }
+    }
+
+    &__detail-wrap {
+      margin-left: 95px;
+    }
+  }
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.c-checkout-info {
+  &__login-wrapper {
+    &--check {
+      float: right;
+      margin-top: -20px;
+      font-size: 1.8rem;
+      font-family: $sub-font;
+      color: lightgrey;
+    }
+    div:last-child {
+      .c-checkbox--add {
+        input {
+          display: none !important;
+        }
+      }
+    }
+    .ant-radio-wrapper{
+      display: block;
+      padding: 10px;
+    }
+    span.ant-radio + *{
+      padding-left: 0px;
+      border-bottom: 1px solid black;
+      margin-left: 15px;
+    }
+  }
+}
+
+.c-checkout-shipping{
+  .ant-radio-wrapper{
+    display: block;
+    border: 1px solid lightgrey;
+    padding: 15px;
+    margin-top:15px;
+    background: #d3d3d36b;
+  }
+  span.ant-radio + *{
+    padding-right: 60px;
+  }
+  .ant-radio-wrapper-checked .ant-radio-inner::after{
+    left: 3.2px;
+  }
+}
+.c-checkout-payment{
+  .ant-radio-wrapper{
+    display: block;
+    padding: 10px;
+  }
+  span.ant-radio + *{
+    padding-left: 0px;
+    border-bottom: 1px solid black;
+    margin-left: 15px;
+  }
+  .ant-radio-wrapper-checked .ant-radio-inner::after{
+    left: 3.2px;
+  }
+}

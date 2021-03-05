@@ -1,0 +1,141 @@
+import dynamic from "next/dynamic";
+const Layout = dynamic(() => import("../../components/Layouts/Layout"));
+import React, { Component } from "react";
+import { connect } from "react-redux";
+const MyAccountSidebar = dynamic(() =>
+  import("../../components/MyAccountSidebar"), {
+    ssr: false,
+  }
+);
+import onlyLogin from "../../components/hoc/onlyLogin";
+import classNames from "classnames";
+import { Card, CardBody, Spinner, Collapse } from "reactstrap";
+import { getUserDetails } from "../../services/api";
+const ProfileUpdatePassword = dynamic(() =>
+  import("../../components/ProfileUpdatePassword")
+);
+
+class ChangePassword extends Component {
+  constructor() {
+    super();
+    this.state = {
+      userDetailsRes: {},
+      isLoading: true,
+    };
+  }
+
+  componentDidMount() {
+    const { user, history, location } = this.props;
+    // if (!user._id) {
+    //   history.push("/" + location.countryCode + "/login");
+    // }
+    if (user._id) {
+      this.getUserDetails(user._id);
+      this.setState({
+        userDetailsLocal: user,
+      });
+    }
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.user !== this.props.user && this.props.user._id) {
+      const { user } = this.props;
+      if (user._id) {
+        this.getUserDetails(user._id);
+        this.setState({
+          userDetailsLocal: user,
+        });
+      }
+    }
+  }
+
+  getUserDetails = (_id) => {
+    getUserDetails(_id)
+      .then((res) => {
+        const rep = res.data;
+        if (rep.user) {
+          this.setState(
+            {
+              userDetailsRes: rep.user,
+              isLoading: false,
+            },
+            () => {
+              document.body.scrollTop = document.documentElement.scrollTop = 0;
+            }
+          );
+        } else {
+          this.setState({
+            isLoading: false,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log({
+          error,
+        });
+
+        this.setState({
+          isLoading: false,
+        });
+      });
+  };
+  render() {
+    const { user, countryCode, className } = this.props;
+    // if (!user._id) this.props.history.push(`/${countryCode}/login`);
+
+    // return <div></div>
+    const { userDetailsRes, isLoading } = this.state;
+    return (
+      <Layout headerTheme="black" fixed={true}>
+        <div
+          className={classNames("my-order", {
+            [className]: className,
+          })}
+        >
+          <div className="container-fluid">
+            <div className="my-order__heading">
+              <h1>my account</h1>
+            </div>
+          </div>
+          <div className="my-order__wrapper">
+            <div className="container-fluid">
+              <div className="row">
+                <MyAccountSidebar activeLink="changePassword" />
+
+                <div className="col-lg-10 ">
+                  <h2 className="my-order-header">Password reset</h2>
+                  {isLoading && (
+                    <div className="p-5 text-center">
+                      <Spinner color="dark" />
+                    </div>
+                  )}
+                  {!isLoading && (
+                    <div className="cp-card">
+                      <Card className="panel-section my-order__panel">
+                        {/* <Alert color="dark">YOUR PERSONAL DETAILS</Alert> */}
+                        <CardBody className="a-cp__card-body">
+                          <Collapse isOpen={true}>
+                            <ProfileUpdatePassword
+                              userDetailsRes={userDetailsRes}
+                              noTitle={true}
+                            />
+                          </Collapse>
+                        </CardBody>
+                      </Card>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+  countryCode: state.location.countryCode,
+});
+export default connect(mapStateToProps)(onlyLogin(ChangePassword));

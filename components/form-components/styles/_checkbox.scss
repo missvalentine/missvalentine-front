@@ -1,0 +1,187 @@
+.c-checkbox {
+  &__input {
+    display: none;
+    &:checked + .c-checkbox__icon {
+      &:after {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: $light-color;
+        @include bpm-xs {
+          width: 8px;
+          height: 8px;
+        }
+      }
+    }
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &-text {
+      font-family: $sub-font;
+      margin-left: 15px;
+    }
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .ant-checkbox-inner {
+      height: 2.2rem !important;
+      width: 2.2rem !important;
+      border: none !important;
+      outline: none !important;
+      // display: none;
+      // outline: 1px solid grey;
+
+      &:hover {
+        // background-color: rgb(202, 202, 202) !important;
+      }
+
+      &::after {
+        position: absolute;
+        top: 0.8rem;
+        left: 0.3rem;
+        // right: 0.1rem;
+        height: 1.5rem;
+        width: 1rem;
+      }
+
+      &:checked {
+        outline: 1px solid grey !important;
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    svg {
+      width: 50px;
+      height: auto;
+      @include bpm-xs {
+        width: 40px;
+      }
+    }
+  }
+  &--gold {
+    .c-checkbox {
+      &__label {
+        color: $brand-color-1;
+      }
+    }
+  }
+  &--dark {
+    .c-checkbox {
+      &__input {
+        + .ant-checkbox-inner {
+          position: relative;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 16px;
+          height: 16px;
+          direction: ltr;
+          background-color: #e4e4e4;
+          border: 1px solid $dark-color-2 !important;
+          border-radius: 2px;
+          border-collapse: separate;
+          -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+        }
+        &:checked + .ant-checkbox-inner:after {
+          position: absolute;
+          display: table;
+          border: 2px solid $dark-color-2;
+          border-top: 0;
+          border-left: 0;
+          -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
+          transform: rotate(45deg) scale(1) translate(-50%, -50%);
+          opacity: 1;
+          -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+          transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+          content: " ";
+        }
+        &:checked + .ant-checkbox-inner {
+          background-color: #e4e4e4;
+          border-color: $dark-color-2;
+        }
+        &:hover {
+          background-color: white !important;
+        }
+      }
+      &__label {
+        color: $dark-color-2;
+      }
+    }
+  }
+  &--light {
+    .c-checkbox {
+      &__input {
+        + .ant-checkbox-inner {
+          position: relative;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 16px;
+          height: 16px;
+          direction: ltr;
+          background-color: white;
+          border: 1px solid $dark-color-2 !important;
+          // border-radius: 2px;
+          border-collapse: separate;
+          -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+        }
+        &:checked + .ant-checkbox-inner:after {
+          position: absolute;
+          display: table;
+          border: 2px solid $dark-color-2;
+          border-top: 0;
+          border-left: 0;
+          -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
+          transform: rotate(45deg) scale(1) translate(-50%, -50%);
+          opacity: 1;
+          -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+          transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+          content: " ";
+        }
+        &:checked + .ant-checkbox-inner {
+          background-color: white;
+          border-color: $dark-color-2;
+        }
+      }
+      &__label {
+        color: $dark-color-2;
+      }
+    }
+  }
+  &--add {
+    .c-checkbox {
+      &__input {
+        display: none;
+      }
+      &__icon {
+        display: none;
+      }
+      &__label {
+        color: $dark-color-2;
+      }
+    }
+  }
+}

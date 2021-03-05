@@ -1,0 +1,43 @@
+.c-layout {
+  > div.mainDiv {
+    width: 100%;
+    * h1 {
+      margin-bottom: 1.5rem !important;
+    }
+    // margin: auto;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    // justify-items: center;@inc
+    @include bpm-md {
+      width: 100%;
+      padding: 0 4rem;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 3rem;
+      margin: 4rem 0;
+    }
+    @include bpm-sm {
+      margin: 4rem auto;
+    }
+    @media screen and (max-width: 570px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  @include bpm-md {
+    .c-heading--faq {
+      margin: 3rem 0;
+    }
+  }
+  @include bpm-sm {
+    .c-heading--faq {
+      margin: 6rem 0 3rem 0;
+      font-size: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 570px) {
+    .c-heading--faq {
+      margin: 5rem 0 3rem 0;
+      padding: 0 2rem;
+    }
+  }
+}

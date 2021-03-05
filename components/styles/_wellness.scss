@@ -1,0 +1,367 @@
+// .wellness {
+//   position: relative;
+//   background: $dark-color-1;
+//   overflow: hidden;
+//   @include bp-md {
+//     padding-right: 40px;
+//   }
+//   &__heading {
+//     background: $dark-color-1;
+//     // z-index: 2;
+//     position: relative;
+//     @include bp-sm {
+//       width: 70%;
+//       position: absolute;
+//       top: 5%;
+//       right: -2vw;
+//     }
+//     @include bp-md {
+//       top: 10%;
+//     }
+//     @include bp-lg {
+//       right: 1vw;
+//     }
+//     @include bp-xl {
+//       right: 3vw;
+//     }
+//     @include bpm-md {
+//       padding-right: 50px;
+//       transform: translate(40px, 30px);
+//     }
+//     &--text {
+//       color: $brand-color-1;
+//       font-size: 2.2vw;
+//       letter-spacing: 1.5px;
+      
+
+//       position: absolute;
+//       z-index: 3;
+//       top: 6rem;
+//       right: 9rem;
+
+//       color: black;
+//       padding: 0;
+//       margin: 0;
+//       p {
+//         font-family: $heavy;
+//         color: $brand-color-1 !important;
+//         font-size: 3vw;
+//         letter-spacing: 1.5px;
+//       }
+//     }
+//     // max-height brkpt
+//     @include bpm-h-1 {
+//       right: 0;
+//     }
+//     @include bpm-h-2 {
+//       right: -3vw;
+//     }
+//   }
+
+//   // Tab styles
+
+//   @include bpm-md {
+//     .wellness-wrapper .show-mg {
+//       display: none;
+//     }
+//     position: static;
+//     * {
+//       position: static !important;
+//     }
+//     display: grid;
+//     grid-template-rows: 1.1fr 0.4fr 1fr;
+
+//     justify-items: center;
+
+//     &__heading {
+//       margin: 3rem 2rem 3rem 0;
+//       width: 100%;
+//       text-align: center;
+//       h3 {
+//         font-size: 3vw;
+//       }
+
+//       p {
+//         font-size: 4vw;
+//       }
+//     }
+
+//     .c-less-more__less,
+//     .c-less-more__whole {
+//       p {
+//         text-align: center;
+//         font-size: 2vw;
+//       }
+//     }
+//     .c-less-more__less {
+//       margin-bottom: -4rem;
+//     }
+//   }
+
+//   @include bpm-sm {
+//     grid-template-rows: 1fr 0.4fr 1fr;
+//     .c-less-more__less,
+//     .c-less-more__whole {
+//       p {
+//         font-size: 2.5vw;
+//       }
+//     }
+//     &__heading {
+//       h3 {
+//         font-size: 3.2vw;
+//       }
+
+//       p {
+//         font-size: 4.5vw;
+//       }
+//     }
+//   }
+
+//   @include bpm-xs {
+//     grid-template-rows: 0.7fr 0.4fr 1fr;
+//     &__heading {
+//       h3 {
+//         font-size: 4.2vw;
+//       }
+
+//       p {
+//         font-size: 6vw;
+//       }
+//     }
+//     .c-less-more__less {
+//       margin-bottom: 1rem;
+//     }
+//     .c-less-more__less,
+//     .c-less-more__whole {
+//       p {
+//         font-size: 3vw;
+
+//         @media screen and (max-width: 430px) {
+//           text-align: left;
+//           font-size: 3.5vw;
+//         }
+//       }
+//     }
+//   }
+//   @include bpm-xxs {
+//     grid-template-rows: 0.5fr 0.4fr 1fr;
+//     .c-less-more__less {
+//       margin-bottom: 0rem;
+//     }
+//   }
+// }
+
+// .wellness-wrapper {
+//   transition: 300ms ease-in-out;
+//   display: flex;
+//   position: relative;
+//   justify-content: space-between;
+
+//   @include bp-md {
+//     &.show-mg {
+//       transition: 300ms ease-in-out;
+//       margin-bottom: 20vw;
+//     }
+//   }
+//   @include bp-lg {
+//     &.show-mg {
+//       transition: 300ms ease-in-out;
+//       margin-bottom: 15vw;
+//     }
+//   }
+//   @include bp-xl {
+//     &.show-mg {
+//       transition: 300ms ease-in-out;
+//       margin-bottom: 10vw;
+//     }
+//   }
+
+//   @include bp-xxl {
+//     min-height: 100vh;
+//     &__img {
+//       position: absolute;
+//       left: 0;
+//       bottom: 0;
+
+//       &--img {
+//         // z-index: -1;
+//         width: 120%;
+//         height: 120%;
+//         object-fit: cover;
+//       }
+//     }
+//   }
+
+//   @include bpm-md {
+//     align-items: flex-end;
+//     flex-wrap: wrap;
+//     // margin-top: -100px;
+//     &__img {
+//       max-width: 100%;
+//     }
+//   }
+//   &__desp {
+//     *{
+//       text-align: justify;
+//     }
+//     position: absolute;
+//     right: 7vw;
+//     // top: 22vw;
+//     z-index: 2;
+//     background: $dark-color-1;
+//     color: $brand-color-1;
+
+//     @include bp-md {
+//       width: 38%;
+//       top: 19vw;
+//     }
+//     @include bpm-h-1 {
+//       padding-top: 0;
+//       padding-left: 3rem;
+
+//       // right: 10%;
+//     }
+//     @include bpm-h-2 {
+//       padding-top: 0;
+//       padding-left: 2rem;
+
+//       // right: 10%;
+//     }
+//     &--text {
+//       line-height: 2.3;
+//       @include bpm-md {
+//         padding: 15px 20px;
+//       }
+//     }
+//     p {
+//       color: black;
+//       text-decoration: none;
+//       font-size: 1.25vw;
+//     }
+//     .wellness-wrapper__btn {
+//       text-align: right;
+//       padding-right: 54px;
+//       color: $dark-color-2;
+
+//       position: absolute;
+//       bottom: -30%;
+//       right: -5vw;
+
+//       div > .c-btn {
+//         // font-size: 2vw !important;
+//         // color: blue;
+//         position: relative;
+//         &::after {
+//           content: "";
+//           height: 32px;
+//           width: 32px;
+//           background: url("/images/double-right-arrow.png");
+//           position: absolute;
+//           top: 1.3rem;
+//           right: 1.5rem;
+//           z-index: 3;
+
+//           @include bp-xs {
+//             top: 1.3rem;
+//             right: -3rem;
+//           }
+//           @include bp-lg {
+//             top: 1.3rem;
+//             right: -3rem;
+//           }
+
+//           @include bp-xxl {
+//             right: 4rem;
+//           }
+
+//           &:hover {
+//             transform: scale(1.2);
+//           }
+//         }
+//       }
+//     }
+//   }
+//   @include bpm-md {
+//     &__desp {
+//       padding: 2rem 8rem;
+//       .wellness-wrapper__btn {
+//         text-align: right;
+//         padding-right: 54px;
+//         color: $dark-color-2;
+
+//         position: absolute;
+//         bottom: -30%;
+//         right: -5vw;
+
+//         div > .c-btn {
+//           // font-size: 2vw !important;
+//           // color: blue;
+//           position: relative !important;
+//           font-size: 2.5rem;
+
+//           &::after {
+//             content: "";
+//             height: 32px;
+//             width: 32px;
+//             background: url("/images/double-right-arrow.png");
+//             position: absolute !important;
+//             top: 0.8rem;
+//             right: -3rem;
+//             z-index: 3;
+
+//             @include bp-md {
+//               top: 1.3rem;
+//               right: -3rem;
+//             }
+//             @include bp-lg {
+//               top: 1.3rem;
+//               right: -3rem;
+//             }
+
+//             @include bp-xxl {
+//               right: 4rem;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   @include bpm-xs {
+//     &__desp {
+//       padding: 2rem 6rem;
+//       .wellness-wrapper__btn {
+//         text-align: right;
+//         padding-right: 54px;
+//         color: $dark-color-2;
+
+//         position: absolute;
+//         bottom: -30%;
+//         right: -5vw;
+
+//         div > .c-btn {
+//           // font-size: 2vw !important;
+//           // color: blue;
+//           position: relative !important;
+//           font-size: 2rem;
+
+//           &::after {
+//             content: "";
+//             height: 32px;
+//             width: 32px;
+//             background: url("/images/double-right-arrow.png");
+//             position: absolute !important;
+//             top: 0.3rem;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// .m-40 {
+//   margin: 30px 0;
+//   text-align: right;
+// }
+// .gold {
+//   color: $brand-color-1;
+// }
