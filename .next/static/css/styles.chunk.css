@@ -34590,11 +34590,11 @@ ul {
     .c-banner__bg--mobile {
       display: none; } }
   @media (max-width: 992px) {
-    .c-banner__bg--desktop {
-      display: none; }
-    .c-banner .lazy-load-image-background {
+    .c-banner {
       width: 100%; }
-      .c-banner .lazy-load-image-background img.c-banner__bg--mobile {
+      .c-banner__bg--desktop {
+        display: none; }
+      .c-banner img.c-banner__bg--mobile {
         display: block;
         max-width: 100vw; } }
   .c-banner__list {
@@ -35544,7 +35544,7 @@ ul {
         text-align: justify; } }
     @media (max-width: 1200px) and (max-width: 769px) {
       .c-lr-section__content {
-        padding: 3rem 5rem 4rem 5rem; } }
+        padding: 3rem 5rem 6rem 5rem; } }
   @media (max-width: 1200px) {
         .c-lr-section__content .c-less-more {
           margin: auto; }
@@ -36093,7 +36093,7 @@ ul {
       min-height: 85vh; } }
   @media (max-width: 769px) {
     .c-category-products {
-      padding: 7rem 3rem 0rem 3rem; } }
+      padding: 3rem 3rem 0rem 3rem; } }
   .c-category-products__list {
     display: flex;
     justify-content: center;
@@ -36203,7 +36203,7 @@ ul {
         margin: 0 95px; } }
     @media (max-width: 992px) {
       .c-category-products__slider {
-        padding: 90px 60px 0px 60px; }
+        padding: 40px 10px 0px; }
         .c-category-products__slider .is-selected:hover {
           background: none !important; } }
     .c-category-products__slider:focus {
@@ -40920,7 +40920,7 @@ input#login_password {
 
 .blog-link-banner {
   text-align: center;
-  background-color: #f0f8f0;
+  background-color: #f9e8ec;
   padding: 4rem 0 3rem 0;
   margin: 8rem 0 0; }
   @media (max-width: 769px) {
@@ -40931,7 +40931,7 @@ input#login_password {
     margin-bottom: -1rem;
     letter-spacing: 0.3rem; }
   .blog-link-banner .bottom-text {
-    color: #7eb3b4;
+    color: #f25d91;
     font-size: 5rem;
     font-family: futuraBT-heavy; }
     .blog-link-banner .bottom-text:hover {
@@ -41783,6 +41783,9 @@ input#login_password {
     width: 100%;
     max-height: 100%;
     border-radius: 5px 5px 0 0; }
+    @media (max-width: 769px) {
+      .c-product-card__image {
+        height: 250px; } }
   .c-product-card__image-wrapper {
     position: relative; }
   .c-product-card__image-text {

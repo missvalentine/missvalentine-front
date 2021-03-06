@@ -20,13 +20,12 @@
     &__bg--desktop {
       display: none;
     }
-    .lazy-load-image-background {
-      // display: block;
-      width: 100%;
-      img.c-banner__bg--mobile {
-        display: block;
-        max-width: 100vw;
-      }
+
+    // display: block;
+    width: 100%;
+    img.c-banner__bg--mobile {
+      display: block;
+      max-width: 100vw;
     }
   }
   &__list {
