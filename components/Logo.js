@@ -13,16 +13,11 @@ const Logo = ({ versions, parentClass, full, text, logo, url }) => {
     [parent]: parentClass,
   });
 
-  if (versions == 'footer') {
+  if (versions[0] === 'footer') {
     return (
       <Link href="/">
         <a className={className}>
-          <LazyLoadImage
-            src={`${imageUrl}/Footer-Logo.png`}
-            className="c-logo__img"
-            alt={projectName}
-            style={{ width: 'auto', height: 'auto' }}
-          />
+          <div className="c-logo__text-footer">{projectName}</div>
         </a>
       </Link>
     );

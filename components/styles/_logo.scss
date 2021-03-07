@@ -4,10 +4,16 @@
     width: 50px;
   }
   &__text {
+    color: black;
+
     font-size: 24px;
     font-family: 'Playfair Display', serif;
-
     display: block;
+    &-footer {
+      color: black;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+    }
   }
   &--non-home {
     width: -webkit-fill-available;

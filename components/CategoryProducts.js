@@ -18,12 +18,9 @@ const CategoryProducts = (
   {
     heading,
     subHeading,
-    // categoryList,
-    // activeCategory,
+
     addToCart,
-    // onCategoryChange,
     showCartBar,
-    // products,
     bg,
     btnText,
   }
@@ -31,7 +28,7 @@ const CategoryProducts = (
   const className = classNames('c-category-products', {
     [`c-category-products--${bg}`]: bg,
   });
-  const [activeCategory, setActiveCategory] = useState('0');
+  const [activeCategoryIndex, setActiveCategoryIndex] = useState(-1);
 
   const flickityInit = () => {
     setTimeout(() => {
@@ -56,10 +53,10 @@ const CategoryProducts = (
     }
   };
 
-  const onCategoryChange = (id) => setActiveCategory(id);
+  const onCategoryChange = (index) => setActiveCategoryIndex(index);
 
   const products = useSelector((s) => s.products);
-
+  console.log('pro', products);
   let flkty = undefined;
   return (
     <div className={className}>
@@ -83,30 +80,37 @@ const CategoryProducts = (
       <div className="c-category-products__list">
         <span
           onClick={() => {
-            onCategoryChange('0');
+            onCategoryChange(-1);
           }}
           className={classNames('c-category-products__list-item', {
-            'c-category-products__list-item--active': activeCategory === '0',
+            'c-category-products__list-item--active':
+              activeCategoryIndex === -1,
           })}
           key={0}
         >
           All
         </span>
 
-        {products.categories.map((el, i) => (
-          <span
-            onClick={() => {
-              onCategoryChange(el._id);
-            }}
-            className={classNames('c-category-products__list-item', {
-              'c-category-products__list-item--active':
-                activeCategory === el._id,
-            })}
-            key={i}
-          >
-            {el.name}
-          </span>
-        ))}
+        {products.categories
+          .filter((el) => el.products.length >= 1)
+          .map((el, i) => (
+            <span
+              onClick={() => {
+                onCategoryChange(i);
+              }}
+              className={classNames('c-category-products__list-item', {
+                'c-category-products__list-item--active':
+                  activeCategoryIndex === i,
+              })}
+              className={`c-category-products__list-item 
+            ${activeCategoryIndex === i &&
+              'c-category-products__list-item--active'}
+                `}
+              key={i}
+            >
+              {el.name}
+            </span>
+          ))}
       </div>
       <div className="row c-category-products__product-list">
         <Flickity
@@ -126,23 +130,35 @@ const CategoryProducts = (
           reloadOnUpdate={true}
           className="c-category-products__slider "
         >
-          {products.products
-            .filter((product) => product.hidden === false)
-            .map((item, index) => (
-              <Product {...props} key={index} data={item} />
-            ))}
+          {console.log(
+            'poooo',
+            products.categories,
+            products.categories[1],
+            activeCategoryIndex
+          )}
+          {activeCategoryIndex === -1
+            ? products.products
+                .filter((product) => product.hidden === false)
+                .map((item, index) => (
+                  <Product {...props} key={index} data={item} />
+                ))
+            : products.categories[activeCategoryIndex].products
+                .filter((product) => product.hidden === false)
+                .map((item, index) => (
+                  <Product {...props} key={index} data={item} />
+                ))}
         </Flickity>
       </div>
       <div
         className="consult-doc-banner-wrapper"
         style={{ padding: '0rem 0 0rem 0' }}
       >
-        <Link href="/shop">
+        <Link href="/products">
           <button
             className="top-btn"
             style={{ fontSize: 'x-large', fontWeight: '500' }}
           >
-            {'See all products '} &nbsp;
+            {'SEE ALL PRODUCTS '} &nbsp;
             <img
               className="top"
               style={{ height: '20px', marginBottom: '5px' }}

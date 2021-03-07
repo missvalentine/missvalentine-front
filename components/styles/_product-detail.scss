@@ -1,0 +1,145 @@
+.c-product-detail {
+  padding: 6% 4%;
+
+  @include bpm-md {
+    padding: 6% 0;
+  }
+  &-left {
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+
+    &__icon {
+      font-size: 4rem;
+      margin: 0 2rem;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      &--hide {
+        color: white;
+      }
+      @include bpm-md {
+        display: none;
+      }
+    }
+    &__image {
+      width: 400px;
+      height: 500px;
+      cursor: pointer;
+      @include bpm-md {
+        width: 300px;
+        max-width: 100%;
+        max-height: 400px;
+      }
+    }
+    &__mini-image {
+      width: 75px;
+      height: 100px;
+      padding: 5px;
+      margin: 2rem 5px;
+      border: 1px solid #e4e4e4;
+      cursor: pointer;
+      border-radius: 5px;
+      &:hover {
+        transform: scale(1.2);
+      }
+      &--selected {
+        border: 1px solid #000;
+      }
+    }
+  }
+
+  &-right {
+    padding-left: 6%;
+
+    &__category {
+    }
+
+    &__name {
+      font-size: 30px;
+      font-family: $book;
+    }
+    &__price {
+      font-size: 40px;
+      font-weight: 600;
+      color: #999;
+      font-style: italic;
+    }
+    &__box {
+      padding: 1rem 0;
+    }
+    &__title {
+      font-size: 20px;
+      font-weight: 600;
+      padding-bottom: 1rem;
+    }
+    &__sizes {
+    }
+    &__size {
+      display: inline-block;
+      border: 1px solid #e4e4e4;
+      padding: 0.5rem 2rem;
+      border-radius: 5px;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+    &__colors {
+    }
+    &__color {
+      display: inline-block;
+      border: 1px solid #e4e4e4;
+      border-radius: 100%;
+      padding: 3px;
+      margin-right: 1rem;
+      div {
+        cursor: pointer;
+        border-radius: 100%;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    button {
+      width: 40%;
+      height: 50px;
+      font-size: 18px;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 1rem;
+
+      @include bpm-md {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0.5rem;
+      }
+      svg {
+        font-size: 22px;
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &__call-btn-wa {
+      background-color: #19d13f;
+      margin-right: 10%;
+      &__img {
+        // transform: rotate(90deg);
+      }
+    }
+    &__call-btn-phone {
+      background-color: black;
+      color: white;
+
+      &__img {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

@@ -1,32 +1,11 @@
 import React, { useState } from 'react';
-// import { FavoriteBorder, Favorite } from '@material-ui/icons';
 import { getColorCode } from '../utilis/customFunctions';
-// import MuiTooltip from '@material-ui/core/Tooltip';
-
-// import { withStyles, makeStyles } from '@material-ui/core/styles';
-
-// const Tooltip = withStyles((theme) => ({
-//   tooltip: {
-//     backgroundColor: theme.palette.common.white,
-//     color: 'rgba(0, 0, 0, 0.87)',
-//     boxShadow: theme.shadows[1],
-//     textTransform: 'uppercase',
-//     border: '1px solid #eee',
-//     fontSize: 15,
-//     padding: '8px 16px',
-//   },
-//   tooltipArrow: {
-//     backgroundColor: theme.palette.common.white,
-//   },
-//   arrow: {
-//     backgroundColor: theme.palette.common.white,
-//   },
-// }))(MuiTooltip);
+import { useRouter } from 'next/router';
 
 export default function Product(props) {
   const { data } = props;
   const { images, name, colors, price, shortDesc } = data;
-
+  const router = useRouter();
   const [showImageNo, setShowImageNo] = useState(0);
   const imagesCount = images.length;
 
@@ -42,8 +21,8 @@ export default function Product(props) {
       <div
         className="c-product-card__image-wrapper"
         onClick={() =>
-          props.history.push({
-            pathname: `product-detail/${data.name}/${data._id}`,
+          router.push({
+            pathname: `products/${data._id}`,
             state: data,
           })
         }
@@ -65,8 +44,8 @@ export default function Product(props) {
         <div
           className="c-product-card__details-name"
           onClick={() =>
-            props.history.push({
-              pathname: `product-detail/${data.name}/${data._id}`,
+            router.push({
+              pathname: `products/${data._id}`,
               state: data,
             })
           }

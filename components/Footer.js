@@ -54,7 +54,7 @@ const Footer = (props) => {
             return (
               <div
                 key={i}
-                className={`col-xs-12 col-lg-2 col-sm-6 col-md-6 col-12 pb-5`}
+                className={`col-xs-12 col-lg-3 col-sm-6 col-md-6 col-12 pb-5`}
               >
                 <Heading
                   h="5"
@@ -80,7 +80,7 @@ const Footer = (props) => {
               </div>
             );
           })}
-          <div className={`c-footer__col col-12 col-sm-6 col-md-6 col-lg-4  `}>
+          <div className={`c-footer__col col-12 col-sm-6 col-md-6 col-lg-3  `}>
             <Heading
               h="5"
               versions={['footer', 'upper']}

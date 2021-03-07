@@ -93,8 +93,9 @@ $color-4: #f0f3f0;
 @import './product';
 @import './map-section';
 @import './our-director';
+@import './product-detail';
 // @import './admin';
-// @import './admin-login';
+@import './admin-login';
 // extra can be transfer in file
 .c-less-more__less {
   line-height: 2em;

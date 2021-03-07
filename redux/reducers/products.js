@@ -15,6 +15,7 @@ const initialState = {
   product: null,
   featured: [],
   categories: [],
+  recentlyViewed: [],
 };
 
 export default (state = initialState, action) => {
@@ -24,19 +25,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         products: payload,
-        // products: payload,
       };
     case SET_CATEGORIES:
-      // const c = payload.map((p) => {
-      //   return {
-      //     title: p.name,
-      //   };
-      // });
-
       return {
         ...state,
         categories: payload,
-        // products: payload,
       };
 
     case SET_PRODUCT:
@@ -49,6 +42,24 @@ export default (state = initialState, action) => {
       return {
         ...state,
         product: null,
+      };
+    case 'SET_RECENTLY_VIEWD':
+      return {
+        ...state,
+        recentlyViewed: payload,
+      };
+    case 'ADD_TO_RECENTLY_VIEWD':
+      let tempRecentlyViewed = state.recentlyViewed;
+      tempRecentlyViewed.push(payload);
+      return {
+        ...state,
+        recentlyViewed: tempRecentlyViewed,
+      };
+
+    case 'CLEAR_RECENTLY_VIEWD':
+      return {
+        ...state,
+        recentlyViewed: null,
       };
 
     default:

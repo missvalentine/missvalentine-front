@@ -3,8 +3,9 @@ const { baseUrl, docMzUrl, contentUrl } = projectSettings;
 const apiList = {
   getAllProducts: `${baseUrl}/product/all`,
   getAllCategories: `${baseUrl}/category/all`,
+  getProductById: `${baseUrl}/product/`,
+
   getAllCombos: `${baseUrl}/products/api/combos/all/`,
-  getProductById: `${baseUrl}/products/api/getbyid/`,
   getProductByName: `${baseUrl}/products/api/getbyname/`,
   //getAllCategories:`${baseUrl}/categories/getcategories`,
   getReviews: `${baseUrl}/review/getapproved/`,

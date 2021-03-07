@@ -299,8 +299,8 @@ class Home extends React.Component {
         {!secondSectionHide && (
           <Link href="/blog">
             <div className="blog-link-banner" style={{ cursor: 'pointer' }}>
-              <p className="top-text">{'EXPIRENCE THE BEST'}</p>
-              <p className="bottom-text">{'explore products'}</p>
+              <p className="top-text">{'EXPIRENCE THE WIDE RANGE '}</p>
+              <p className="bottom-text">{'explore now'}</p>
             </div>
           </Link>
         )}
