@@ -10,7 +10,7 @@ import '../styles/app.scss';
 const Footer = dynamic(() => import('../Footer'));
 import classNames from 'classnames';
 const ChatBot = dynamic(() => import('../chatBot/ChatBot'));
-const Button = dynamic(() => import('../form-components/Button'));
+import Button from '../form-components/Button';
 const TopAlert = dynamic(() => import('../TopAlert'));
 import { FullModal } from '../modal';
 import { connect } from 'react-redux';
@@ -51,7 +51,7 @@ const Layout = ({
 
   return (
     <>
-      {topBarText && <TopAlert>{topBarText}</TopAlert>}
+      {/* {topBarText && <TopAlert>{topBarText}</TopAlert>} */}
       <div
         className={classNames('c-layout', {
           [pageClass]: pageClass,
@@ -161,7 +161,7 @@ const Layout = ({
         >
           <div className="ss ss-row">
             <div className="left">
-              <LazyLoadImage
+              <img
                 src="/images/ss2_banner.png"
                 style={{ width: '100%', height: '100%' }}
               />
