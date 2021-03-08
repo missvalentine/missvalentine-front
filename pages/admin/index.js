@@ -1,33 +1,35 @@
-import React, { useState } from 'react';
-// import { authenticate, isAuth } from '../../helper/auth';
-
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useDispatch, useSelector } from 'react-redux';
+import { signIn } from '../../redux/actions/auth';
 export default function AdminLogin(props) {
   const [email, setEmail] = useState('admin@missvalentineinnerwear.com');
   const [password, setPassword] = useState('Vikasjain@2021');
-
+  const dispatch = useDispatch();
+  const router = useRouter();
   const changeHandler = (event) => {
     event.target.name === 'email'
       ? setEmail(event.target.value)
       : setPassword(event.target.value);
   };
 
+  const auth = useSelector((s) => s.auth);
   const submitHandler = () => {
-    // httpRequest({
-    //   method: 'post',
-    //   url: '/auth/signin',
-    //   data: {
-    //     email: email,
-    //     password: password,
-    //   },
-    // }).then((res) => {
-    //   if (res.data) {
-    //     authenticate(res);
-    //     // history.push()
-    //     props.history.push('/admin/dashboard');
-    //   }
-    // });
+    dispatch(
+      signIn({
+        email: email,
+        password: password,
+      })
+    );
   };
-  // if (isAuth()) return <Redirect to="/admin/dashboard" />;
+
+  useEffect(() => {
+    console.log('auth', auth);
+    if (auth.token) router.push('/admin/dashboard');
+  }, [auth.token]);
+
+  if (auth.token) router.push('/admin/dashboard');
+
   return (
     <div>
       <div className="auth-wrapper">

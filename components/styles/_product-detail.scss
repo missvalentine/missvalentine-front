@@ -132,6 +132,10 @@
       &__img {
         // transform: rotate(90deg);
       }
+
+      @include bpm-md {
+        margin-right: 0;
+      }
     }
     &__call-btn-phone {
       background-color: black;

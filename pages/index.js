@@ -174,14 +174,17 @@ class Home extends React.Component {
           hide: false,
           title: '',
           content: '',
-          btnText: 'View Products',
+          btnText: 'Explore Range',
+
+          link: '/category',
         },
         {
           images: { src: slide2 },
           hide: false,
           title: '',
           content: '',
-          btnText: 'Explore',
+          btnText: 'View Products',
+          link: '/products',
         },
       ],
       // categorySlider: {
@@ -274,7 +277,7 @@ class Home extends React.Component {
                   <Button
                     parentClass="c-home"
                     type="link"
-                    link="/shop"
+                    link={el.link}
                     theme={'dark'}
                   >
                     {parser(el.btnText)}
