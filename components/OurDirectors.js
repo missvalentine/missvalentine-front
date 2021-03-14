@@ -1,35 +1,40 @@
 import React from 'react';
+import VikasImage from '../assets/images/directors/Mr.VikasBabuJain.jpeg';
+import PawanImage from '../assets/images/directors/Mr.PawanKumarJain.jpeg';
+import SiddhartImage from '../assets/images/directors/Mr.Siddharthjain.jpeg';
 
 export default function OurDirectors() {
   const directors = [
     {
-      name: 'Vikas Jain',
-      desc: 'Have 10year + experinece in same field',
-      img:
-        'https://user-images.githubusercontent.com/5709133/50445980-88299a80-0912-11e9-962a-6fd92fd18027.png',
+      name: 'Mr. Vikas Babu Jain',
+      desc: 'M.D, Miss Valenine',
+      img: VikasImage,
     },
     {
-      name: 'Sidhart Jain',
-      desc: 'Have 10year + experinece in same field',
-      img:
-        'https://user-images.githubusercontent.com/5709133/50445980-88299a80-0912-11e9-962a-6fd92fd18027.png',
+      name: 'Mr. Pawan Kumar Jain',
+      desc: 'Director, Miss Valenine',
+      img: PawanImage,
     },
     {
-      name: 'Vikas Jain',
-      desc: 'Have 10year + experinece in same field',
-      img:
-        'https://user-images.githubusercontent.com/5709133/50445980-88299a80-0912-11e9-962a-6fd92fd18027.png',
+      name: 'Mr. Siddharth jain',
+      desc: 'Director, Miss Valenine',
+      img: SiddhartImage,
     },
   ];
 
   return (
     <div className="c-directors">
-      <div className="c-directors__title"> Our Directors</div>
+      <div className="c-directors__title"> Board of Directors</div>
+      <div className="c-directors__subtitle">
+        Our Team has deep expertise in the textile industries, having more than
+        14 years of experience in manufacturing & marketing, and a passion for
+        fundamentally improving & producing quality products
+      </div>
       <div className="c-directors__cards">
         {directors.map((d, i) => (
           <div key={i} className="c-directors__cards-card">
             <img
-              alt={'director ' + d.img}
+              alt={'director ' + d.name}
               className="c-directors__cards-card-img"
               src={d.img}
             />

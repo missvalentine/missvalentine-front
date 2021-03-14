@@ -1,4 +1,20 @@
 {
+  "../../components/HImgSection": [
+    {
+      "id": "./components/HImgSection.js",
+      "file": "static/chunks/40.js"
+    },
+    {
+      "id": "./node_modules/react-lazy-load-image-component/build/index.js",
+      "file": "static/chunks/40.js"
+    }
+  ],
+  "../../components/Heading": [
+    {
+      "id": "./components/Heading.js",
+      "file": "static/chunks/1.js"
+    }
+  ],
   "../../components/Layouts/Layout": [
     {
       "id": "./components/styles/app.scss",
@@ -37,6 +53,22 @@
       "file": "static/css/styles.chunk.css"
     },
     {
+      "id": "./node_modules/pure-react-carousel/dist/react-carousel.es.css",
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": 9,
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": "./node_modules/react-inner-image-zoom/lib/InnerImageZoom/styles.css",
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": 10,
+      "file": "static/css/styles.chunk.css"
+    },
+    {
       "id": "./components/styles/app.scss",
       "file": "static/chunks/styles.js"
     },
@@ -73,1082 +105,2000 @@
       "file": "static/chunks/styles.js"
     },
     {
+      "id": "./node_modules/pure-react-carousel/dist/react-carousel.es.css",
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": 9,
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": "./node_modules/react-inner-image-zoom/lib/InnerImageZoom/styles.css",
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": 10,
+      "file": "static/chunks/styles.js"
+    },
+    {
       "id": "./components/Layouts/Layout.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./components/form-components/Button.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./components/modal/FullModal.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./components/modal/Modal.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./components/modal/index.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./constants/allCountry.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/@babel/runtime/helpers/assertThisInitialized.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/@babel/runtime/helpers/defineProperty.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
-      "id": "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js",
-      "file": "static/chunks/43.js"
+      "id": "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js",
+      "file": "static/chunks/35.js"
     },
     {
-      "id": "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js",
-      "file": "static/chunks/43.js"
+      "id": "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js",
+      "file": "static/chunks/35.js"
     },
     {
-      "id": "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js",
-      "file": "static/chunks/43.js"
+      "id": "./node_modules/@babel/runtime/helpers/esm/createClass.js",
+      "file": "static/chunks/35.js"
     },
     {
-      "id": "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js",
-      "file": "static/chunks/43.js"
+      "id": "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js",
+      "file": "static/chunks/35.js"
     },
     {
-      "id": "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js",
-      "file": "static/chunks/43.js"
+      "id": "./node_modules/@babel/runtime/helpers/esm/inherits.js",
+      "file": "static/chunks/35.js"
     },
     {
-      "id": "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js",
-      "file": "static/chunks/43.js"
+      "id": "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js",
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/@babel/runtime/helpers/extends.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/@babel/runtime/helpers/inheritsLoose.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/@babel/runtime/helpers/interopRequireDefault.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/@babel/runtime/helpers/setPrototypeOf.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
-      "id": "./node_modules/@babel/runtime/regenerator/index.js",
-      "file": "static/chunks/43.js"
+      "id": "./node_modules/@babel/runtime/helpers/typeof.js",
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/@hypnosphi/create-react-context/lib/implementation.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/@hypnosphi/create-react-context/lib/index.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/box-dimension-calculator/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/call-bind/callBound.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/call-bind/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/camel-case/camel-case.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/deep-equal/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/define-properties/index.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/dom-helpers/class/addClass.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/dom-helpers/class/hasClass.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/dom-helpers/class/removeClass.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/function-bind/implementation.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/function-bind/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/get-intrinsic/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/has-symbols/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/has-symbols/shams.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/has/src/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/is-arguments/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/is-date-object/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/is-regex/index.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/lodash/lodash.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/lower-case/lower-case.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/next/dist/client/link.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/client/normalize-trailing-slash.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/client/router.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/client/with-router.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/compiled/path-to-regexp/index.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/amp-context.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/amp.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/head-manager-context.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/head.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/mitt.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/router-context.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/router/router.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/router/utils/escape-path-delimiters.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/router/utils/format-url.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/router/utils/parse-relative-url.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/router/utils/path-match.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/router/utils/prepare-destination.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/router/utils/querystring.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/router/utils/resolve-rewrites.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/router/utils/route-matcher.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/router/utils/route-regex.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/side-effect.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/lib/utils.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/dist/next-server/server/denormalize-page-path.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/next/link.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/arrayLikeToArray.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/arrayWithHoles.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/arrayWithoutHoles.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/assertThisInitialized.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/asyncToGenerator.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/construct.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/getPrototypeOf.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/inherits.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/interopRequireDefault.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/interopRequireWildcard.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/isNativeReflectConstruct.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/iterableToArray.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/iterableToArrayLimit.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/nonIterableRest.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/nonIterableSpread.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/possibleConstructorReturn.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/setPrototypeOf.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/slicedToArray.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/toConsumableArray.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/typeof.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/next/node_modules/@babel/runtime/regenerator/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/no-case/no-case.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/no-case/vendor/camel-case-regexp.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/no-case/vendor/camel-case-upper-regexp.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/no-case/vendor/non-word-regexp.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/object-is/implementation.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/object-is/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/object-is/polyfill.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/object-is/shim.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/object-keys/implementation.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/object-keys/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/object-keys/isArguments.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/popper.js/dist/esm/popper.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/react-icons-kit/Icon.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/react-icons-kit/SvgIcon.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/react-icons-kit/horizontalCenter.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/react-icons-kit/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/react-icons-kit/md/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
+    },
+    {
+      "id": "./node_modules/react-lazy-load-image-component/build/index.js",
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/react-popper/lib/esm/Manager.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/react-popper/lib/esm/Popper.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/react-popper/lib/esm/Reference.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/react-popper/lib/esm/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/react-popper/lib/esm/utils.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Alert.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Badge.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Breadcrumb.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/BreadcrumbItem.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Button.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ButtonDropdown.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ButtonGroup.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ButtonToggle.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ButtonToolbar.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Card.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CardBody.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CardColumns.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CardDeck.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CardFooter.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CardGroup.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CardHeader.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CardImg.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CardImgOverlay.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CardLink.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CardSubtitle.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CardText.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CardTitle.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Carousel.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CarouselCaption.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CarouselControl.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CarouselIndicators.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CarouselItem.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Col.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Collapse.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Container.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CustomFileInput.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/CustomInput.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Dropdown.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/DropdownContext.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/DropdownItem.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/DropdownMenu.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/DropdownToggle.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Fade.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Form.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/FormFeedback.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/FormGroup.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/FormText.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Input.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/InputGroup.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/InputGroupAddon.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/InputGroupButtonDropdown.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/InputGroupText.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Jumbotron.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Label.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/List.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ListGroup.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ListGroupItem.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ListGroupItemHeading.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ListGroupItemText.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ListInlineItem.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Media.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Modal.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ModalBody.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ModalFooter.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ModalHeader.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Nav.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/NavItem.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/NavLink.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Navbar.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/NavbarBrand.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/NavbarText.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/NavbarToggler.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Pagination.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/PaginationItem.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/PaginationLink.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Popover.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/PopoverBody.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/PopoverHeader.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/PopperContent.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/PopperTargetHelper.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Portal.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Progress.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Row.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Spinner.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/TabContent.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/TabContext.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/TabPane.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Table.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Toast.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ToastBody.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/ToastHeader.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/Tooltip.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/TooltipPopoverWrapper.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/UncontrolledAlert.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/UncontrolledButtonDropdown.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/UncontrolledCarousel.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/UncontrolledCollapse.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/UncontrolledDropdown.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/UncontrolledPopover.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/UncontrolledTooltip.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/polyfill.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/es/utils.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/node_modules/react-transition-group/CSSTransition.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/node_modules/react-transition-group/ReplaceTransition.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/node_modules/react-transition-group/Transition.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/node_modules/react-transition-group/TransitionGroup.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/node_modules/react-transition-group/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/node_modules/react-transition-group/utils/ChildMapping.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/reactstrap/node_modules/react-transition-group/utils/PropTypes.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./node_modules/regenerator-runtime/runtime.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/regexp.prototype.flags/implementation.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/regexp.prototype.flags/index.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/regexp.prototype.flags/polyfill.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/regexp.prototype.flags/shim.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     },
     {
       "id": "./node_modules/upper-case/upper-case.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/address.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/ambassadoruser.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/appointment.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/cards.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/cart.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/checkout.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/content.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/drawers.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/errors.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/extras.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/firstSetting.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/index.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/loading.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/location.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/products.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/referrer.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/reviews.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/subMenus.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/user.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/wishList.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./redux/actions/wishListLogin.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./services/api.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./services/apis/ambassador.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./services/apis/checkout.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./services/apis/contact.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./services/apis/doctors.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./services/apis/google.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./services/apis/products.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./services/apis/user.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./services/helpers/cart.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./services/helpers/misc.js",
-      "file": "static/chunks/43.js"
-    },
-    {
-      "id": "./services/helpers/product.js",
-      "file": "static/chunks/43.js"
+      "file": "static/chunks/35.js"
     }
   ],
-  "../../components/blog/Article": [
+  "../../components/ProductDetailsTab": [
     {
-      "id": "./components/blog/Article/index.js",
-      "file": "static/chunks/47.js"
+      "id": "./components/ProductDetailsTab.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/assertThisInitialized.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/defineProperty.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/extends.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/inheritsLoose.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/setPrototypeOf.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/@hypnosphi/create-react-context/lib/implementation.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/@hypnosphi/create-react-context/lib/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/call-bind/callBound.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/call-bind/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/deep-equal/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/define-properties/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/function-bind/implementation.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/function-bind/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/get-intrinsic/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/has-symbols/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/has-symbols/shams.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/has/src/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/is-arguments/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/is-date-object/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/is-regex/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/next/dist/client/link.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/next/link.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/object-is/implementation.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/object-is/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/object-is/polyfill.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/object-is/shim.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/object-keys/implementation.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/object-keys/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/object-keys/isArguments.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/popper.js/dist/esm/popper.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/react-popper/lib/esm/Manager.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/react-popper/lib/esm/Popper.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/react-popper/lib/esm/Reference.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/react-popper/lib/esm/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/react-popper/lib/esm/utils.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Alert.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Badge.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Breadcrumb.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/BreadcrumbItem.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Button.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ButtonDropdown.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ButtonGroup.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ButtonToggle.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ButtonToolbar.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Card.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardBody.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardColumns.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardDeck.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardFooter.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardGroup.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardHeader.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardImg.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardImgOverlay.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardLink.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardSubtitle.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardText.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardTitle.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Carousel.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CarouselCaption.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CarouselControl.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CarouselIndicators.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CarouselItem.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Col.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Collapse.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Container.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CustomFileInput.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CustomInput.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Dropdown.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/DropdownContext.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/DropdownItem.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/DropdownMenu.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/DropdownToggle.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Fade.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Form.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/FormFeedback.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/FormGroup.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/FormText.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Input.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/InputGroup.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/InputGroupAddon.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/InputGroupButtonDropdown.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/InputGroupText.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Jumbotron.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Label.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/List.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ListGroup.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ListGroupItem.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ListGroupItemHeading.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ListGroupItemText.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ListInlineItem.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Media.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Modal.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ModalBody.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ModalFooter.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ModalHeader.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Nav.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/NavItem.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/NavLink.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Navbar.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/NavbarBrand.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/NavbarText.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/NavbarToggler.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Pagination.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/PaginationItem.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/PaginationLink.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Popover.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/PopoverBody.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/PopoverHeader.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/PopperContent.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/PopperTargetHelper.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Portal.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Progress.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Row.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Spinner.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/TabContent.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/TabContext.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/TabPane.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Table.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Toast.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ToastBody.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ToastHeader.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Tooltip.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/TooltipPopoverWrapper.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledAlert.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledButtonDropdown.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledCarousel.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledCollapse.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledDropdown.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledPopover.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledTooltip.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/polyfill.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/utils.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/CSSTransition.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/ReplaceTransition.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/Transition.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/TransitionGroup.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/utils/ChildMapping.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/utils/PropTypes.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/regexp.prototype.flags/implementation.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/regexp.prototype.flags/index.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/regexp.prototype.flags/polyfill.js",
+      "file": "static/chunks/37.js"
+    },
+    {
+      "id": "./node_modules/regexp.prototype.flags/shim.js",
+      "file": "static/chunks/37.js"
     }
   ],
-  "../../components/blog/MainSection/MainSection": [
+  "../../components/ProductInfo": [
     {
-      "id": "./components/blog/MainSection/MainSection.js",
-      "file": "static/chunks/48.js"
+      "id": "./assets/images/wishlist-heart.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./components/ProductInfo.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./constants/constantMessage.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/assertThisInitialized.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/defineProperty.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/createClass.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/inherits.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/extends.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/inheritsLoose.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/setPrototypeOf.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/typeof.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@hypnosphi/create-react-context/lib/implementation.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/@hypnosphi/create-react-context/lib/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/call-bind/callBound.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/call-bind/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/deep-equal/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/define-properties/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/function-bind/implementation.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/function-bind/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/get-intrinsic/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/has-symbols/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/has-symbols/shams.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/has/src/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/is-arguments/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/is-date-object/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/is-regex/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/object-is/implementation.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/object-is/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/object-is/polyfill.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/object-is/shim.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/object-keys/implementation.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/object-keys/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/object-keys/isArguments.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/popper.js/dist/esm/popper.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/react-lazy-load-image-component/build/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/react-popper/lib/esm/Manager.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/react-popper/lib/esm/Popper.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/react-popper/lib/esm/Reference.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/react-popper/lib/esm/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/react-popper/lib/esm/utils.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Alert.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Badge.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Breadcrumb.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/BreadcrumbItem.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Button.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ButtonDropdown.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ButtonGroup.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ButtonToggle.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ButtonToolbar.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Card.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardBody.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardColumns.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardDeck.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardFooter.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardGroup.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardHeader.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardImg.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardImgOverlay.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardLink.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardSubtitle.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardText.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CardTitle.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Carousel.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CarouselCaption.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CarouselControl.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CarouselIndicators.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CarouselItem.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Col.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Collapse.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Container.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CustomFileInput.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/CustomInput.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Dropdown.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/DropdownContext.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/DropdownItem.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/DropdownMenu.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/DropdownToggle.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Fade.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Form.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/FormFeedback.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/FormGroup.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/FormText.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Input.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/InputGroup.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/InputGroupAddon.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/InputGroupButtonDropdown.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/InputGroupText.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Jumbotron.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Label.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/List.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ListGroup.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ListGroupItem.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ListGroupItemHeading.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ListGroupItemText.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ListInlineItem.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Media.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Modal.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ModalBody.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ModalFooter.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ModalHeader.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Nav.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/NavItem.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/NavLink.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Navbar.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/NavbarBrand.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/NavbarText.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/NavbarToggler.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Pagination.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/PaginationItem.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/PaginationLink.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Popover.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/PopoverBody.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/PopoverHeader.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/PopperContent.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/PopperTargetHelper.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Portal.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Progress.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Row.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Spinner.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/TabContent.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/TabContext.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/TabPane.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Table.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Toast.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ToastBody.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/ToastHeader.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/Tooltip.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/TooltipPopoverWrapper.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledAlert.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledButtonDropdown.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledCarousel.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledCollapse.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledDropdown.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledPopover.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/UncontrolledTooltip.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/polyfill.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/es/utils.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/CSSTransition.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/ReplaceTransition.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/Transition.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/TransitionGroup.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/utils/ChildMapping.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/reactstrap/node_modules/react-transition-group/utils/PropTypes.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/regexp.prototype.flags/implementation.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/regexp.prototype.flags/index.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/regexp.prototype.flags/polyfill.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./node_modules/regexp.prototype.flags/shim.js",
+      "file": "static/chunks/36.js"
+    },
+    {
+      "id": "./services/extra/basicFunction.js",
+      "file": "static/chunks/36.js"
     }
   ],
-  "../ArticleCard/ArticleCard": [
+  "../../components/ProductSlider": [
     {
-      "id": "./assets/images/ionic-md-share.svg",
-      "file": "static/chunks/45.js"
+      "id": "./components/ProductSlider.js",
+      "file": "static/chunks/38.js"
     },
     {
-      "id": "./components/blog/ArticleCard/ArticleCard.js",
-      "file": "static/chunks/45.js"
+      "id": "./node_modules/desandro-matches-selector/matches-selector.js",
+      "file": "static/chunks/38.js"
     },
     {
-      "id": "./node_modules/react-moment/dist/index.js",
-      "file": "static/chunks/45.js"
+      "id": "./node_modules/ev-emitter/ev-emitter.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/fizzy-ui-utils/utils.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/flickity/js/add-remove-cell.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/flickity/js/animate.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/flickity/js/cell.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/flickity/js/drag.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/flickity/js/flickity.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/flickity/js/index.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/flickity/js/lazyload.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/flickity/js/page-dots.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/flickity/js/player.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/flickity/js/prev-next-button.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/flickity/js/slide.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/get-size/get-size.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/imagesloaded/imagesloaded.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/react-flickity-component/lib/index.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/unidragger/unidragger.js",
+      "file": "static/chunks/38.js"
+    },
+    {
+      "id": "./node_modules/unipointer/unipointer.js",
+      "file": "static/chunks/38.js"
     }
   ],
-  "../ArticleCard/ArticleCard2": [
+  "../../components/TItleList": [
     {
-      "id": "./components/blog/ArticleCard/ArticleCard2.js",
-      "file": "static/chunks/46.js"
-    },
-    {
-      "id": "./node_modules/react-moment/dist/index.js",
-      "file": "static/chunks/46.js"
-    }
-  ],
-  "../BlogNav/BlogNav": [
-    {
-      "id": "./components/blog/BlogNav/BlogNav.js",
-      "file": "static/chunks/44.js"
-    },
-    {
-      "id": "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js",
-      "file": "static/chunks/44.js"
-    },
-    {
-      "id": "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js",
-      "file": "static/chunks/44.js"
-    },
-    {
-      "id": "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js",
-      "file": "static/chunks/44.js"
-    },
-    {
-      "id": "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js",
-      "file": "static/chunks/44.js"
+      "id": "./components/TItleList.js",
+      "file": "static/chunks/34.js"
     }
   ],
   "../Footer": [
@@ -11275,6 +12225,26 @@
     {
       "id": "./components/LRSection.js",
       "file": "static/chunks/21.js"
+    }
+  ],
+  "../components/ProductRating": [
+    {
+      "id": "./components/ProductRating.js",
+      "file": "static/chunks/43.js"
+    }
+  ],
+  "../form-components/Button": [
+    {
+      "id": "./components/form-components/Button.js",
+      "file": "static/chunks/33.js"
+    },
+    {
+      "id": "./node_modules/next/dist/client/link.js",
+      "file": "static/chunks/33.js"
+    },
+    {
+      "id": "./node_modules/next/link.js",
+      "file": "static/chunks/33.js"
     }
   ],
   "../form-components/Checkbox": [
@@ -28849,10 +29819,6 @@
     {
       "id": "./components/CartDrawer.js",
       "file": "static/chunks/6.js"
-    },
-    {
-      "id": "./constants/reduxInitialStates.js",
-      "file": "static/chunks/6.js"
     }
   ],
   "./CartIcon": [
@@ -29549,6 +30515,12 @@
       "file": "static/chunks/1.js"
     }
   ],
+  "./ImageZoom": [
+    {
+      "id": "./components/ImageZoom.js",
+      "file": "static/chunks/41.js"
+    }
+  ],
   "./LearnResponse": [
     {
       "id": "./components/chatBot/LearnResponse.js",
@@ -29566,7 +30538,7 @@
   "./Logo": [
     {
       "id": "./components/Logo.js",
-      "file": "static/chunks/30.js"
+      "file": "static/chunks/29.js"
     }
   ],
   "./MobileMenus": [
@@ -36011,16 +36983,192 @@
       "file": "static/chunks/9.js"
     }
   ],
+  "./Product": [
+    {
+      "id": "./components/Product.js",
+      "file": "static/chunks/42.js"
+    }
+  ],
+  "./ProductViewSlider": [
+    {
+      "id": "./components/styles/app.scss",
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": 2,
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": 3,
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": 4,
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": 5,
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": 6,
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": 7,
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": 8,
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": "./node_modules/pure-react-carousel/dist/react-carousel.es.css",
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": 9,
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": "./node_modules/react-inner-image-zoom/lib/InnerImageZoom/styles.css",
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": 10,
+      "file": "static/css/styles.chunk.css"
+    },
+    {
+      "id": "./components/styles/app.scss",
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": 2,
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": 3,
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": 4,
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": 5,
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": 6,
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": 7,
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": 8,
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": "./node_modules/pure-react-carousel/dist/react-carousel.es.css",
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": 9,
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": "./node_modules/react-inner-image-zoom/lib/InnerImageZoom/styles.css",
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": 10,
+      "file": "static/chunks/styles.js"
+    },
+    {
+      "id": "./components/ProductViewSlider.js",
+      "file": "static/chunks/39.js"
+    },
+    {
+      "id": "./node_modules/pure-react-carousel/dist/index.es.js",
+      "file": "static/chunks/39.js"
+    },
+    {
+      "id": "./node_modules/react-inner-image-zoom/es/InnerImageZoom/InnerImageZoom.js",
+      "file": "static/chunks/39.js"
+    },
+    {
+      "id": "./node_modules/react-inner-image-zoom/es/InnerImageZoom/components/FullscreenPortal.js",
+      "file": "static/chunks/39.js"
+    },
+    {
+      "id": "./node_modules/react-inner-image-zoom/es/InnerImageZoom/components/Image.js",
+      "file": "static/chunks/39.js"
+    },
+    {
+      "id": "./node_modules/react-inner-image-zoom/es/InnerImageZoom/components/ZoomImage.js",
+      "file": "static/chunks/39.js"
+    },
+    {
+      "id": "./node_modules/react-inner-image-zoom/es/InnerImageZoom/index.js",
+      "file": "static/chunks/39.js"
+    },
+    {
+      "id": "./node_modules/react-inner-image-zoom/es/index.js",
+      "file": "static/chunks/39.js"
+    }
+  ],
   "./SubscribeForm": [
     {
       "id": "./components/SubscribeForm.js",
       "file": "static/chunks/22.js"
     }
   ],
+  "./TItleList": [
+    {
+      "id": "./components/TItleList.js",
+      "file": "static/chunks/34.js"
+    }
+  ],
+  "./Tabs": [
+    {
+      "id": "./components/Tabs.js",
+      "file": "static/chunks/44.js"
+    }
+  ],
   "./dev/noop": [
     {
       "id": "./node_modules/next/dist/client/dev/noop.js",
       "file": "static/chunks/0.js"
+    }
+  ],
+  "./form-components/Button": [
+    {
+      "id": "./components/form-components/Button.js",
+      "file": "static/chunks/33.js"
+    },
+    {
+      "id": "./node_modules/next/dist/client/link.js",
+      "file": "static/chunks/33.js"
+    },
+    {
+      "id": "./node_modules/next/link.js",
+      "file": "static/chunks/33.js"
+    }
+  ],
+  "./form-components/Checkbox": [
+    {
+      "id": "./components/form-components/Checkbox.js",
+      "file": "static/chunks/26.js"
     }
   ],
   "./form-components/Input": [
@@ -42451,6 +43599,12 @@
     {
       "id": "./node_modules/rc-util/es/warning.js",
       "file": "static/chunks/2.js"
+    }
+  ],
+  "./form-components/Quantity": [
+    {
+      "id": "./components/form-components/Quantity.js",
+      "file": "static/chunks/45.js"
     }
   ],
   "./nav": [

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { signIn } from '../../redux/actions/auth';
+import '../../components/styles/app.scss';
+import { ToastContainer, toast } from 'react-toastify';
+
 export default function AdminLogin(props) {
   const [email, setEmail] = useState('admin@missvalentineinnerwear.com');
   const [password, setPassword] = useState('Vikasjain@2021');
@@ -32,6 +35,7 @@ export default function AdminLogin(props) {
 
   return (
     <div>
+      <ToastContainer />
       <div className="auth-wrapper">
         <div className="auth-content">
           <div className="auth-bg">

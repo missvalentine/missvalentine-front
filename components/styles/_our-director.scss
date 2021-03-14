@@ -1,4 +1,5 @@
 .directors-section-wrapper {
+  // background-color: #f9e8ec;
   width: 100%;
   padding: 5rem 5rem 2rem;
   font-family: $book;
@@ -10,11 +11,26 @@
     &__title {
       font-size: 4rem;
       text-align: center;
-      margin-bottom: 5rem;
+      margin-bottom: 1rem;
 
       @include bpm-sm {
         font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    &__subtitle {
+      font-size: 1.8rem;
+      text-align: center;
+      // margin-bottom: 5rem;
+      margin: auto;
+      color: #aaaaaa;
+      width: 60%;
+      margin-bottom: 4rem;
+
+      @include bpm-sm {
         margin-bottom: 2.5rem;
+        width: 100%;
+        font-size: 1.2rem;
       }
     }
     &__cards {
@@ -23,18 +39,33 @@
         display: block;
       }
       &-card {
-        width: 100%;
+        width: 21%;
+        margin: auto;
         text-align: center;
+        box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.2);
+        padding: 1.5rem;
+
+        &:hover {
+          transform: scale(1.05);
+        }
         @include bpm-sm {
           margin-bottom: 2rem;
+          width: 95%;
+          &:hover {
+            transform: none;
+          }
         }
         &-img {
-          width: 50%;
+          width: 95%;
+          height: 80%;
         }
         &-name {
           font-weight: 600;
           padding: 1.5rem 0 0.5rem;
           font-size: 2rem;
+          @include bpm-sm {
+            font-size: 1.8rem;
+          }
         }
         &-desc {
         }

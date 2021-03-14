@@ -15,6 +15,7 @@ const initialState = {
   product: null,
   featured: [],
   categories: [],
+  subcategories: [],
   recentlyViewed: [],
 };
 
@@ -30,6 +31,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         categories: payload,
+      };
+    case 'SET_SUBCATEGORIES':
+      return {
+        ...state,
+        subcategories: payload,
       };
 
     case SET_PRODUCT:

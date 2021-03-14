@@ -4,11 +4,11 @@ export const signIn = (obj) => (dispatch) => {
   return signInReq(obj)
     .then((res) => {
       if (res.data) {
-        console.log('super', res.data);
         dispatch({
           type: 'SET_AUTH',
           payload: res.data,
         });
+        localStorage.setItem('auth', JSON.stringify(res.data));
       }
     })
     .catch((err) => {

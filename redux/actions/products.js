@@ -5,13 +5,12 @@ import {
   getProductById,
   getAllCategories,
 } from '../../services/apis/products';
+import { getAllSubcategories } from '../../services/apis/admin';
 
 export const getProducts = () => (dispatch) => {
   getAllProducts()
     .then((res) => {
       if (res.data && res.data.success) {
-        console.log('hellllo', res.data.data);
-
         dispatch({
           type: SET_PRODUCTS,
           payload: res.data.data,
@@ -44,6 +43,21 @@ export const getCategories = () => (dispatch) => {
       if (res.data && res.data.success) {
         dispatch({
           type: SET_CATEGORIES,
+          payload: res.data.data,
+        });
+      }
+    })
+    .catch((err) => {
+      console.log({ err });
+    });
+};
+
+export const getSubCategories = () => (dispatch) => {
+  getAllSubcategories()
+    .then((res) => {
+      if (res.data && res.data.success) {
+        dispatch({
+          type: 'SET_SUBCATEGORIES',
           payload: res.data.data,
         });
       }
