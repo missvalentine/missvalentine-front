@@ -1,4 +1,4 @@
-export const projectName = 'Miss Valentine';
+export const projectName = 'MissValentine';
 export const baseUrl = 'https://missval.herokuapp.com/api';
 //export const baseUrl = "http://localhost:4003";
 export const docMzUrl = 'http://localhost:3001';

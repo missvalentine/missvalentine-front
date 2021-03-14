@@ -1,7 +1,7 @@
-import dynamic from 'next/dynamic'
-const Heading = dynamic(() => import("./Heading"));
-import { LazyLoadImage } from "react-lazy-load-image-component";
-const Button = dynamic(() => import("./form-components/Button"));
+import dynamic from 'next/dynamic';
+const Heading = dynamic(() => import('./Heading'));
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+const Button = dynamic(() => import('./form-components/Button'));
 const LRSection = ({
   heading,
   subHeading,
@@ -27,12 +27,12 @@ const LRSection = ({
       {content}
       {children}
       <div className="c-lr-section__btn-wrapper">
-        {linkText && ( 
+        {linkText && (
           <Button
             theme="btm-br"
             type="link"
             onClick={() => {
-              if (typeof onLinkClick === "function") {
+              if (typeof onLinkClick === 'function') {
                 onLinkClick();
               }
             }}

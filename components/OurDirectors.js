@@ -7,17 +7,17 @@ export default function OurDirectors() {
   const directors = [
     {
       name: 'Mr. Vikas Babu Jain',
-      desc: 'M.D, Miss Valenine',
+      desc: 'M.D, MissValentine',
       img: VikasImage,
     },
     {
       name: 'Mr. Pawan Kumar Jain',
-      desc: 'Director, Miss Valenine',
+      desc: 'Director, MissValentine',
       img: PawanImage,
     },
     {
       name: 'Mr. Siddharth jain',
-      desc: 'Director, Miss Valenine',
+      desc: 'Director, MissValentine',
       img: SiddhartImage,
     },
   ];

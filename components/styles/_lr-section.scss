@@ -61,7 +61,16 @@
   }
   &__image {
     flex: 0.4;
+    height: 100%;
     margin-left: 6rem;
+    text-align: center;
+
+    img {
+      width: 60%;
+      margin: auto;
+      text-align: center;
+      // max-height: 300px;
+    }
     @include bpm-md {
       flex: 1;
       img {

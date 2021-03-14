@@ -114,12 +114,19 @@ export default function ProductDetail(props) {
               </div>
               <div className="c-product-detail-right__box">
                 <button className="c-product-detail-right__call-btn-wa">
-                  <WhatsAppOutlined className="c-product-detail-right__call-btn-wa__img" />
-                  Whatsapp Enquiry
+                  <a
+                    target="_black"
+                    href={`https://wa.me/9999217125/?text=Hello!%20I%20want%20to%20enquire%20about%20${data.name}`}
+                  >
+                    <WhatsAppOutlined className="c-product-detail-right__call-btn-wa__img" />
+                    Whatsapp Enquiry
+                  </a>
                 </button>
                 <button className="c-product-detail-right__call-btn-phone">
-                  <PhoneFilled className="c-product-detail-right__call-btn-phone__img" />
-                  Call Enquiry
+                  <a href="tel:9999217125">
+                    <PhoneFilled className="c-product-detail-right__call-btn-phone__img" />
+                    Call Enquiry
+                  </a>
                 </button>
               </div>
 

@@ -29,6 +29,8 @@ import HomeMap from '../components/HomeMap';
 import OurDirectors from '../components/OurDirectors';
 import slide1 from '../assets/images/homeSlides/slider1.webp';
 import slide2 from '../assets/images/homeSlides/slider2.webp';
+import GetinTouch from '../components/GetinTouch';
+import modelImg from '../assets/images/home/nodel3.jpeg';
 
 class Home extends React.Component {
   constructor(props) {
@@ -310,7 +312,7 @@ class Home extends React.Component {
         {!thirdSectionHide && (
           <Fade>
             <LRSection
-              heading={'MISS VALENTINE'}
+              heading={'MissValentine'}
               subHeading={'COMFORT THAT SUITS YOU'}
               linkText={'Read more'}
               onLinkClick={() => {
@@ -319,7 +321,7 @@ class Home extends React.Component {
                 }));
               }}
               // Link="/"
-              image={'https://wallpapercave.com/wp/wp4762830.jpg'}
+              image={modelImg}
             >
               <div className="c-less-more">
                 <div className="c-less-more__less">{parser(thirdContent)}</div>
@@ -335,53 +337,65 @@ class Home extends React.Component {
           </Fade>
         )}
         {!fourthSectionHide && (
-          <section className="honest-section-wrapper">
-            <p class="heading">BEST IN PRODUCT</p>
-            <div class="honest-container">
-              <div class="img-wrapper">
-                <img
-                  src="/images/organic.svg"
-                  class="honest-svg"
-                  alt="organic"
-                />
-                <p class="img-head-text">COMFORT GROWN</p>
-                <p class="img-sub-text">
-                  The extracts used in our products are obtained from
-                  organically grown hemp devoid of any harmful chemical inputs.
-                </p>
+          <Fade>
+            <section className="honest-section-wrapper">
+              <p class="heading">BEST IN PRODUCT</p>
+              <div class="honest-container">
+                <div class="img-wrapper">
+                  <img
+                    src="/images/organic.svg"
+                    class="honest-svg"
+                    alt="organic"
+                  />
+                  <p class="img-head-text">COMFORT GROWN</p>
+                  <p class="img-sub-text">
+                    The extracts used in our products are obtained from
+                    organically grown hemp devoid of any harmful chemical
+                    inputs.
+                  </p>
+                </div>
+                <div class="img-wrapper">
+                  <img
+                    src="/images/thc.svg"
+                    class="honest-svg"
+                    alt="honest-thc"
+                  />
+                  <p class="img-head-text">SOFT FABRIC</p>
+                  <p class="img-sub-text">
+                    We take great care to ensure that the products reaching you
+                    are completely free of any THC. Only the goodness of hemp
+                    for you.
+                  </p>
+                </div>
+                <div class="img-wrapper">
+                  <img src="/images/vegan.svg" class="honest-svg" alt="vegan" />
+                  <p class="img-head-text">SIZE THAT SUITS YOU</p>
+                  <p class="img-sub-text">
+                    We have a wide range of vegan products infused with the
+                    goodness of CBD, curated keeping you in mind because we
+                    care.
+                  </p>
+                </div>
               </div>
-              <div class="img-wrapper">
-                <img
-                  src="/images/thc.svg"
-                  class="honest-svg"
-                  alt="honest-thc"
-                />
-                <p class="img-head-text">SOFT FABRIC</p>
-                <p class="img-sub-text">
-                  We take great care to ensure that the products reaching you
-                  are completely free of any THC. Only the goodness of hemp for
-                  you.
-                </p>
-              </div>
-              <div class="img-wrapper">
-                <img src="/images/vegan.svg" class="honest-svg" alt="vegan" />
-                <p class="img-head-text">SIZE THAT SUITS YOU</p>
-                <p class="img-sub-text">
-                  We have a wide range of vegan products infused with the
-                  goodness of CBD, curated keeping you in mind because we care.
-                </p>
-              </div>
-            </div>
-          </section>
+            </section>
+          </Fade>
         )}
 
-        <section className="map-section-wrapper">
-          <HomeMap />
-        </section>
-
-        <section className="directors-section-wrapper">
-          <OurDirectors />
-        </section>
+        <Fade>
+          <section className="map-section-wrapper">
+            <HomeMap />
+          </section>
+        </Fade>
+        <Fade>
+          <section className="touch-section-wrapper">
+            <GetinTouch />
+          </section>
+        </Fade>
+        <Fade>
+          <section className="directors-section-wrapper">
+            <OurDirectors />
+          </section>
+        </Fade>
         <div
           className="consult-doc-banner-wrapper"
           style={{ padding: '4rem 0' }}
