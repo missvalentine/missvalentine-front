@@ -31,10 +31,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/contact": [
+    "/products/[pid]": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/contact.js"
+      "static/chunks/pages/products/[pid].js"
     ]
   },
   "ampFirstPages": []

@@ -83,13 +83,15 @@ export default function ProductDetail(props) {
               </div>
             </div>
             <div className="c-product-detail-right col-xs-12 col-md-6">
-              <div className="c-product-detail-right__category">
+              {/* <div className="c-product-detail-right__category">
                 {data.category}
-              </div>
+              </div> */}
               <div className="c-product-detail-right__name">{data.name}</div>
-              <div className="c-product-detail-right__price">
-                &#x20B9; {data.price}
-              </div>
+              {data.price && (
+                <div className="c-product-detail-right__price">
+                  &#x20B9; {data.price}
+                </div>
+              )}
               <div className="c-product-detail-right__box">
                 <div className="c-product-detail-right__title">
                   Available Sizes
@@ -116,7 +118,8 @@ export default function ProductDetail(props) {
                 <button className="c-product-detail-right__call-btn-wa">
                   <a
                     target="_black"
-                    href={`https://wa.me/9999217125/?text=Hello!%20I%20want%20to%20enquire%20about%20${data.name}`}
+                    // href={`https://wa.me/9999217125/?text=Hello!%20I%20want%20to%20enquire%20about%20${data.name}`}
+                    href={`https://wa.me/9999217125/?text=Hello!%20I%20want%20to%20enquire%20about%20`}
                   >
                     <WhatsAppOutlined className="c-product-detail-right__call-btn-wa__img" />
                     Whatsapp Enquiry

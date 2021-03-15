@@ -1,5 +1,9 @@
 import axios from 'axios';
 import store from '../redux/store';
+
+const baseUrl = false
+  ? 'http://localhost:5000/api'
+  : 'https://missval.herokuapp.com/api';
 export const useHttp = async ({ method = 'get', url, data, options }) => {
   try {
     const auth = JSON.parse(localStorage.getItem('auth'));
@@ -17,7 +21,7 @@ export const useHttp = async ({ method = 'get', url, data, options }) => {
     const res = await axios({
       method,
       url,
-      baseURL: 'https://missval.herokuapp.com/api',
+      baseURL: baseUrl,
       data,
       headers: headers,
     })

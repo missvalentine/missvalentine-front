@@ -4,7 +4,11 @@ import Link from 'next/link';
 export default function LeftPanel() {
   return (
     <div className="c-adminpanel-left">
-      <h4 className="c-adminpanel-left__heading">Navigation</h4>
+      <Link href="/" className="">
+        <h3 className="c-adminpanel-left__weblink">Go To Website</h3>
+      </Link>
+
+      <h3 className="c-adminpanel-left__heading">Admin Navigation</h3>
       <ul className="c-adminpanel-left__list">
         <li className="c-adminpanel-left__list-item">
           <Link href="/admin/dashboard" className="">
@@ -22,7 +26,7 @@ export default function LeftPanel() {
           </Link>
         </li>
         <li className="c-adminpanel-left__list-item">
-          <Link href="/admin/subcategory" className="">
+          <Link href="/admin/subcategory/create" className="">
             Create Sub-Category
           </Link>
         </li>
@@ -36,9 +40,14 @@ export default function LeftPanel() {
             Create Product
           </Link>
         </li>
-        <li className=" ">
-          <Link href="/admin/product/manage" className="">
+        <li className="c-adminpanel-left__list-item ">
+          <Link href="/admin/product" className="">
             Manage Products
+          </Link>
+        </li>
+        <li className="c-adminpanel-left__list-item ">
+          <Link href="/admin/product" className="">
+            Contact Requests
           </Link>
         </li>
       </ul>

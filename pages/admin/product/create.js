@@ -1,44 +1,289 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import '../../../components/styles/app.scss';
+import AdminLayout from '../../../components/admin/AdminLayout';
 
-export default function create() {
-  const [name, setName] = useState('');
+import { Input, Button, Checkbox, Tag, Select, Upload } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 
-  const user = JSON.parse(localStorage.getItem('user'));
+import {
+  createProduct,
+  getAllCategories,
+} from '../../../services/apis/admin.js';
 
-  const onSubmit = (event) => {
-    event.preventDefault();
-    httpRequest({
-      method: 'post',
-      url: `/category/create/${user._id}`,
-      data: {
-        name: name,
-      },
-    }).then((res) => {
-      if (res.data) {
-        // localStorage.setItem('token', 'Bearer ' + res.data.token);
-        // localStorage.setItem('user', JSON.stringify(res.data.user));
-        // history.push()
-        // props.history.push('/admin/dashboard');
+const { Option } = Select;
+
+//constants
+const allSizes = ['32', '34', '36'];
+const allColors = ['red', 'green', 'blue', 'gold', 'lime', 'cyan'];
+
+export default function create(props) {
+  const { editData } = props;
+
+  const [inputData, setInputData] = useState({
+    name: '',
+    shortDesc: '',
+    description: '',
+    category: '',
+    subCategories: [],
+    price: '',
+    sizes: [],
+    colors: [],
+    hidden: false,
+    images: [],
+    errors: '',
+  });
+  const [categories, setCategories] = useState([]);
+  const [subCategories, setSubCategories] = useState([]);
+
+  useEffect(() => {
+    if (editData) {
+      let newInputData = { ...inputData };
+      newInputData.sizes = editData.sizes;
+      setInputData(newInputData);
+    }
+  }, []);
+
+  useEffect(() => {
+    getAllCategories().then(
+      (res) => res && res.data && setCategories(res.data.data)
+    );
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(inputData, 'input');
+    let formData = new FormData();
+    formData.append('name', inputData.name);
+    formData.append('shortDesc', inputData.shortDesc);
+    formData.append('description', inputData.description);
+    formData.append('category', inputData.category);
+    formData.append('price', inputData.price);
+    formData.append('hidden', inputData.hidden);
+    formData.append('sizes', JSON.stringify(inputData.sizes));
+    formData.append('colors', JSON.stringify(inputData.colors));
+    formData.append('subCategories', JSON.stringify(inputData.subCategories));
+
+    //for Images
+    const fileListAsArray = Array.from(inputData.images);
+    for (var i in fileListAsArray) {
+      console.log(fileListAsArray[i]);
+      formData.append('images', fileListAsArray[i]);
+    }
+    createProduct(formData).then((res) => {
+      if (res.data && res.data.success) {
+        setInputData({
+          ...inputData,
+          name: '',
+          // shortDesc: '',
+          // description: '',
+          // category: '',
+          // subCategories: [],
+          // price: '',
+          // sizes: [],
+          // colors: [],
+          // hidden: false,
+          images: [],
+          errors: '',
+        });
       }
     });
   };
+
+  const handleInputChange = (selector) => (event) => {
+    if (selector === 'hidden') {
+      setInputData({ ...inputData, hidden: event.target.checked });
+    } else if (
+      selector === 'sizes' ||
+      selector === 'colors' ||
+      selector === 'subCategories'
+    ) {
+      setInputData({ ...inputData, [selector]: event });
+    } else {
+      setInputData({ ...inputData, [selector]: event.target.value });
+    }
+  };
+
+  const handleCategoryChange = (cate) => {
+    setInputData({ ...inputData, category: cate._id, subCategories: [] });
+    setSubCategories(cate.subcategories);
+  };
+
+  const handleImagesChange = (file, fileList) => {
+    setInputData({
+      ...inputData,
+      images: fileList,
+    });
+  };
+  const handleImagesRemove = (file) => {
+    const index = inputData.images.indexOf(file);
+    const newFileList = inputData.images.slice();
+    newFileList.splice(index, 1);
+    setInputData({
+      ...inputData,
+      images: newFileList,
+    });
+  };
+
+  function tagRender(props) {
+    const { label, value, closable, onClose } = props;
+
+    return (
+      <Tag
+        color={value}
+        closable={closable}
+        onClose={onClose}
+        style={{ marginRight: 3 }}
+      >
+        {label}
+      </Tag>
+    );
+  }
+
   return (
-    <form>
-      <div className="form-group text-left">
-        <label className=" " htmlFor="category">
-          Enter Category Name
-        </label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="form-control mb-3"
-          placeholder="Ex. Summer Collection"
-        ></input>
-        <button onClick={onSubmit} type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </div>
-    </form>
+    <AdminLayout>
+      {categories && categories.length > 0 ? (
+        <div>
+          <h3> {editData ? ' Edit ' : 'Enter '} Product Details</h3>
+          <div className="c-admin-create-product__item">
+            <Select
+              style={{ width: '100%' }}
+              placeholder="Please select category"
+            >
+              {categories.map((cate, index) => (
+                <Option
+                  key={index}
+                  value={cate._id}
+                  name={cate.name}
+                  onClick={() => handleCategoryChange(cate)}
+                >
+                  {cate.name}
+                </Option>
+              ))}
+            </Select>
+          </div>
+
+          <div className="c-admin-create-product__item">
+            <Select
+              // value={inputData.subCategories || []}
+              onChange={handleInputChange('subCategories')}
+              mode="multiple"
+              placeholder="Select subcategories"
+              style={{ width: '100%' }}
+            >
+              {subCategories.map((subcategory, index) => (
+                <Option key={index} value={subcategory._id}>
+                  {subcategory.name}
+                </Option>
+              ))}
+            </Select>
+          </div>
+
+          <div className="c-admin-create-product__item">
+            <Input
+              id="name"
+              placeholder="Enter Product Name"
+              label="Product Name"
+              name="name"
+              required
+              onChange={handleInputChange('name')}
+            />
+          </div>
+
+          <div className="c-admin-create-product__item">
+            <Input.TextArea
+              id="short-desc-input"
+              label="Short Description"
+              name="shortDesc"
+              required
+              rows={2}
+              onChange={handleInputChange('shortDesc')}
+              placeholder="write a short description about the product."
+            />
+          </div>
+
+          <div className="c-admin-create-product__item">
+            <Input.TextArea
+              label="Description"
+              name="description"
+              rows={4}
+              onChange={handleInputChange('description')}
+              placeholder="write a full description about the product."
+            />
+          </div>
+
+          <div className="c-admin-create-product__item">
+            <Input
+              label="Price ( ₹ )"
+              name="price"
+              placeholder="Please enter price"
+              onChange={handleInputChange('price')}
+            />
+          </div>
+
+          <div className="c-admin-create-product__item">
+            <Select
+              style={{ width: '100%' }}
+              placeholder="Please select Sizes"
+              onChange={handleInputChange('sizes')}
+              mode="multiple"
+              name="sizes"
+            >
+              {allSizes.map((size, index) => (
+                <Option key={index} value={size}>
+                  {size}
+                </Option>
+              ))}
+            </Select>
+          </div>
+
+          {/* //colors */}
+          <div className="c-admin-create-product__item">
+            <Select
+              style={{ width: '100%' }}
+              placeholder="Please select Colors"
+              onChange={handleInputChange('colors')}
+              showArrow
+              mode="multiple"
+              name="colors"
+              tagRender={tagRender}
+            >
+              {allColors.map((color, index) => (
+                <Option key={index} value={color}>
+                  {color}
+                </Option>
+              ))}
+            </Select>
+          </div>
+          <div className="c-admin-create-product__item">
+            <Checkbox
+              checked={inputData.hidden}
+              onChange={handleInputChange('hidden')}
+            >
+              Is Hidden?
+            </Checkbox>
+          </div>
+
+          <Upload
+            name="images"
+            accept=".jpg, .jpeg, .png"
+            multiple
+            listType="picture"
+            beforeUpload={handleImagesChange}
+            onRemove={handleImagesRemove}
+            fileList={inputData.images}
+          >
+            <Button icon={<UploadOutlined />}>Upload Images</Button>
+          </Upload>
+
+          <div className="c-admin-create-product__btn">
+            <Button variant="contained" color="primary" onClick={handleSubmit}>
+              Create
+            </Button>
+          </div>
+        </div>
+      ) : (
+        <div>Create a Category first</div>
+      )}
+    </AdminLayout>
   );
 }

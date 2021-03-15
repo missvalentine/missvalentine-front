@@ -1,32 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Collapse } from 'antd';
+import { DeleteOutlined } from '@ant-design/icons';
 import AdminLayout from '../../../components/admin/AdminLayout';
 import '../../../components/styles/app.scss';
-import { useSelector, useDispatch } from 'react-redux';
-import { getCategories } from '../../../redux/actions/products';
+import {
+  getAllCategories,
+  deleteCategory,
+} from '../../../services/apis/admin.js';
 
 const { Panel } = Collapse;
 
 export default function ManageCategory() {
-  const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
-  console.log(products);
-
-  function callback(key) {
-    // console.log(key, products);
-  }
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    dispatch(getCategories());
-    console.log(products);
+    getAllCategories().then(
+      (res) => res && res.data && setCategories(res.data.data)
+    );
   }, []);
+  const handleDeleteCategory = (id) => {
+    deleteCategory(id).then();
+  };
+
   return (
     <AdminLayout>
       <h3>Manage Category</h3>
-      <Collapse defaultActiveKey={['1']} onChange={callback}>
-        {/* {products.catego} */}
-        {products.categories.map((c, i) => (
-          <Panel header={c.name} key={i}>
+      <Collapse expandIconPosition="right">
+        {categories.map((c, i) => (
+          <Panel
+            showArrow={false}
+            header={c.name}
+            key={i}
+            extra={
+              <DeleteOutlined onClick={() => handleDeleteCategory(c._id)} />
+            }
+          >
             <p>{'text'}</p>
           </Panel>
         ))}

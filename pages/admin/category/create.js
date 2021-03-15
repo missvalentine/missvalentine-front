@@ -3,19 +3,17 @@ import { Input, Button } from 'antd';
 import AdminLayout from '../../../components/admin/AdminLayout';
 import { createCategory } from '../../../services/apis/admin.js';
 import '../../../components/styles/app.scss';
-import { useSelector, useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 
 export default function create() {
   const [name, setName] = useState('');
-  const dispatch = useDispatch();
 
   const onSubmit = (event) => {
     event.preventDefault();
 
     createCategory({
       name: name,
-    });
+    }).then((res) => res.data && res.data.success && setName(''));
     // .then(
     //   (res) =>
     //     res.data.success && toast.success('Category Created Successfully!')

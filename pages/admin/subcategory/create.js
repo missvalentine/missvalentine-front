@@ -1,50 +1,74 @@
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import MenuItem from '@material-ui/core/MenuItem';
-import Button from '@material-ui/core/Button';
+import React, { useState, useEffect } from 'react';
+import { Input, Button } from 'antd';
+import AdminLayout from '../../../components/admin/AdminLayout';
+import {
+  createSubcategory,
+  getAllCategories,
+} from '../../../services/apis/admin.js';
+import '../../../components/styles/app.scss';
+import { Select } from 'antd';
 
-import { useSelector } from 'react-redux';
+const { Option } = Select;
 
 export default function create() {
-  function handleChange(value) {
-    console.log(`selected ${value}`);
-  }
-  const onSubmit = (event) => {};
+  const [name, setName] = useState('');
+  const [categories, setCategories] = useState([]);
+  const [categoryId, setCategoryId] = useState(null);
 
-  const categories = useSelector((s) => s.products.categories);
-  console.log(categories);
+  const onSubmit = (event) => {
+    event.preventDefault();
+    createSubcategory({
+      name: name,
+      category: categoryId,
+    }).then((res) => {
+      if (res.data && res.data.success) {
+        setName('');
+        setCategoryId(null);
+      }
+    });
+  };
+
+  useEffect(() => {
+    getAllCategories().then(
+      (res) => res && res.data && setCategories(res.data.data)
+    );
+  }, []);
+
+  function handleCatChange(value) {
+    setCategoryId(value);
+  }
+
   return (
-    <div>
-      {categories ? (
+    <AdminLayout>
+      <h3>Create a New Category</h3>
+      {categories.length > 1 ? (
         <div>
-          <TextField
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            // value={category.name}
-            label="Choose Category"
-            select
-            onChange={(e) => setCategoryId(e.target.value)}
-            helperText="Please select your currency"
+          <Select
+            placeholder="Select Category Category"
+            style={{ width: '100%' }}
+            onChange={handleCatChange}
+            bordered
           >
             {categories.map((cate, index) => (
-              <MenuItem key={index} value={cate._id} name={cate.name}>
+              <Option key={index} value={cate._id} name={cate.name}>
                 {cate.name}
-              </MenuItem>
+              </Option>
             ))}
-          </TextField>
-
-          <TextField
-            id="standard-password-input"
-            label="name"
-            required
-            autoComplete="current-password"
+          </Select>
+          <Input
+            addonBefore={'Enter Sub-Category Name'}
+            value={name}
             onChange={(e) => setName(e.target.value)}
+            placeholder="ex Bra, lingrie"
+            disabled={categoryId === null}
           />
-          <Button onClick={onSubmit}>Create</Button>
+          <Button onClick={onSubmit} type="submit" className="">
+            Submit
+          </Button>
         </div>
       ) : (
         <div>Create a Category first</div>
       )}
-    </div>
+    </AdminLayout>
   );
 }

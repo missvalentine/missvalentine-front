@@ -8,8 +8,18 @@
     &__heading {
       color: rosybrown;
     }
+    &__weblink {
+      background-color: white;
+      border: 1px solid rosybrown;
+      color: rosybrown;
+
+      padding: 1rem;
+      cursor: pointer;
+    }
 
     &__list {
+      // padding: 0 1rem;
+
       &-item {
         padding: 1rem 0;
       }

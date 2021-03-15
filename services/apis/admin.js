@@ -54,7 +54,7 @@ export const createSubcategory = (data) =>
 
 export const deleteCategory = (pid) =>
   useHttp({
-    method: 'delete',
+    method: 'DELETE',
     url: `/category/${pid}/${_id}`,
   });
 export const deleteProduct = (pid) =>
