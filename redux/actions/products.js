@@ -4,6 +4,7 @@ import {
   getAllProducts,
   getProductById,
   getAllCategories,
+  getCategoryById,
 } from '../../services/apis/products';
 import { getAllSubcategories } from '../../services/apis/admin';
 
@@ -29,6 +30,23 @@ export const getProduct = (_id) => (dispatch) => {
 
         dispatch({
           type: 'SET_PRODUCT',
+          payload: res.data.data,
+        });
+      }
+    })
+    .catch((err) => {
+      console.log({ err });
+    });
+};
+
+export const getCategory = (_id) => (dispatch) => {
+  getCategoryById(_id)
+    .then((res) => {
+      if (res.data && res.data.success) {
+        console.log('SET_CATEGORY', res.data.data);
+
+        dispatch({
+          type: 'SET_CATEGORY',
           payload: res.data.data,
         });
       }

@@ -1,4 +1,6 @@
 import dynamic from 'next/dynamic';
+import '../../components/styles/app.scss';
+
 const Layout = dynamic(() => import('../../components/Layouts/Layout'), {
   ssr: false,
 });
@@ -71,30 +73,58 @@ const Product = () => {
   return (
     <Layout headerTheme="black" fixed={true}>
       <ProductDetail data={products.product} />
-      <div className="c-product-single__related-section">
-        <div
-          className="row justify-content-center"
-          style={{ maxWidth: '100%' }}
-        >
-          <div className="col-md-6">
-            <Heading
-              style={{
-                textAlign: 'center',
-              }}
-              versions={['default', 'upper', 'weight-500']}
-            >
-              RECENTLY VIEWED
-            </Heading>
-          </div>
+      {products.products !== [] && (
+        <div className="c-product-single__related-section">
+          <div
+            className="row justify-content-center"
+            style={{ maxWidth: '100%' }}
+          >
+            <div className="col-md-6">
+              <Heading
+                style={{
+                  textAlign: 'center',
+                }}
+                versions={['default', 'upper', 'weight-500']}
+              >
+                YOU MAY ALSO LIKE
+              </Heading>
+            </div>
 
-          <div className="col-12">
-            <ProductSlider
-              parentClass="c-product-single"
-              products={products.product}
-            />
+            <div className="col-12">
+              <ProductSlider
+                parentClass="c-product-single"
+                products={products.products}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      )}
+      {products.recentlyViewed !== [] && (
+        <div className="c-product-single__related-section">
+          <div
+            className="row justify-content-center"
+            style={{ maxWidth: '100%' }}
+          >
+            <div className="col-md-6">
+              <Heading
+                style={{
+                  textAlign: 'center',
+                }}
+                versions={['default', 'upper', 'weight-500']}
+              >
+                RECENTLY VIEWED
+              </Heading>
+            </div>
+
+            <div className="col-12">
+              <ProductSlider
+                parentClass="c-product-single"
+                products={products.recentlyViewed}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 };

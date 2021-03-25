@@ -134,12 +134,17 @@ export default function ProductDetail(props) {
               </div>
 
               <div className="c-product-detail-right__box">
-                <div className="c-product-detail-right__title">Description</div>
+                <div className="c-product-detail-right__title">
+                  Product Features
+                </div>
                 <div>{data.shortDesc}</div>
               </div>
             </div>
             <div className="c-product-detail-right col-xs-12 mt-5">
-              {data.description}
+              <div className="c-product-detail-right__title">
+                Product Description
+              </div>
+              <div>{data.description}</div>
             </div>
           </div>
         )}

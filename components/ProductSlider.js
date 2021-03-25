@@ -10,7 +10,7 @@ import {
 import projectSettings from '../constants/projectSettings';
 import { useSelector, useDispatch } from 'react-redux';
 
-const ProductSlider = ({ parentClass, versions }) => {
+const ProductSlider = ({ parentClass, versions, products }) => {
   const componentClass = `c-product-slider`;
   const versionClass = versions
     .map((el) => `${componentClass}--${el}`)
@@ -20,7 +20,7 @@ const ProductSlider = ({ parentClass, versions }) => {
     [versionClass]: versions,
     [parent]: parentClass,
   });
-  const products = useSelector((state) => state.products);
+  // const products = useSelector((state) => state.products);
 
   let flkty = undefined;
   return (
@@ -39,7 +39,7 @@ const ProductSlider = ({ parentClass, versions }) => {
           reloadOnUpdate={true}
           className="c-category-products__slider"
         >
-          {products.recentlyViewed
+          {products
             .filter((product) => product.hidden !== true)
             .map((el, i) => {
               const title = getProductTitle(el);

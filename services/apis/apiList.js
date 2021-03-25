@@ -4,6 +4,7 @@ const apiList = {
   getAllProducts: `${baseUrl}/product/all`,
   getAllCategories: `${baseUrl}/category/all`,
   getProductById: `${baseUrl}/product/`,
+  getCategoryById: `${baseUrl}/category/`,
 
   signInApi: `${baseUrl}/auth/signin`,
 

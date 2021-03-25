@@ -91,26 +91,27 @@ const CategoryProducts = (
           All
         </span>
 
-        {products.categories
-          .filter((el) => el.products.length >= 1)
-          .map((el, i) => (
-            <span
-              onClick={() => {
-                onCategoryChange(i);
-              }}
-              className={classNames('c-category-products__list-item', {
-                'c-category-products__list-item--active':
-                  activeCategoryIndex === i,
-              })}
-              className={`c-category-products__list-item 
+        {products.categories.map((el, i) => {
+          if (el.products.length >= 1)
+            return (
+              <span
+                onClick={() => {
+                  onCategoryChange(i);
+                }}
+                className={classNames('c-category-products__list-item', {
+                  'c-category-products__list-item--active':
+                    activeCategoryIndex === i,
+                })}
+                className={`c-category-products__list-item 
             ${activeCategoryIndex === i &&
               'c-category-products__list-item--active'}
                 `}
-              key={i}
-            >
-              {el.name}
-            </span>
-          ))}
+                key={i}
+              >
+                {el.name}
+              </span>
+            );
+        })}
       </div>
       <div className="row c-category-products__product-list">
         <Flickity
@@ -130,12 +131,7 @@ const CategoryProducts = (
           reloadOnUpdate={true}
           className="c-category-products__slider "
         >
-          {console.log(
-            'poooo',
-            products.categories,
-            products.categories[1],
-            activeCategoryIndex
-          )}
+          {console.log('poooo', products.categories, activeCategoryIndex)}
           {activeCategoryIndex === -1
             ? products.products
                 .filter((product) => product.hidden === false)

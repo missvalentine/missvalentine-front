@@ -15,6 +15,7 @@ const initialState = {
   product: null,
   featured: [],
   categories: [],
+  category: null,
   subcategories: [],
   recentlyViewed: [],
 };
@@ -49,6 +50,17 @@ export default (state = initialState, action) => {
         ...state,
         product: null,
       };
+    case 'SET_CATEGORY':
+      console.log('payload', payload);
+      return {
+        ...state,
+        category: payload,
+      };
+    case 'CLEAR_CATEGORY':
+      return {
+        ...state,
+        category: null,
+      };
     case 'SET_RECENTLY_VIEWD':
       return {
         ...state,
@@ -56,7 +68,9 @@ export default (state = initialState, action) => {
       };
     case 'ADD_TO_RECENTLY_VIEWD':
       let tempRecentlyViewed = state.recentlyViewed;
-      tempRecentlyViewed.push(payload);
+      if (tempRecentlyViewed.findIndex((x) => x._id === payload._id) === -1)
+        tempRecentlyViewed.push(payload);
+
       return {
         ...state,
         recentlyViewed: tempRecentlyViewed,

@@ -1,19 +1,19 @@
-import dynamic from 'next/dynamic'
-import React, { useState } from "react";
-const Logo = dynamic(() => import("./Logo"));
-const Nav = dynamic(() => import("./nav"));
-import { useScrollPosition } from "../services/helpers/scroll";
-import { Affix } from "antd";
-import classNames from "classnames";
-import projectSettings from "../constants/projectSettings";
-import mainMenus from "../constants/mainMenus";
-import rightMenus from "../constants/rightMenus";
-const NavMobile = dynamic(() => import("./navMobile"));
-import mobileMenus from "../constants/mobileMenus";
-import mobileMenusRight from "../constants/mobileMenusRight";
+import dynamic from 'next/dynamic';
+import React, { useState } from 'react';
+const Logo = dynamic(() => import('./Logo'));
+const Nav = dynamic(() => import('./nav'));
+import { useScrollPosition } from '../services/helpers/scroll';
+import { Affix } from 'antd';
+import classNames from 'classnames';
+import projectSettings from '../constants/projectSettings';
+import rightMenus from '../constants/rightMenus';
+const NavMobile = dynamic(() => import('./navMobile'));
+import mobileMenus from '../constants/mobileMenus';
+import mobileMenusRight from '../constants/mobileMenusRight';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Header = ({ bg, theme, versions, fixed, homeLogo, logo }) => {
-  const versionClass = versions.map((el) => `c-header--${el}`).join(" ");
+  const versionClass = versions.map((el) => `c-header--${el}`).join(' ');
   const [isFixed, setIsFixed] = useState(false);
   const [show, setIsShow] = useState(true);
   const [isAtTop, setIsAtTop] = useState(true);
@@ -38,24 +38,59 @@ const Header = ({ bg, theme, versions, fixed, homeLogo, logo }) => {
     false,
     300
   );
-  const logoVersion = homeLogo ? [] : ["non-home"];
+  const logoVersion = homeLogo ? [] : ['non-home'];
+
+  const categories = useSelector((state) => state.products.categories);
+
+  const mainMenus = [
+    {
+      label: 'Explore',
+      link: '/products',
+      action: 'link',
+      subMenus:
+        categories === []
+          ? categories.map((c) => {
+              return {
+                label: c.name,
+                link: `/category/${c._id}`,
+                action: 'link',
+              };
+            })
+          : [
+              {
+                label: 'MissValentine Bra',
+                link: `/category/604ef99876aae4dc089d8330`,
+                action: 'link',
+              },
+            ],
+    },
+    {
+      label: <div>New&nbsp;Arrivals</div>,
+      link: '/products',
+      action: 'link',
+    },
+    {
+      label: 'catalogue',
+      link: '/e-catalogue',
+      action: 'link',
+    },
+  ];
 
   if (fixed) {
     return (
       <div>
         <div
-          className={classNames("c-header__wrapper", {
-            "c-header__wrapper--hidden": !show && !fixed,
+          className={classNames('c-header__wrapper', {
+            'c-header__wrapper--hidden': !show && !fixed,
           })}
         >
-          
           <header
             onScroll={(e) => {}}
-            className={classNames(" c-header", {
-              "c-header--light": true,
-              "c-header--fixed": true && !fixed,
-              "c-header--pinned": isFixed || bg,
-              ["c-header--" + theme]: theme,
+            className={classNames(' c-header', {
+              'c-header--light': true,
+              'c-header--fixed': true && !fixed,
+              'c-header--pinned': isFixed || bg,
+              ['c-header--' + theme]: theme,
               [versionClass]: versions,
             })}
           >
@@ -82,18 +117,17 @@ const Header = ({ bg, theme, versions, fixed, homeLogo, logo }) => {
       <div>
         <Affix className="c-header__affix">
           <div
-            className={classNames("c-header__wrapper", {
-              "c-header__wrapper--hidden": !show && !fixed,
+            className={classNames('c-header__wrapper', {
+              'c-header__wrapper--hidden': !show && !fixed,
             })}
           >
-           
             <header
               onScroll={(e) => {}}
-              className={classNames(" c-header", {
-                "c-header--light": true,
-                "c-header--fixed": true && !fixed,
-                "c-header--pinned": isFixed || bg,
-                ["c-header--" + theme]: theme,
+              className={classNames(' c-header', {
+                'c-header--light': true,
+                'c-header--fixed': true && !fixed,
+                'c-header--pinned': isFixed || bg,
+                ['c-header--' + theme]: theme,
                 [versionClass]: versions,
               })}
             >

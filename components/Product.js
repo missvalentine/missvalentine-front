@@ -16,7 +16,7 @@ export default function Product(props) {
   const handleOnMouseLeave = () => {
     imagesCount >= 2 && setShowImageNo((s) => s - 1);
   };
-  console.log('prd', data);
+
   return (
     <div className="c-product-card ">
       <div

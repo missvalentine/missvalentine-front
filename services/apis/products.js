@@ -2,11 +2,13 @@ import axios from 'axios';
 import apiList from './apiList';
 
 export const getProductById = (id) => axios.get(apiList.getProductById + id);
+export const getCategoryById = (id) => axios.get(apiList.getCategoryById + id);
 export const getProductByName = (name) =>
   axios.get(apiList.getProductByName + name);
 
 export const getAllProducts = () => axios.get(apiList.getAllProducts);
 export const getAllCategories = () => axios.get(apiList.getAllCategories);
+
 export const getAllCombos = () => axios.get(apiList.getAllCombos);
 
 export const addToWishList = (userid, productid, productmeta, productSlug) =>

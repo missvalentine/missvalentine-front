@@ -189,29 +189,6 @@ class Home extends React.Component {
           link: '/products',
         },
       ],
-      // categorySlider: {
-      //   title: categoryTitle,
-      //   btnText: categoryBtnText,
-      //   hide: categorySliderHide,
-      // },
-      // secondSection: {
-      //   title: secondTitle,
-      //   bigTitle: secondBigTitle,
-      //   hide: secondSectionHide,
-      // },
-      // thirdSection: {
-      //   bigTitle: thirdBirTitle,
-      //   title: thirdTitle,
-      //   content: thirdContent,
-      //   btnText: thirdBtnText,
-      //   hide: thirdSectionHide,
-      //   images: thirdSectionImage,
-      // },
-      // fourthSection: {
-      //   content: fourthContent,
-      //   title: fourthTitle,
-      //   hide: fourthSectionHide,
-      // },
     };
     const {
       logo: { images: logoImages },

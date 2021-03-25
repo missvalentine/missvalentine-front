@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/admin/product/create": "pages/admin/product/create.js"
+  "/admin/product": "pages/admin/product.js",
+  "/category/[cid]": "pages/category/[cid].js"
 }
