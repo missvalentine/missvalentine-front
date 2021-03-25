@@ -1,16 +1,13 @@
 import dynamic from 'next/dynamic';
 import { connect } from 'react-redux';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import Fade from 'react-reveal/Fade';
+import classNames from 'classnames';
 
 const Layout = dynamic(() => import('../../components/Layouts/Layout'), {
   ssr: false,
 });
-// const BundleProducts = dynamic(
-//   () => import("../../components/BundleProducts"),
-//   {
-//     ssr: false,
-//   }
-// );
+
 const Heading = dynamic(() => import('../../components/Heading'), {
   ssr: false,
 });
@@ -43,6 +40,7 @@ const Category = (props) => {
   };
   const dispatch = useDispatch();
   const Category = useSelector((state) => state.products.category);
+  const [activeCategoryIndex, setActiveCategoryIndex] = useState(-1);
 
   useEffect(() => {
     console.log('calling cat', Category);
@@ -64,17 +62,57 @@ const Category = (props) => {
             <div className="col-xs-12">
               <Heading versions={['shop-all']}>
                 {/* {parse('DISCOVER OUR BRA LINE')} */}
-                {/* {Category.name} */}
+                {Category && Category.name}
               </Heading>
             </div>
           </div>
         </div>
+        {/* 
+        <div className="c-category-products__list">
+          <span
+            onClick={() => {
+              onCategoryChange(-1);
+            }}
+            className={classNames('c-category-products__list-item', {
+              'c-category-products__list-item--active':
+                activeCategoryIndex === -1,
+            })}
+            key={0}
+          >
+            All
+          </span>
+
+          {Category &&
+            Category.subcategories.map((el, i) => {
+              return (
+                <span
+                  onClick={() => {
+                    onCategoryChange(i);
+                  }}
+                  className={classNames('c-category-products__list-item', {
+                    'c-category-products__list-item--active':
+                      activeCategoryIndex === i,
+                  })}
+                  className={`c-category-products__list-item 
+            ${activeCategoryIndex === i &&
+              'c-category-products__list-item--active'}
+                `}
+                  key={i}
+                >
+                  {el.name}
+                </span>
+              );
+            })}
+        </div> */}
+
         <div className="c-shop-page__products-wrapper">
           <div className="c-shop-page__row row">
             {Category !== null &&
               Category.products.map((el, i) => (
                 <div key={el._id} className="col-lg-4 col-md-6">
-                  <Product data={el} />
+                  <Fade>
+                    <Product data={el} />
+                  </Fade>
                 </div>
               ))}
           </div>

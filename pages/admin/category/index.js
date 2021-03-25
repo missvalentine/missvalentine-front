@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Collapse } from 'antd';
-import { DeleteOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import AdminLayout from '../../../components/admin/AdminLayout';
 import '../../../components/styles/app.scss';
 import {
@@ -32,10 +32,18 @@ export default function ManageCategory() {
             header={c.name}
             key={i}
             extra={
-              <DeleteOutlined onClick={() => handleDeleteCategory(c._id)} />
+              <>
+                <EditOutlined />
+                <DeleteOutlined onClick={() => handleDeleteCategory(c._id)} />
+              </>
             }
           >
-            <p>{'text'}</p>
+            <div>#{c._id}</div>
+            <div>
+              {c.subcategories.map((s, si) => (
+                <span>{s.name}</span>
+              ))}
+            </div>
           </Panel>
         ))}
       </Collapse>

@@ -46,8 +46,8 @@ export default function LeftPanel() {
           </Link>
         </li>
         <li className="c-adminpanel-left__list-item ">
-          <Link href="/admin/product" className="">
-            Contact Requests
+          <Link href="/admin/contact" className="">
+            Contact/Enquiry Request
           </Link>
         </li>
       </ul>

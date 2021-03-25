@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import parse from 'html-react-parser';
+import Fade from 'react-reveal/Fade';
 
 import banner1 from '../../assets/images/homeSlides/slider1.webp';
 const Banner = dynamic(() => import('../../components/Banner'), {
@@ -51,9 +52,15 @@ const Products = () => {
         <div className="c-shop-page__products-wrapper">
           <div className="c-shop-page__row row">
             {products.products.map((el, i) => (
-              <div key={el._id} className="col-lg-4 col-md-6">
-                <Product data={el} />
-              </div>
+              <Fade>
+                <div
+                  key={el._id}
+                  className="col-lg-4 col-md-6"
+                  style={{ padding: '0 40px' }}
+                >
+                  <Product data={el} />
+                </div>
+              </Fade>
             ))}
           </div>
         </div>

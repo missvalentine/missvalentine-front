@@ -1,12 +1,11 @@
 import dynamic from 'next/dynamic';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 const Logo = dynamic(() => import('./Logo'));
 const Nav = dynamic(() => import('./nav'));
 import { useScrollPosition } from '../services/helpers/scroll';
 import { Affix } from 'antd';
 import classNames from 'classnames';
 import projectSettings from '../constants/projectSettings';
-import rightMenus from '../constants/rightMenus';
 const NavMobile = dynamic(() => import('./navMobile'));
 import mobileMenus from '../constants/mobileMenus';
 import mobileMenusRight from '../constants/mobileMenusRight';
@@ -39,39 +38,47 @@ const Header = ({ bg, theme, versions, fixed, homeLogo, logo }) => {
     300
   );
   const logoVersion = homeLogo ? [] : ['non-home'];
-
-  const categories = useSelector((state) => state.products.categories);
+  const dispatch = useDispatch();
 
   const mainMenus = [
     {
       label: 'Explore',
       link: '/products',
       action: 'link',
-      subMenus:
-        categories === []
-          ? categories.map((c) => {
-              return {
-                label: c.name,
-                link: `/category/${c._id}`,
-                action: 'link',
-              };
-            })
-          : [
-              {
-                label: 'MissValentine Bra',
-                link: `/category/604ef99876aae4dc089d8330`,
-                action: 'link',
-              },
-            ],
+      subMenus: [
+        {
+          label: 'MissValentine Bra',
+          link: `/category/604ef99876aae4dc089d8330`,
+          action: 'link',
+        },
+        {
+          label: 'MissValentine Panty',
+          link: `/category/604ef9a076aae4dc089d8331`,
+          action: 'link',
+        },
+        {
+          label: 'MissValentine Bra Set',
+          link: `/category/605c49b89d78638e33272668`,
+          action: 'link',
+        },
+      ],
     },
     {
       label: <div>New&nbsp;Arrivals</div>,
       link: '/products',
       action: 'link',
     },
+  ];
+
+  const rightMenus = [
     {
-      label: 'catalogue',
+      label: 'CATALOGUE',
       link: '/e-catalogue',
+      action: 'link',
+    },
+    {
+      label: <div>CONTACT&nbsp;US</div>,
+      link: '/contact',
       action: 'link',
     },
   ];

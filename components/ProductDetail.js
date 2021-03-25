@@ -16,7 +16,6 @@ import {
 } from '@ant-design/icons';
 export default function ProductDetail(props) {
   const { data } = props;
-  console.log('data', data);
 
   const [openViewer, setOpenViewer] = useState(false);
   const [currImg, setCurrImg] = useState(0);
@@ -83,43 +82,51 @@ export default function ProductDetail(props) {
               </div>
             </div>
             <div className="c-product-detail-right col-xs-12 col-md-6">
-              {/* <div className="c-product-detail-right__category">
-                {data.category}
-              </div> */}
+              <div className="c-product-detail-right__category">
+                {data.category.name}
+              </div>
               <div className="c-product-detail-right__name">{data.name}</div>
               {data.price && (
                 <div className="c-product-detail-right__price">
                   &#x20B9; {data.price}
                 </div>
               )}
-              <div className="c-product-detail-right__box">
-                <div className="c-product-detail-right__title">
-                  Available Sizes
+              {data.sizes.length !== 0 && (
+                <div className="c-product-detail-right__box">
+                  <div className="c-product-detail-right__title">
+                    Available Sizes
+                  </div>
+                  <div className="c-product-detail-right__sizes">
+                    {data.sizes.map((s, i) => (
+                      <div key={i} className="c-product-detail-right__size">
+                        {s}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="c-product-detail-right__sizes">
-                  {data.sizes.map((s, i) => (
-                    <div key={i} className="c-product-detail-right__size">
-                      {s}
-                    </div>
-                  ))}
+              )}
+              {data.colors.length !== 0 && (
+                <div className="c-product-detail-right__box">
+                  <div className="c-product-detail-right__title">Colors</div>
+                  <div className="c-product-detail-right__colors">
+                    {data.colors.map((c, i) => (
+                      <div className="c-product-detail-right__color" key={i}>
+                        <div style={{ backgroundColor: getColorCode(c) }}></div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="c-product-detail-right__box">
-                <div className="c-product-detail-right__title">Colors</div>
-                <div className="c-product-detail-right__colors">
-                  {data.colors.map((c, i) => (
-                    <div className="c-product-detail-right__color" key={i}>
-                      <div style={{ backgroundColor: getColorCode(c) }}></div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              )}
               <div className="c-product-detail-right__box">
                 <button className="c-product-detail-right__call-btn-wa">
                   <a
                     target="_black"
                     // href={`https://wa.me/9999217125/?text=Hello!%20I%20want%20to%20enquire%20about%20${data.name}`}
-                    href={`https://wa.me/9999217125/?text=Hello!%20I%20want%20to%20enquire%20about%20`}
+                    href={`https://wa.me/+919999217125/?text=Hello!%20I%20want%20to%20enquire%20about%20${
+                      data.name && data.name !== ''
+                        ? data.name
+                        : data.category.name
+                    }`}
                   >
                     <WhatsAppOutlined className="c-product-detail-right__call-btn-wa__img" />
                     Whatsapp Enquiry
@@ -132,6 +139,21 @@ export default function ProductDetail(props) {
                   </a>
                 </button>
               </div>
+
+              {data.subCategories.length !== 0 && (
+                <div className="c-product-detail-right__box">
+                  <div className="c-product-detail-right__title">
+                    Category (s)
+                  </div>
+                  <div className="c-product-detail-right__sizes">
+                    {data.subCategories.map((s, i) => (
+                      <div key={i} className="c-product-detail-right__size">
+                        {s.name}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div className="c-product-detail-right__box">
                 <div className="c-product-detail-right__title">

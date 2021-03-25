@@ -266,7 +266,6 @@ class Home extends React.Component {
             })}
           </Flickity>
         </div>
-        {console.log('zest', categoryList, this.state.categories, products)}
 
         {!categorySliderHide && (
           <Fade>
@@ -279,12 +278,14 @@ class Home extends React.Component {
         )}
 
         {!secondSectionHide && (
-          <Link href="/blog">
-            <div className="blog-link-banner" style={{ cursor: 'pointer' }}>
-              <p className="top-text">{'EXPIRENCE THE WIDE RANGE '}</p>
-              <p className="bottom-text">{'explore now'}</p>
-            </div>
-          </Link>
+          <Fade>
+            <Link href="/blog">
+              <div className="blog-link-banner" style={{ cursor: 'pointer' }}>
+                <p className="top-text">{'EXPIRENCE THE WIDE RANGE '}</p>
+                <p className="bottom-text">{'explore now'}</p>
+              </div>
+            </Link>
+          </Fade>
         )}
         {!thirdSectionHide && (
           <Fade>
@@ -373,20 +374,22 @@ class Home extends React.Component {
             <OurDirectors />
           </section>
         </Fade>
-        <div
-          className="consult-doc-banner-wrapper"
-          style={{ padding: '4rem 0' }}
-        >
-          <button className="top-btn" onClick={() => this.toTop()}>
-            BACK TO TOP{' '}
-            <LazyLoadImage
-              className="top"
-              style={{ height: '20px', marginBottom: '5px' }}
-              src="/images/arrow-up.png"
-              alt="to-top"
-            />
-          </button>
-        </div>
+        <Fade>
+          <div
+            className="consult-doc-banner-wrapper"
+            style={{ padding: '4rem 0' }}
+          >
+            <button className="top-btn" onClick={() => this.toTop()}>
+              BACK TO TOP{' '}
+              <LazyLoadImage
+                className="top"
+                style={{ height: '20px', marginBottom: '5px' }}
+                src="/images/arrow-up.png"
+                alt="to-top"
+              />
+            </button>
+          </div>
+        </Fade>
       </Layout>
     );
   }

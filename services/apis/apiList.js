@@ -7,6 +7,7 @@ const apiList = {
   getCategoryById: `${baseUrl}/category/`,
 
   signInApi: `${baseUrl}/auth/signin`,
+  contact: `${baseUrl}/contact/`,
 
   getAllCombos: `${baseUrl}/products/api/combos/all/`,
   getProductByName: `${baseUrl}/products/api/getbyname/`,
@@ -24,8 +25,6 @@ const apiList = {
   getUserDetails: `${baseUrl}/users/api/profile/`,
   updateUserPassword: `${baseUrl}/users/api/profile/password/`,
   forgotPassword: `${baseUrl}/users/api/forgetpassword/`,
-
-  contact: `${baseUrl}/contact-us/`,
 
   getShippingRates: `${baseUrl}/ship/shipment/`,
   confirmShipment: `${baseUrl}/ship/confirm/`,

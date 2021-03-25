@@ -113,6 +113,7 @@ const CategoryProducts = (
             );
         })}
       </div>
+
       <div className="row c-category-products__product-list">
         <Flickity
           options={{

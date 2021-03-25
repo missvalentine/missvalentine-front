@@ -28,9 +28,8 @@
     }
     > div {
       @include bp-md {
-        margin-top: 2rem;
+        padding: 0 40px;
       }
-      margin-top: 2rem;
     }
   }
   &__filter-item {

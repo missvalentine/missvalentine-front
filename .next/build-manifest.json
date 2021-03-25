@@ -24,19 +24,19 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
+    "/admin/category": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/css/styles.chunk.css",
+      "static/chunks/styles.js",
+      "static/chunks/pages/admin/category.js"
+    ],
     "/admin/product": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/css/styles.chunk.css",
       "static/chunks/styles.js",
       "static/chunks/pages/admin/product.js"
-    ],
-    "/category/[cid]": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/css/styles.chunk.css",
-      "static/chunks/styles.js",
-      "static/chunks/pages/category/[cid].js"
     ]
   },
   "ampFirstPages": []

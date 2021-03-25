@@ -55,11 +55,18 @@
     padding-left: 6%;
 
     &__category {
+      text-transform: uppercase;
+      font-family: $book;
+
+      font-weight: 500;
+      color: #bbb;
+      font-size: 20px;
     }
 
     &__name {
-      font-size: 30px;
+      font-size: 35px;
       font-family: $book;
+      padding: 10px 0;
     }
     &__price {
       font-size: 40px;

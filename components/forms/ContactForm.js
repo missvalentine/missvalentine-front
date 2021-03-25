@@ -1,21 +1,22 @@
-import dynamic from "next/dynamic";
-import { Form, Radio as AntRadio } from "antd";
-const Input = dynamic(() => import("../form-components/Input"));
-const Button = dynamic(() => import("../form-components/Button"));
-import { contactUs } from "../../services/api";
-import regex from "../../services/helpers/regex";
-import reactComponentDebounce from "react-component-debounce";
-import { Modal } from "../modal";
+import dynamic from 'next/dynamic';
+import { Form, Radio as AntRadio } from 'antd';
+const Input = dynamic(() => import('../form-components/Input'));
+const Button = dynamic(() => import('../form-components/Button'));
+import { contactUs } from '../../services/api';
+import regex from '../../services/helpers/regex';
+import reactComponentDebounce from 'react-component-debounce';
+import { Modal } from '../modal';
 import {
   msgSent,
   msgFailed,
   msgSentTitle,
   msgFailedTitle,
-} from "../../constants/constantMessage";
-import { projectName } from "../../constants/projectSettings";
+} from '../../constants/constantMessage';
+import { projectName } from '../../constants/projectSettings';
+import { withRouter } from 'next/dist/client/router';
 
 const DebounceInput = reactComponentDebounce({
-  valuePropName: "value",
+  valuePropName: 'value',
   triggerMs: 1000,
 })(Input);
 
@@ -25,10 +26,11 @@ class Contact extends React.Component {
     this.state = {
       isLoading: false,
       isModal: false,
-      modalText: "",
-      modalTitle: "",
+      modalText: '',
+      modalTitle: '',
     };
   }
+
   onSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -39,22 +41,12 @@ class Contact extends React.Component {
             isLoading: true,
           },
           () => {
-            contactUs(values)
-              .then((res) => {
-                this.setState({
-                  isLoading: false,
-                  isModal: true,
-                  modalText: res.data.status ? msgSent : msgFailed,
-                  modalTitle: res.data.status ? msgSentTitle : msgFailedTitle,
-                });
-                if (res.data.status) {
-                } else {
-                }
-                console.log({
-                  res,
-                });
-              })
-              .catch(console.log);
+            contactUs({ ...values, callScreen: 'Contact Page' }).then((res) => {
+              if (res.data.success) {
+                this.props.router.push('/');
+              }
+            });
+            this.props.router.push('/');
           }
         );
       }
@@ -73,18 +65,10 @@ class Contact extends React.Component {
           <div className="c-contact-form__row">
             <div className="c-contact-form__row-left">
               <Item>
-                {getFieldDecorator("subject", {
-                  initialValue: "Order Enquiry",
+                {getFieldDecorator('subject', {
+                  initialValue: 'Product Enquiry',
                 })(
                   <AntRadio.Group>
-                    <AntRadio
-                      className="c-contact-form__radio"
-                      value="Order Enquiry"
-                    >
-                      <b>Order Enquiry</b>
-                      <br />
-                      Questions about an order you have placed online.
-                    </AntRadio>
                     <AntRadio
                       className="c-contact-form__radio"
                       value="Product Enquiry"
@@ -92,7 +76,7 @@ class Contact extends React.Component {
                       <b>Product Enquiry</b>
                       <br />
                       Questions you may have about specific products and
-                      ingredients.
+                      quality.
                     </AntRadio>
                     <AntRadio
                       className="c-contact-form__radio"
@@ -100,16 +84,7 @@ class Contact extends React.Component {
                     >
                       <b>Wholesale Enquiry</b>
                       <br />
-                      Questions about distributing {projectName} CBD.
-                    </AntRadio>
-                    <AntRadio
-                      className="c-contact-form__radio"
-                      value="Press and Marketing Enquiry"
-                    >
-                      <b>Press and Marketing Enquiry</b>
-                      <br />
-                      Questions you may have about press and marketing
-                      opportunities
+                      Questions about distributing {projectName}.
                     </AntRadio>
                     <AntRadio
                       className="c-contact-form__radio c-contact-form__radio--last"
@@ -126,18 +101,18 @@ class Contact extends React.Component {
             <div className="c-contact-form__row-right">
               <div className="c-contact-form__main-form">
                 <Item>
-                  {getFieldDecorator("name", {
+                  {getFieldDecorator('name', {
                     rules: [
-                      { required: true, message: "Please input your name!" },
+                      { required: true, message: 'Please input your name!' },
                       {
                         pattern: regex.name,
-                        message: "Please enter a valid name!",
+                        message: 'Please enter a valid name!',
                       },
                       { max: 20 },
                     ],
                   })(
                     <DebounceInput
-                      versions={["light"]}
+                      versions={['light']}
                       // pattern={[
                       //     '^.{8,}$', // min 8 chars
                       //     '(?=.*\\d)', // number required
@@ -149,30 +124,30 @@ class Contact extends React.Component {
                   )}
                 </Item>
                 <Item>
-                  {getFieldDecorator("email", {
+                  {getFieldDecorator('email', {
                     rules: [
-                      { required: true, message: "Please input your e-mail!" },
+                      { required: true, message: 'Please input your e-mail!' },
                       {
                         max: 40,
                         message: "You can't use more than 40 characters.",
                       },
                       {
                         pattern: regex.email,
-                        message: "Please enter a valid E-mail!",
+                        message: 'Please enter a valid E-mail!',
                       },
                     ],
                   })(
                     <DebounceInput
-                      versions={["light"]}
+                      versions={['light']}
                       parentClass="c-contact-form"
                       label="E-mail"
                     />
                   )}
                 </Item>
                 <Item>
-                  {getFieldDecorator("text", {
+                  {getFieldDecorator('text', {
                     rules: [
-                      { required: true, message: "Please input your message!" },
+                      { required: true, message: 'Please input your message!' },
                       {
                         max: 250,
                         message: "You can't use more than 250 characters.",
@@ -180,7 +155,7 @@ class Contact extends React.Component {
                     ],
                   })(
                     <Input
-                      versions={["light"]}
+                      versions={['light']}
                       parentClass="c-contact-form"
                       label="Message"
                     />
@@ -200,25 +175,56 @@ class Contact extends React.Component {
               <div className="c-contact-form__info-block">
                 <div className="c-contact-form__info-block__row">
                   <div className="c-contact-form__info-block__row-left">
-                    <p className="c-contact-form__text" style={{fontWeight: '600', fontFamily: "'Montserrat', sans-serif", fontSize: '14px'}}>Our Phone Number</p>
-                  </div>
-                  <div className="c-contact-form__info-block__row-right">
-                    <a href="tel:+16463673725" className="c-contact-form__link" style={{fontFamily: "'Montserrat', sans-serif", fontSize: '14px'}}>
-                      +1 (646) 367-3725
-                    </a>
-                  </div>
-                </div>
-                <div className="c-contact-form__info-block__row" style={{marginTop: '-8px', fontSize: '14px'}}>
-                  <div className="c-contact-form__info-block__row-left">
-                    <p className="c-contact-form__text" style={{fontWeight: '600', fontFamily: "'Montserrat', sans-serif", fontSize: '14px'}}>Our E-mail</p>
+                    <p
+                      className="c-contact-form__text"
+                      style={{
+                        fontWeight: '600',
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontSize: '14px',
+                      }}
+                    >
+                      Our Phone Number
+                    </p>
                   </div>
                   <div className="c-contact-form__info-block__row-right">
                     <a
-                      href="mailto:support@cbdbene.com"
+                      href="tel:+919999217125"
                       className="c-contact-form__link"
-                      style={{fontFamily: "'Montserrat', sans-serif", fontSize: '14px'}}
+                      style={{
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontSize: '14px',
+                      }}
                     >
-                      support@cbdbene.com
+                      +91 9999217125
+                    </a>
+                  </div>
+                </div>
+                <div
+                  className="c-contact-form__info-block__row"
+                  style={{ fontSize: '14px' }}
+                >
+                  <div className="c-contact-form__info-block__row-left">
+                    <p
+                      className="c-contact-form__text"
+                      style={{
+                        fontWeight: '600',
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontSize: '14px',
+                      }}
+                    >
+                      Our E-mail
+                    </p>
+                  </div>
+                  <div className="c-contact-form__info-block__row-right">
+                    <a
+                      href="mailto:info@missvalentineinnerwear.com"
+                      className="c-contact-form__link"
+                      style={{
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontSize: '14px',
+                      }}
+                    >
+                      info@missvalentineinnerwear.com
                     </a>
                   </div>
                 </div>
@@ -226,16 +232,10 @@ class Contact extends React.Component {
             </div>
           </div>
         </Form>
-
-        <Modal isOpen={isModal} heading={modalTitle} toggle={this.toggle}>
-          <div className="col-12 text-center">
-            <p className="h4 p-5">{modalText}</p>
-          </div>
-        </Modal>
       </div>
     );
   }
 }
-const ContactFrom = Form.create({ name: "contact" })(Contact);
+const ContactFrom = Form.create({ name: 'contact' })(Contact);
 
-export default ContactFrom;
+export default withRouter(ContactFrom);

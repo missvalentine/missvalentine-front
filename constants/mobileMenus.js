@@ -3,14 +3,6 @@ import { FiShoppingCart } from 'react-icons/fi';
 import ReactSVG from 'react-svg';
 const mobileMenus = [
   {
-    icon: <ReactSVG src="" />,
-    action: 'input',
-    input: {
-      type: 'text',
-      action: 'seach',
-    },
-  },
-  {
     label: 'Explore',
     link: '/products',
     action: 'link',
@@ -18,15 +10,18 @@ const mobileMenus = [
     subMenus: [
       {
         label: 'MissValentine Bra',
-        link: '/category/?cid=topicals',
+        link: `/category/604ef99876aae4dc089d8330`,
         action: 'link',
-        as: '/category/topicals',
       },
       {
         label: 'MissValentine Panty',
-        link: '/category/?cid=pets',
+        link: `/category/604ef9a076aae4dc089d8331`,
         action: 'link',
-        as: '/category/pets',
+      },
+      {
+        label: 'MissValentine Bra Set',
+        link: `/category/605c49b89d78638e33272668`,
+        action: 'link',
       },
     ],
   },

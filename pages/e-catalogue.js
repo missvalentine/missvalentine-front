@@ -12,16 +12,15 @@ import { Select } from 'antd';
 
 const { Option } = Select;
 
-export default function ECatalogue({ category }) {
+export default function ECatalogue() {
   function handleChange(value) {
     console.log(`selected ${value}`);
   }
   return (
     <Layout headerVersions={['bg-dark']} headerTheme="black">
       <div>
-        <Heading versions={['shop-all']}>
-          {parse('DISCOVER THE WHOLE RANGE')}
-        </Heading>
+        <Heading versions={['shop-all']}>{'DISCOVER THE WHOLE RANGE'}</Heading>
+        <div className=""></div>
         <Select
           defaultValue="lucy"
           style={{ width: 120 }}
