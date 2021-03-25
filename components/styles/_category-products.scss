@@ -1,6 +1,5 @@
 .c-category-products {
-  padding: 40px;
-  padding-bottom: 0;
+  padding: 0px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,7 +151,7 @@
     padding: 0;
     @include bp-md {
       //margin-top: -20rem;
-      padding: 90px 60px 50px;
+      padding: 50px 60px 0px;
       margin: 0 95px;
     }
     @include bpm-md {

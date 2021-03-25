@@ -91,69 +91,6 @@ const Layout = ({
         />
         {children}
 
-        {/* <FullModal
-          isOpen={isEntryMsg}
-          toggle={() => setEntryMsg(false)}
-          //   style={{ width: "max-content" }}
-        >
-          <div className="ss-row ss">
-            <div className="left">
-              <LazyLoadImage
-                src="/images/caution-ss.png"
-                style={{ width: "100%", height: "100%" }}
-              />
-            
-            </div>
-            <div className="right">
-              <div className="modal__logo-wrapper">
-                <div
-                  className="modal__heading"
-                  style={{ display: "flex", justifyContent: "center" }}
-                >
-                  <a className="c-logo  modal-footer__logo" href="/">
-                    <LazyLoadImage
-                      src="/images/logo-new.png"
-                      className="modal__logo-img ss__logo"
-                      alt={projectName}
-                    />
-                  </a>
-                </div>
-             
-              </div>
-              <div className="c-susbmit-r__wrapper justify-content-center">
-                <h1 className="ss__heading">
-                  Please confirm that you are
-                  <br />
-                  21 years of age or older
-                </h1>
-                <div className="row">
-                  <Button
-                    theme="dark"
-                    type="link"
-                    // directClass="mt-4"
-                    onClick={() => {
-                      setEntryMsg(false);
-                      setEntryMsg1(true);
-                    }}
-                  >
-                    Yes
-                  </Button>
-
-                  <Button
-                    theme="dark"
-                    type="link"
-                    // directClass="mt-4"
-                    link="https://google.com"
-                    target={true}
-                  >
-                    No
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </FullModal>*/}
-
         <FullModal
           isOpen={isEntryMsg}
           toggle={() => setEntryMsg(false)}

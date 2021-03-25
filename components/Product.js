@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getColorCode } from '../utilis/customFunctions';
 import { useRouter } from 'next/router';
+import '../components/styles/app.scss';
 
 export default function Product(props) {
   const { data } = props;
@@ -15,7 +16,7 @@ export default function Product(props) {
   const handleOnMouseLeave = () => {
     imagesCount >= 2 && setShowImageNo((s) => s - 1);
   };
-
+  console.log('prd', data);
   return (
     <div className="c-product-card ">
       <div
@@ -29,8 +30,9 @@ export default function Product(props) {
       >
         {images && images[showImageNo] && (
           <img
-            src={`data:image/png;base64,${images[showImageNo].data}`}
-            alt={'asd'}
+            // src={`data:image/png;base64,${images[showImageNo].data}`}
+            src={images[showImageNo].data}
+            alt={'product image'}
             className="c-product-card__image"
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
@@ -53,7 +55,9 @@ export default function Product(props) {
           {name}
         </div>
         <div className="c-product-card__details-desc">{shortDesc}</div>
-        <div className="c-product-card__details-price">Rs. {price}</div>
+        {price && price !== '' && (
+          <div className="c-product-card__details-price">Rs. {price}</div>
+        )}
         <div className="c-product-card__details-colors">
           {/* 
         <Tooltip

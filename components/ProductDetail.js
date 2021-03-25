@@ -25,7 +25,7 @@ export default function ProductDetail(props) {
   const imgSrc =
     data &&
     data.images.map((i) => {
-      return { src: `data:image/png;base64,${i.data}` };
+      return { src: i.data };
     });
   const gotoPrevImg = () => setCurrImg((s) => s - 1);
   const gotoNextImg = () => setCurrImg((s) => s + 1);
@@ -137,6 +137,9 @@ export default function ProductDetail(props) {
                 <div className="c-product-detail-right__title">Description</div>
                 <div>{data.shortDesc}</div>
               </div>
+            </div>
+            <div className="c-product-detail-right col-xs-12 mt-5">
+              {data.description}
             </div>
           </div>
         )}

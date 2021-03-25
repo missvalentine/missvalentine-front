@@ -15,7 +15,7 @@
     }
   }
   &__products-wrapper {
-    padding: 0 40px 40px 40px;
+    padding: 60px 40px 0px;
     background-color: $light-color;
     @include bpm-xs {
       padding: 0 20px 40px 20px;
@@ -28,9 +28,9 @@
     }
     > div {
       @include bp-md {
-        margin-top: 9rem;
+        margin-top: 2rem;
       }
-      margin-top: 9rem;
+      margin-top: 2rem;
     }
   }
   &__filter-item {

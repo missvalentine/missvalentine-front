@@ -27,13 +27,13 @@ export default function ManageCategory(props) {
         {products.map((c, i) => (
           <Panel
             showArrow={false}
-            header={c.name}
+            header={`#${c._id} ${c.name}`}
             key={i}
             extra={
               <DeleteOutlined onClick={() => handleDeleteCategory(c._id)} />
             }
           >
-            <p>{'text'}</p>
+            <p>{c.shortDesc}</p>
           </Panel>
         ))}
       </Collapse>
