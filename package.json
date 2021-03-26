@@ -2,6 +2,10 @@
   "name": "cbdbene_v2",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.15.0",
+    "npm": "7.0.15"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
