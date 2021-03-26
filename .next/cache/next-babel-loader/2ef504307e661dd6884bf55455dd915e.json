@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { SET_APUSER, UNSET_APUSER } from \"./type\";\nexport const setAPUser = ambassadoruser => {\n  return {\n    type: SET_APUSER,\n    payload: ambassadoruser\n  };\n};\nexport const unsetAPUser = () => ({\n  type: UNSET_APUSER,\n  payload: {}\n});","map":null,"metadata":{},"sourceType":"module"}

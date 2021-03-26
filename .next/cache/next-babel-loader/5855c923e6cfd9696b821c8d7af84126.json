@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { SET_WISHLIST_LOGIN, UNSET_WISHLIST_LOGIN } from \"./type\";\nexport const setWishListLogin = wishListLogin => ({\n  type: SET_WISHLIST_LOGIN,\n  payload: wishListLogin\n});\nexport const unsetWishListLogin = () => ({\n  type: UNSET_WISHLIST_LOGIN,\n  payload: {}\n});","map":null,"metadata":{},"sourceType":"module"}

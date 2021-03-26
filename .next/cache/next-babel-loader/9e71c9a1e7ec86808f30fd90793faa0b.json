@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { CLEAR_ERRORS, SET_ERRORS } from \"./type\";\nexport const setErrors = payload => ({\n  type: SET_ERRORS,\n  payload\n});\nexport const clearErrors = payload => ({\n  type: CLEAR_ERRORS,\n  payload\n});","map":null,"metadata":{},"sourceType":"module"}

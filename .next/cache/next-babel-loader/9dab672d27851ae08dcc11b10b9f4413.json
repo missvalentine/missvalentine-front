@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { SET_ENTRY_MSG } from \"./type\";\nexport const setEntryMsg = payload => ({\n  type: SET_ENTRY_MSG,\n  payload\n});","map":null,"metadata":{},"sourceType":"module"}

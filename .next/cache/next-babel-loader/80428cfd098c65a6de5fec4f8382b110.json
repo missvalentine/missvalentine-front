@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { SET_ENTRY_MSG } from \"./type\";\nexport var setEntryMsg = function setEntryMsg(payload) {\n  return {\n    type: SET_ENTRY_MSG,\n    payload: payload\n  };\n};","map":null,"metadata":{},"sourceType":"module"}

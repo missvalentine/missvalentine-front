@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { SET_REFERRER } from \"./type\";\nexport const setReferrer = payload => ({\n  type: SET_REFERRER,\n  payload\n});","map":null,"metadata":{},"sourceType":"module"}

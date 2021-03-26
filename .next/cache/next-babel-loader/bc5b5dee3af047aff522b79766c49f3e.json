@@ -1,0 +1,1 @@
+{"ast":null,"code":"import axios from 'axios';\nimport apiList from './apiList';\nexport const getDoctors = () => axios.get(apiList.getDoctors);","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"var learnQuestions = [{\n  'title': \"Old Man's War\",\n  'author': 'John Scalzi' // 'tags': ['fiction']\n\n}, {\n  'title': 'The Lock Artist',\n  'author': 'Steve' // 'tags': ['thriller']\n\n}];\nexport default learnQuestions;","map":null,"metadata":{},"sourceType":"module"}

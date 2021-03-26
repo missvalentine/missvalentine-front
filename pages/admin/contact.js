@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Collapse } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons';
-import AdminLayout from '../../../components/admin/AdminLayout';
-import '../../../components/styles/app.scss';
-import {
-  getAllCategories,
-  deleteCategory,
-} from '../../../services/apis/admin.js';
+import AdminLayout from '../../components/admin/AdminLayout';
+import '../../components/styles/app.scss';
+import { getAllCategories, deleteCategory } from '../../services/apis/admin.js';
 
 const { Panel } = Collapse;
 

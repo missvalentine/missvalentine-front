@@ -1,0 +1,1 @@
+{"ast":null,"code":"import apiList from './apiList';\nimport axios from 'axios';\nexport const signInReq = obj => axios.post(apiList.signInApi, obj);","map":null,"metadata":{},"sourceType":"module"}
