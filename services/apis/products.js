@@ -6,7 +6,7 @@ export const getCategoryById = (id) => axios.get(apiList.getCategoryById + id);
 export const getProductByName = (name) =>
   axios.get(apiList.getProductByName + name);
 
-export const getAllProducts = () => axios.get(apiList.getAllProducts);
+export const getAllProducts = (data) => axios.get(apiList.getAllProducts, data);
 export const getAllCategories = () => axios.get(apiList.getAllCategories);
 
 export const getAllCombos = () => axios.get(apiList.getAllCombos);

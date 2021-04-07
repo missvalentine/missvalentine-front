@@ -7,16 +7,18 @@ import { useHttp } from '../../utilis/useHttp';
 
 const _id = '601bef27d29ac85814619ba3';
 
-export const getAllCategories = () =>
+export const getAllCategories = (data) =>
   useHttp({
     method: 'get',
     url: `/category/all`,
+    data,
   });
 
-export const getAllProducts = () =>
+export const getAllProducts = (data) =>
   useHttp({
     method: 'get',
     url: `/product/all`,
+    data,
   });
 
 export const getAllSubcategories = () =>
@@ -25,7 +27,26 @@ export const getAllSubcategories = () =>
     url: `/subcategory/all`,
   });
 
-//create
+//get one ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+export const getCategory = (id) =>
+  useHttp({
+    method: 'get',
+    url: `/category/${id}`,
+  });
+
+export const getProduct = (id) =>
+  useHttp({
+    method: 'get',
+    url: `/product/${id}`,
+  });
+export const getSubcategory = (id) =>
+  useHttp({
+    method: 'get',
+    url: `/subcategory/${id}`,
+  });
+
+//create ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 export const createCategory = (data) =>
   useHttp({
@@ -52,6 +73,7 @@ export const createSubcategory = (data) =>
     data,
   });
 
+//Delete  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 export const deleteCategory = (pid) =>
   useHttp({
     method: 'DELETE',

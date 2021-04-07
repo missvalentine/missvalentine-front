@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { getColorCode } from '../utilis/customFunctions';
 import { useRouter } from 'next/router';
 import '../components/styles/app.scss';
+import { Button } from 'antd';
+import { HeartOutlined, HeartFilled, HeartTwoTone } from '@ant-design/icons';
 
 export default function Product(props) {
-  const { data } = props;
+  const { data, isSelectable, isSelected, handleSelectClick } = props;
   const { images, name, colors, price, shortDesc } = data;
   const router = useRouter();
   const [showImageNo, setShowImageNo] = useState(0);
@@ -30,7 +32,6 @@ export default function Product(props) {
       >
         {images && images[showImageNo] && (
           <img
-            // src={`data:image/png;base64,${images[showImageNo].data}`}
             src={images[showImageNo].data}
             alt={'product image'}
             className="c-product-card__image"
@@ -76,6 +77,16 @@ export default function Product(props) {
             </div>
           ))}
         </div>
+        {isSelectable && (
+          <Button
+            type={isSelected ? 'primary' : 'default'}
+            shape="rounded"
+            onClick={() => handleSelectClick(data)}
+          >
+            {/* <HeartTwoTone twoToneColor="#eb2f96" /> */}
+            {isSelected ? 'Selected' : 'Select'}
+          </Button>
+        )}
       </div>
     </div>
   );

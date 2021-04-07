@@ -8,8 +8,8 @@ import {
 } from '../../services/apis/products';
 import { getAllSubcategories } from '../../services/apis/admin';
 
-export const getProducts = () => (dispatch) => {
-  getAllProducts()
+export const getProducts = (data) => (dispatch) => {
+  getAllProducts(data)
     .then((res) => {
       if (res.data && res.data.success) {
         dispatch({
@@ -22,6 +22,7 @@ export const getProducts = () => (dispatch) => {
       console.log({ err });
     });
 };
+
 export const getProduct = (_id) => (dispatch) => {
   getProductById(_id)
     .then((res) => {

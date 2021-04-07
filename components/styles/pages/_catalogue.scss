@@ -1,0 +1,30 @@
+.c-catalogue {
+  padding: 4rem 10rem;
+  // @include bpm-sm {
+  //   padding: 0rem;
+  // }
+  &__options {
+    padding: 2rem;
+    margin-top: 4rem;
+    background: linear-gradient(299deg, #6cf0ff, #c675c2);
+    .row {
+      padding: 1rem 0;
+    }
+    p {
+      color: white;
+      font-weight: 600;
+    }
+
+    input,
+    .ant-select {
+      background: white;
+      width: 100%;
+    }
+    .load-btn-wrapper {
+      justify-content: center;
+      padding: 4rem 0 2rem;
+    }
+    .load-btn {
+    }
+  }
+}

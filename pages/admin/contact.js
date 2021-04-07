@@ -21,7 +21,7 @@ export default function ManageCategory() {
 
   return (
     <AdminLayout>
-      <h3>Manage Category</h3>
+      <h3>Manage Contacts</h3>
       <Collapse expandIconPosition="right">
         {categories.map((c, i) => (
           <Panel
