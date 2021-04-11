@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { SET_CURRENT_APPOINTMENT, UNSET_CURRENT_APPOINTMENT } from './type';\nexport const setCurrentAppointment = appointment => ({\n  type: SET_CURRENT_APPOINTMENT,\n  payload: appointment\n});\nexport const unsetCurrentAppointment = () => ({\n  type: UNSET_CURRENT_APPOINTMENT\n});","map":null,"metadata":{},"sourceType":"module"}

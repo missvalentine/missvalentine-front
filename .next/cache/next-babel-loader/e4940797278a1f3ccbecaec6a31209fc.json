@@ -1,1 +1,0 @@
-{"ast":null,"code":"import axios from 'axios';\nimport apiList from './apiList';\nexport var getDoctors = function getDoctors() {\n  return axios.get(apiList.getDoctors);\n};","map":null,"metadata":{},"sourceType":"module"}

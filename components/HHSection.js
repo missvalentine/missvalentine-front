@@ -1,8 +1,8 @@
-import dynamic from 'next/dynamic'
-const Heading = dynamic(() => import("./Heading"));
-const Button = dynamic(() => import("./form-components/Button"));
-import classNames from "classnames";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import dynamic from 'next/dynamic';
+const Heading = dynamic(() => import('./Heading'));
+const Button = dynamic(() => import('./form-components/Button'));
+import classNames from 'classnames';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 const HHSection = ({
   heading,
   subHeading,
@@ -12,7 +12,7 @@ const HHSection = ({
   bg,
   children,
 }) => {
-  const className = classNames("c-hh-section", {
+  const className = classNames('c-hh-section', {
     [`c-hh-section--${bg}`]: bg,
   });
   return (
@@ -25,7 +25,7 @@ const HHSection = ({
               h="4"
               subHeading={true}
               parentClass="c-hh-section"
-              versions={["default", "lft-br"]}
+              versions={['default', 'lft-br']}
             >
               {subHeading}
             </Heading>
@@ -33,9 +33,9 @@ const HHSection = ({
               <Button
                 theme="dark"
                 type="link"
-                versions={["new"]}
+                versions={['new']}
                 directClass="mt-4"
-                link={link || "#"}
+                link={link || '#'}
               >
                 {linkText}
               </Button>

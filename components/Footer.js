@@ -1,31 +1,51 @@
 import dynamic from 'next/dynamic';
 const Heading = dynamic(() => import('./Heading'));
 import Link from 'next/link';
+import Router from 'next/router';
 import footerMenu from '../constants/footerMenu';
 const SubscribeForm = dynamic(() => import('./SubscribeForm'));
 import projectSettings, { projectName } from '../constants/projectSettings';
 const Logo = dynamic(() => import('./Logo'));
 import { useState } from 'react';
-import { addSubscriber } from '../services/apis/user';
 import { Modal } from 'antd';
+import { createContactUs } from '../services/apis/contact';
 const EmailReg = new RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g);
 
 const subscribeUser = async (e, email) => {
   e.preventDefault();
   if (EmailReg.test(email)) {
-    let result = await addSubscriber(email);
-    //console.log(result.data);
-    if (result.status === 200) {
-      Modal.success({
-        content: `${result.data.message}`,
-        wrapClassName: 'c-footer-modal',
-      });
-    }
-  } else {
-    Modal.warning({
-      content: `Invalid Email!!`,
-      wrapClassName: 'c-footer-modal',
-    });
+    createContactUs({ email, callScreen: 'footer' })
+      .then((res) => {
+        if (res.data.success) {
+          Modal.success({
+            title: 'Email Registered Successfully!',
+            okText: 'Explore Products',
+            onOk() {
+              Router.push('/');
+            },
+            wrapClassName: 'c-footer-modal',
+          });
+        } else {
+          Modal.error({
+            title: 'Request Failed!',
+            okText: 'Explore Products',
+            onOk() {
+              Router.push('/');
+            },
+            wrapClassName: 'c-footer-modal',
+          });
+        }
+      })
+      .catch((err) =>
+        Modal.error({
+          title: 'Request Failed!',
+          okText: 'Explore Products',
+          onOk() {
+            Router.push('/');
+          },
+          wrapClassName: 'c-footer-modal',
+        })
+      );
   }
 };
 

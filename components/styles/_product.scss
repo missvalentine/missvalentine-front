@@ -11,6 +11,11 @@
     width: 100%;
     height: auto;
   }
+
+  &--selected {
+    cursor: default;
+    // border: 2px solid #41a9ff;
+  }
   &__image {
     height: 320px;
     width: 100%;

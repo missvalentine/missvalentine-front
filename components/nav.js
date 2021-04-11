@@ -6,17 +6,7 @@ import Router from 'next/router';
 import classNames from 'classnames';
 import './styles/app.scss';
 const Drawer = dynamic(() => import('./Drawer'));
-const CartDrawer = dynamic(() => import('./CartDrawer'));
-import {
-  toggleCartBar,
-  hideCartBar,
-  toggleRegBar,
-} from '../redux/actions/drawers';
-import { unsetUser } from '../redux/actions/user';
-import { clearCart } from '../redux/actions/cart';
-const Registration = dynamic(() => import('./popups/Registration'));
-const ForgetPassword = dynamic(() => import('./popups/ForgetPassword'));
-const Login = dynamic(() => import('./popups/Login'));
+
 import { Menu, Dropdown } from 'antd';
 const Input = dynamic(() => import('./form-components/Input'));
 import CartIcon from './CartIcon';

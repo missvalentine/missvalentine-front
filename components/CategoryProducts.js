@@ -6,8 +6,6 @@ import { connect } from 'react-redux';
 import projectSettings from '../constants/projectSettings';
 import Flickity from 'react-flickity-component';
 import Link from 'next/link';
-import { addToCart } from '../redux/actions/cart';
-import { directAddToCart, getProductTitle } from '../services/helpers/product';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { showCartBar } from '../redux/actions/drawers';
 import Product from './Product';
@@ -15,15 +13,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 const CategoryProducts = (
   props,
-  {
-    heading,
-    subHeading,
-
-    addToCart,
-    showCartBar,
-    bg,
-    btnText,
-  }
+  { heading, subHeading, showCartBar, bg, btnText }
 ) => {
   const className = classNames('c-category-products', {
     [`c-category-products--${bg}`]: bg,
@@ -44,13 +34,6 @@ const CategoryProducts = (
   };
   const flResize = () => {
     if (flkty) flkty.resize();
-  };
-
-  const addToCartFn = (product) => {
-    if (product) {
-      addToCart(directAddToCart(product));
-      showCartBar();
-    }
   };
 
   const onCategoryChange = (index) => setActiveCategoryIndex(index);
@@ -169,4 +152,4 @@ const CategoryProducts = (
   );
 };
 
-export default connect(null, { addToCart, showCartBar })(CategoryProducts);
+export default CategoryProducts;

@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
-import { connect } from 'react-redux'
-import Link from 'next/link'
-import classNames from 'classnames'
-import './styles/app.scss'
-import { toggleCartBar, hideCartBar, toggleRegBar } from '../redux/actions/drawers'
-import { unsetUser } from '../redux/actions/user'
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import Link from 'next/link';
+import classNames from 'classnames';
+import './styles/app.scss';
 import { Menu, Dropdown } from 'antd';
 import Input from './form-components/Input';
-import CartIcon from './CartIcon';
 import { SearchOutlined } from '@ant-design/icons';
 import apiList from '../services/apis/apiList';
 import {
@@ -21,9 +18,8 @@ import projectSettings from '../constants/projectSettings';
 import CartItem from './CartItem';
 import { numberFormat } from '../services/helpers/misc';
 const { SubMenu } = Menu;
-const MobileMenu = ({items, user, toggleCartBar, toggleRegBar }) => {
-
-  const [isOpen, setOpen] = useState(false)
+const MobileMenu = ({ items, user, toggleRegBar }) => {
+  const [isOpen, setOpen] = useState(false);
   const [search, setSearch] = useState('');
   const [display, setDisplay] = useState(false);
   const [products, setProducts] = useState([]);
@@ -100,129 +96,93 @@ const MobileMenu = ({items, user, toggleCartBar, toggleRegBar }) => {
     // console.log(applySearch);
     setProducts(applySearch);
   };
-    const onClick = (e, action) => {
-        if (action === "link") {
-    
-        }
-        if (action === "cart") {
-          toggleCartBar();
-          // setIsCartOpen(!isCartOpen)
-        }
-        if (action === "reg") {
-          toggleRegBar()
-        }
-        if (action === "logout") {
-          unsetUser()
-        }
-      }
 
-
-    return  (
+  return (
     <ul className="c-nav__list">
-          {items.filter(el => {
-            console.log(el);
-            if (user._id) {
-              return el.onlyLogin !== false
-            } else {
-              return el.onlyLogin !== true
-            }
-          }).map((el, ind) => <li 
-         
-          key={ind} className={classNames("c-nav__list-item", {
-            "c-nav__list-item--has-sub-menu": el.subMenus
-          })}>
-            
-            {/* <div  onClick={()={
-                    }}  className="c-nav__list-item-inner"> */}
-                    {
-                      el.action === 'input' ? (
-                        <div style={{ position: 'relative' }}>
-                          <Input
-                            prefix={<SearchOutlined style={{ color: '#aaaaaa' }} />}
-                            value={search}
-                            onChange={(e) => filterProducts(e.target.value)}
-                            onKeyDown={onSubmit}
-                            label="Search"
-                          />
-                          {/* {display ? ( */}
-                          <Dropdown
-                            overlayStyle={{
-                              position: 'absolute',
-                              top: '0 !important',
-                              left: '0 !important',
-                              width: '400px',
-                              height: '500px',
-                              overflow: 'scroll',
-                            }}
-                            visible={display}
-                            // visible={true}
-                            onVisibleChange={() => setDisplay(!display)}
-                            overlay={menu}
-                          >
-                            <a
-                              className="ant-dropdown-link"
-                              onClick={(e) => e.preventDefault()}
-                            ></a>
-                          </Dropdown>
-                          {/* ) : null} */}
-                        </div>
-                      ) : ""
-                    }
-              {
-                el.link ?
-                  <Link as={el.as || el.link} href={el.link}>
-                    <a onClick={(e) => {
-                      onClick(e, el.action)
-                    }} className="c-nav__link">
-                      {el.label}
-                      {el.icon}
-                    </a>
-                  </Link>
-                  : (
-                    <span onClick={(e) => {
-                        onClick(e, el.action)
-                      }} className="c-nav__link">
-                        {el.label}
-                        {el.icon}
-                      </span>)
-              }  
-              {/* {
-                el.subMenus && <span onClick={() => setOpen(!isOpen)} className={classNames("c-nav__sub-menu-tgl", {
-                  "c-nav__sub-menu-tgl--opened": isOpen
-                })}>{isOpen ? <FiMinus /> : <FiPlus />}</span>
-              } */}
-            {
-              el.subMenus && <ul className="c-nav__sub-menu">
-                  
-                {el.subMenus.map((elx, i) =>
-                    <li key={i} className="c-nav__sub-menu-item">
-                      <Link as={elx.as || elx.link} href={elx.link}>
-                        <a className="c-nav__link c-nav__link--sub">
-                          {elx.label}
-                        </a>
-                      </Link>
-                    </li>
-                )}
+      {items
+        .filter((el) => {
+          console.log(el);
+          if (user._id) {
+            return el.onlyLogin !== false;
+          } else {
+            return el.onlyLogin !== true;
+          }
+        })
+        .map((el, ind) => (
+          <li
+            key={ind}
+            className={classNames('c-nav__list-item', {
+              'c-nav__list-item--has-sub-menu': el.subMenus,
+            })}
+          >
+            {el.action === 'input' ? (
+              <div style={{ position: 'relative' }}>
+                <Input
+                  prefix={<SearchOutlined style={{ color: '#aaaaaa' }} />}
+                  value={search}
+                  onChange={(e) => filterProducts(e.target.value)}
+                  onKeyDown={onSubmit}
+                  label="Search"
+                />
+                {/* {display ? ( */}
+                <Dropdown
+                  overlayStyle={{
+                    position: 'absolute',
+                    top: '0 !important',
+                    left: '0 !important',
+                    width: '400px',
+                    height: '500px',
+                    overflow: 'scroll',
+                  }}
+                  visible={display}
+                  // visible={true}
+                  onVisibleChange={() => setDisplay(!display)}
+                  overlay={menu}
+                >
+                  <a
+                    className="ant-dropdown-link"
+                    onClick={(e) => e.preventDefault()}
+                  ></a>
+                </Dropdown>
+                {/* ) : null} */}
+              </div>
+            ) : (
+              ''
+            )}
+            {el.link ? (
+              <Link as={el.as || el.link} href={el.link}>
+                <a onClick={el.action} className="c-nav__link">
+                  {el.label}
+                  {el.icon}
+                </a>
+              </Link>
+            ) : (
+              <span onClick={el.action} className="c-nav__link">
+                {el.label}
+                {el.icon}
+              </span>
+            )}
+            {el.subMenus && (
+              <ul className="c-nav__sub-menu">
+                {el.subMenus.map((elx, i) => (
+                  <li key={i} className="c-nav__sub-menu-item">
+                    <Link as={elx.as || elx.link} href={elx.link}>
+                      <a className="c-nav__link c-nav__link--sub">
+                        {elx.label}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
               </ul>
-            }
-          </li>)}
-          
-        </ul>
-    )
-}
+            )}
+          </li>
+        ))}
+    </ul>
+  );
+};
 
 MobileMenu.defaultProps = {
-    items: []
-  }
+  items: [],
+};
 
-  const mapStateToProps = state => ({
-    isCartOpen: state.drawers.isCartOpen,
-    isRegOpen: state.drawers.isRegOpen,
-    hasLogin: state.drawers.hasLogin,
-    user: state.user
-  })
-
-
-
-export default connect(mapStateToProps, { toggleCartBar, hideCartBar, toggleRegBar, unsetUser })(MobileMenu)
- 
+export default MobileMenu;

@@ -1,15 +1,3 @@
-import {
-  SET_PRODUCTS,
-  SET_PRODUCT,
-  CLEAR_PRODUCT,
-  SET_CATEGORIES,
-} from '../actions/type';
-
-import {
-  getVisibleProducts,
-  getFeaturedProduct,
-  getCategoriesProducts,
-} from '../../services/helpers/product';
 const initialState = {
   products: [],
   product: null,
@@ -23,12 +11,12 @@ const initialState = {
 export default (state = initialState, action) => {
   const { payload, type } = action;
   switch (type) {
-    case SET_PRODUCTS:
+    case 'SET_PRODUCTS':
       return {
         ...state,
         products: payload,
       };
-    case SET_CATEGORIES:
+    case 'SET_CATEGORIES':
       return {
         ...state,
         categories: payload,
@@ -39,13 +27,13 @@ export default (state = initialState, action) => {
         subcategories: payload,
       };
 
-    case SET_PRODUCT:
+    case 'SET_PRODUCT':
       return {
         ...state,
         product: payload,
       };
 
-    case CLEAR_PRODUCT:
+    case 'CLEAR_PRODUCT':
       return {
         ...state,
         product: null,

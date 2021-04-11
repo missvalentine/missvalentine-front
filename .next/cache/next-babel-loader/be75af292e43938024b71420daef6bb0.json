@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { SET_ADDRESS } from \"../actions/type\";\nconst initialState = {};\nexport default ((state = initialState, action) => {\n  switch (action.type) {\n    case SET_ADDRESS:\n      return action.payload;\n\n    default:\n      return state;\n  }\n});","map":null,"metadata":{},"sourceType":"module"}

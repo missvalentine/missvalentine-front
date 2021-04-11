@@ -1,5 +1,4 @@
 import axios from 'axios';
-import store from '../redux/store';
 import { baseUrl } from '../constants/projectSettings';
 
 export const useHttp = async ({ method = 'get', url, data, options }) => {

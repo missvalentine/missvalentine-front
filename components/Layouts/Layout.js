@@ -1,24 +1,13 @@
 import dynamic from 'next/dynamic';
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-const Header = dynamic(() => import('../Header'));
-import projectSettings, {
-  topBarText,
-  projectName,
-} from '../../constants/projectSettings';
+import Header from '../Header';
 import '../styles/app.scss';
 const Footer = dynamic(() => import('../Footer'));
 import classNames from 'classnames';
-const ChatBot = dynamic(() => import('../chatBot/ChatBot'));
-import Button from '../form-components/Button';
 const TopAlert = dynamic(() => import('../TopAlert'));
-import { FullModal } from '../modal';
-import { connect } from 'react-redux';
-import { setEntryMsg } from '../../redux/actions';
-const Input = dynamic(() => import('../form-components/Input'));
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { addSubscriber } from '../../services/apis/user';
-const EmailReg = new RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g);
+import projectSettings from '../../constants/projectSettings';
+
 const Layout = ({
   title,
   description,
@@ -30,25 +19,9 @@ const Layout = ({
   pageClass,
   fixed,
   homeLogo,
-  isEntryMsg,
-  setEntryMsg,
   logo,
   footerLogo,
 }) => {
-  // console.log(headerVersions);
-  const [isEntryMsg1, setEntryMsg1] = useState(false);
-  const [email, setEmail] = useState('');
-  const [isAdded, setIsAdded] = useState(false);
-  const [message, setMessage] = useState('');
-
-  const setSubscriber = async () => {
-    // setEntryMsg1(false);
-    // console.log(email);
-    const result = await addSubscriber(email);
-    setIsAdded(true);
-    setMessage(result.data.message);
-  };
-
   return (
     <>
       {/* {topBarText && <TopAlert>{topBarText}</TopAlert>} */}
@@ -91,99 +64,6 @@ const Layout = ({
         />
         {children}
 
-        <FullModal
-          isOpen={isEntryMsg}
-          toggle={() => setEntryMsg(false)}
-          style={{ width: '100%' }}
-        >
-          <div className="ss ss-row">
-            <div className="left">
-              <img
-                src="/images/ss2_banner.png"
-                style={{ width: '100%', height: '100%' }}
-              />
-            </div>
-            <div className="right">
-              {!isAdded ? (
-                <>
-                  <div
-                    className="modal__logo-wrapper ss__heading"
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}
-                  >
-                    <div className="">
-                      <span
-                        className="c-banner__heading"
-                        style={{
-                          color: '#d8ab97',
-                          fontSize: '50px',
-                          lineHeight: '60px',
-                        }}
-                      >
-                        you first!
-                      </span>
-                    </div>
-                  </div>
-                  <div className="c-susbmit-r__wrapper justify-content-center">
-                    <h1
-                      className="ss__subhead"
-                      style={{ fontSize: '20px', margin: '30px' }}
-                    >
-                      Sign up for our emails to get the latest updates
-                      <br />
-                      on our products before anyone else.
-                    </h1>
-                    <div>
-                      <Input
-                        label="Email"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
-                      {email.length > 0 && !EmailReg.test(email) && (
-                        <span style={{ color: 'red' }}>
-                          email is not valid!
-                        </span>
-                      )}
-                      <br />
-                      <Button
-                        theme="dark"
-                        type="submit"
-                        onClick={setSubscriber}
-                        disbaled={!EmailReg.test(email)}
-                      >
-                        Submit
-                      </Button>
-                      <Button
-                        theme="dark"
-                        type="link"
-                        onClick={() => setEntryMsg(false)}
-                      >
-                        Cancel
-                      </Button>
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <h1>{message}</h1>
-                  <Button
-                    theme="dark"
-                    type="link"
-                    onClick={() => setEntryMsg(false)}
-                  >
-                    Close
-                  </Button>
-                </>
-              )}
-            </div>
-          </div>
-        </FullModal>
-
-        <ChatBot />
         <Footer imageUrl={footerLogo} />
       </div>
     </>
@@ -194,11 +74,5 @@ Layout.defaultProps = {
   isHeaderBg: false,
   fixed: true,
 };
-const mapStateToProps = (state) => ({
-  isEntryMsg: state.firstSetting.entryMsg,
-});
-export default connect(mapStateToProps, {
-  setEntryMsg,
-})(Layout);
 
-// onClick={() => {if () {setEntryMsg1(false)} else {setError("Invalid Email")}}}
+export default Layout;

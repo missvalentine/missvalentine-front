@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import Router from 'next/router';
 import '../components/styles/pages/_catalogue.scss';
 const Layout = dynamic(() => import('../components/Layouts/Layout'), {
   ssr: false,
@@ -10,8 +11,8 @@ const Heading = dynamic(() => import('../components/Heading'), {
 import { getCategories, getProducts } from '../redux/actions';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Select, Input, Button } from 'antd';
-import { getSubcategory } from '../services/apis/admin.js';
+import { Select, Input, Button, Modal } from 'antd';
+import { getSubcategory, createContactUs } from '../services/apis/admin.js';
 import { Fade } from 'reactstrap';
 import Product from '../components/Product.js';
 
@@ -33,6 +34,10 @@ export default function ECatalogue() {
   const [selectedProducts, setSelectedProducts] = useState([]);
 
   const [showSubCate, setShowSubCate] = useState(false);
+
+  const handleInputChange = (event) => {
+    setValue({ ...value, [event.target.name]: event.target.value });
+  };
 
   function handleCategoryChange(v) {
     setValue({ ...value, category: v, subCategory: {} });
@@ -57,14 +62,12 @@ export default function ECatalogue() {
 
   const handleLoadProducts = () => {
     if (value.subCategory._id) {
-      console.log('subcate');
       getSubcategory(value.subCategory._id)
         .then((res) => {
           setSelectableProducts(res.data.products);
         })
         .catch((err) => setSelectableProducts(value.category.products));
     } else {
-      console.log('cate', value.category.products);
       setSelectableProducts(value.category.products);
     }
   };
@@ -86,42 +89,106 @@ export default function ECatalogue() {
     setSelectedProducts(tempSelectedProducts);
   };
 
+  const handleSendEnquiry = () => {
+    const contactData = {
+      name: value.name,
+      storeName: value.storeName,
+      phone: value.phoneNumber,
+      address: value.address,
+      city: value.city,
+      state: value.state,
+      products: selectedProducts,
+      callScreen: 'enquiry',
+    };
+    createContactUs(contactData)
+      .then(
+        (res) =>
+          res.data &&
+          Modal.success({
+            title: 'Enquiry Request Registered Successfully!',
+            okText: 'Explore Products',
+            onOk() {
+              Router.push('/');
+            },
+          })
+      )
+      .catch((err) =>
+        Modal.error({
+          title: 'Request Failed!',
+          okText: 'Explore Products',
+          onOk() {
+            Router.push('/');
+          },
+        })
+      );
+  };
+
   return (
     <Layout headerVersions={['bg-dark']} headerTheme="black">
       <div className="c-catalogue">
         <Heading versions={['shop-all']}>{'Enquiry Form'}</Heading>
         <div className="c-catalogue__options">
-          <div className=" row">
-            <div className="col-4">
+          <div className="row">
+            <div className="col-12 col-lg-4 ">
               <p>Name</p>
-              <Input placeholder="Enter your name" />
+              <Input.Search
+                required
+                placeholder="Enter your name"
+                name="name"
+                value={value.name}
+                onChange={handleInputChange}
+              />
             </div>
-            <div className="col-4">
+            <div className="col-12 col-lg-4 ">
               <p>Store Name</p>
-              <Input placeholder="Enter your store name" />
+              <Input
+                placeholder="Enter your store name"
+                name="storeName"
+                value={value.storeName}
+                onChange={handleInputChange}
+              />
             </div>
-            <div className="col-4">
+            <div className="col-12 col-lg-4 ">
               <p>Phone Number</p>
-
-              <Input placeholder="Enter your phone no" />
+              <Input
+                placeholder="Enter your phone no"
+                name="phoneNumber"
+                value={value.phoneNumber}
+                onChange={handleInputChange}
+              />
             </div>
           </div>
           <div className=" row">
-            <div className="col-4">
+            <div className="col-12 col-lg-4 ">
               <p>Address</p>
-              <Input placeholder="Enter your address" />
+              <Input
+                placeholder="Enter your address"
+                name="address"
+                value={value.address}
+                onChange={handleInputChange}
+              />
             </div>
-            <div className="col-4">
+            <div className="col-12 col-lg-4 ">
               <p>City</p>
-              <Input placeholder="Enter your city" />
+              <Input
+                placeholder="Enter your city"
+                name="city"
+                value={value.city}
+                onChange={handleInputChange}
+              />
             </div>
-            <div className="col-4">
+            <div className="col-12 col-lg-4 ">
               <p>State</p>
-              <Input placeholder="Enter your state" />
+              <Input
+                placeholder="Enter your state"
+                name="state"
+                value={value.state}
+                onChange={handleInputChange}
+              />
             </div>
           </div>
           <div className=" row">
-            <div className="col-4">
+            <div className="col-12 col-lg-4 ">
               <p>Category</p>
               <Select
                 value={value.category.name}
@@ -137,7 +204,7 @@ export default function ECatalogue() {
             {value.category !== {} &&
               showSubCate &&
               value.category.subcategories && (
-                <div className="col-4">
+                <div className="col-12 col-lg-4 ">
                   <p>Sub Category (Optional)</p>
                   <Select
                     value={value.subCategory.name}
@@ -155,17 +222,55 @@ export default function ECatalogue() {
               )}
           </div>
           <div className="row load-btn-wrapper">
-            <Button className="load-btn" onClick={handleLoadProducts}>
+            <Button
+              className="load-btn"
+              onClick={handleLoadProducts}
+              disabled={!value.category.products}
+            >
               Load Products
             </Button>
           </div>
         </div>
+        {selectedProducts.length !== 0 && (
+          <>
+            <div className="c-catalogue__products c-catalogue__products-selected row">
+              <Heading className="col-12 my-2" versions={['shop-all']}>
+                {'Selected Products'}
+              </Heading>
+
+              {selectedProducts.map((el, i) => (
+                <div
+                  key={el._id}
+                  className="col-lg-4 col-md-6 my-3"
+                  style={{ padding: '0 40px' }}
+                >
+                  <Fade key={el._id}>
+                    <Product
+                      data={el}
+                      isSelectable
+                      isSelected={
+                        selectedProducts.filter((prd) => prd._id === el._id)
+                          .length > 0
+                      }
+                      handleSelectClick={handleSelectClick}
+                    />
+                  </Fade>
+                </div>
+              ))}
+              <div className="col-12 text-center">
+                <Button className="" onClick={handleSendEnquiry}>
+                  Send Enquiry
+                </Button>
+              </div>
+            </div>
+          </>
+        )}
         <div className="c-catalogue__products row">
-          {selectableProducts &&
+          {selectableProducts.length !== 0 &&
             selectableProducts.map((el, i) => (
               <div
                 key={el._id}
-                className="col-lg-4 col-md-6"
+                className="col-lg-4 col-md-6 my-3"
                 style={{ padding: '0 40px' }}
               >
                 <Fade key={el._id}>

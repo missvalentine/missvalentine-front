@@ -1,19 +1,14 @@
 import dynamic from 'next/dynamic';
-import { Form, Radio as AntRadio } from 'antd';
+import { Form, Radio as AntRadio, Modal } from 'antd';
+import Router from 'next/router';
 const Input = dynamic(() => import('../form-components/Input'));
 const Button = dynamic(() => import('../form-components/Button'));
-import { contactUs } from '../../services/api';
 import regex from '../../services/helpers/regex';
 import reactComponentDebounce from 'react-component-debounce';
-import { Modal } from '../modal';
-import {
-  msgSent,
-  msgFailed,
-  msgSentTitle,
-  msgFailedTitle,
-} from '../../constants/constantMessage';
+
 import { projectName } from '../../constants/projectSettings';
-import { withRouter } from 'next/dist/client/router';
+import { createContactUs } from '../../services/apis/contact';
+// import './styles/_all.scss';
 
 const DebounceInput = reactComponentDebounce({
   valuePropName: 'value',
@@ -25,12 +20,8 @@ class Contact extends React.Component {
     super(props);
     this.state = {
       isLoading: false,
-      isModal: false,
-      modalText: '',
-      modalTitle: '',
     };
   }
-
   onSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -41,23 +32,52 @@ class Contact extends React.Component {
             isLoading: true,
           },
           () => {
-            contactUs({ ...values, callScreen: 'Contact Page' }).then((res) => {
-              if (res.data.success) {
-                this.props.router.push('/');
-              }
-            });
-            this.props.router.push('/');
+            createContactUs({ ...values, callScreen: 'contactPage' })
+              .then((res) => {
+                this.setState({
+                  isLoading: false,
+                });
+                console.log('res.data', res.data, res.data.success);
+                if (res.data.success) {
+                  Modal.success({
+                    title: 'Email Registered Successfully!',
+                    okText: 'Explore Products',
+                    onOk() {
+                      Router.push('/');
+                    },
+                    wrapClassName: 'c-footer-modal',
+                  });
+                } else {
+                  Modal.error({
+                    title: 'Request Failed!',
+                    okText: 'Explore Products',
+                    onOk() {
+                      Router.push('/');
+                    },
+                    wrapClassName: 'c-footer-modal',
+                  });
+                }
+              })
+              .catch((err) =>
+                Modal.error({
+                  title: 'Request Failed!',
+                  okText: 'Explore Products',
+                  onOk() {
+                    Router.push('/');
+                  },
+                  wrapClassName: 'c-footer-modal',
+                })
+              );
           }
         );
       }
     });
   };
-  toggle = () =>
-    this.setState((prevState) => ({ isModal: !prevState.isModal }));
+
   render() {
     const { Item } = Form;
     const { getFieldDecorator } = this.props.form;
-    const { isLoading, isModal, modalTitle, modalText } = this.state;
+    const { isLoading } = this.state;
     console.log(this.props.form);
     return (
       <div className="c-contact-form">
@@ -66,9 +86,17 @@ class Contact extends React.Component {
             <div className="c-contact-form__row-left">
               <Item>
                 {getFieldDecorator('subject', {
-                  initialValue: 'Product Enquiry',
+                  initialValue: 'Order Enquiry',
                 })(
                   <AntRadio.Group>
+                    <AntRadio
+                      className="c-contact-form__radio"
+                      value="Order Enquiry"
+                    >
+                      <b>Order Enquiry</b>
+                      <br />
+                      Questions about an order you have placed online.
+                    </AntRadio>
                     <AntRadio
                       className="c-contact-form__radio"
                       value="Product Enquiry"
@@ -76,7 +104,7 @@ class Contact extends React.Component {
                       <b>Product Enquiry</b>
                       <br />
                       Questions you may have about specific products and
-                      quality.
+                      ingredients.
                     </AntRadio>
                     <AntRadio
                       className="c-contact-form__radio"
@@ -84,7 +112,16 @@ class Contact extends React.Component {
                     >
                       <b>Wholesale Enquiry</b>
                       <br />
-                      Questions about distributing {projectName}.
+                      Questions about distributing {projectName} CBD.
+                    </AntRadio>
+                    <AntRadio
+                      className="c-contact-form__radio"
+                      value="Press and Marketing Enquiry"
+                    >
+                      <b>Press and Marketing Enquiry</b>
+                      <br />
+                      Questions you may have about press and marketing
+                      opportunities
                     </AntRadio>
                     <AntRadio
                       className="c-contact-form__radio c-contact-form__radio--last"
@@ -188,20 +225,20 @@ class Contact extends React.Component {
                   </div>
                   <div className="c-contact-form__info-block__row-right">
                     <a
-                      href="tel:+919999217125"
+                      href="tel:+917683037227"
                       className="c-contact-form__link"
                       style={{
                         fontFamily: "'Montserrat', sans-serif",
                         fontSize: '14px',
                       }}
                     >
-                      +91 9999217125
+                      +91 7683037227
                     </a>
                   </div>
                 </div>
                 <div
                   className="c-contact-form__info-block__row"
-                  style={{ fontSize: '14px' }}
+                  style={{ marginTop: '-8px', fontSize: '14px' }}
                 >
                   <div className="c-contact-form__info-block__row-left">
                     <p
@@ -238,4 +275,4 @@ class Contact extends React.Component {
 }
 const ContactFrom = Form.create({ name: 'contact' })(Contact);
 
-export default withRouter(ContactFrom);
+export default ContactFrom;

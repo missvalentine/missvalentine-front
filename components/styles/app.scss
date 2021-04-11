@@ -16,8 +16,6 @@ $color-4: #f0f3f0;
 @import '~antd/dist/antd.css';
 @import '~animate.css/animate.min.css';
 @import 'override';
-@import '../form-components/styles/all';
-@import '../forms/styles/all';
 @import 'fonts';
 @import 'base';
 @import 'logo';
@@ -63,7 +61,6 @@ $color-4: #f0f3f0;
 @import 'productRating';
 @import 'loader';
 @import 'ambassator/login';
-@import '../doctors/appointment/all';
 @import 'chatbot';
 @import 'top-alert';
 @import './get-in-touch-banner';
@@ -95,6 +92,9 @@ $color-4: #f0f3f0;
 @import './our-director';
 @import './get-in-touch';
 @import './product-detail';
+@import './contact-form';
+
+@import './components/form-components/styles/_all.scss';
 
 // @import './admin';
 

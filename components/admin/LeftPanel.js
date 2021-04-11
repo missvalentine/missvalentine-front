@@ -46,8 +46,18 @@ export default function LeftPanel() {
           </Link>
         </li>
         <li className="c-adminpanel-left__list-item ">
-          <Link href="/admin/contact" className="">
-            Contact/Enquiry Request
+          <Link href="/admin/contact/query" className="">
+            Contact Queries
+          </Link>
+        </li>
+        <li className="c-adminpanel-left__list-item ">
+          <Link href="/admin/contact/enquiry" className="">
+            Enquiry Request
+          </Link>
+        </li>
+        <li className="c-adminpanel-left__list-item ">
+          <Link href="/admin/contact/promotions" className="">
+            Promotion Emails
           </Link>
         </li>
       </ul>

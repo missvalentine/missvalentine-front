@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 const Heading = dynamic(() => import('./Heading'));
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 const Button = dynamic(() => import('./form-components/Button'));
+
 const LRSection = ({
   heading,
   subHeading,

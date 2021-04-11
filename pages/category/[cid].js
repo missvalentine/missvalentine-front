@@ -2,7 +2,6 @@ import dynamic from 'next/dynamic';
 import { connect } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import Fade from 'react-reveal/Fade';
-import classNames from 'classnames';
 
 const Layout = dynamic(() => import('../../components/Layouts/Layout'), {
   ssr: false,
@@ -12,9 +11,6 @@ const Heading = dynamic(() => import('../../components/Heading'), {
   ssr: false,
 });
 import apiList from '../../services/apis/apiList';
-const ProductCard = dynamic(() => import('../../components/ProductCard'), {
-  ssr: false,
-});
 
 import { useRouter } from 'next/router';
 import parse from 'html-react-parser';

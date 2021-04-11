@@ -160,13 +160,41 @@ export default function ProductDetail(props) {
                   Product Features
                 </div>
                 <div>{data.shortDesc}</div>
+                <div>100% Original Product</div>
+              </div>
+              <div className="c-product-detail-right__box">
+                <div className="c-product-detail-right__title"></div>
               </div>
             </div>
-            <div className="c-product-detail-right col-xs-12 mt-5">
+            <div className="c-product-detail-right col-12 mt-5">
               <div className="c-product-detail-right__title">
                 Product Description
               </div>
               <div>{data.description}</div>
+            </div>
+            <div className="c-product-detail-right col-12 mt-3 ">
+              <div className="c-product-detail-right__title">Wash Care</div>
+              <div>
+                <ol>
+                  <li>Hand wash in warm water</li>
+                  <li>Do not wring</li>
+                  <li>Reshape cups whilst damp</li>
+                  <li>Line dry in shade</li>
+                  <li>Do not bleach/ dry clean/ iron.</li>
+                </ol>
+              </div>
+            </div>
+            <div className="c-product-detail-right col-12 mt-3 ">
+              <div className="c-product-detail-right__title">
+                Country of Origin
+              </div>
+              <div>India</div>
+            </div>
+            <div className="c-product-detail-right col-12 mt-3 ">
+              <div className="c-product-detail-right__title">
+                Country of Manufacturing
+              </div>
+              <div>India</div>
             </div>
           </div>
         )}

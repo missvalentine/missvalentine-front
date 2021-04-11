@@ -140,6 +140,12 @@ const colours = {
   whitesmoke: '#f5f5f5',
   yellow: '#ffff00',
   yellowgreen: '#9acd32',
+
+  wine: '#902442',
+  carrot: '#d78490',
+  nude: '#d2bda2',
+  skin: '#E4CDBE',
+  rani: '#fe67ca',
 };
 
 export function getColorCode(colorName) {

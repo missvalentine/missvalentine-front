@@ -20,10 +20,14 @@ export default function Product(props) {
   };
 
   return (
-    <div className="c-product-card ">
+    <div
+      className={`c-product-card   ${isSelected &&
+        'c-product-card--selected '}`}
+    >
       <div
         className="c-product-card__image-wrapper"
         onClick={() =>
+          !isSelected &&
           router.push({
             pathname: `products/${data._id}`,
             state: data,
@@ -47,6 +51,7 @@ export default function Product(props) {
         <div
           className="c-product-card__details-name"
           onClick={() =>
+            !isSelected &&
             router.push({
               pathname: `products/${data._id}`,
               state: data,

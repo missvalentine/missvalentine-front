@@ -4,9 +4,9 @@ import '../../components/styles/app.scss';
 const Layout = dynamic(() => import('../../components/Layouts/Layout'), {
   ssr: false,
 });
-const ProductInfo = dynamic(() => import('../../components/ProductInfo'), {
-  ssr: false,
-});
+// const ProductInfo = dynamic(() => import('../../components/ProductInfo'), {
+//   ssr: false,
+// });
 const HImgSection = dynamic(() => import('../../components/HImgSection'), {
   ssr: false,
 });
@@ -129,46 +129,4 @@ const Product = () => {
   );
 };
 
-// Product.getInitialProps = async ({ query, res: resMain }) => {
-// let product = null;
-// const res = await fetch(apiList.getProductByName + query.pid);
-// // const res           = await fetch(apiList.getProductById+query.pid)
-// const productObj = await res.json();
-// if (!productObj.product_details) {
-//   const res = await fetch(apiList.getProductById + query.pid);
-//   const productObj = await res.json();
-//   product = getVisibleProducts([productObj.product_details]);
-// } else {
-//   product = getVisibleProducts([productObj.product_details]);
-// }
-// const reviewRes = await fetch(
-//   apiList.getReviews + productObj.product_details._id
-// );
-// const reviews = await reviewRes.json();
-// const allRes = await fetch(apiList.getAllProducts);
-// const allProductObj = await allRes.json();
-// const allProducts = getVisibleProducts(allProductObj.products).filter(
-//   (el) => el._id !== query.pid
-// );
-// if (product.length && product[0] && productObj.status) {
-//   return {
-//     res,
-//     product: product.length && product[0],
-//     productObj,
-//     allProducts,
-//     allProductObj,
-//     reviews: reviews.reviews,
-//   };
-// }
-// resMain.statusCode = 404;
-// return {
-//   err: {
-//     statusCode: 404,
-//   },
-// };
-// };
 export default Product;
-// export default connect((state) => ({
-//   cart: state.cart,
-//   user: state.user,
-// }))(Product);

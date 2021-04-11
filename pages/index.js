@@ -4,6 +4,8 @@ import Layout from '../components/Layouts/Layout';
 const LRSection = dynamic(() => import('../components/LRSection'), {
   ssr: false,
 });
+const Button = dynamic(() => import('../components/form-components/Button'));
+
 const CategoryProducts = dynamic(
   () => import('../components/CategoryProducts'),
   {
@@ -11,11 +13,8 @@ const CategoryProducts = dynamic(
   }
 );
 import categoryList from '../constants/categoryList';
-import { getProducts, homeData, getCategories } from '../redux/actions';
+import { getProducts, getCategories } from '../redux/actions';
 import { connect } from 'react-redux';
-const Button = dynamic(() => import('../components/form-components/Button'), {
-  ssr: false,
-});
 import { getAllCombos } from '../services/api';
 import Fade from 'react-reveal/Fade';
 import { Collapse } from 'reactstrap';
@@ -44,82 +43,6 @@ class Home extends React.Component {
       isLrSection: false,
       isWillness: false,
       show: false,
-      homeData: {
-        logo: {
-          images: [
-            {
-              name: '',
-              src: '',
-            },
-            {
-              name: '',
-              src: '',
-            },
-            {
-              name: '',
-              src: '',
-            },
-          ],
-        },
-        banner: [
-          {
-            title: '',
-            content: '',
-            btnText: '',
-            hide: false,
-            images: {
-              name: '',
-              src: '',
-            },
-          },
-        ],
-        categorySlider: {
-          title: '',
-          btnText: '',
-          hide: false,
-          images: [
-            {
-              name: '',
-              src: '',
-            },
-          ],
-        },
-        secondSection: {
-          title: '',
-          bigTitle: '',
-          hide: false,
-          images: [
-            {
-              name: '',
-              src: '',
-            },
-          ],
-        },
-        thirdSection: {
-          bigTitle: '',
-          title: '',
-          content: '',
-          btnText: '',
-          hide: false,
-          images: [
-            {
-              name: '',
-              src: '',
-            },
-          ],
-        },
-        fourthSection: {
-          title: '',
-          content: '',
-          hide: false,
-          images: [
-            {
-              name: '',
-              src: '',
-            },
-          ],
-        },
-      },
       loading: true,
     };
   }
@@ -132,29 +55,8 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    if (localStorage.getItem('homeData')) {
-      this.setState({ homeData: JSON.parse(localStorage.getItem('homeData')) });
-    }
     this.props.getProducts();
     this.props.getCategories();
-    homeData().then((data) => {
-      let stringData = JSON.stringify(data);
-      if (localStorage.getItem('homeData') != stringData) {
-        this.setState({
-          homeData: data,
-          loading: false,
-        });
-      } else {
-        localStorage.setItem('homeData', stringData);
-      }
-    });
-    // getAllCombos().then((res) => {
-    //   if (res.data && res.data.combos) {
-    //     this.setState({
-    //       combos: res.data.combos,
-    //     });
-    //   }
-    // });
   }
 
   toTop = () => {
@@ -190,41 +92,15 @@ class Home extends React.Component {
         },
       ],
     };
-    const {
-      logo: { images: logoImages },
-      banner: bannerContent,
-      categorySlider: {
-        title: categoryTitle,
-        btnText: categoryBtnText,
-        hide: categorySliderHide,
-      },
-      secondSection: {
-        title: secondTitle,
-        bigTitle: secondBigTitle,
-        hide: secondSectionHide,
-      },
-      thirdSection: {
-        bigTitle: thirdBirTitle,
-        title: thirdTitle,
-        content: thirdContent,
-        btnText: thirdBtnText,
-        hide: thirdSectionHide,
-        images: thirdSectionImage,
-      },
-      fourthSection: {
-        content: fourthContent,
-        title: fourthTitle,
-        hide: fourthSectionHide,
-      },
-    } = this.state.homeData;
-    let description = [bannerContent, thirdContent];
+
+    let description = ['bannerContent', 'thirdContent'];
 
     return (
       <Layout
         title="Home"
         headerTheme="black"
         homeLogo={false}
-        footerLogo={logoImages[2].src}
+        // footerLogo={logoImages[2].src}
         pageClass={'c-home'}
         description={description}
         keywords={keywords}
@@ -266,98 +142,103 @@ class Home extends React.Component {
             })}
           </Flickity>
         </div>
+        {/* categorySliderHide */}
 
-        {!categorySliderHide && (
-          <Fade>
-            <CategoryProducts
-              products={products}
-              heading={parser(categoryTitle)}
-              btnText={parser(categoryBtnText)}
-            />
-          </Fade>
-        )}
+        <Fade>
+          <CategoryProducts
+            products={products}
+            heading={parser('categoryTitle')}
+            btnText={parser('categoryBtnText')}
+          />
+        </Fade>
 
-        {!secondSectionHide && (
-          <Fade>
-            <Link href="/blog">
-              <div className="blog-link-banner" style={{ cursor: 'pointer' }}>
-                <p className="top-text">{'EXPIRENCE THE WIDE RANGE '}</p>
-                <p className="bottom-text">{'explore now'}</p>
+        {/* secondSectionHide */}
+
+        <Fade>
+          <Link href="/products">
+            <div className="blog-link-banner" style={{ cursor: 'pointer' }}>
+              <p className="top-text">{'EXPIRENCE THE WIDE RANGE '}</p>
+              <p className="bottom-text">{'explore now'}</p>
+            </div>
+          </Link>
+        </Fade>
+
+        {/* //thirdSectionHide */}
+
+        <Fade>
+          <LRSection
+            heading={'MissValentine'}
+            subHeading={'COMFORT THAT SUITS YOU'}
+            linkText={'Read more'}
+            onLinkClick={() => {
+              this.setState((prevState) => ({
+                isLrSection: !prevState.isLrSection,
+              }));
+            }}
+            // Link="/"
+            image={modelImg}
+          >
+            <div className="c-less-more">
+              <div className="c-less-more__less">
+                {parser(
+                  'Premium lingerie brand that provides comfortable fit, support with impeccable quality'
+                )}
               </div>
-            </Link>
-          </Fade>
-        )}
-        {!thirdSectionHide && (
-          <Fade>
-            <LRSection
-              heading={'MissValentine'}
-              subHeading={'COMFORT THAT SUITS YOU'}
-              linkText={'Read more'}
-              onLinkClick={() => {
-                this.setState((prevState) => ({
-                  isLrSection: !prevState.isLrSection,
-                }));
-              }}
-              // Link="/"
-              image={modelImg}
-            >
-              <div className="c-less-more">
-                <div className="c-less-more__less">{parser(thirdContent)}</div>
-                <Collapse isOpen={isLrSection}>
-                  <div className="c-less-more__whole">
-                    <div className="c-less-more__whole-inner">
-                      {parser(thirdContent)}
-                    </div>
+              <Collapse isOpen={isLrSection}>
+                <div className="c-less-more__whole">
+                  <div className="c-less-more__whole-inner">
+                    {parser(
+                      'Any outfit worn by a women looses its charm if you are not wearing a perfect Bra underneath. A bra is not only a piece of inner wear but is also responsible for how confidently you carry yourself in public. The right kind of bra not only is good for the health of your breasts but also affects the way your dresses look on you.'
+                    )}
                   </div>
-                </Collapse>
+                </div>
+              </Collapse>
+            </div>
+          </LRSection>
+        </Fade>
+
+        {/* fourthSectionHide */}
+
+        <Fade>
+          <section className="honest-section-wrapper">
+            <p class="heading">BEST IN PRODUCT</p>
+            <div class="honest-container">
+              <div class="img-wrapper">
+                <img
+                  src="/images/organic.svg"
+                  class="honest-svg"
+                  alt="organic"
+                />
+                <p class="img-head-text">COMFORT GROWN</p>
+                <p class="img-sub-text">
+                  The extracts used in our products are obtained from
+                  organically grown hemp devoid of any harmful chemical inputs.
+                </p>
               </div>
-            </LRSection>
-          </Fade>
-        )}
-        {!fourthSectionHide && (
-          <Fade>
-            <section className="honest-section-wrapper">
-              <p class="heading">BEST IN PRODUCT</p>
-              <div class="honest-container">
-                <div class="img-wrapper">
-                  <img
-                    src="/images/organic.svg"
-                    class="honest-svg"
-                    alt="organic"
-                  />
-                  <p class="img-head-text">COMFORT GROWN</p>
-                  <p class="img-sub-text">
-                    The extracts used in our products are obtained from
-                    organically grown hemp devoid of any harmful chemical
-                    inputs.
-                  </p>
-                </div>
-                <div class="img-wrapper">
-                  <img
-                    src="/images/thc.svg"
-                    class="honest-svg"
-                    alt="honest-thc"
-                  />
-                  <p class="img-head-text">SOFT FABRIC</p>
-                  <p class="img-sub-text">
-                    We take great care to ensure that the products reaching you
-                    are completely free of any THC. Only the goodness of hemp
-                    for you.
-                  </p>
-                </div>
-                <div class="img-wrapper">
-                  <img src="/images/vegan.svg" class="honest-svg" alt="vegan" />
-                  <p class="img-head-text">SIZE THAT SUITS YOU</p>
-                  <p class="img-sub-text">
-                    We have a wide range of vegan products infused with the
-                    goodness of CBD, curated keeping you in mind because we
-                    care.
-                  </p>
-                </div>
+              <div class="img-wrapper">
+                <img
+                  src="/images/thc.svg"
+                  class="honest-svg"
+                  alt="honest-thc"
+                />
+                <p class="img-head-text">SOFT FABRIC</p>
+                <p class="img-sub-text">
+                  We take great care to ensure that the products reaching you
+                  are completely free of any THC. Only the goodness of hemp for
+                  you.
+                </p>
               </div>
-            </section>
-          </Fade>
-        )}
+              <div class="img-wrapper">
+                <img src="/images/vegan.svg" class="honest-svg" alt="vegan" />
+                <p class="img-head-text">SIZE THAT SUITS YOU</p>
+                <p class="img-sub-text">
+                  We have a wide range of vegan products infused with the
+                  goodness of CBD, curated keeping you in mind because we care.
+                </p>
+              </div>
+            </div>
+          </section>
+        </Fade>
 
         <Fade>
           <section className="map-section-wrapper">

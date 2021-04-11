@@ -3,5 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/e-catalogue": "pages/e-catalogue.js"
+  "/admin/contact/query": "pages/admin/contact/query.js"
 }

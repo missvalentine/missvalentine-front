@@ -16,7 +16,7 @@ const Heading = dynamic(() => import('../../components/Heading'), {
 const Layout = dynamic(() => import('../../components/Layouts/Layout'), {
   ssr: false,
 });
-import { getProducts, homeData, getCategories } from '../../redux/actions';
+import { getProducts, getCategories } from '../../redux/actions';
 
 import { useSelector, useDispatch } from 'react-redux';
 import Product from '../../components/Product';

@@ -4,18 +4,8 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 import './styles/app.scss';
 const Drawer = dynamic(() => import('./Drawer'));
-const CartDrawer = dynamic(() => import('./CartDrawer'));
 const MobileMenus = dynamic(() => import('./MobileMenus'));
-import {
-  toggleCartBar,
-  hideCartBar,
-  toggleRegBar,
-} from '../redux/actions/drawers';
-import { unsetUser } from '../redux/actions/user';
-const Registration = dynamic(() => import('./popups/Registration'));
-const ForgetPassword = dynamic(() => import('./popups/ForgetPassword'));
-const Login = dynamic(() => import('./popups/Login'));
-const CartIcon = dynamic(() => import('./CartIcon'));
+
 import { projectName } from '../constants/projectSettings';
 
 const NavMobile = ({
@@ -23,7 +13,6 @@ const NavMobile = ({
   items,
   isRight,
   isCartOpen,
-  toggleCartBar,
   hideCartBar,
   toggleRegBar,
   isRegOpen,
@@ -35,20 +24,7 @@ const NavMobile = ({
 }) => {
   const [isOpen, setOpen] = useState(false);
   // const [isCartOpen, setIsCartOpen] = useState(false)
-  const onClick = (e, action) => {
-    if (action === 'link') {
-    }
-    if (action === 'cart') {
-      toggleCartBar();
-      // setIsCartOpen(!isCartOpen)
-    }
-    if (action === 'reg') {
-      toggleRegBar();
-    }
-    if (action === 'logout') {
-      unsetUser();
-    }
-  };
+
   if (onlyCart) {
     return (
       <div
@@ -62,13 +38,10 @@ const NavMobile = ({
         {items.map((el, key) => (
           <span
             key={key}
-            onClick={(e) => {
-              onClick(e, el.action);
-            }}
+            onClick={el.action}
             className="c-nav__icon c-nav__icon--mobile"
           >
             {el.label}
-            {/* {el.icon} */}
             <CartIcon />
           </span>
         ))}
@@ -100,32 +73,8 @@ const NavMobile = ({
       >
         <MobileMenus items={items} user={user} />
       </Drawer>
-      <Drawer onClose={hideCartBar} title="Cart" visible={isCartOpen}>
-        <CartDrawer />
-      </Drawer>
-      <Drawer
-        onClose={toggleRegBar}
-        title={loginDisplay === 'register' ? 'Registration' : 'Login'}
-        visible={isRegOpen}
-      >
-        {loginDisplay === 'register' && <Registration />}
-        {loginDisplay === 'login' && <Login />}
-        {loginDisplay === 'forget' && <ForgetPassword />}
-      </Drawer>
     </nav>
   );
 };
 
-const mapStateToProps = (state) => ({
-  isCartOpen: state.drawers.isCartOpen,
-  isRegOpen: state.drawers.isRegOpen,
-  hasLogin: state.drawers.hasLogin,
-  loginDisplay: state.drawers.toDisplay,
-  user: state.user,
-});
-export default connect(mapStateToProps, {
-  toggleCartBar,
-  hideCartBar,
-  toggleRegBar,
-  unsetUser,
-})(NavMobile);
+export default NavMobile;

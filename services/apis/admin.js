@@ -1,9 +1,4 @@
-import axios from 'axios';
-import apiList from './apiList';
 import { useHttp } from '../../utilis/useHttp';
-// const auth = JSON.parse(localStorage.getItem('auth'));
-// const { user } = auth;
-// const { _id } = user;
 
 const _id = '601bef27d29ac85814619ba3';
 

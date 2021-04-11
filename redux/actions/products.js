@@ -1,4 +1,3 @@
-import { SET_PRODUCTS, SET_CATEGORIES } from './type';
 import { addSlugToProduct } from '../../services/helpers/product';
 import {
   getAllProducts,
@@ -13,7 +12,7 @@ export const getProducts = (data) => (dispatch) => {
     .then((res) => {
       if (res.data && res.data.success) {
         dispatch({
-          type: SET_PRODUCTS,
+          type: 'SET_PRODUCTS',
           payload: res.data.data,
         });
       }
@@ -61,7 +60,7 @@ export const getCategories = () => (dispatch) => {
     .then((res) => {
       if (res.data && res.data.success) {
         dispatch({
-          type: SET_CATEGORIES,
+          type: 'SET_CATEGORIES',
           payload: res.data.data,
         });
       }
