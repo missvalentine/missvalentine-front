@@ -1,5 +1,5 @@
 export const projectName = 'MissValentine';
-const isLocal = true;
+const isLocal = false;
 export const baseUrl = isLocal
   ? 'http://localhost:5000/api'
   : 'https://missval.herokuapp.com/api';
