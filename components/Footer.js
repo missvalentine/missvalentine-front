@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import dynamic from 'next/dynamic';
 const Heading = dynamic(() => import('./Heading'));
 import Link from 'next/link';
@@ -6,7 +7,6 @@ import footerMenu from '../constants/footerMenu';
 const SubscribeForm = dynamic(() => import('./SubscribeForm'));
 import projectSettings, { projectName } from '../constants/projectSettings';
 const Logo = dynamic(() => import('./Logo'));
-import { useState } from 'react';
 import { Modal } from 'antd';
 import { createContactUs } from '../services/apis/contact';
 const EmailReg = new RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g);
@@ -23,7 +23,6 @@ const subscribeUser = async (e, email) => {
             onOk() {
               Router.push('/');
             },
-            wrapClassName: 'c-footer-modal',
           });
         } else {
           Modal.error({
@@ -32,7 +31,6 @@ const subscribeUser = async (e, email) => {
             onOk() {
               Router.push('/');
             },
-            wrapClassName: 'c-footer-modal',
           });
         }
       })

@@ -1,6 +1,3 @@
-import { AiOutlineUser } from 'react-icons/ai';
-import { FiShoppingCart } from 'react-icons/fi';
-import ReactSVG from 'react-svg';
 const mobileMenus = [
   {
     label: 'Explore',
@@ -33,6 +30,11 @@ const mobileMenus = [
   {
     label: 'Catalogue',
     link: '/e-catalogue',
+    action: 'link',
+  },
+  {
+    label: 'Contact',
+    link: '/contact',
     action: 'link',
   },
 ];

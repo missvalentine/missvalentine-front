@@ -22,13 +22,8 @@ import {
 import projectSettings from '../constants/projectSettings';
 import CartItem from './CartItem';
 import { numberFormat } from '../services/helpers/misc';
-const { SubMenu } = Menu;
 const Nav = ({ parent, items, isRight, props }) => {
   const inputEl = useRef(null);
-  const [isOpen, setOpen] = useState(false);
-  const [search, setSearch] = useState('');
-  const [display, setDisplay] = useState(false);
-  const [products, setProducts] = useState([]);
 
   return (
     <nav
@@ -66,21 +61,10 @@ const Nav = ({ parent, items, isRight, props }) => {
               </span>
             )}
             {el.subMenus && (
-              // <ul className="c-nav__sub-menu">
               <div className="sidebar">
                 <div className="sidebarLeftDiv">
                   <ul style={{ listStyleType: 'none' }}>
                     {el.subMenus.map((elx, i) => (
-                      // <Flip key={i} left opposite when={isOpen}>
-                      //   <li className="c-nav__sub-menu-item">
-                      //     <Link as={elx.as || elx.link} href={elx.link}>
-                      //       <a className="c-nav__link c-nav__link--sub">
-                      //         {elx.label}
-                      //       </a>
-                      //     </Link>
-                      //   </li>
-                      // </Flip>
-
                       <li style={{ margin: '30px 20px' }} key={i}>
                         <Link as={elx.as || elx.link} href={elx.link}>
                           <a className="c-nav__link c-nav__link--sub">
