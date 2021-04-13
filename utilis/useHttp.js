@@ -5,12 +5,12 @@ export const useHttp = async ({ method = 'get', url, data, options }) => {
   try {
     console.log('http', data);
     const auth = JSON.parse(localStorage.getItem('auth'));
-    const { user, token } = auth;
     let headers = {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     };
-    if (user) {
+    if (auth) {
+      const { user, token } = auth;
       headers = { ...headers, Authorization: `Bearer ${token}` };
     }
     if (options && options.headers) {

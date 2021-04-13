@@ -1,25 +1,7 @@
 {
-  "/404": "pages/404.js",
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/accessibility": "pages/accessibility.js",
-  "/admin/category/create": "pages/admin/category/create.js",
-  "/admin/category": "pages/admin/category.js",
-  "/admin/contact/enquiry": "pages/admin/contact/enquiry.js",
-  "/admin/contact/query": "pages/admin/contact/query.js",
-  "/admin/dashboard": "pages/admin/dashboard.js",
-  "/admin": "pages/admin.js",
-  "/admin/product/create": "pages/admin/product/create.js",
-  "/admin/product": "pages/admin/product.js",
-  "/admin/subcategory/create": "pages/admin/subcategory/create.js",
-  "/admin/subcategory": "pages/admin/subcategory.js",
-  "/category/[cid]": "pages/category/[cid].js",
-  "/contact": "pages/contact.js",
-  "/e-catalogue": "pages/e-catalogue.js",
+  "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/privacy": "pages/privacy.js",
-  "/products/[pid]": "pages/products/[pid].js",
-  "/products": "pages/products.js",
-  "/websiteaccessibility": "pages/websiteaccessibility.js",
-  "/_document": "pages/_document.js"
+  "/e-catalogue": "pages/e-catalogue.js"
 }
