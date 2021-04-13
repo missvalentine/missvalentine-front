@@ -88,227 +88,642 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/styles/app.scss":
-/*!************************************!*\
-  !*** ./components/styles/app.scss ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL2NvbXBvbmVudHMvc3R5bGVzL2FwcC5zY3NzLmpzIiwic291cmNlc0NvbnRlbnQiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/styles/app.scss\n");
-
-/***/ }),
-
-/***/ "./constants/projectSettings.js":
-/*!**************************************!*\
-  !*** ./constants/projectSettings.js ***!
-  \**************************************/
-/*! exports provided: projectName, baseUrl, docMzUrl, contentUrl, imageUrl, serverUrl, googleApiKey, shippingFreeAfter, shippingExtraRate, shippingStaticRate, referralPresent, defaultOrderStatus, defaultStatusInOrder, invoiceUrl, subsPercent, filePath, labSheetPath, countryTax, chatTheme, enableCountry, accountTypeOpt, customRates, topBarText, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"projectName\", function() { return projectName; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"baseUrl\", function() { return baseUrl; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"docMzUrl\", function() { return docMzUrl; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"contentUrl\", function() { return contentUrl; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"imageUrl\", function() { return imageUrl; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"serverUrl\", function() { return serverUrl; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"googleApiKey\", function() { return googleApiKey; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"shippingFreeAfter\", function() { return shippingFreeAfter; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"shippingExtraRate\", function() { return shippingExtraRate; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"shippingStaticRate\", function() { return shippingStaticRate; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"referralPresent\", function() { return referralPresent; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"defaultOrderStatus\", function() { return defaultOrderStatus; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"defaultStatusInOrder\", function() { return defaultStatusInOrder; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"invoiceUrl\", function() { return invoiceUrl; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"subsPercent\", function() { return subsPercent; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"filePath\", function() { return filePath; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"labSheetPath\", function() { return labSheetPath; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"countryTax\", function() { return countryTax; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"chatTheme\", function() { return chatTheme; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"enableCountry\", function() { return enableCountry; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"accountTypeOpt\", function() { return accountTypeOpt; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"customRates\", function() { return customRates; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"topBarText\", function() { return topBarText; });\nconst projectName = 'MissValentine';\nconst isLocal = true;\nconst baseUrl = isLocal ? 'http://localhost:5000/api' : 'https://missval.herokuapp.com/api'; //export const baseUrl = \"http://localhost:4003\";\n\nconst docMzUrl = 'http://localhost:3001';\nconst contentUrl = 'https://server1.cbdbene.com';\nconst imageUrl = 'https://server1.cbdbene.com/';\nconst serverUrl = 'https://admin.cbdbene.com/'; //export const baseUrl = \"http://localhost:4003\";\n//export const serverUrl = \"http://localhost:4003/\";\n//export const imageUrl = \"http://localhost:5000/\";\n// export const contentUrl = \"http://localhost:5000\";\n\nconst googleApiKey = 'AIzaSyBXxXfKy5wtHEO9XniOvGEKPME-_ldClVk';\nconst shippingFreeAfter = 75;\nconst shippingExtraRate = 5;\nconst shippingStaticRate = 5.95;\nconst referralPresent = 25;\nconst defaultOrderStatus = 'Transaction completed - label generated';\nconst defaultStatusInOrder = 'in process';\nconst invoiceUrl = 'https://admin.cbdbene.com/images/';\nconst subsPercent = 10;\nconst filePath = 'https://admin.cbdbene.com/var/www/cbdbene_3rde/cbdbene/';\nconst labSheetPath = 'https://admin.cbdbene.com/var/www/cbdbene_3rde/cbdbene/';\nconst countryTax = 15 / 100;\nconst chatTheme = {\n  background: '#ffffff',\n  // fontFamily: fonts.mainfont,\n  headerBgColor: '#000000',\n  headerFontColor: '#ffffff',\n  headerFontSize: '20px',\n  botBubbleColor: '#eee9e3',\n  botFontColor: '#202020',\n  userBubbleColor: '#fff',\n  userFontColor: '#4a4a4a'\n};\nconst enableCountry = ['US', 'USA', 'United States'];\nconst accountTypeOpt = [{\n  label: 'Checking',\n  value: 'checking'\n}, {\n  label: 'Savings',\n  value: 'savings'\n}, {\n  label: 'Business Checking',\n  value: 'businessChecking'\n}];\nconst customRates = [{\n  id: 'rate_custom1',\n  object: 'Rate',\n  created_at: '2020-02-10T10:54:03Z',\n  updated_at: '2020-02-10T10:54:03Z',\n  mode: 'test',\n  service: 'Priority',\n  carrier: 'USPS',\n  rate: '8.42',\n  currency: 'USD',\n  retail_rate: '14.90',\n  retail_currency: 'USD',\n  list_rate: '11.19',\n  list_currency: 'USD',\n  delivery_days: 2,\n  delivery_date: null,\n  delivery_date_guaranteed: false,\n  est_delivery_days: 2,\n  shipment_id: 'shp_2255eb7f0e8b4775abcfe009be9ba569',\n  carrier_account_id: 'ca_5cd23a24d9c3427780dcfde68fbb1c76',\n  customName: 'Standard',\n  customRate: 15.89\n}, {\n  id: 'rate_custom2',\n  object: 'Rate',\n  created_at: '2020-02-10T10:54:03Z',\n  updated_at: '2020-02-10T10:54:03Z',\n  mode: 'test',\n  service: 'ParcelSelect',\n  carrier: 'USPS',\n  rate: '10.89',\n  currency: 'USD',\n  retail_rate: '10.89',\n  retail_currency: 'USD',\n  list_rate: '10.89',\n  list_currency: 'USD',\n  delivery_days: 7,\n  delivery_date: null,\n  delivery_date_guaranteed: false,\n  est_delivery_days: 7,\n  shipment_id: 'shp_2255eb7f0e8b4775abcfe009be9ba569',\n  carrier_account_id: 'ca_5cd23a24d9c3427780dcfde68fbb1c76',\n  customName: 'Priority',\n  customRate: 20.54\n}, {\n  id: 'rate_custom3',\n  object: 'Rate',\n  created_at: '2020-02-10T10:54:03Z',\n  updated_at: '2020-02-10T10:54:03Z',\n  mode: 'test',\n  service: 'Express',\n  carrier: 'USPS',\n  rate: '43.60',\n  currency: 'USD',\n  retail_rate: '50.85',\n  retail_currency: 'USD',\n  list_rate: '43.60',\n  list_currency: 'USD',\n  delivery_days: null,\n  delivery_date: null,\n  delivery_date_guaranteed: false,\n  est_delivery_days: null,\n  shipment_id: 'shp_2255eb7f0e8b4775abcfe009be9ba569',\n  carrier_account_id: 'ca_5cd23a24d9c3427780dcfde68fbb1c76',\n  customName: 'Express',\n  customRate: 48.6\n}];\nconst topBarText = 'Free shipping on all orders above $75.'; // make it empty string (\"\") to hide tha bar\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  imageUrl,\n  projectName,\n  baseUrl,\n  serverUrl,\n  googleApiKey,\n  shippingFreeAfter,\n  shippingExtraRate,\n  shippingStaticRate,\n  referralPresent,\n  defaultOrderStatus,\n  defaultStatusInOrder,\n  invoiceUrl,\n  enableCountry,\n  subsPercent,\n  accountTypeOpt,\n  filePath,\n  labSheetPath,\n  countryTax,\n  docMzUrl,\n  customRates,\n  chatTheme,\n  topBarText,\n  contentUrl\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jb25zdGFudHMvcHJvamVjdFNldHRpbmdzLmpzP2M1MjUiXSwibmFtZXMiOlsicHJvamVjdE5hbWUiLCJpc0xvY2FsIiwiYmFzZVVybCIsImRvY016VXJsIiwiY29udGVudFVybCIsImltYWdlVXJsIiwic2VydmVyVXJsIiwiZ29vZ2xlQXBpS2V5Iiwic2hpcHBpbmdGcmVlQWZ0ZXIiLCJzaGlwcGluZ0V4dHJhUmF0ZSIsInNoaXBwaW5nU3RhdGljUmF0ZSIsInJlZmVycmFsUHJlc2VudCIsImRlZmF1bHRPcmRlclN0YXR1cyIsImRlZmF1bHRTdGF0dXNJbk9yZGVyIiwiaW52b2ljZVVybCIsInN1YnNQZXJjZW50IiwiZmlsZVBhdGgiLCJsYWJTaGVldFBhdGgiLCJjb3VudHJ5VGF4IiwiY2hhdFRoZW1lIiwiYmFja2dyb3VuZCIsImhlYWRlckJnQ29sb3IiLCJoZWFkZXJGb250Q29sb3IiLCJoZWFkZXJGb250U2l6ZSIsImJvdEJ1YmJsZUNvbG9yIiwiYm90Rm9udENvbG9yIiwidXNlckJ1YmJsZUNvbG9yIiwidXNlckZvbnRDb2xvciIsImVuYWJsZUNvdW50cnkiLCJhY2NvdW50VHlwZU9wdCIsImxhYmVsIiwidmFsdWUiLCJjdXN0b21SYXRlcyIsImlkIiwib2JqZWN0IiwiY3JlYXRlZF9hdCIsInVwZGF0ZWRfYXQiLCJtb2RlIiwic2VydmljZSIsImNhcnJpZXIiLCJyYXRlIiwiY3VycmVuY3kiLCJyZXRhaWxfcmF0ZSIsInJldGFpbF9jdXJyZW5jeSIsImxpc3RfcmF0ZSIsImxpc3RfY3VycmVuY3kiLCJkZWxpdmVyeV9kYXlzIiwiZGVsaXZlcnlfZGF0ZSIsImRlbGl2ZXJ5X2RhdGVfZ3VhcmFudGVlZCIsImVzdF9kZWxpdmVyeV9kYXlzIiwic2hpcG1lbnRfaWQiLCJjYXJyaWVyX2FjY291bnRfaWQiLCJjdXN0b21OYW1lIiwiY3VzdG9tUmF0ZSIsInRvcEJhclRleHQiXSwibWFwcGluZ3MiOiJBQUFBO0FBQUE7QUFBQTtB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YUFGYTtBQUdiRSxTQUhhO0FBSWJJLFdBSmE7QUFLYkMsY0FMYTtBQU1iQyxtQkFOYTtBQU9iQyxtQkFQYTtBQVFiQyxvQkFSYTtBQVNiQyxpQkFUYTtBQVViQyxvQkFWYTtBQVdiQyxzQkFYYTtBQVliQyxZQVphO0FBYWJjLGVBYmE7QUFjYmIsYUFkYTtBQWViYyxnQkFmYTtBQWdCYmIsVUFoQmE7QUFpQmJDLGNBakJhO0FBa0JiQyxZQWxCYTtBQW1CYmYsVUFuQmE7QUFvQmI2QixhQXBCYTtBQXFCYmIsV0FyQmE7QUFzQmJtQyxZQXRCYTtBQXVCYmxEO0FBdkJhLENBQWYiLCJmaWxlIjoiLi9jb25zdGFudHMvcHJvamVjdFNldHRpbmdzLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IHByb2plY3ROYW1lID0gJ01pc3NWYWxlbnRpbmUnO1xuY29uc3QgaXNMb2NhbCA9IHRydWU7XG5leHBvcnQgY29uc3QgYmFzZVVybCA9IGlzTG9jYWxcbiAgPyAnaHR0cDovL2xvY2FsaG9zdDo1MDAwL2FwaSdcbiAgOiAnaHR0cHM6Ly9taXNzdmFsLmhlcm9rdWFwcC5jb20vYXBpJztcbi8vZXhwb3J0IGNvbnN0IGJhc2VVcmwgPSBcImh0dHA6Ly9sb2NhbGhvc3Q6NDAwM1wiO1xuZXhwb3J0IGNvbnN0IGRvY016VXJsID0gJ2h0dHA6Ly9sb2NhbGhvc3Q6MzAwMSc7XG5leHBvcnQgY29uc3QgY29udGVudFVybCA9ICdodHRwczovL3NlcnZlcjEuY2JkYmVuZS5jb20nO1xuZXhwb3J0IGNvbnN0IGltYWdlVXJsID0gJ2h0dHBzOi8vc2VydmVyMS5jYmRiZW5lLmNvbS8nO1xuZXhwb3J0IGNvbnN0IHNlcnZlclVybCA9ICdodHRwczovL2FkbWluLmNiZGJlbmUuY29tLyc7XG4vL2V4cG9ydCBjb25zdCBiYXNlVXJsID0gXCJodHRwOi8vbG9jYWxob3N0OjQwMDNcIjtcbi8vZXhwb3J0IGNvbnN0IHNlcnZlclVybCA9IFwiaHR0cDovL2xvY2FsaG9zdDo0MDAzL1wiO1xuLy9leHBvcnQgY29uc3QgaW1hZ2VVcmwgPSBcImh0dHA6Ly9sb2NhbGhvc3Q6NTAwMC9cIjtcbi8vIGV4cG9ydCBjb25zdCBjb250ZW50VXJsID0gXCJodHRwOi8vbG9jYWxob3N0OjUwMDBcIjtcbmV4cG9ydCBjb25zdCBnb29nbGVBcGlLZXkgPSAnQUl6YVN5Qlh4WGZLeTV3dEhFTzlYbmlPdkdFS1BNRS1fbGRDbFZrJztcbmV4cG9ydCBjb25zdCBzaGlwcGluZ0ZyZWVBZnRlciA9IDc1O1xuZXhwb3J0IGNvbnN0IHNoaXBwaW5nRXh0cmFSYXRlID0gNTtcbmV4cG9ydCBjb25zdCBzaGlwcGluZ1N0YXRpY1JhdGUgPSA1Ljk1O1xuZXhwb3J0IGNvbnN0IHJlZmVycmFsUHJlc2VudCA9IDI1O1xuZXhwb3J0IGNvbnN0IGRlZmF1bHRPcmRlclN0YXR1cyA9ICdUcmFuc2FjdGlvbiBjb21wbGV0ZWQgLSBsYWJlbCBnZW5lcmF0ZWQnO1xuZXhwb3J0IGNvbnN0IGRlZmF1bHRTdGF0dXNJbk9yZGVyID0gJ2luIHByb2Nlc3MnO1xuZXhwb3J0IGNvbnN0IGludm9pY2VVcmwgPSAnaHR0cHM6Ly9hZG1pbi5jYmRiZW5lLmNvbS9pbWFnZXMvJztcbmV4cG9ydCBjb25zdCBzdWJzUGVyY2VudCA9IDEwO1xuZXhwb3J0IGNvbnN0IGZpbGVQYXRoID1cbiAgJ2h0dHBzOi8vYWRtaW4uY2JkYmVuZS5jb20vdmFyL3d3dy9jYmRiZW5lXzNyZGUvY2JkYmVuZS8nO1xuZXhwb3J0IGNvbnN0IGxhYlNoZWV0UGF0aCA9XG4gICdodHRwczovL2FkbWluLmNiZGJlbmUuY29tL3Zhci93d3cvY2JkYmVuZV8zcmRlL2NiZGJlbmUvJztcbmV4cG9ydCBjb25zdCBjb3VudHJ5VGF4ID0gMTUgLyAxMDA7XG5cbmV4cG9ydCBjb25zdCBjaGF0VGhlbWUgPSB7XG4gIGJhY2tncm91bmQ6ICcjZmZmZmZmJyxcbiAgLy8gZm9udEZhbWlseTogZm9udHMubWFpbmZvbnQsXG4gIGhlYWRlckJnQ29sb3I6ICcjMDAwMDAwJyxcbiAgaGVhZGVyRm9udENvbG9yOiAnI2ZmZmZmZicsXG4gIGhlYWRlckZvbnRTaXplOiAnMjBweCcsXG4gIGJvdEJ1YmJsZUNvbG9yOiAnI2VlZTllMycsXG4gIGJvdEZvbnRDb2xvcjogJyMyMDIwMjAnLFxuICB1c2VyQnViYmxlQ29sb3I6ICcjZmZmJyxcbiAgdXNlckZvbnRDb2xvcjogJyM0YTRhNGEnLFxufTtcblxuZXhwb3J0IGNvbnN0IGVuYWJsZUNvdW50cnkgPSBbJ1VTJywgJ1VTQScsICdVbml0ZWQgU3RhdGVzJ107XG5leHBvcnQgY29uc3QgYWNjb3VudFR5cGVPcHQgPSBbXG4gIHtcbiAgICBsYWJlbDogJ0NoZWNraW5nJyxcbiAgICB2YWx1ZTogJ2NoZWNraW5nJyxcbiAgfSxcbiAge1xuICAgIGxhYmVsOiAnU2F2aW5ncycsXG4gICAgdmFsdWU6ICdzYXZpbmdzJyxcbiAgfSxcbiAge1xuICAgIGxhYmVsOiAnQnVzaW5lc3MgQ2hlY2tpbmcnLFxuICAgIHZhbHVlOiAnYnVzaW5lc3NDaGVja2luZycsXG4gIH0sXG5dO1xuZXhwb3J0IGNvbnN0IGN1c3RvbVJhdGVzID0gW1xuICB7XG4gICAgaWQ6ICdyYXRlX2N1c3RvbTEnLFxuICAgIG9iamVjdDogJ1JhdGUnLFxuICAgIGNyZWF0ZWRfYXQ6ICcyMDIwLTAyLTEwVDEwOjU0OjAzWicsXG4gICAgdXBkYXRlZF9hdDogJzIwMjAtMDItMTBUMTA6NTQ6MDNaJyxcbiAgICBtb2RlOiAndGVzdCcsXG4gICAgc2VydmljZTogJ1ByaW9yaXR5JyxcbiAgICBjYXJyaWVyOiAnVVNQUycsXG4gICAgcmF0ZTogJzguNDInLFxuICAgIGN1cnJlbmN5OiAnVVNEJyxcbiAgICByZXRhaWxfcmF0ZTogJzE0LjkwJyxcbiAgICByZXRhaWxfY3VycmVuY3k6ICdVU0QnLFxuICAgIGxpc3RfcmF0ZTogJzExLjE5JyxcbiAgICBsaXN0X2N1cnJlbmN5OiAnVVNEJyxcbiAgICBkZWxpdmVyeV9kYXlzOiAyLFxuICAgIGRlbGl2ZXJ5X2RhdGU6IG51bGwsXG4gICAgZGVsaXZlcnlfZGF0ZV9ndWFyYW50ZWVkOiBmYWxzZSxcbiAgICBlc3RfZGVsaXZlcnlfZGF5czogMixcbiAgICBzaGlwbWVudF9pZDogJ3NocF8yMjU1ZWI3ZjBlOGI0Nzc1YWJjZmUwMDliZTliYTU2OScsXG4gICAgY2Fycmllcl9hY2NvdW50X2lkOiAnY2FfNWNkMjNhMjRkOWMzNDI3NzgwZGNmZGU2OGZiYjFjNzYnLFxuICAgIGN1c3RvbU5hbWU6ICdTdGFuZGFyZCcsXG4gICAgY3VzdG9tUmF0ZTogMTUuODksXG4gIH0sXG4gIHtcbiAgICBpZDogJ3JhdGVfY3VzdG9tMicsXG4gICAgb2JqZWN0OiAnUmF0ZScsXG4gICAgY3JlYXRlZF9hdDogJzIwMjAtMDItMTBUMTA6NTQ6MDNaJyxcbiAgICB1cGRhdGVkX2F0OiAnMjAyMC0wMi0xMFQxMDo1NDowM1onLFxuICAgIG1vZGU6ICd0ZXN0JyxcbiAgICBzZXJ2aWNlOiAnUGFyY2VsU2VsZWN0JyxcbiAgICBjYXJyaWVyOiAnVVNQUycsXG4gICAgcmF0ZTogJzEwLjg5JyxcbiAgICBjdXJyZW5jeTogJ1VTRCcsXG4gICAgcmV0YWlsX3JhdGU6ICcxMC44OScsXG4gICAgcmV0YWlsX2N1cnJlbmN5OiAnVVNEJyxcbiAgICBsaXN0X3JhdGU6ICcxMC44OScsXG4gICAgbGlzdF9jdXJyZW5jeTogJ1VTRCcsXG4gICAgZGVsaXZlcnlfZGF5czogNyxcbiAgICBkZWxpdmVyeV9kYXRlOiBudWxsLFxuICAgIGRlbGl2ZXJ5X2RhdGVfZ3VhcmFudGVlZDogZmFsc2UsXG4gICAgZXN0X2RlbGl2ZXJ5X2RheXM6IDcsXG4gICAgc2hpcG1lbnRfaWQ6ICdzaHBfMjI1NWViN2YwZThiNDc3NWFiY2ZlMDA5YmU5YmE1NjknLFxuICAgIGNhcnJpZXJfYWNjb3VudF9pZDogJ2NhXzVjZDIzYTI0ZDljMzQyNzc4MGRjZmRlNjhmYmIxYzc2JyxcbiAgICBjdXN0b21OYW1lOiAnUHJpb3JpdHknLFxuICAgIGN1c3RvbVJhdGU6IDIwLjU0LFxuICB9LFxuICB7XG4gICAgaWQ6ICdyYXRlX2N1c3RvbTMnLFxuICAgIG9iamVjdDogJ1JhdGUnLFxuICAgIGNyZWF0ZWRfYXQ6ICcyMDIwLTAyLTEwVDEwOjU0OjAzWicsXG4gICAgdXBkYXRlZF9hdDogJzIwMjAtMDItMTBUMTA6NTQ6MDNaJyxcbiAgICBtb2RlOiAndGVzdCcsXG4gICAgc2VydmljZTogJ0V4cHJlc3MnLFxuICAgIGNhcnJpZXI6ICdVU1BTJyxcbiAgICByYXRlOiAnNDMuNjAnLFxuICAgIGN1cnJlbmN5OiAnVVNEJyxcbiAgICByZXRhaWxfcmF0ZTogJzUwLjg1JyxcbiAgICByZXRhaWxfY3VycmVuY3k6ICdVU0QnLFxuICAgIGxpc3RfcmF0ZTogJzQzLjYwJyxcbiAgICBsaXN0X2N1cnJlbmN5OiAnVVNEJyxcbiAgICBkZWxpdmVyeV9kYXlzOiBudWxsLFxuICAgIGRlbGl2ZXJ5X2RhdGU6IG51bGwsXG4gICAgZGVsaXZlcnlfZGF0ZV9ndWFyYW50ZWVkOiBmYWxzZSxcbiAgICBlc3RfZGVsaXZlcnlfZGF5czogbnVsbCxcbiAgICBzaGlwbWVudF9pZDogJ3NocF8yMjU1ZWI3ZjBlOGI0Nzc1YWJjZmUwMDliZTliYTU2OScsXG4gICAgY2Fycmllcl9hY2NvdW50X2lkOiAnY2FfNWNkMjNhMjRkOWMzNDI3NzgwZGNmZGU2OGZiYjFjNzYnLFxuICAgIGN1c3RvbU5hbWU6ICdFeHByZXNzJyxcbiAgICBjdXN0b21SYXRlOiA0OC42LFxuICB9LFxuXTtcbmV4cG9ydCBjb25zdCB0b3BCYXJUZXh0ID0gJ0ZyZWUgc2hpcHBpbmcgb24gYWxsIG9yZGVycyBhYm92ZSAkNzUuJzsgLy8gbWFrZSBpdCBlbXB0eSBzdHJpbmcgKFwiXCIpIHRvIGhpZGUgdGhhIGJhclxuXG5leHBvcnQgZGVmYXVsdCB7XG4gIGltYWdlVXJsLFxuICBwcm9qZWN0TmFtZSxcbiAgYmFzZVVybCxcbiAgc2VydmVyVXJsLFxuICBnb29nbGVBcGlLZXksXG4gIHNoaXBwaW5nRnJlZUFmdGVyLFxuICBzaGlwcGluZ0V4dHJhUmF0ZSxcbiAgc2hpcHBpbmdTdGF0aWNSYXRlLFxuICByZWZlcnJhbFByZXNlbnQsXG4gIGRlZmF1bHRPcmRlclN0YXR1cyxcbiAgZGVmYXVsdFN0YXR1c0luT3JkZXIsXG4gIGludm9pY2VVcmwsXG4gIGVuYWJsZUNvdW50cnksXG4gIHN1YnNQZXJjZW50LFxuICBhY2NvdW50VHlwZU9wdCxcbiAgZmlsZVBhdGgsXG4gIGxhYlNoZWV0UGF0aCxcbiAgY291bnRyeVRheCxcbiAgZG9jTXpVcmwsXG4gIGN1c3RvbVJhdGVzLFxuICBjaGF0VGhlbWUsXG4gIHRvcEJhclRleHQsXG4gIGNvbnRlbnRVcmwsXG59O1xuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./constants/projectSettings.js\n");
-
-/***/ }),
-
-/***/ "./pages/_app.js":
-/*!***********************!*\
-  !*** ./pages/_app.js ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var redux_persist_integration_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-persist/integration/react */ \"redux-persist/integration/react\");\n/* harmony import */ var redux_persist_integration_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(redux_persist_integration_react__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../redux */ \"./redux/index.js\");\n/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/head */ \"next/head\");\n/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _constants_projectSettings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants/projectSettings */ \"./constants/projectSettings.js\");\n/* harmony import */ var _components_styles_app_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/styles/app.scss */ \"./components/styles/app.scss\");\n/* harmony import */ var _components_styles_app_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_styles_app_scss__WEBPACK_IMPORTED_MODULE_6__);\nvar _jsxFileName = \"/Users/akshataggarwal/Documents/Coding Files/webd projects/missvalentine-front/pages/_app.js\";\nvar __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;\n\nfunction _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }\n\n// pages/_app.js\n\n\n\n\n\n\n\n/**\n * @param {object} initialState\n * @param {boolean} options.isServer indicates whether it is a server side or client side\n * @param {Request} options.req NodeJS Request object (not set when client applies initialState from server)\n * @param {Request} options.res NodeJS Request object (not set when client applies initialState from server)\n * @param {boolean} options.debug User-defined debug mode param\n * @param {string} options.storeKey This key will be used to preserve store in global namespace for safe HMR\n */\n\nconst {\n  store,\n  persistor\n} = Object(_redux__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n\nconst App = ({\n  Component,\n  pageProps\n}) => {\n  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, {\n    __self: undefined,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 24,\n      columnNumber: 7\n    }\n  }, __jsx(\"script\", {\n    src: `https://maps.googleapis.com/maps/api/js?key=${_constants_projectSettings__WEBPACK_IMPORTED_MODULE_5__[\"default\"].googleApiKey}&libraries=places&v=3` // async\n    // defer\n    ,\n    __self: undefined,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 25,\n      columnNumber: 9\n    }\n  })), __jsx(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"Provider\"], {\n    store: store,\n    __self: undefined,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 31,\n      columnNumber: 7\n    }\n  }, __jsx(redux_persist_integration_react__WEBPACK_IMPORTED_MODULE_2__[\"PersistGate\"], {\n    loading: null,\n    persistor: persistor,\n    __self: undefined,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 32,\n      columnNumber: 9\n    }\n  }, __jsx(Component, _extends({}, pageProps, {\n    __self: undefined,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 33,\n      columnNumber: 11\n    }\n  })))));\n};\n\nApp.getInitialProps = async ({\n  Component,\n  ctx\n}) => {\n  if (Component.getInitialProps) {\n    const pageProps = await Component.getInitialProps(ctx);\n    return {\n      pageProps\n    };\n  }\n\n  return {};\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (App);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9wYWdlcy9fYXBwLmpzP2Q1MzAiXSwibmFtZXMiOlsic3RvcmUiLCJwZXJzaXN0b3IiLCJjcmVhdGVTdG9yZSIsIkFwcCIsIkNvbXBvbmVudCIsInBhZ2VQcm9wcyIsInByb2plY3RTZXR0aW5ncyIsImdvb2dsZUFwaUtleSIsImdldEluaXRpYWxQcm9wcyIsImN0eCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBRUEsTUFBTTtBQUFFQSxPQUFGO0FBQVNDO0FBQVQsSUFBdUJDLHNEQUFXLEVBQXhDOztBQUVBLE1BQU1DLEdBQUcsR0FBRyxDQUFDO0FBQUVDLFdBQUY7QUFBYUM7QUFBYixDQUFELEtBQThCO0FBQ3hDLFNBQ0UsbUVBQ0UsTUFBQyxnREFBRDtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLEtBQ0U7QUFDRSxPQUFHLEVBQUcsK0NBQThDQyxrRUFBZSxDQUFDQyxZQUFhLHVCQURuRixDQUVFO0FBQ0E7QUFIRjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLElBREYsQ0FERixFQVFFLE1BQUMsb0RBQUQ7QUFBVSxTQUFLLEVBQUVQLEtBQWpCO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsS0FDRSxNQUFDLDJFQUFEO0FBQWEsV0FBTyxFQUFFLElBQXRCO0FBQTRCLGFBQVMsRUFBRUMsU0FBdkM7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxLQUNFLE1BQUMsU0FBRCxlQUFlSSxTQUFmO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsS0FERixDQURGLENBUkYsQ0FERjtBQWdCRCxDQWpCRDs7QUFtQkFGLEdBQUcsQ0FBQ0ssZUFBSixHQUFzQixPQUFPO0FBQUVKLFdBQUY7QUFBYUs7QUFBYixDQUFQLEtBQThCO0FBQ2xELE1BQUlMLFNBQVMsQ0FBQ0ksZUFBZCxFQUErQjtBQUM3QixVQUFNSCxTQUFTLEdBQUcsTUFBTUQsU0FBUyxDQUFDSSxlQUFWLENBQTBCQyxHQUExQixDQUF4QjtBQUNBLFdBQU87QUFBRUo7QUFBRixLQUFQO0FBQ0Q7O0FBRUQsU0FBTyxFQUFQO0FBQ0QsQ0FQRDs7QUFTZUYsa0VBQWYiLCJmaWxlIjoiLi9wYWdlcy9fYXBwLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gcGFnZXMvX2FwcC5qc1xuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IFByb3ZpZGVyIH0gZnJvbSAncmVhY3QtcmVkdXgnO1xuaW1wb3J0IHsgUGVyc2lzdEdhdGUgfSBmcm9tICdyZWR1eC1wZXJzaXN0L2ludGVncmF0aW9uL3JlYWN0JztcbmltcG9ydCBjcmVhdGVTdG9yZSBmcm9tICcuLi9yZWR1eCc7XG5cbmltcG9ydCBIZWFkIGZyb20gJ25leHQvaGVhZCc7XG5pbXBvcnQgcHJvamVjdFNldHRpbmdzIGZyb20gJy4uL2NvbnN0YW50cy9wcm9qZWN0U2V0dGluZ3MnO1xuaW1wb3J0ICcuLi9jb21wb25lbnRzL3N0eWxlcy9hcHAuc2Nzcyc7XG4vKipcbiAqIEBwYXJhbSB7b2JqZWN0fSBpbml0aWFsU3RhdGVcbiAqIEBwYXJhbSB7Ym9vbGVhbn0gb3B0aW9ucy5pc1NlcnZlciBpbmRpY2F0ZXMgd2hldGhlciBpdCBpcyBhIHNlcnZlciBzaWRlIG9yIGNsaWVudCBzaWRlXG4gKiBAcGFyYW0ge1JlcXVlc3R9IG9wdGlvbnMucmVxIE5vZGVKUyBSZXF1ZXN0IG9iamVjdCAobm90IHNldCB3aGVuIGNsaWVudCBhcHBsaWVzIGluaXRpYWxTdGF0ZSBmcm9tIHNlcnZlcilcbiAqIEBwYXJhbSB7UmVxdWVzdH0gb3B0aW9ucy5yZXMgTm9kZUpTIFJlcXVlc3Qgb2JqZWN0IChub3Qgc2V0IHdoZW4gY2xpZW50IGFwcGxpZXMgaW5pdGlhbFN0YXRlIGZyb20gc2VydmVyKVxuICogQHBhcmFtIHtib29sZWFufSBvcHRpb25zLmRlYnVnIFVzZXItZGVmaW5lZCBkZWJ1ZyBtb2RlIHBhcmFtXG4gKiBAcGFyYW0ge3N0cmluZ30gb3B0aW9ucy5zdG9yZUtleSBUaGlzIGtleSB3aWxsIGJlIHVzZWQgdG8gcHJlc2VydmUgc3RvcmUgaW4gZ2xvYmFsIG5hbWVzcGFjZSBmb3Igc2FmZSBITVJcbiAqL1xuXG5jb25zdCB7IHN0b3JlLCBwZXJzaXN0b3IgfSA9IGNyZWF0ZVN0b3JlKCk7XG5cbmNvbnN0IEFwcCA9ICh7IENvbXBvbmVudCwgcGFnZVByb3BzIH0pID0+IHtcbiAgcmV0dXJuIChcbiAgICA8PlxuICAgICAgPEhlYWQ+XG4gICAgICAgIDxzY3JpcHRcbiAgICAgICAgICBzcmM9e2BodHRwczovL21hcHMuZ29vZ2xlYXBpcy5jb20vbWFwcy9hcGkvanM/a2V5PSR7cHJvamVjdFNldHRpbmdzLmdvb2dsZUFwaUtleX0mbGlicmFyaWVzPXBsYWNlcyZ2PTNgfVxuICAgICAgICAgIC8vIGFzeW5jXG4gICAgICAgICAgLy8gZGVmZXJcbiAgICAgICAgPjwvc2NyaXB0PlxuICAgICAgPC9IZWFkPlxuICAgICAgPFByb3ZpZGVyIHN0b3JlPXtzdG9yZX0+XG4gICAgICAgIDxQZXJzaXN0R2F0ZSBsb2FkaW5nPXtudWxsfSBwZXJzaXN0b3I9e3BlcnNpc3Rvcn0+XG4gICAgICAgICAgPENvbXBvbmVudCB7Li4ucGFnZVByb3BzfSAvPlxuICAgICAgICA8L1BlcnNpc3RHYXRlPlxuICAgICAgPC9Qcm92aWRlcj5cbiAgICA8Lz5cbiAgKTtcbn07XG5cbkFwcC5nZXRJbml0aWFsUHJvcHMgPSBhc3luYyAoeyBDb21wb25lbnQsIGN0eCB9KSA9PiB7XG4gIGlmIChDb21wb25lbnQuZ2V0SW5pdGlhbFByb3BzKSB7XG4gICAgY29uc3QgcGFnZVByb3BzID0gYXdhaXQgQ29tcG9uZW50LmdldEluaXRpYWxQcm9wcyhjdHgpO1xuICAgIHJldHVybiB7IHBhZ2VQcm9wcyB9O1xuICB9XG5cbiAgcmV0dXJuIHt9O1xufTtcblxuZXhwb3J0IGRlZmF1bHQgQXBwO1xuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./pages/_app.js\n");
-
-/***/ }),
-
-/***/ "./redux/index.js":
-/*!************************!*\
-  !*** ./redux/index.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"redux\");\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-thunk */ \"redux-thunk\");\n/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_thunk__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var redux_persist__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-persist */ \"redux-persist\");\n/* harmony import */ var redux_persist__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(redux_persist__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var redux_persist_lib_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux-persist/lib/storage */ \"redux-persist/lib/storage\");\n/* harmony import */ var redux_persist_lib_storage__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(redux_persist_lib_storage__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reducers */ \"./redux/reducers/index.js\");\n\n // import { logger } from 'redux-logger';\n\n\n\n\nconst persistConfig = {\n  key: 'root',\n  storage: (redux_persist_lib_storage__WEBPACK_IMPORTED_MODULE_3___default())\n};\nconst persistedReducer = Object(redux_persist__WEBPACK_IMPORTED_MODULE_2__[\"persistReducer\"])(persistConfig, _reducers__WEBPACK_IMPORTED_MODULE_4__[\"default\"]);\n/* harmony default export */ __webpack_exports__[\"default\"] = (() => {\n  const store = Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"createStore\"])(persistedReducer, {}, Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"compose\"])(Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"applyMiddleware\"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1___default.a)));\n  const persistor = Object(redux_persist__WEBPACK_IMPORTED_MODULE_2__[\"persistStore\"])(store);\n  return {\n    store,\n    persistor\n  };\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZWR1eC9pbmRleC5qcz9jOGU0Il0sIm5hbWVzIjpbInBlcnNpc3RDb25maWciLCJrZXkiLCJzdG9yYWdlIiwicGVyc2lzdGVkUmVkdWNlciIsInBlcnNpc3RSZWR1Y2VyIiwicm9vdFJlZHVjZXIiLCJzdG9yZSIsImNyZWF0ZVN0b3JlIiwiY29tcG9zZSIsImFwcGx5TWlkZGxld2FyZSIsInRodW5rIiwicGVyc2lzdG9yIiwicGVyc2lzdFN0b3JlIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0NBRUE7O0FBQ0E7QUFDQTtBQUVBO0FBRUEsTUFBTUEsYUFBYSxHQUFHO0FBQ3BCQyxLQUFHLEVBQUUsTUFEZTtBQUVwQkMsNkVBQU9BO0FBRmEsQ0FBdEI7QUFLQSxNQUFNQyxnQkFBZ0IsR0FBR0Msb0VBQWMsQ0FBQ0osYUFBRCxFQUFnQkssaURBQWhCLENBQXZDO0FBRWUscUVBQU07QUFDbkIsUUFBTUMsS0FBSyxHQUFHQyx5REFBVyxDQUN2QkosZ0JBRHVCLEVBRXZCLEVBRnVCLEVBR3ZCSyxxREFBTyxDQUFDQyw2REFBZSxDQUFDQyxrREFBRCxDQUFoQixDQUhnQixDQUF6QjtBQUtBLFFBQU1DLFNBQVMsR0FBR0Msa0VBQVksQ0FBQ04sS0FBRCxDQUE5QjtBQUNBLFNBQU87QUFBRUEsU0FBRjtBQUFTSztBQUFULEdBQVA7QUFDRCxDQVJEIiwiZmlsZSI6Ii4vcmVkdXgvaW5kZXguanMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBjcmVhdGVTdG9yZSwgYXBwbHlNaWRkbGV3YXJlLCBjb21wb3NlIH0gZnJvbSAncmVkdXgnO1xuaW1wb3J0IHRodW5rIGZyb20gJ3JlZHV4LXRodW5rJztcbi8vIGltcG9ydCB7IGxvZ2dlciB9IGZyb20gJ3JlZHV4LWxvZ2dlcic7XG5pbXBvcnQgeyBwZXJzaXN0U3RvcmUsIHBlcnNpc3RSZWR1Y2VyIH0gZnJvbSAncmVkdXgtcGVyc2lzdCc7XG5pbXBvcnQgc3RvcmFnZSBmcm9tICdyZWR1eC1wZXJzaXN0L2xpYi9zdG9yYWdlJztcblxuaW1wb3J0IHJvb3RSZWR1Y2VyIGZyb20gJy4vcmVkdWNlcnMnO1xuXG5jb25zdCBwZXJzaXN0Q29uZmlnID0ge1xuICBrZXk6ICdyb290JyxcbiAgc3RvcmFnZSxcbn07XG5cbmNvbnN0IHBlcnNpc3RlZFJlZHVjZXIgPSBwZXJzaXN0UmVkdWNlcihwZXJzaXN0Q29uZmlnLCByb290UmVkdWNlcik7XG5cbmV4cG9ydCBkZWZhdWx0ICgpID0+IHtcbiAgY29uc3Qgc3RvcmUgPSBjcmVhdGVTdG9yZShcbiAgICBwZXJzaXN0ZWRSZWR1Y2VyLFxuICAgIHt9LFxuICAgIGNvbXBvc2UoYXBwbHlNaWRkbGV3YXJlKHRodW5rKSlcbiAgKTtcbiAgY29uc3QgcGVyc2lzdG9yID0gcGVyc2lzdFN0b3JlKHN0b3JlKTtcbiAgcmV0dXJuIHsgc3RvcmUsIHBlcnNpc3RvciB9O1xufTtcbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./redux/index.js\n");
-
-/***/ }),
-
-/***/ "./redux/reducers/auth.js":
-/*!********************************!*\
-  !*** ./redux/reducers/auth.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nconst initialState = {\n  user: null,\n  token: null\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = ((state = initialState, action) => {\n  const {\n    payload,\n    type\n  } = action;\n\n  switch (type) {\n    case 'SET_AUTH':\n      return _objectSpread(_objectSpread({}, state), payload);\n\n    case 'Clear_AUTH':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        user: null,\n        token: null\n      });\n\n    case 'SET_USER':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        user: payload\n      });\n\n    case 'CLEAR_USER':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        user: null\n      });\n\n    case 'SET_TOKEN':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        token: payload\n      });\n\n    case 'CLEAR_TOKEN':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        token: null\n      });\n\n    default:\n      return state;\n  }\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZWR1eC9yZWR1Y2Vycy9hdXRoLmpzP2YzMzIiXSwibmFtZXMiOlsiaW5pdGlhbFN0YXRlIiwidXNlciIsInRva2VuIiwic3RhdGUiLCJhY3Rpb24iLCJwYXlsb2FkIiwidHlwZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBLE1BQU1BLFlBQVksR0FBRztBQUNuQkMsTUFBSSxFQUFFLElBRGE7QUFFbkJDLE9BQUssRUFBRTtBQUZZLENBQXJCO0FBS2UsZ0VBQUNDLEtBQUssR0FBR0gsWUFBVCxFQUF1QkksTUFBdkIsS0FBa0M7QUFDL0MsUUFBTTtBQUFFQyxXQUFGO0FBQVdDO0FBQVgsTUFBb0JGLE1BQTFCOztBQUNBLFVBQVFFLElBQVI7QUFDRSxTQUFLLFVBQUw7QUFDRSw2Q0FDS0gsS0FETCxHQUVLRSxPQUZMOztBQUlGLFNBQUssWUFBTDtBQUNFLDZDQUNLRixLQURMO0FBRUVGLFlBQUksRUFBRSxJQUZSO0FBR0VDLGFBQUssRUFBRTtBQUhUOztBQUtGLFNBQUssVUFBTDtBQUNFLDZDQUNLQyxLQURMO0FBRUVGLFlBQUksRUFBRUk7QUFGUjs7QUFJRixTQUFLLFlBQUw7QUFDRSw2Q0FDS0YsS0FETDtBQUVFRixZQUFJLEVBQUU7QUFGUjs7QUFJRixTQUFLLFdBQUw7QUFDRSw2Q0FDS0UsS0FETDtBQUVFRCxhQUFLLEVBQUVHO0FBRlQ7O0FBSUYsU0FBSyxhQUFMO0FBQ0UsNkNBQ0tGLEtBREw7QUFFRUQsYUFBSyxFQUFFO0FBRlQ7O0FBS0Y7QUFDRSxhQUFPQyxLQUFQO0FBbENKO0FBb0NELENBdENEIiwiZmlsZSI6Ii4vcmVkdXgvcmVkdWNlcnMvYXV0aC5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGluaXRpYWxTdGF0ZSA9IHtcbiAgdXNlcjogbnVsbCxcbiAgdG9rZW46IG51bGwsXG59O1xuXG5leHBvcnQgZGVmYXVsdCAoc3RhdGUgPSBpbml0aWFsU3RhdGUsIGFjdGlvbikgPT4ge1xuICBjb25zdCB7IHBheWxvYWQsIHR5cGUgfSA9IGFjdGlvbjtcbiAgc3dpdGNoICh0eXBlKSB7XG4gICAgY2FzZSAnU0VUX0FVVEgnOlxuICAgICAgcmV0dXJuIHtcbiAgICAgICAgLi4uc3RhdGUsXG4gICAgICAgIC4uLnBheWxvYWQsXG4gICAgICB9O1xuICAgIGNhc2UgJ0NsZWFyX0FVVEgnOlxuICAgICAgcmV0dXJuIHtcbiAgICAgICAgLi4uc3RhdGUsXG4gICAgICAgIHVzZXI6IG51bGwsXG4gICAgICAgIHRva2VuOiBudWxsLFxuICAgICAgfTtcbiAgICBjYXNlICdTRVRfVVNFUic6XG4gICAgICByZXR1cm4ge1xuICAgICAgICAuLi5zdGF0ZSxcbiAgICAgICAgdXNlcjogcGF5bG9hZCxcbiAgICAgIH07XG4gICAgY2FzZSAnQ0xFQVJfVVNFUic6XG4gICAgICByZXR1cm4ge1xuICAgICAgICAuLi5zdGF0ZSxcbiAgICAgICAgdXNlcjogbnVsbCxcbiAgICAgIH07XG4gICAgY2FzZSAnU0VUX1RPS0VOJzpcbiAgICAgIHJldHVybiB7XG4gICAgICAgIC4uLnN0YXRlLFxuICAgICAgICB0b2tlbjogcGF5bG9hZCxcbiAgICAgIH07XG4gICAgY2FzZSAnQ0xFQVJfVE9LRU4nOlxuICAgICAgcmV0dXJuIHtcbiAgICAgICAgLi4uc3RhdGUsXG4gICAgICAgIHRva2VuOiBudWxsLFxuICAgICAgfTtcblxuICAgIGRlZmF1bHQ6XG4gICAgICByZXR1cm4gc3RhdGU7XG4gIH1cbn07XG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./redux/reducers/auth.js\n");
-
-/***/ }),
-
-/***/ "./redux/reducers/drawers.js":
-/*!***********************************!*\
-  !*** ./redux/reducers/drawers.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nconst initialState = {\n  isCartOpen: false,\n  isRegOpen: false,\n  hasLogin: false,\n  toDisplay: 'login'\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = ((state = initialState, action) => {\n  const {\n    type,\n    payload\n  } = action;\n\n  switch (type) {\n    case 'TOGGLE_CART_BAR':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        isCartOpen: !state.isCartOpen\n      });\n\n    case 'SHOW_CART_BAR':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        isCartOpen: true\n      });\n\n    case 'HIDE_CART_BAR':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        isCartOpen: false\n      });\n\n    case 'TOGGLE_REGISTRATION_BAR':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        isRegOpen: !state.isRegOpen\n      });\n\n    case 'SHOW_REGISTRATION_BAR':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        isRegOpen: true\n      });\n\n    case 'HIDE_REGISTRATION_BAR':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        isRegOpen: false\n      });\n\n    case 'HAS_LOGIN':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        hasLogin: payload\n      });\n\n    case 'TO_DISPLAY':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        toDisplay: payload\n      });\n\n    default:\n      return state;\n  }\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZWR1eC9yZWR1Y2Vycy9kcmF3ZXJzLmpzPzNkZDEiXSwibmFtZXMiOlsiaW5pdGlhbFN0YXRlIiwiaXNDYXJ0T3BlbiIsImlzUmVnT3BlbiIsImhhc0xvZ2luIiwidG9EaXNwbGF5Iiwic3RhdGUiLCJhY3Rpb24iLCJ0eXBlIiwicGF5bG9hZCJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBLE1BQU1BLFlBQVksR0FBRztBQUNuQkMsWUFBVSxFQUFFLEtBRE87QUFFbkJDLFdBQVMsRUFBRSxLQUZRO0FBR25CQyxVQUFRLEVBQUUsS0FIUztBQUluQkMsV0FBUyxFQUFFO0FBSlEsQ0FBckI7QUFPZSxnRUFBQ0MsS0FBSyxHQUFHTCxZQUFULEVBQXVCTSxNQUF2QixLQUFrQztBQUMvQyxRQUFNO0FBQUVDLFFBQUY7QUFBUUM7QUFBUixNQUFvQkYsTUFBMUI7O0FBRUEsVUFBUUMsSUFBUjtBQUNFLFNBQUssaUJBQUw7QUFDRSw2Q0FDS0YsS0FETDtBQUVFSixrQkFBVSxFQUFFLENBQUNJLEtBQUssQ0FBQ0o7QUFGckI7O0FBS0YsU0FBSyxlQUFMO0FBQ0UsNkNBQ0tJLEtBREw7QUFFRUosa0JBQVUsRUFBRTtBQUZkOztBQUtGLFNBQUssZUFBTDtBQUNFLDZDQUNLSSxLQURMO0FBRUVKLGtCQUFVLEVBQUU7QUFGZDs7QUFLRixTQUFLLHlCQUFMO0FBQ0UsNkNBQ0tJLEtBREw7QUFFRUgsaUJBQVMsRUFBRSxDQUFDRyxLQUFLLENBQUNIO0FBRnBCOztBQUtGLFNBQUssdUJBQUw7QUFDRSw2Q0FDS0csS0FETDtBQUVFSCxpQkFBUyxFQUFFO0FBRmI7O0FBS0YsU0FBSyx1QkFBTDtBQUNFLDZDQUNLRyxLQURMO0FBRUVILGlCQUFTLEVBQUU7QUFGYjs7QUFLRixTQUFLLFdBQUw7QUFDRSw2Q0FDS0csS0FETDtBQUVFRixnQkFBUSxFQUFFSztBQUZaOztBQUtGLFNBQUssWUFBTDtBQUNFLDZDQUNLSCxLQURMO0FBRUVELGlCQUFTLEVBQUVJO0FBRmI7O0FBS0Y7QUFDRSxhQUFPSCxLQUFQO0FBbERKO0FBb0RELENBdkREIiwiZmlsZSI6Ii4vcmVkdXgvcmVkdWNlcnMvZHJhd2Vycy5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGluaXRpYWxTdGF0ZSA9IHtcbiAgaXNDYXJ0T3BlbjogZmFsc2UsXG4gIGlzUmVnT3BlbjogZmFsc2UsXG4gIGhhc0xvZ2luOiBmYWxzZSxcbiAgdG9EaXNwbGF5OiAnbG9naW4nLFxufTtcblxuZXhwb3J0IGRlZmF1bHQgKHN0YXRlID0gaW5pdGlhbFN0YXRlLCBhY3Rpb24pID0+IHtcbiAgY29uc3QgeyB0eXBlLCBwYXlsb2FkIH0gPSBhY3Rpb247XG5cbiAgc3dpdGNoICh0eXBlKSB7XG4gICAgY2FzZSAnVE9HR0xFX0NBUlRfQkFSJzpcbiAgICAgIHJldHVybiB7XG4gICAgICAgIC4uLnN0YXRlLFxuICAgICAgICBpc0NhcnRPcGVuOiAhc3RhdGUuaXNDYXJ0T3BlbixcbiAgICAgIH07XG5cbiAgICBjYXNlICdTSE9XX0NBUlRfQkFSJzpcbiAgICAgIHJldHVybiB7XG4gICAgICAgIC4uLnN0YXRlLFxuICAgICAgICBpc0NhcnRPcGVuOiB0cnVlLFxuICAgICAgfTtcblxuICAgIGNhc2UgJ0hJREVfQ0FSVF9CQVInOlxuICAgICAgcmV0dXJuIHtcbiAgICAgICAgLi4uc3RhdGUsXG4gICAgICAgIGlzQ2FydE9wZW46IGZhbHNlLFxuICAgICAgfTtcblxuICAgIGNhc2UgJ1RPR0dMRV9SRUdJU1RSQVRJT05fQkFSJzpcbiAgICAgIHJldHVybiB7XG4gICAgICAgIC4uLnN0YXRlLFxuICAgICAgICBpc1JlZ09wZW46ICFzdGF0ZS5pc1JlZ09wZW4sXG4gICAgICB9O1xuXG4gICAgY2FzZSAnU0hPV19SRUdJU1RSQVRJT05fQkFSJzpcbiAgICAgIHJldHVybiB7XG4gICAgICAgIC4uLnN0YXRlLFxuICAgICAgICBpc1JlZ09wZW46IHRydWUsXG4gICAgICB9O1xuXG4gICAgY2FzZSAnSElERV9SRUdJU1RSQVRJT05fQkFSJzpcbiAgICAgIHJldHVybiB7XG4gICAgICAgIC4uLnN0YXRlLFxuICAgICAgICBpc1JlZ09wZW46IGZhbHNlLFxuICAgICAgfTtcblxuICAgIGNhc2UgJ0hBU19MT0dJTic6XG4gICAgICByZXR1cm4ge1xuICAgICAgICAuLi5zdGF0ZSxcbiAgICAgICAgaGFzTG9naW46IHBheWxvYWQsXG4gICAgICB9O1xuXG4gICAgY2FzZSAnVE9fRElTUExBWSc6XG4gICAgICByZXR1cm4ge1xuICAgICAgICAuLi5zdGF0ZSxcbiAgICAgICAgdG9EaXNwbGF5OiBwYXlsb2FkLFxuICAgICAgfTtcblxuICAgIGRlZmF1bHQ6XG4gICAgICByZXR1cm4gc3RhdGU7XG4gIH1cbn07XG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./redux/reducers/drawers.js\n");
-
-/***/ }),
-
-/***/ "./redux/reducers/index.js":
-/*!*********************************!*\
-  !*** ./redux/reducers/index.js ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _products__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./products */ \"./redux/reducers/products.js\");\n/* harmony import */ var _loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loading */ \"./redux/reducers/loading.js\");\n/* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth */ \"./redux/reducers/auth.js\");\n/* harmony import */ var _message__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./message */ \"./redux/reducers/message.js\");\n/* harmony import */ var _drawers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./drawers */ \"./redux/reducers/drawers.js\");\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux */ \"redux\");\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_5__);\n\n\n\n\n\n\nconst rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_5__[\"combineReducers\"])({\n  auth: _auth__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n  products: _products__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n  drawers: _drawers__WEBPACK_IMPORTED_MODULE_4__[\"default\"],\n  loading: _loading__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  message: _message__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n});\n/* harmony default export */ __webpack_exports__[\"default\"] = (rootReducer);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZWR1eC9yZWR1Y2Vycy9pbmRleC5qcz9lYWY0Il0sIm5hbWVzIjpbInJvb3RSZWR1Y2VyIiwiY29tYmluZVJlZHVjZXJzIiwiYXV0aCIsInByb2R1Y3RzIiwiZHJhd2VycyIsImxvYWRpbmciLCJtZXNzYWdlIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUVBO0FBRUEsTUFBTUEsV0FBVyxHQUFHQyw2REFBZSxDQUFDO0FBQ2xDQyxxREFEa0M7QUFFbENDLDZEQUZrQztBQUdsQ0MsMkRBSGtDO0FBSWxDQywyREFKa0M7QUFLbENDLDJEQUFPQTtBQUwyQixDQUFELENBQW5DO0FBUWVOLDBFQUFmIiwiZmlsZSI6Ii4vcmVkdXgvcmVkdWNlcnMvaW5kZXguanMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgcHJvZHVjdHMgZnJvbSAnLi9wcm9kdWN0cyc7XG5pbXBvcnQgbG9hZGluZyBmcm9tICcuL2xvYWRpbmcnO1xuaW1wb3J0IGF1dGggZnJvbSAnLi9hdXRoJztcbmltcG9ydCBtZXNzYWdlIGZyb20gJy4vbWVzc2FnZSc7XG5pbXBvcnQgZHJhd2VycyBmcm9tICcuL2RyYXdlcnMnO1xuXG5pbXBvcnQgeyBjb21iaW5lUmVkdWNlcnMgfSBmcm9tICdyZWR1eCc7XG5cbmNvbnN0IHJvb3RSZWR1Y2VyID0gY29tYmluZVJlZHVjZXJzKHtcbiAgYXV0aCxcbiAgcHJvZHVjdHMsXG4gIGRyYXdlcnMsXG4gIGxvYWRpbmcsXG4gIG1lc3NhZ2UsXG59KTtcblxuZXhwb3J0IGRlZmF1bHQgcm9vdFJlZHVjZXI7XG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./redux/reducers/index.js\n");
-
-/***/ }),
-
-/***/ "./redux/reducers/loading.js":
-/*!***********************************!*\
-  !*** ./redux/reducers/loading.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nconst initialState = {\n  isLoading: false\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = ((state = initialState, action) => {\n  const {\n    payload,\n    type\n  } = action;\n\n  switch (type) {\n    case 'LOADING':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        isLoading: payload\n      });\n\n    default:\n      return state;\n  }\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZWR1eC9yZWR1Y2Vycy9sb2FkaW5nLmpzP2QzYjQiXSwibmFtZXMiOlsiaW5pdGlhbFN0YXRlIiwiaXNMb2FkaW5nIiwic3RhdGUiLCJhY3Rpb24iLCJwYXlsb2FkIiwidHlwZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBLE1BQU1BLFlBQVksR0FBRztBQUNuQkMsV0FBUyxFQUFFO0FBRFEsQ0FBckI7QUFJZSxnRUFBQ0MsS0FBSyxHQUFHRixZQUFULEVBQXVCRyxNQUF2QixLQUFrQztBQUMvQyxRQUFNO0FBQUVDLFdBQUY7QUFBV0M7QUFBWCxNQUFvQkYsTUFBMUI7O0FBRUEsVUFBUUUsSUFBUjtBQUNFLFNBQUssU0FBTDtBQUNFLDZDQUNLSCxLQURMO0FBRUVELGlCQUFTLEVBQUVHO0FBRmI7O0FBSUY7QUFDRSxhQUFPRixLQUFQO0FBUEo7QUFTRCxDQVpEIiwiZmlsZSI6Ii4vcmVkdXgvcmVkdWNlcnMvbG9hZGluZy5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGluaXRpYWxTdGF0ZSA9IHtcbiAgaXNMb2FkaW5nOiBmYWxzZSxcbn07XG5cbmV4cG9ydCBkZWZhdWx0IChzdGF0ZSA9IGluaXRpYWxTdGF0ZSwgYWN0aW9uKSA9PiB7XG4gIGNvbnN0IHsgcGF5bG9hZCwgdHlwZSB9ID0gYWN0aW9uO1xuXG4gIHN3aXRjaCAodHlwZSkge1xuICAgIGNhc2UgJ0xPQURJTkcnOlxuICAgICAgcmV0dXJuIHtcbiAgICAgICAgLi4uc3RhdGUsXG4gICAgICAgIGlzTG9hZGluZzogcGF5bG9hZCxcbiAgICAgIH07XG4gICAgZGVmYXVsdDpcbiAgICAgIHJldHVybiBzdGF0ZTtcbiAgfVxufTtcbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./redux/reducers/loading.js\n");
-
-/***/ }),
-
-/***/ "./redux/reducers/message.js":
-/*!***********************************!*\
-  !*** ./redux/reducers/message.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nconst initialState = {\n  show: false,\n  type: null,\n  title: '',\n  content: '',\n  okText: 'Ok'\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = ((state = initialState, action) => {\n  const {\n    payload,\n    type\n  } = action;\n\n  switch (type) {\n    case 'SET_MESSAGE':\n      return _objectSpread(_objectSpread({}, state), payload);\n\n    case 'SHOW_MESSAGE':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        show: true\n      });\n\n    case 'CLOSE_MESSAGE':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        show: false\n      });\n\n    default:\n      return state;\n  }\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZWR1eC9yZWR1Y2Vycy9tZXNzYWdlLmpzP2JlOWYiXSwibmFtZXMiOlsiaW5pdGlhbFN0YXRlIiwic2hvdyIsInR5cGUiLCJ0aXRsZSIsImNvbnRlbnQiLCJva1RleHQiLCJzdGF0ZSIsImFjdGlvbiIsInBheWxvYWQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBQSxNQUFNQSxZQUFZLEdBQUc7QUFDbkJDLE1BQUksRUFBRSxLQURhO0FBRW5CQyxNQUFJLEVBQUUsSUFGYTtBQUduQkMsT0FBSyxFQUFFLEVBSFk7QUFJbkJDLFNBQU8sRUFBRSxFQUpVO0FBS25CQyxRQUFNLEVBQUU7QUFMVyxDQUFyQjtBQVFlLGdFQUFDQyxLQUFLLEdBQUdOLFlBQVQsRUFBdUJPLE1BQXZCLEtBQWtDO0FBQy9DLFFBQU07QUFBRUMsV0FBRjtBQUFXTjtBQUFYLE1BQW9CSyxNQUExQjs7QUFFQSxVQUFRTCxJQUFSO0FBQ0UsU0FBSyxhQUFMO0FBQ0UsNkNBQ0tJLEtBREwsR0FFS0UsT0FGTDs7QUFLRixTQUFLLGNBQUw7QUFDRSw2Q0FDS0YsS0FETDtBQUVFTCxZQUFJLEVBQUU7QUFGUjs7QUFLRixTQUFLLGVBQUw7QUFDRSw2Q0FDS0ssS0FETDtBQUVFTCxZQUFJLEVBQUU7QUFGUjs7QUFLRjtBQUNFLGFBQU9LLEtBQVA7QUFwQko7QUFzQkQsQ0F6QkQiLCJmaWxlIjoiLi9yZWR1eC9yZWR1Y2Vycy9tZXNzYWdlLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgaW5pdGlhbFN0YXRlID0ge1xuICBzaG93OiBmYWxzZSxcbiAgdHlwZTogbnVsbCxcbiAgdGl0bGU6ICcnLFxuICBjb250ZW50OiAnJyxcbiAgb2tUZXh0OiAnT2snLFxufTtcblxuZXhwb3J0IGRlZmF1bHQgKHN0YXRlID0gaW5pdGlhbFN0YXRlLCBhY3Rpb24pID0+IHtcbiAgY29uc3QgeyBwYXlsb2FkLCB0eXBlIH0gPSBhY3Rpb247XG5cbiAgc3dpdGNoICh0eXBlKSB7XG4gICAgY2FzZSAnU0VUX01FU1NBR0UnOlxuICAgICAgcmV0dXJuIHtcbiAgICAgICAgLi4uc3RhdGUsXG4gICAgICAgIC4uLnBheWxvYWQsXG4gICAgICB9O1xuXG4gICAgY2FzZSAnU0hPV19NRVNTQUdFJzpcbiAgICAgIHJldHVybiB7XG4gICAgICAgIC4uLnN0YXRlLFxuICAgICAgICBzaG93OiB0cnVlLFxuICAgICAgfTtcblxuICAgIGNhc2UgJ0NMT1NFX01FU1NBR0UnOlxuICAgICAgcmV0dXJuIHtcbiAgICAgICAgLi4uc3RhdGUsXG4gICAgICAgIHNob3c6IGZhbHNlLFxuICAgICAgfTtcblxuICAgIGRlZmF1bHQ6XG4gICAgICByZXR1cm4gc3RhdGU7XG4gIH1cbn07XG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./redux/reducers/message.js\n");
-
-/***/ }),
-
-/***/ "./redux/reducers/products.js":
-/*!************************************!*\
-  !*** ./redux/reducers/products.js ***!
-  \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nconst initialState = {\n  products: [],\n  product: null,\n  featured: [],\n  categories: [],\n  category: null,\n  subcategories: [],\n  recentlyViewed: []\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = ((state = initialState, action) => {\n  const {\n    payload,\n    type\n  } = action;\n\n  switch (type) {\n    case 'SET_PRODUCTS':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        products: payload\n      });\n\n    case 'SET_CATEGORIES':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        categories: payload\n      });\n\n    case 'SET_SUBCATEGORIES':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        subcategories: payload\n      });\n\n    case 'SET_PRODUCT':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        product: payload\n      });\n\n    case 'CLEAR_PRODUCT':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        product: null\n      });\n\n    case 'SET_CATEGORY':\n      console.log('payload', payload);\n      return _objectSpread(_objectSpread({}, state), {}, {\n        category: payload\n      });\n\n    case 'CLEAR_CATEGORY':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        category: null\n      });\n\n    case 'SET_RECENTLY_VIEWD':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        recentlyViewed: payload\n      });\n\n    case 'ADD_TO_RECENTLY_VIEWD':\n      let tempRecentlyViewed = state.recentlyViewed;\n      if (tempRecentlyViewed.findIndex(x => x._id === payload._id) === -1) tempRecentlyViewed.push(payload);\n      return _objectSpread(_objectSpread({}, state), {}, {\n        recentlyViewed: tempRecentlyViewed\n      });\n\n    case 'CLEAR_RECENTLY_VIEWD':\n      return _objectSpread(_objectSpread({}, state), {}, {\n        recentlyViewed: null\n      });\n\n    default:\n      return state;\n  }\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZWR1eC9yZWR1Y2Vycy9wcm9kdWN0cy5qcz8xNWY0Il0sIm5hbWVzIjpbImluaXRpYWxTdGF0ZSIsInByb2R1Y3RzIiwicHJvZHVjdCIsImZlYXR1cmVkIiwiY2F0ZWdvcmllcyIsImNhdGVnb3J5Iiwic3ViY2F0ZWdvcmllcyIsInJlY2VudGx5Vmlld2VkIiwic3RhdGUiLCJhY3Rpb24iLCJwYXlsb2FkIiwidHlwZSIsImNvbnNvbGUiLCJsb2ciLCJ0ZW1wUmVjZW50bHlWaWV3ZWQiLCJmaW5kSW5kZXgiLCJ4IiwiX2lkIiwicHVzaCJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBLE1BQU1BLFlBQVksR0FBRztBQUNuQkMsVUFBUSxFQUFFLEVBRFM7QUFFbkJDLFNBQU8sRUFBRSxJQUZVO0FBR25CQyxVQUFRLEVBQUUsRUFIUztBQUluQkMsWUFBVSxFQUFFLEVBSk87QUFLbkJDLFVBQVEsRUFBRSxJQUxTO0FBTW5CQyxlQUFhLEVBQUUsRUFOSTtBQU9uQkMsZ0JBQWMsRUFBRTtBQVBHLENBQXJCO0FBVWUsZ0VBQUNDLEtBQUssR0FBR1IsWUFBVCxFQUF1QlMsTUFBdkIsS0FBa0M7QUFDL0MsUUFBTTtBQUFFQyxXQUFGO0FBQVdDO0FBQVgsTUFBb0JGLE1BQTFCOztBQUNBLFVBQVFFLElBQVI7QUFDRSxTQUFLLGNBQUw7QUFDRSw2Q0FDS0gsS0FETDtBQUVFUCxnQkFBUSxFQUFFUztBQUZaOztBQUlGLFNBQUssZ0JBQUw7QUFDRSw2Q0FDS0YsS0FETDtBQUVFSixrQkFBVSxFQUFFTTtBQUZkOztBQUlGLFNBQUssbUJBQUw7QUFDRSw2Q0FDS0YsS0FETDtBQUVFRixxQkFBYSxFQUFFSTtBQUZqQjs7QUFLRixTQUFLLGFBQUw7QUFDRSw2Q0FDS0YsS0FETDtBQUVFTixlQUFPLEVBQUVRO0FBRlg7O0FBS0YsU0FBSyxlQUFMO0FBQ0UsNkNBQ0tGLEtBREw7QUFFRU4sZUFBTyxFQUFFO0FBRlg7O0FBSUYsU0FBSyxjQUFMO0FBQ0VVLGFBQU8sQ0FBQ0MsR0FBUixDQUFZLFNBQVosRUFBdUJILE9BQXZCO0FBQ0EsNkNBQ0tGLEtBREw7QUFFRUgsZ0JBQVEsRUFBRUs7QUFGWjs7QUFJRixTQUFLLGdCQUFMO0FBQ0UsNkNBQ0tGLEtBREw7QUFFRUgsZ0JBQVEsRUFBRTtBQUZaOztBQUlGLFNBQUssb0JBQUw7QUFDRSw2Q0FDS0csS0FETDtBQUVFRCxzQkFBYyxFQUFFRztBQUZsQjs7QUFJRixTQUFLLHVCQUFMO0FBQ0UsVUFBSUksa0JBQWtCLEdBQUdOLEtBQUssQ0FBQ0QsY0FBL0I7QUFDQSxVQUFJTyxrQkFBa0IsQ0FBQ0MsU0FBbkIsQ0FBOEJDLENBQUQsSUFBT0EsQ0FBQyxDQUFDQyxHQUFGLEtBQVVQLE9BQU8sQ0FBQ08sR0FBdEQsTUFBK0QsQ0FBQyxDQUFwRSxFQUNFSCxrQkFBa0IsQ0FBQ0ksSUFBbkIsQ0FBd0JSLE9BQXhCO0FBRUYsNkNBQ0tGLEtBREw7QUFFRUQsc0JBQWMsRUFBRU87QUFGbEI7O0FBS0YsU0FBSyxzQkFBTDtBQUNFLDZDQUNLTixLQURMO0FBRUVELHNCQUFjLEVBQUU7QUFGbEI7O0FBS0Y7QUFDRSxhQUFPQyxLQUFQO0FBN0RKO0FBK0RELENBakVEIiwiZmlsZSI6Ii4vcmVkdXgvcmVkdWNlcnMvcHJvZHVjdHMuanMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBpbml0aWFsU3RhdGUgPSB7XG4gIHByb2R1Y3RzOiBbXSxcbiAgcHJvZHVjdDogbnVsbCxcbiAgZmVhdHVyZWQ6IFtdLFxuICBjYXRlZ29yaWVzOiBbXSxcbiAgY2F0ZWdvcnk6IG51bGwsXG4gIHN1YmNhdGVnb3JpZXM6IFtdLFxuICByZWNlbnRseVZpZXdlZDogW10sXG59O1xuXG5leHBvcnQgZGVmYXVsdCAoc3RhdGUgPSBpbml0aWFsU3RhdGUsIGFjdGlvbikgPT4ge1xuICBjb25zdCB7IHBheWxvYWQsIHR5cGUgfSA9IGFjdGlvbjtcbiAgc3dpdGNoICh0eXBlKSB7XG4gICAgY2FzZSAnU0VUX1BST0RVQ1RTJzpcbiAgICAgIHJldHVybiB7XG4gICAgICAgIC4uLnN0YXRlLFxuICAgICAgICBwcm9kdWN0czogcGF5bG9hZCxcbiAgICAgIH07XG4gICAgY2FzZSAnU0VUX0NBVEVHT1JJRVMnOlxuICAgICAgcmV0dXJuIHtcbiAgICAgICAgLi4uc3RhdGUsXG4gICAgICAgIGNhdGVnb3JpZXM6IHBheWxvYWQsXG4gICAgICB9O1xuICAgIGNhc2UgJ1NFVF9TVUJDQVRFR09SSUVTJzpcbiAgICAgIHJldHVybiB7XG4gICAgICAgIC4uLnN0YXRlLFxuICAgICAgICBzdWJjYXRlZ29yaWVzOiBwYXlsb2FkLFxuICAgICAgfTtcblxuICAgIGNhc2UgJ1NFVF9QUk9EVUNUJzpcbiAgICAgIHJldHVybiB7XG4gICAgICAgIC4uLnN0YXRlLFxuICAgICAgICBwcm9kdWN0OiBwYXlsb2FkLFxuICAgICAgfTtcblxuICAgIGNhc2UgJ0NMRUFSX1BST0RVQ1QnOlxuICAgICAgcmV0dXJuIHtcbiAgICAgICAgLi4uc3RhdGUsXG4gICAgICAgIHByb2R1Y3Q6IG51bGwsXG4gICAgICB9O1xuICAgIGNhc2UgJ1NFVF9DQVRFR09SWSc6XG4gICAgICBjb25zb2xlLmxvZygncGF5bG9hZCcsIHBheWxvYWQpO1xuICAgICAgcmV0dXJuIHtcbiAgICAgICAgLi4uc3RhdGUsXG4gICAgICAgIGNhdGVnb3J5OiBwYXlsb2FkLFxuICAgICAgfTtcbiAgICBjYXNlICdDTEVBUl9DQVRFR09SWSc6XG4gICAgICByZXR1cm4ge1xuICAgICAgICAuLi5zdGF0ZSxcbiAgICAgICAgY2F0ZWdvcnk6IG51bGwsXG4gICAgICB9O1xuICAgIGNhc2UgJ1NFVF9SRUNFTlRMWV9WSUVXRCc6XG4gICAgICByZXR1cm4ge1xuICAgICAgICAuLi5zdGF0ZSxcbiAgICAgICAgcmVjZW50bHlWaWV3ZWQ6IHBheWxvYWQsXG4gICAgICB9O1xuICAgIGNhc2UgJ0FERF9UT19SRUNFTlRMWV9WSUVXRCc6XG4gICAgICBsZXQgdGVtcFJlY2VudGx5Vmlld2VkID0gc3RhdGUucmVjZW50bHlWaWV3ZWQ7XG4gICAgICBpZiAodGVtcFJlY2VudGx5Vmlld2VkLmZpbmRJbmRleCgoeCkgPT4geC5faWQgPT09IHBheWxvYWQuX2lkKSA9PT0gLTEpXG4gICAgICAgIHRlbXBSZWNlbnRseVZpZXdlZC5wdXNoKHBheWxvYWQpO1xuXG4gICAgICByZXR1cm4ge1xuICAgICAgICAuLi5zdGF0ZSxcbiAgICAgICAgcmVjZW50bHlWaWV3ZWQ6IHRlbXBSZWNlbnRseVZpZXdlZCxcbiAgICAgIH07XG5cbiAgICBjYXNlICdDTEVBUl9SRUNFTlRMWV9WSUVXRCc6XG4gICAgICByZXR1cm4ge1xuICAgICAgICAuLi5zdGF0ZSxcbiAgICAgICAgcmVjZW50bHlWaWV3ZWQ6IG51bGwsXG4gICAgICB9O1xuXG4gICAgZGVmYXVsdDpcbiAgICAgIHJldHVybiBzdGF0ZTtcbiAgfVxufTtcbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./redux/reducers/products.js\n");
-
-/***/ }),
-
-/***/ 0:
-/*!****************************************!*\
-  !*** multi private-next-pages/_app.js ***!
-  \****************************************/
-/*! no static exports found */
+/***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_app.js");
+module.exports = __webpack_require__("1TCz");
 
 
 /***/ }),
 
-/***/ "next/head":
-/*!****************************!*\
-  !*** external "next/head" ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "1TCz":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("module.exports = require(\"next/head\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJuZXh0L2hlYWRcIj81ZWYyIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6Im5leHQvaGVhZC5qcyIsInNvdXJjZXNDb250ZW50IjpbIm1vZHVsZS5leHBvcnRzID0gcmVxdWlyZShcIm5leHQvaGVhZFwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///next/head\n");
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__("cDcd");
+var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
+
+// EXTERNAL MODULE: external "react-redux"
+var external_react_redux_ = __webpack_require__("h74D");
+
+// EXTERNAL MODULE: external "redux-persist/integration/react"
+var react_ = __webpack_require__("JPPj");
+
+// EXTERNAL MODULE: external "redux"
+var external_redux_ = __webpack_require__("rKB8");
+
+// EXTERNAL MODULE: external "redux-thunk"
+var external_redux_thunk_ = __webpack_require__("ZSx1");
+var external_redux_thunk_default = /*#__PURE__*/__webpack_require__.n(external_redux_thunk_);
+
+// EXTERNAL MODULE: external "redux-persist"
+var external_redux_persist_ = __webpack_require__("VNb8");
+
+// EXTERNAL MODULE: external "redux-persist/lib/storage"
+var storage_ = __webpack_require__("T8f9");
+var storage_default = /*#__PURE__*/__webpack_require__.n(storage_);
+
+// CONCATENATED MODULE: ./redux/reducers/products.js
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+const initialState = {
+  products: [],
+  product: null,
+  featured: [],
+  categories: [],
+  category: null,
+  subcategories: [],
+  recentlyViewed: []
+};
+/* harmony default export */ var products = ((state = initialState, action) => {
+  const {
+    payload,
+    type
+  } = action;
+
+  switch (type) {
+    case 'SET_PRODUCTS':
+      return _objectSpread(_objectSpread({}, state), {}, {
+        products: payload
+      });
+
+    case 'SET_CATEGORIES':
+      return _objectSpread(_objectSpread({}, state), {}, {
+        categories: payload
+      });
+
+    case 'SET_SUBCATEGORIES':
+      return _objectSpread(_objectSpread({}, state), {}, {
+        subcategories: payload
+      });
+
+    case 'SET_PRODUCT':
+      return _objectSpread(_objectSpread({}, state), {}, {
+        product: payload
+      });
+
+    case 'CLEAR_PRODUCT':
+      return _objectSpread(_objectSpread({}, state), {}, {
+        product: null
+      });
+
+    case 'SET_CATEGORY':
+      console.log('payload', payload);
+      return _objectSpread(_objectSpread({}, state), {}, {
+        category: payload
+      });
+
+    case 'CLEAR_CATEGORY':
+      return _objectSpread(_objectSpread({}, state), {}, {
+        category: null
+      });
+
+    case 'SET_RECENTLY_VIEWD':
+      return _objectSpread(_objectSpread({}, state), {}, {
+        recentlyViewed: payload
+      });
+
+    case 'ADD_TO_RECENTLY_VIEWD':
+      let tempRecentlyViewed = state.recentlyViewed;
+      if (tempRecentlyViewed.findIndex(x => x._id === payload._id) === -1) tempRecentlyViewed.push(payload);
+      return _objectSpread(_objectSpread({}, state), {}, {
+        recentlyViewed: tempRecentlyViewed
+      });
+
+    case 'CLEAR_RECENTLY_VIEWD':
+      return _objectSpread(_objectSpread({}, state), {}, {
+        recentlyViewed: null
+      });
+
+    default:
+      return state;
+  }
+});
+// CONCATENATED MODULE: ./redux/reducers/loading.js
+function loading_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function loading_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { loading_ownKeys(Object(source), true).forEach(function (key) { loading_defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { loading_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function loading_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+const loading_initialState = {
+  isLoading: false
+};
+/* harmony default export */ var loading = ((state = loading_initialState, action) => {
+  const {
+    payload,
+    type
+  } = action;
+
+  switch (type) {
+    case 'LOADING':
+      return loading_objectSpread(loading_objectSpread({}, state), {}, {
+        isLoading: payload
+      });
+
+    default:
+      return state;
+  }
+});
+// CONCATENATED MODULE: ./redux/reducers/auth.js
+function auth_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function auth_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { auth_ownKeys(Object(source), true).forEach(function (key) { auth_defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { auth_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function auth_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+const auth_initialState = {
+  user: null,
+  token: null
+};
+/* harmony default export */ var auth = ((state = auth_initialState, action) => {
+  const {
+    payload,
+    type
+  } = action;
+
+  switch (type) {
+    case 'SET_AUTH':
+      return auth_objectSpread(auth_objectSpread({}, state), payload);
+
+    case 'Clear_AUTH':
+      return auth_objectSpread(auth_objectSpread({}, state), {}, {
+        user: null,
+        token: null
+      });
+
+    case 'SET_USER':
+      return auth_objectSpread(auth_objectSpread({}, state), {}, {
+        user: payload
+      });
+
+    case 'CLEAR_USER':
+      return auth_objectSpread(auth_objectSpread({}, state), {}, {
+        user: null
+      });
+
+    case 'SET_TOKEN':
+      return auth_objectSpread(auth_objectSpread({}, state), {}, {
+        token: payload
+      });
+
+    case 'CLEAR_TOKEN':
+      return auth_objectSpread(auth_objectSpread({}, state), {}, {
+        token: null
+      });
+
+    default:
+      return state;
+  }
+});
+// CONCATENATED MODULE: ./redux/reducers/message.js
+function message_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function message_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { message_ownKeys(Object(source), true).forEach(function (key) { message_defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { message_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function message_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+const message_initialState = {
+  show: false,
+  type: null,
+  title: '',
+  content: '',
+  okText: 'Ok'
+};
+/* harmony default export */ var message = ((state = message_initialState, action) => {
+  const {
+    payload,
+    type
+  } = action;
+
+  switch (type) {
+    case 'SET_MESSAGE':
+      return message_objectSpread(message_objectSpread({}, state), payload);
+
+    case 'SHOW_MESSAGE':
+      return message_objectSpread(message_objectSpread({}, state), {}, {
+        show: true
+      });
+
+    case 'CLOSE_MESSAGE':
+      return message_objectSpread(message_objectSpread({}, state), {}, {
+        show: false
+      });
+
+    default:
+      return state;
+  }
+});
+// CONCATENATED MODULE: ./redux/reducers/drawers.js
+function drawers_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function drawers_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { drawers_ownKeys(Object(source), true).forEach(function (key) { drawers_defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { drawers_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function drawers_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+const drawers_initialState = {
+  isCartOpen: false,
+  isRegOpen: false,
+  hasLogin: false,
+  toDisplay: 'login'
+};
+/* harmony default export */ var drawers = ((state = drawers_initialState, action) => {
+  const {
+    type,
+    payload
+  } = action;
+
+  switch (type) {
+    case 'TOGGLE_CART_BAR':
+      return drawers_objectSpread(drawers_objectSpread({}, state), {}, {
+        isCartOpen: !state.isCartOpen
+      });
+
+    case 'SHOW_CART_BAR':
+      return drawers_objectSpread(drawers_objectSpread({}, state), {}, {
+        isCartOpen: true
+      });
+
+    case 'HIDE_CART_BAR':
+      return drawers_objectSpread(drawers_objectSpread({}, state), {}, {
+        isCartOpen: false
+      });
+
+    case 'TOGGLE_REGISTRATION_BAR':
+      return drawers_objectSpread(drawers_objectSpread({}, state), {}, {
+        isRegOpen: !state.isRegOpen
+      });
+
+    case 'SHOW_REGISTRATION_BAR':
+      return drawers_objectSpread(drawers_objectSpread({}, state), {}, {
+        isRegOpen: true
+      });
+
+    case 'HIDE_REGISTRATION_BAR':
+      return drawers_objectSpread(drawers_objectSpread({}, state), {}, {
+        isRegOpen: false
+      });
+
+    case 'HAS_LOGIN':
+      return drawers_objectSpread(drawers_objectSpread({}, state), {}, {
+        hasLogin: payload
+      });
+
+    case 'TO_DISPLAY':
+      return drawers_objectSpread(drawers_objectSpread({}, state), {}, {
+        toDisplay: payload
+      });
+
+    default:
+      return state;
+  }
+});
+// CONCATENATED MODULE: ./redux/reducers/index.js
+
+
+
+
+
+
+const rootReducer = Object(external_redux_["combineReducers"])({
+  auth: auth,
+  products: products,
+  drawers: drawers,
+  loading: loading,
+  message: message
+});
+/* harmony default export */ var reducers = (rootReducer);
+// CONCATENATED MODULE: ./redux/index.js
+
+ // import { logger } from 'redux-logger';
+
+
+
+
+const persistConfig = {
+  key: 'root',
+  storage: storage_default.a
+};
+const persistedReducer = Object(external_redux_persist_["persistReducer"])(persistConfig, reducers);
+/* harmony default export */ var redux = (() => {
+  const store = Object(external_redux_["createStore"])(persistedReducer, {}, Object(external_redux_["compose"])(Object(external_redux_["applyMiddleware"])(external_redux_thunk_default.a)));
+  const persistor = Object(external_redux_persist_["persistStore"])(store);
+  return {
+    store,
+    persistor
+  };
+});
+// EXTERNAL MODULE: external "next/head"
+var head_ = __webpack_require__("xnum");
+var head_default = /*#__PURE__*/__webpack_require__.n(head_);
+
+// EXTERNAL MODULE: ./constants/projectSettings.js
+var projectSettings = __webpack_require__("xSWb");
+
+// EXTERNAL MODULE: ./components/styles/app.scss
+var app = __webpack_require__("YWgu");
+
+// CONCATENATED MODULE: ./pages/_app.js
+var __jsx = external_react_default.a.createElement;
+// pages/_app.js
+
+
+
+
+
+
+
+/**
+ * @param {object} initialState
+ * @param {boolean} options.isServer indicates whether it is a server side or client side
+ * @param {Request} options.req NodeJS Request object (not set when client applies initialState from server)
+ * @param {Request} options.res NodeJS Request object (not set when client applies initialState from server)
+ * @param {boolean} options.debug User-defined debug mode param
+ * @param {string} options.storeKey This key will be used to preserve store in global namespace for safe HMR
+ */
+
+const {
+  store: _app_store,
+  persistor: _app_persistor
+} = redux();
+
+const App = ({
+  Component,
+  pageProps
+}) => {
+  return __jsx(external_react_default.a.Fragment, null, __jsx(head_default.a, null, __jsx("script", {
+    src: `https://maps.googleapis.com/maps/api/js?key=${projectSettings["b" /* default */].googleApiKey}&libraries=places&v=3` // async
+    // defer
+
+  })), __jsx(external_react_redux_["Provider"], {
+    store: _app_store
+  }, __jsx(react_["PersistGate"], {
+    loading: null,
+    persistor: _app_persistor
+  }, __jsx(Component, pageProps))));
+};
+
+App.getInitialProps = async ({
+  Component,
+  ctx
+}) => {
+  if (Component.getInitialProps) {
+    const pageProps = await Component.getInitialProps(ctx);
+    return {
+      pageProps
+    };
+  }
+
+  return {};
+};
+
+/* harmony default export */ var _app = __webpack_exports__["default"] = (App);
 
 /***/ }),
 
-/***/ "react":
-/*!************************!*\
-  !*** external "react" ***!
-  \************************/
-/*! no static exports found */
+/***/ "JPPj":
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"react\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJyZWFjdFwiPzU4OGUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoicmVhY3QuanMiLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IHJlcXVpcmUoXCJyZWFjdFwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///react\n");
+module.exports = require("redux-persist/integration/react");
 
 /***/ }),
 
-/***/ "react-redux":
-/*!******************************!*\
-  !*** external "react-redux" ***!
-  \******************************/
-/*! no static exports found */
+/***/ "T8f9":
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"react-redux\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJyZWFjdC1yZWR1eFwiPzc4Y2QiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoicmVhY3QtcmVkdXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IHJlcXVpcmUoXCJyZWFjdC1yZWR1eFwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///react-redux\n");
+module.exports = require("redux-persist/lib/storage");
 
 /***/ }),
 
-/***/ "redux":
-/*!************************!*\
-  !*** external "redux" ***!
-  \************************/
-/*! no static exports found */
+/***/ "VNb8":
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"redux\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJyZWR1eFwiP2QzMjUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoicmVkdXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IHJlcXVpcmUoXCJyZWR1eFwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///redux\n");
+module.exports = require("redux-persist");
 
 /***/ }),
 
-/***/ "redux-persist":
-/*!********************************!*\
-  !*** external "redux-persist" ***!
-  \********************************/
-/*! no static exports found */
+/***/ "YWgu":
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"redux-persist\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJyZWR1eC1wZXJzaXN0XCI/Njc4YSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJyZWR1eC1wZXJzaXN0LmpzIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSByZXF1aXJlKFwicmVkdXgtcGVyc2lzdFwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///redux-persist\n");
+
 
 /***/ }),
 
-/***/ "redux-persist/integration/react":
-/*!**************************************************!*\
-  !*** external "redux-persist/integration/react" ***!
-  \**************************************************/
-/*! no static exports found */
+/***/ "ZSx1":
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"redux-persist/integration/react\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJyZWR1eC1wZXJzaXN0L2ludGVncmF0aW9uL3JlYWN0XCI/ZGFmOSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJyZWR1eC1wZXJzaXN0L2ludGVncmF0aW9uL3JlYWN0LmpzIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSByZXF1aXJlKFwicmVkdXgtcGVyc2lzdC9pbnRlZ3JhdGlvbi9yZWFjdFwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///redux-persist/integration/react\n");
+module.exports = require("redux-thunk");
 
 /***/ }),
 
-/***/ "redux-persist/lib/storage":
-/*!********************************************!*\
-  !*** external "redux-persist/lib/storage" ***!
-  \********************************************/
-/*! no static exports found */
+/***/ "cDcd":
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"redux-persist/lib/storage\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJyZWR1eC1wZXJzaXN0L2xpYi9zdG9yYWdlXCI/ZWIyMCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJyZWR1eC1wZXJzaXN0L2xpYi9zdG9yYWdlLmpzIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSByZXF1aXJlKFwicmVkdXgtcGVyc2lzdC9saWIvc3RvcmFnZVwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///redux-persist/lib/storage\n");
+module.exports = require("react");
 
 /***/ }),
 
-/***/ "redux-thunk":
-/*!******************************!*\
-  !*** external "redux-thunk" ***!
-  \******************************/
-/*! no static exports found */
+/***/ "h74D":
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"redux-thunk\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJyZWR1eC10aHVua1wiPzg4MDgiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoicmVkdXgtdGh1bmsuanMiLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IHJlcXVpcmUoXCJyZWR1eC10aHVua1wiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///redux-thunk\n");
+module.exports = require("react-redux");
+
+/***/ }),
+
+/***/ "rKB8":
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+
+/***/ "xSWb":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return projectName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return baseUrl; });
+/* unused harmony export docMzUrl */
+/* unused harmony export contentUrl */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return imageUrl; });
+/* unused harmony export serverUrl */
+/* unused harmony export googleApiKey */
+/* unused harmony export shippingFreeAfter */
+/* unused harmony export shippingExtraRate */
+/* unused harmony export shippingStaticRate */
+/* unused harmony export referralPresent */
+/* unused harmony export defaultOrderStatus */
+/* unused harmony export defaultStatusInOrder */
+/* unused harmony export invoiceUrl */
+/* unused harmony export subsPercent */
+/* unused harmony export filePath */
+/* unused harmony export labSheetPath */
+/* unused harmony export countryTax */
+/* unused harmony export chatTheme */
+/* unused harmony export enableCountry */
+/* unused harmony export accountTypeOpt */
+/* unused harmony export customRates */
+/* unused harmony export topBarText */
+const projectName = 'MissValentine';
+const isLocal = false;
+const baseUrl = isLocal ? 'http://localhost:5000/api' : 'https://missval.herokuapp.com/api'; //export const baseUrl = "http://localhost:4003";
+
+const docMzUrl = 'http://localhost:3001';
+const contentUrl = 'https://server1.cbdbene.com';
+const imageUrl = 'https://server1.cbdbene.com/';
+const serverUrl = 'https://admin.cbdbene.com/'; //export const baseUrl = "http://localhost:4003";
+//export const serverUrl = "http://localhost:4003/";
+//export const imageUrl = "http://localhost:5000/";
+// export const contentUrl = "http://localhost:5000";
+
+const googleApiKey = 'AIzaSyBXxXfKy5wtHEO9XniOvGEKPME-_ldClVk';
+const shippingFreeAfter = 75;
+const shippingExtraRate = 5;
+const shippingStaticRate = 5.95;
+const referralPresent = 25;
+const defaultOrderStatus = 'Transaction completed - label generated';
+const defaultStatusInOrder = 'in process';
+const invoiceUrl = 'https://admin.cbdbene.com/images/';
+const subsPercent = 10;
+const filePath = 'https://admin.cbdbene.com/var/www/cbdbene_3rde/cbdbene/';
+const labSheetPath = 'https://admin.cbdbene.com/var/www/cbdbene_3rde/cbdbene/';
+const countryTax = 15 / 100;
+const chatTheme = {
+  background: '#ffffff',
+  // fontFamily: fonts.mainfont,
+  headerBgColor: '#000000',
+  headerFontColor: '#ffffff',
+  headerFontSize: '20px',
+  botBubbleColor: '#eee9e3',
+  botFontColor: '#202020',
+  userBubbleColor: '#fff',
+  userFontColor: '#4a4a4a'
+};
+const enableCountry = ['US', 'USA', 'United States'];
+const accountTypeOpt = [{
+  label: 'Checking',
+  value: 'checking'
+}, {
+  label: 'Savings',
+  value: 'savings'
+}, {
+  label: 'Business Checking',
+  value: 'businessChecking'
+}];
+const customRates = [{
+  id: 'rate_custom1',
+  object: 'Rate',
+  created_at: '2020-02-10T10:54:03Z',
+  updated_at: '2020-02-10T10:54:03Z',
+  mode: 'test',
+  service: 'Priority',
+  carrier: 'USPS',
+  rate: '8.42',
+  currency: 'USD',
+  retail_rate: '14.90',
+  retail_currency: 'USD',
+  list_rate: '11.19',
+  list_currency: 'USD',
+  delivery_days: 2,
+  delivery_date: null,
+  delivery_date_guaranteed: false,
+  est_delivery_days: 2,
+  shipment_id: 'shp_2255eb7f0e8b4775abcfe009be9ba569',
+  carrier_account_id: 'ca_5cd23a24d9c3427780dcfde68fbb1c76',
+  customName: 'Standard',
+  customRate: 15.89
+}, {
+  id: 'rate_custom2',
+  object: 'Rate',
+  created_at: '2020-02-10T10:54:03Z',
+  updated_at: '2020-02-10T10:54:03Z',
+  mode: 'test',
+  service: 'ParcelSelect',
+  carrier: 'USPS',
+  rate: '10.89',
+  currency: 'USD',
+  retail_rate: '10.89',
+  retail_currency: 'USD',
+  list_rate: '10.89',
+  list_currency: 'USD',
+  delivery_days: 7,
+  delivery_date: null,
+  delivery_date_guaranteed: false,
+  est_delivery_days: 7,
+  shipment_id: 'shp_2255eb7f0e8b4775abcfe009be9ba569',
+  carrier_account_id: 'ca_5cd23a24d9c3427780dcfde68fbb1c76',
+  customName: 'Priority',
+  customRate: 20.54
+}, {
+  id: 'rate_custom3',
+  object: 'Rate',
+  created_at: '2020-02-10T10:54:03Z',
+  updated_at: '2020-02-10T10:54:03Z',
+  mode: 'test',
+  service: 'Express',
+  carrier: 'USPS',
+  rate: '43.60',
+  currency: 'USD',
+  retail_rate: '50.85',
+  retail_currency: 'USD',
+  list_rate: '43.60',
+  list_currency: 'USD',
+  delivery_days: null,
+  delivery_date: null,
+  delivery_date_guaranteed: false,
+  est_delivery_days: null,
+  shipment_id: 'shp_2255eb7f0e8b4775abcfe009be9ba569',
+  carrier_account_id: 'ca_5cd23a24d9c3427780dcfde68fbb1c76',
+  customName: 'Express',
+  customRate: 48.6
+}];
+const topBarText = 'Free shipping on all orders above $75.'; // make it empty string ("") to hide tha bar
+
+/* harmony default export */ __webpack_exports__["b"] = ({
+  imageUrl,
+  projectName,
+  baseUrl,
+  serverUrl,
+  googleApiKey,
+  shippingFreeAfter,
+  shippingExtraRate,
+  shippingStaticRate,
+  referralPresent,
+  defaultOrderStatus,
+  defaultStatusInOrder,
+  invoiceUrl,
+  enableCountry,
+  subsPercent,
+  accountTypeOpt,
+  filePath,
+  labSheetPath,
+  countryTax,
+  docMzUrl,
+  customRates,
+  chatTheme,
+  topBarText,
+  contentUrl
+});
+
+/***/ }),
+
+/***/ "xnum":
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ })
 

@@ -1,0 +1,1 @@
+{"ast":null,"code":"var socialLinks = {\n  facebook: \"//facebook.com\",\n  youtube: \"//youtube.com\",\n  instagram: \"//instagram.com\",\n  twitter: \"//twitter.com\"\n};\nexport default socialLinks;","map":null,"metadata":{},"sourceType":"module"}

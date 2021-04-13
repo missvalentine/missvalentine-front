@@ -12,7 +12,8 @@ import { getCategories, getProducts } from '../redux/actions';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Select, Input, Button, Modal } from 'antd';
-import { getSubcategory, createContactUs } from '../services/apis/admin.js';
+import { createContactUs } from '../services/apis/contact';
+import { getSubcategory } from '../services/apis/admin';
 import { Fade } from 'reactstrap';
 import Product from '../components/Product.js';
 
