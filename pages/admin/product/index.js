@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Collapse } from 'antd';
+import { Collapse, notification, message } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons';
 import AdminLayout from '../../../components/admin/AdminLayout';
 import '../../../components/styles/app.scss';
@@ -10,32 +10,39 @@ const { Panel } = Collapse;
 export default function ManageCategory(props) {
   const [products, setProducts] = useState([]);
 
-  // const { toast } = props;
+  const handleGetAllProducts = () =>
+    getAllProducts().then(({ data }) => data.success && setProducts(data.data));
+
   useEffect(() => {
-    getAllProducts().then(
-      (res) => res && res.data && setProducts(res.data.data)
-    );
+    handleGetAllProducts();
   }, []);
   const handleDeleteCategory = (id) => {
-    deleteProduct(id).then();
+    deleteProduct(id).then(({ data }) => {
+      if (data.success) {
+        notification.success({ message: data.message });
+      } else notification.success({ message: data.message });
+    });
+    handleGetAllProducts();
   };
 
   return (
     <AdminLayout>
       <h3>Manage Products</h3>
       <Collapse expandIconPosition="right">
-        {products.map((c, i) => (
-          <Panel
-            showArrow={false}
-            header={`#${c._id} ${c.name}`}
-            key={i}
-            extra={
-              <DeleteOutlined onClick={() => handleDeleteCategory(c._id)} />
-            }
-          >
-            <p>{c.shortDesc}</p>
-          </Panel>
-        ))}
+        {products &&
+          products.length > 0 &&
+          products.map((c, i) => (
+            <Panel
+              showArrow={false}
+              header={`#${c._id} ${c.name}`}
+              key={i}
+              extra={
+                <DeleteOutlined onClick={() => handleDeleteCategory(c._id)} />
+              }
+            >
+              <p>{c.shortDesc}</p>
+            </Panel>
+          ))}
       </Collapse>
     </AdminLayout>
   );

@@ -2,7 +2,15 @@ import React, { useState, useEffect } from 'react';
 import '../../../components/styles/app.scss';
 import AdminLayout from '../../../components/admin/AdminLayout';
 
-import { Input, Button, Checkbox, Tag, Select, Upload } from 'antd';
+import {
+  Input,
+  Button,
+  Checkbox,
+  Tag,
+  Select,
+  Upload,
+  notification,
+} from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 
 import {
@@ -20,7 +28,7 @@ const allColors = [
   'Nude',
   'Skin',
   'Rani',
-
+  'White',
   'AliceBlue',
   'AntiqueWhite',
   'Aqua',
@@ -165,7 +173,6 @@ const allColors = [
   'Turquoise',
   'Violet',
   'Wheat',
-  'White',
   'WhiteSmoke',
   'Yellow',
   'YellowGreen',
@@ -223,8 +230,8 @@ export default function create(props) {
       console.log(fileListAsArray[i]);
       formData.append('images', fileListAsArray[i]);
     }
-    createProduct(formData).then((res) => {
-      if (res.data && res.data.success) {
+    createProduct(formData).then(({ data }) => {
+      if (data.success) {
         setInputData({
           ...inputData,
           name: '',
@@ -239,6 +246,9 @@ export default function create(props) {
           images: [],
           errors: '',
         });
+        notification.success({ message: data.message });
+      } else {
+        notification.error({ message: data.message });
       }
     });
   };

@@ -35,16 +35,13 @@ const ProductSlider = ({ parentClass, versions, products }) => {
             contain: true,
           }}
           flickityRef={(c) => (flkty = c)}
-          disableImagesLoaded={false}
+          // disableImagesLoaded={false}
           reloadOnUpdate={true}
           className="c-category-products__slider"
         >
           {products
             .filter((product) => product.hidden !== true)
             .map((el, i) => {
-              const title = getProductTitle(el);
-              const image = getProductImage(el);
-              const subTitle = getProductShortDesc(el);
               return (
                 <div key={i} className=" col-lg-4 c-category-products__product">
                   <Product data={el} />

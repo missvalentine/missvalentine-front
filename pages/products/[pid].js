@@ -73,7 +73,7 @@ const Product = () => {
   return (
     <Layout headerTheme="black" fixed={true}>
       <ProductDetail data={products.product} />
-      {products.products !== [] && (
+      {products.products.length > 0 && (
         <div className="c-product-single__related-section">
           <div
             className="row justify-content-center"
@@ -99,7 +99,7 @@ const Product = () => {
           </div>
         </div>
       )}
-      {products.recentlyViewed !== [] && (
+      {products.recentlyViewed.length > 0 && (
         <div className="c-product-single__related-section">
           <div
             className="row justify-content-center"

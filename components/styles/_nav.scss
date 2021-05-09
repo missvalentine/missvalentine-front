@@ -91,7 +91,7 @@
     height: 25px;
     &:before,
     &:after {
-      content: "";
+      content: '';
       display: block;
       height: 2px;
       // background-color: $dark-color-1;
@@ -194,16 +194,16 @@
 
 .sidebar {
   min-width: 350px;
-  background-color: #f4f4f4;
+  background-color: #eee;
   top: 0;
   left: 0;
   display: flex;
-  height: inherit;
+  height: 100vh;
   position: fixed;
   z-index: -1;
   /* display: none; */
   transform: translateX(-100%);
-  transition: 0.3s;
+  transition: 0.5s;
   top: 6rem;
   /* padding: 30px; */
 }
@@ -211,16 +211,23 @@
 .sidebarLeftDiv {
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
-
+  // margin-top: 3rem;
   // homescreen side nav underline
   ul {
+    padding: 6rem;
+
     li {
       a {
-        padding: 0 0;
+        font-size: 18px;
         &:hover {
-          border-bottom: 2.25px solid $dark-color-2;
+          // border-bottom: 2.25px solid $dark-color-2;
+          text-decoration: none;
+          border: none;
         }
+      }
+      &:hover {
+        // border-bottom: 2.25px solid $dark-color-2;
+        border: none;
       }
     }
   }

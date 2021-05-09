@@ -65,7 +65,7 @@ const Nav = ({ parent, items, isRight, props }) => {
                 <div className="sidebarLeftDiv">
                   <ul style={{ listStyleType: 'none' }}>
                     {el.subMenus.map((elx, i) => (
-                      <li style={{ margin: '30px 20px' }} key={i}>
+                      <li style={{ margin: '20px' }} key={i}>
                         <Link as={elx.as || elx.link} href={elx.link}>
                           <a className="c-nav__link c-nav__link--sub">
                             {elx.label}

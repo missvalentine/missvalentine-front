@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Collapse } from 'antd';
+import { Collapse, notification } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons';
 import AdminLayout from '../../../components/admin/AdminLayout';
 import '../../../components/styles/app.scss';
@@ -26,18 +26,20 @@ export default function ManageCategory() {
     <AdminLayout>
       <h3>Manage Sub-Category</h3>
       <Collapse expandIconPosition="right">
-        {subcategories.map((c, i) => (
-          <Panel
-            showArrow={false}
-            header={c.name}
-            key={i}
-            extra={
-              <DeleteOutlined onClick={() => handleDeleteCategory(c._id)} />
-            }
-          >
-            <p>{'text'}</p>
-          </Panel>
-        ))}
+        {subcategories &&
+          subcategories.length === 0 &&
+          subcategories.map((c, i) => (
+            <Panel
+              showArrow={false}
+              header={c.name}
+              key={i}
+              extra={
+                <DeleteOutlined onClick={() => handleDeleteCategory(c._id)} />
+              }
+            >
+              <p>{'text'}</p>
+            </Panel>
+          ))}
       </Collapse>
     </AdminLayout>
   );
