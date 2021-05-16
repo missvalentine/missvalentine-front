@@ -17,15 +17,15 @@ const Logo = ({ versions, parentClass, full, text, logo, url }) => {
     return (
       <Link href="/">
         <a className={className}>
-          <div className="c-logo__text-footer">{projectName}</div>
+          <img className="c-logo__image" src={url} />
         </a>
       </Link>
     );
-  } else if (versions == 'navbar') {
+  } else if (versions[0] == 'navbar') {
     return (
       <Link href="/">
         <a className={className}>
-          <div className="c-logo__text">{projectName}</div>
+          <img className="c-logo__image" src={url} />
         </a>
       </Link>
     );

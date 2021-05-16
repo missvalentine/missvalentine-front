@@ -15,7 +15,7 @@ import apiList from '../../services/apis/apiList';
 import { useRouter } from 'next/router';
 import parse from 'html-react-parser';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { Spin } from 'antd';
+import { Spin, Skeleton, Empty } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import { getAllCategories } from '../../services/api';
 import { useSelector, useDispatch } from 'react-redux';
@@ -28,6 +28,7 @@ import { getCategory } from '../../redux/actions';
 
 const Category = (props) => {
   const router = useRouter();
+  const [loading, setLoading] = React.useState(false);
 
   const { cid } = router.query;
 
@@ -39,14 +40,17 @@ const Category = (props) => {
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(-1);
 
   useEffect(() => {
-    console.log('calling cat', Category);
-
+    setLoading(true);
     dispatch(getCategory(cid));
-    console.log('products', Category);
-  }, []);
+    setLoading(false);
+  }, [cid]);
 
   return (
-    <Layout headerVersions={['bg-dark']} headerTheme="black">
+    <Layout
+      title={Category && Category.name}
+      headerVersions={['bg-dark']}
+      headerTheme="black"
+    >
       <Banner
         image={banner2}
         mobileImage={banner2}
@@ -100,38 +104,52 @@ const Category = (props) => {
               );
             })}
         </div> */}
-
-        <div className="c-shop-page__products-wrapper">
-          <div className="c-shop-page__row row">
-            {Category !== null &&
-              Category.products.map((el, i) => (
-                <div key={el._id} className="col-lg-4 col-md-6">
-                  <Fade>
-                    <Product data={el} />
-                  </Fade>
-                </div>
-              ))}
+        <Spin spinning={loading}>
+          <div className="c-shop-page__products-wrapper">
+            <div className="c-shop-page__row row justify-content-center">
+              {Category !== null && Category.products.length > 0 ? (
+                Category.products.map((el, i) => (
+                  <div key={el._id} className="col-lg-4 col-md-6">
+                    <Fade>
+                      <Product data={el} />
+                    </Fade>
+                  </div>
+                ))
+              ) : (
+                <center>
+                  <Empty
+                    image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+                    imageStyle={{
+                      height: 100,
+                    }}
+                    description={
+                      <h2>Currently no product under {Category.name}</h2>
+                    }
+                  />
+                </center>
+              )}
+            </div>
           </div>
-        </div>
 
-        <div
-          className="consult-doc-banner-wrapper"
-          style={{ padding: '4rem 0' }}
-        >
-          <button
-            className="top-btn"
-            style={{ fontSize: 'x-large' }}
-            onClick={() => toTop()}
+          <div
+            className="consult-doc-banner-wrapper"
+            style={{ padding: '4rem 0' }}
           >
-            BACK TO TOP{' '}
-            <LazyLoadImage
-              className="top"
-              style={{ height: '20px', marginBottom: '5px' }}
-              src="/images/arrow-up.png"
-              alt="to-top"
-            />
-          </button>
-        </div>
+            <button
+              className="top-btn"
+              style={{ fontSize: 'x-large' }}
+              onClick={() => toTop()}
+            >
+              BACK TO TOP{' '}
+              <LazyLoadImage
+                className="top"
+                style={{ height: '20px', marginBottom: '5px' }}
+                src="/images/arrow-up.png"
+                alt="to-top"
+              />
+            </button>
+          </div>
+        </Spin>{' '}
       </div>
     </Layout>
   );

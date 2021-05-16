@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import parse from 'html-react-parser';
 import Fade from 'react-reveal/Fade';
+import { Spin } from 'antd';
 
 import banner1 from '../../assets/images/homeSlides/slider1.webp';
 const Banner = dynamic(() => import('../../components/Banner'), {
@@ -24,16 +25,22 @@ import Product from '../../components/Product';
 const Products = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
-
+  const [loading, setLoading] = React.useState(false);
   useEffect(() => {
+    setLoading(true);
     dispatch(getProducts());
+    setLoading(false);
   }, []);
   const toTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
 
   return (
-    <Layout headerVersions={['bg-dark']} headerTheme="black">
+    <Layout
+      title="Explore All Products"
+      headerVersions={['bg-dark']}
+      headerTheme="black"
+    >
       <Banner
         image={banner1}
         mobileImage={banner1}
@@ -49,40 +56,42 @@ const Products = () => {
             </div>
           </div>
         </div>
-        <div className="c-shop-page__products-wrapper">
-          <div className="c-shop-page__row row">
-            {products.products.map((el, i) => (
-              <Fade>
-                <div
-                  key={el._id}
-                  className="col-lg-4 col-md-6"
-                  style={{ padding: '0 40px' }}
-                >
-                  <Product data={el} />
-                </div>
-              </Fade>
-            ))}
+        <Spin spinning={loading}>
+          <div className="c-shop-page__products-wrapper">
+            <div className="c-shop-page__row row">
+              {products.products.map((el, i) => (
+                <Fade>
+                  <div
+                    key={el._id}
+                    className="col-lg-4 col-md-6"
+                    style={{ padding: '0 40px' }}
+                  >
+                    <Product data={el} />
+                  </div>
+                </Fade>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div
-          className="consult-doc-banner-wrapper"
-          style={{ padding: '4rem 0' }}
-        >
-          <button
-            className="top-btn"
-            style={{ fontSize: 'x-large' }}
-            onClick={() => toTop()}
+          <div
+            className="consult-doc-banner-wrapper"
+            style={{ padding: '4rem 0' }}
           >
-            BACK TO TOP{' '}
-            <LazyLoadImage
-              className="top"
-              style={{ height: '20px', marginBottom: '5px' }}
-              src="/images/arrow-up.png"
-              alt="to-top"
-            />
-          </button>
-        </div>
+            <button
+              className="top-btn"
+              style={{ fontSize: 'x-large' }}
+              onClick={() => toTop()}
+            >
+              BACK TO TOP{' '}
+              <LazyLoadImage
+                className="top"
+                style={{ height: '20px', marginBottom: '5px' }}
+                src="/images/arrow-up.png"
+                alt="to-top"
+              />
+            </button>
+          </div>
+        </Spin>
       </div>
     </Layout>
   );

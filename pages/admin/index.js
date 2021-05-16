@@ -3,11 +3,12 @@ import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { signIn } from '../../redux/actions/auth';
 import '../../components/styles/app.scss';
-import { ToastContainer, toast } from 'react-toastify';
+import { notification } from 'antd';
 
 export default function AdminLogin(props) {
-  const [email, setEmail] = useState('admin@missvalentineinnerwear.com');
-  const [password, setPassword] = useState('Vikasjain@2021');
+  // admin@missvalentineinnerwear.com
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const router = useRouter();
   const changeHandler = (event) => {
@@ -16,26 +17,31 @@ export default function AdminLogin(props) {
       : setPassword(event.target.value);
   };
 
-  const auth = useSelector((s) => s.auth);
+  const auth = JSON.parse(localStorage.getItem('auth'));
+  // const auth = useSelector((s) => s.auth);
+
   const submitHandler = () => {
     dispatch(
       signIn({
         email: email,
         password: password,
       })
-    );
+    )
+      .then(({ data }) => {
+        if (data && data.token) {
+          notification.success({ message: 'Sign in Successfully' });
+          router.push('/admin/dashboard');
+        } else notification.error({ message: 'Invalid user or password' });
+      })
+      .catch((err) => notification.error({ message: 'something went wrong' }));
   };
 
   useEffect(() => {
-    console.log('auth', auth);
-    if (auth.token) router.push('/admin/dashboard');
-  }, [auth.token]);
-
-  if (auth.token) router.push('/admin/dashboard');
+    if (auth && auth.token) router.push('/admin/dashboard');
+  }, [auth]);
 
   return (
     <div>
-      <ToastContainer />
       <div className="auth-wrapper">
         <div className="auth-content">
           <div className="auth-bg">

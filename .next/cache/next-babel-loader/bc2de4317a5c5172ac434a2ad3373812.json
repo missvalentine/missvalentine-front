@@ -1,1 +1,0 @@
-{"ast":null,"code":"import apiList from './apiList';\nimport axios from 'axios';\nexport var signInReq = function signInReq(obj) {\n  return axios.post(apiList.signInApi, obj);\n};","map":null,"metadata":{},"sourceType":"module"}

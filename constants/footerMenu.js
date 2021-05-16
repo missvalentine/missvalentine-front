@@ -3,24 +3,16 @@ const footerMenu = [
   {
     heading: 'Company',
     menus: [
-      // {
-      //     slug: "/account",
-      //     title: "My Account"
-      // },
-      // {
-      //     slug: "/shipping-returns",
-      //     title: "Shipping & Returns"
-      // },
-      // {
-      //     slug: "/learn",
-      //     title: "FAQ"
-      // },
+      {
+        slug: '/e-catalogue',
+        title: 'E-Catalogue',
+      },
       {
         slug: '/contact',
         title: 'Contact Us',
       },
       {
-        slug: '/about-us',
+        slug: '/#about-us',
         title: 'About Us',
       },
     ],

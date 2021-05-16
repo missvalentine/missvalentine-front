@@ -2,18 +2,16 @@ import { useHttp } from '../../utilis/useHttp';
 
 const _id = '601bef27d29ac85814619ba3';
 
-export const getAllCategories = (data) =>
+export const getAllCategories = () =>
   useHttp({
     method: 'get',
     url: `/category/all`,
-    data,
   });
 
-export const getAllProducts = (data) =>
+export const getAllProducts = () =>
   useHttp({
     method: 'get',
     url: `/product/all`,
-    data,
   });
 
 export const getAllSubcategories = () =>
@@ -83,4 +81,20 @@ export const deleteSubcategory = (pid) =>
   useHttp({
     method: 'delete',
     url: `/subcategory/${pid}/${_id}`,
+  });
+
+//edit ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+export const updateCategory = (data, cid) =>
+  useHttp({
+    method: 'put',
+    url: `/category/${cid}/${_id}`,
+    data,
+  });
+
+export const updateSubCategory = (data, cid) =>
+  useHttp({
+    method: 'put',
+    url: `/subcategory/${cid}/${_id}`,
+    data,
   });

@@ -10,6 +10,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { showCartBar } from '../redux/actions/drawers';
 import Product from './Product';
 import { useSelector, useDispatch } from 'react-redux';
+import { Spin } from 'antd';
 import { useState } from 'react';
 const CategoryProducts = (
   props,
@@ -96,39 +97,40 @@ const CategoryProducts = (
             );
         })}
       </div>
-
-      <div className="row c-category-products__product-list">
-        <Flickity
-          options={{
-            initialIndex: 0,
-            pageDots: false,
-            cellAlign: 'left',
-            contain: true,
-            on: {
-              ready: () => {
-                flickityInit();
+      <Spin spinning={products.products.length === 0}>
+        <div className="row c-category-products__product-list">
+          <Flickity
+            options={{
+              initialIndex: 0,
+              cellAlign: 'center',
+              contain: true,
+              pageDots: false,
+              autoPlay: 1000,
+              on: {
+                ready: () => {
+                  flickityInit();
+                },
               },
-            },
-          }}
-          flickityRef={(c) => (flkty = c)}
-          disableImagesLoaded={false}
-          reloadOnUpdate={true}
-          className="c-category-products__slider "
-        >
-          {console.log('poooo', products.categories, activeCategoryIndex)}
-          {activeCategoryIndex === -1
-            ? products.products
-                .filter((product) => product.hidden === false)
-                .map((item, index) => (
-                  <Product {...props} key={index} data={item} />
-                ))
-            : products.categories[activeCategoryIndex].products
-                .filter((product) => product.hidden === false)
-                .map((item, index) => (
-                  <Product {...props} key={index} data={item} />
-                ))}
-        </Flickity>
-      </div>
+            }}
+            flickityRef={(c) => (flkty = c)}
+            disableImagesLoaded={false}
+            reloadOnUpdate={true}
+            className="c-category-products__slider "
+          >
+            {activeCategoryIndex === -1
+              ? products.products
+                  .filter((product) => product.hidden === false)
+                  .map((item, index) => (
+                    <Product {...props} key={index} data={item} />
+                  ))
+              : products.categories[activeCategoryIndex].products
+                  .filter((product) => product.hidden === false)
+                  .map((item, index) => (
+                    <Product {...props} key={index} data={item} />
+                  ))}
+          </Flickity>
+        </div>
+      </Spin>
       <div
         className="consult-doc-banner-wrapper"
         style={{ padding: '0rem 0 0rem 0' }}

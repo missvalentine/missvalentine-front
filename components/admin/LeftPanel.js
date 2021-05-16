@@ -1,7 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
+import { signOut } from '../../redux/actions/auth';
+import { useDispatch, useSelector } from 'react-redux';
+import Router from 'next/router';
 
 export default function LeftPanel() {
+  const dispatch = useDispatch();
+  const handleLogut = () => {
+    dispatch(signOut());
+    Router.push('/');
+  };
+
   return (
     <div className="c-adminpanel-left">
       <Link href="/" className="">
@@ -52,12 +61,17 @@ export default function LeftPanel() {
         </li>
         <li className="c-adminpanel-left__list-item ">
           <Link href="/admin/contact/enquiry" className="">
-            Enquiry Request
+            Catalogue Enquiry Request
           </Link>
         </li>
         <li className="c-adminpanel-left__list-item ">
           <Link href="/admin/contact/promotions" className="">
             Promotion Emails
+          </Link>
+        </li>
+        <li className="c-adminpanel-left__list-item " onClick={handleLogut}>
+          <Link href="/" className="">
+            Log Out
           </Link>
         </li>
       </ul>

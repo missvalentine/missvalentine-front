@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Collapse } from 'antd';
+import { Collapse, Popconfirm, notification, Divider, Tag } from 'antd';
+import Router from 'next/router';
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import AdminLayout from '../../../components/admin/AdminLayout';
 import '../../../components/styles/app.scss';
@@ -13,13 +14,30 @@ const { Panel } = Collapse;
 export default function ManageCategory() {
   const [categories, setCategories] = useState([]);
 
-  useEffect(() => {
+  const handleGetAllCategories = () =>
     getAllCategories().then(
       (res) => res && res.data && setCategories(res.data.data)
     );
+  useEffect(() => {
+    handleGetAllCategories();
   }, []);
+
   const handleDeleteCategory = (id) => {
-    deleteCategory(id).then();
+    deleteCategory(id)
+      .then(({ data }) => {
+        if (data && data.success) {
+          notification.success({ message: data.message });
+          handleGetAllCategories();
+        } else {
+          notification.error({
+            message: data.message,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        notification.error({ message: 'Something went wrong' });
+      });
   };
 
   return (
@@ -33,16 +51,44 @@ export default function ManageCategory() {
             key={i}
             extra={
               <>
-                <EditOutlined />
-                <DeleteOutlined onClick={() => handleDeleteCategory(c._id)} />
+                <EditOutlined
+                  onClick={() =>
+                    Router.push({
+                      pathname: '/admin/category/create',
+                      query: { cid: c._id },
+                    })
+                  }
+                />
+                <Popconfirm
+                  placement="left"
+                  title="Are you sure to delete this category ?"
+                  onConfirm={() => handleDeleteCategory(c._id)}
+                  okText="Yes"
+                  cancelText="No"
+                >
+                  <DeleteOutlined />
+                </Popconfirm>
               </>
             }
           >
-            <div>#{c._id}</div>
-            <div>
-              {c.subcategories.map((s, si) => (
-                <span>{s.name}</span>
-              ))}
+            <div>Id : #{c._id}</div>
+            <Divider>Sub Categories</Divider>
+
+            <div className="px-4">
+              {c.subcategories.length > 0 ? (
+                c.subcategories.map((s, si) => <Tag>{s.name}</Tag>)
+              ) : (
+                <div>No Subcategories</div>
+              )}
+            </div>
+            <Divider>Products</Divider>
+
+            <div className="px-4">
+              {c.products.length > 0 ? (
+                c.products.map((p, si) => <Tag>{p.name}</Tag>)
+              ) : (
+                <div>No Products</div>
+              )}
             </div>
           </Panel>
         ))}

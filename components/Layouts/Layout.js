@@ -1,6 +1,8 @@
 import dynamic from 'next/dynamic';
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import flogoImage from '../../assets/images/footerlogo2.jpeg';
+import hlogoImage from '../../assets/images/headlogoNobg.png';
 import Header from '../Header';
 import '../styles/app.scss';
 const Footer = dynamic(() => import('../Footer'));
@@ -22,6 +24,9 @@ const Layout = ({
   logo,
   footerLogo,
 }) => {
+  const kString = 'Buy ladies bras online from a range of sports, push up, padded & more at MissValentine. Find women bras in different colors, fabrics, patterns at best price.'.split(
+    ' '
+  );
   return (
     <>
       {/* {topBarText && <TopAlert>{topBarText}</TopAlert>} */}
@@ -56,15 +61,16 @@ const Layout = ({
         </Head>
         <Header
           theme={headerTheme}
+          // homeLogo ||
           homeLogo={homeLogo}
           versions={headerVersions}
           bg={isHeaderBg}
           fixed={fixed}
-          logo={logo}
+          logo={hlogoImage}
         />
         {children}
 
-        <Footer imageUrl={footerLogo} />
+        <Footer imageUrl={flogoImage} />
       </div>
     </>
   );

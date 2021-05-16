@@ -1377,7 +1377,7 @@ const faqGeneral = [
         ],
       },
       {
-        title: `CBD innerContent `,
+        title: `innerContent `,
         content: ``,
         innerContent: [
           {

@@ -1,23 +1,28 @@
-import dynamic from "next/dynamic";
-const Layout = dynamic(() => import("../components/Layouts/Layout"), {
+import dynamic from 'next/dynamic';
+const Layout = dynamic(() => import('../components/Layouts/Layout'), {
   ssr: false,
 });
-const Heading = dynamic(() => import("../components/Heading"), {
+const Heading = dynamic(() => import('../components/Heading'), {
   ssr: false,
 });
-import { projectName } from "../constants/projectSettings";
+import {
+  projectName,
+  projectInfoUrl,
+  projectUrl,
+  projectAdminUrl,
+} from '../constants/projectSettings';
 const privacy = () => {
   return (
-    <Layout headerVersions={["bg-dark"]} headerTheme="black">
-      <div className="c-privacy__page-title" style={{ marginTop: "30px" }}>
+    <Layout headerVersions={['bg-dark']} headerTheme="black">
+      <div className="c-privacy__page-title" style={{ marginTop: '30px' }}>
         <Heading
           style={{
-            fontFamily: "futuraBT-medium",
+            fontFamily: 'futuraBT-medium',
             fontWeight: 500,
-            fontSize: "32px",
+            fontSize: '32px',
             opacity: 0.9,
           }}
-          versions={["large"]}
+          versions={['large']}
           parentClass="c-privacy"
           className="c-privacy__heading--large "
         >
@@ -26,21 +31,21 @@ const privacy = () => {
       </div>
       <div className="c-privacy__content">
         <Heading className="c-privacy__heading">
-          Welcome to CBD {projectName}
+          Welcome to {projectName}
         </Heading>
         <div className="container">
-          {projectName} LLC, a Delaware limited liability company d/b/a CBD
-          {projectName} collectively referred to in this privacy policy as
-          “CBDbene,” the “Company” or sometimes “we” or “us” or “our”), operates
-          the site located at the URL www.cbdbene.com (together with any other
-          site or applications branded as {projectName} (collectively, the
+          {projectName} , a innerwear company based in India
+          {projectName} collectively referred to in this privacy policy as “
+          {projectName}” the “Company” or sometimes “we” or “us” or “our”),
+          operates the site located at the URL {projectUrl} (together with any
+          other site or applications branded as {projectName} (collectively, the
           “Site”). {projectName} respects your privacy rights and is committed
           to protecting the information we collect from you online.
         </div>
         <Heading className="c-privacy__heading">Introduction of Policy</Heading>
         <div className="container">
-          This online privacy policy (“Privacy Policy”) explains CBDbené’s
-          privacy practices for the CBDbene.com site (together with its pages
+          This online privacy policy (“Privacy Policy”) explains {projectName}
+          privacy practices for the {projectUrl} site (together with its pages
           and features, “Site”) and mobile software application (together with
           its pages and features, “App”). This Privacy Policy explains how we
           collect, use, disclose and manage information that you provide to us
@@ -84,7 +89,7 @@ const privacy = () => {
           further using such personal information or maintaining it in
           retrievable form. If you believe we might have any information from or
           about a child under the age of 18, please contact us at
-          privacy@cbdbene.com.
+          {projectInfoUrl}.
         </div>
         <Heading className="c-privacy__heading">
           Categories of Information Collected
@@ -167,13 +172,15 @@ const privacy = () => {
             </li>
             <li>
               Improve the products, services, marketing and promotional efforts
-              of CBDbené;
+              of {projectName};
             </li>
             <li>
               Create new products, services, marketing and promotions for
-              CBDbené;
+              {projectName};
             </li>
-            <li>Market the businesses, products and/or services of CBDbené;</li>
+            <li>
+              Market the businesses, products and/or services of {projectName};
+            </li>
             <li>
               Help personalize user experiences with the Site, the App and/or
               their respective products and/or services;
@@ -209,7 +216,7 @@ const privacy = () => {
           to law enforcement or other governmental officials as we, in our sole
           discretion, deem necessary to comply with applicable law.
         </div>
-        <Heading className="c-privacy__heading" versions={["large"]}>
+        <Heading className="c-privacy__heading" versions={['large']}>
           Use of Web Technologies
         </Heading>
         <p>
@@ -351,40 +358,40 @@ const privacy = () => {
         <div className="container">
           You may opt out of the Ad Tech Network by clicking
           <a
-            style={{ color: "black" }}
+            style={{ color: 'black' }}
             href="http://www.youronlinechoices.com/opt-out-interface"
           >
-            {" "}
+            {' '}
             http://www.youronlinechoices.com/opt-out-interface
           </a>
           . If you would like to opt out of having interest-based information
           collected during your visits to our Site or other sites, both the
           National Advertising Initiative (the “NAI”) and the Digital
           Advertising Alliance (the “DAA”) offer opt out tools to assist you in
-          managing your choices. Click{" "}
+          managing your choices. Click{' '}
           <a
-            style={{ color: "black" }}
+            style={{ color: 'black' }}
             href="http://www.networkadvertising.org/choices/"
           >
-            {" "}
+            {' '}
             http://www.networkadvertising.org/choices/
-          </a>{" "}
-          to visit the NAI opt out page and click{" "}
+          </a>{' '}
+          to visit the NAI opt out page and click{' '}
           <a
-            style={{ color: "black" }}
+            style={{ color: 'black' }}
             href="http://www.aboutads.info/choices/"
           >
-            {" "}
+            {' '}
             http://www.aboutads.info/choices/
-          </a>{" "}
+          </a>{' '}
           for the DAA opt out page. You may wish to visit
           <a
-            style={{ color: "black" }}
+            style={{ color: 'black' }}
             href="http://www.networkadvertising.org/understanding-online-advertising/"
           >
-            {" "}
+            {' '}
             http://www.networkadvertising.org/understanding-online-advertising//
-          </a>{" "}
+          </a>{' '}
           to learn more about interest-based advertising and your choices
           regarding having this information used by third parties and your “opt
           out” choices. Opting out through the DAA or the NAI only means that
@@ -400,10 +407,9 @@ const privacy = () => {
         <div className="container">
           If you want to be removed from our marketing list and do not want us
           to send you e-mail, postal mail or other messages about our products
-          and services, you can opt out. To do so, please send an e-mail to{" "}
-          <a style={{ color: "black" }} href="mailto:unsubscribe@cbdbene.com">
-            {" "}
-            unsubscribe@cbdbene.com
+          and services, you can opt out. To do so, please send an e-mail to{' '}
+          <a style={{ color: 'black' }} href={`mailto:${projectAdminUrl}`}>
+            {projectAdminUrl}
           </a>
           , with the word “REMOVE” in the subject line.
         </div>
@@ -415,10 +421,10 @@ const privacy = () => {
           request certain information regarding our disclosure of such
           residents’ personal information to third parties for such third
           parties’ direct marketing purposes. To make such a request, please
-          e-mail us at{" "}
-          <a style={{ color: "black" }} href="mailto:privacy@cbdbene.com">
-            {" "}
-            privacy@cbdbene.com
+          e-mail us at{' '}
+          <a style={{ color: 'black' }} href={`mailto:${projectInfoUrl}`}>
+            {' '}
+            {projectInfoUrl}
           </a>
           .
         </div>
@@ -429,7 +435,7 @@ const privacy = () => {
           Policy will be posted here. The date stamp at the top of the page
           represents the last day this Privacy Policy was updated. If you have
           questions about this Privacy Policy, you can contact us at
-          privacy@cbdbene.com. By maintaining an Account with us, or by using or
+          {projectInfoUrl}. By maintaining an Account with us, or by using or
           accessing any services provided by us or the Site, you will be deemed
           to have agreed to and accepted this Privacy Policy.
         </div>
@@ -447,24 +453,24 @@ const privacy = () => {
           collected through the Site or the App or to no longer use your
           personal information to provide you with any products or services.
           Please submit any such request (“Request Concerning Personal
-          Information”) By email: Privacy@cbdbene.com, with a subject line of
-          “Your Personal Information.” For each Request Concerning Personal
+          Information”) By email: {projectInfoUrl}, with a subject line of “Your
+          Personal Information.” For each Request Concerning Personal
           Information, please state “Your Personal Information” in the email or
           letter subject line, and clearly state the the nature of your request
           and your name, street address, city, state, zip code and email
-          address. CBD{projectName} is not responsible for any Request
-          Concerning Personal Information that is incomplete, incorrectly
-          labeled, or incorrectly sent. You are solely responsible for the
-          accuracy and content of your personal information, and for keeping
-          your personal information current and correct. Further, {projectName}{" "}
-          does not respond to “do not track” (DNT) signals. Finally, as
-          explained further above, {projectName} does not authorize third
-          parties to collect your personal information when you use the Site or
-          the App, except as expressly stated in this Privacy Policy. To the
-          fullest extent permitted by law, {projectName} is not responsible for,
-          and you hereby release {projectName} from any and all liability which
-          may arise from, such third parties’ unauthorized collection of your
-          personal information
+          address. {projectName} is not responsible for any Request Concerning
+          Personal Information that is incomplete, incorrectly labeled, or
+          incorrectly sent. You are solely responsible for the accuracy and
+          content of your personal information, and for keeping your personal
+          information current and correct. Further, {projectName} does not
+          respond to “do not track” (DNT) signals. Finally, as explained further
+          above, {projectName} does not authorize third parties to collect your
+          personal information when you use the Site or the App, except as
+          expressly stated in this Privacy Policy. To the fullest extent
+          permitted by law, {projectName} is not responsible for, and you hereby
+          release {projectName} from any and all liability which may arise from,
+          such third parties’ unauthorized collection of your personal
+          information
         </div>
         <Heading className="c-privacy__heading">Severability</Heading>
         <div className="container">
@@ -494,13 +500,12 @@ const privacy = () => {
         <Heading className="c-privacy__heading">Contact Us</Heading>
         <div className="container">
           If you have any questions or suggestions about this Privacy Policy,
-          the Site or the App please contact us by e-mail:{" "}
-          <a style={{ color: "black" }} href="mailto:privacy@cbdbene.com">
-            {" "}
-            privacy@cbdbene.com
+          the Site or the App please contact us by e-mail:{' '}
+          <a style={{ color: 'black' }} href={`mailto:${projectInfoUrl}`}>
+            {projectInfoUrl}
           </a>
         </div>
-        <div style={{ marginTop: "50px" }}></div>
+        <div style={{ marginTop: '50px' }}></div>
       </div>
     </Layout>
   );

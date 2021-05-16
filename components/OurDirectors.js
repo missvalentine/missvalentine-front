@@ -23,7 +23,7 @@ export default function OurDirectors() {
   ];
 
   return (
-    <div className="c-directors">
+    <div className="c-directors" id="about-us">
       <div className="c-directors__title"> Board of Directors</div>
       <div className="c-directors__subtitle">
         Our Team has deep expertise in the textile industries, having more than

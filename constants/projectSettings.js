@@ -1,4 +1,7 @@
 export const projectName = 'MissValentine';
+export const projectUrl = 'www.missvalentineinnerwear.com';
+export const projectInfoUrl = 'info@missvalentineinnerwear.com';
+export const projectAdminUrl = 'admin@missvalentineinnerwear.com';
 const isLocal = false;
 export const baseUrl = isLocal
   ? 'http://localhost:5000/api'

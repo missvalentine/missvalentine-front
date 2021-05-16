@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Collapse, notification } from 'antd';
-import { DeleteOutlined } from '@ant-design/icons';
+import { Collapse, Popconfirm, notification } from 'antd';
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import Router from 'next/router';
 import AdminLayout from '../../../components/admin/AdminLayout';
 import '../../../components/styles/app.scss';
 import {
@@ -13,13 +14,34 @@ const { Panel } = Collapse;
 export default function ManageCategory() {
   const [subcategories, setSubcategories] = useState([]);
 
-  useEffect(() => {
+  const handleGetAllSubCategories = () =>
     getAllSubcategories().then(
-      (res) => res && res.data && setSubcategories(res.data.data)
+      ({ data }) => data && setSubcategories(data.data)
     );
+
+  useEffect(() => {
+    handleGetAllSubCategories();
   }, []);
-  const handleDeleteCategory = (id) => {
-    deleteSubcategory(id).then();
+
+  const handleDeleteSubCategory = (id) => {
+    deleteSubcategory(id)
+      .then(({ data }) => {
+        console.log('data', data);
+        if (data && data.success) {
+          console.log('success', data);
+
+          notification.success({ message: data.message });
+          handleGetAllSubCategories();
+        } else {
+          notification.error({
+            message: data.message,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        notification.error({ message: 'Something went wrong' });
+      });
   };
 
   return (
@@ -27,17 +49,41 @@ export default function ManageCategory() {
       <h3>Manage Sub-Category</h3>
       <Collapse expandIconPosition="right">
         {subcategories &&
-          subcategories.length === 0 &&
-          subcategories.map((c, i) => (
+          subcategories.map((sc, i) => (
             <Panel
               showArrow={false}
-              header={c.name}
+              header={sc.name}
               key={i}
               extra={
-                <DeleteOutlined onClick={() => handleDeleteCategory(c._id)} />
+                <>
+                  <EditOutlined
+                    onClick={() =>
+                      Router.push({
+                        pathname: '/admin/subcategory/create',
+                        query: { sCid: sc._id },
+                      })
+                    }
+                  />
+                  <Popconfirm
+                    placement="left"
+                    title="Are you sure to delete this sub-category ?"
+                    onConfirm={() => handleDeleteSubCategory(sc._id)}
+                    okText="Yes"
+                    cancelText="No"
+                  >
+                    <DeleteOutlined />
+                  </Popconfirm>
+                </>
               }
             >
-              <p>{'text'}</p>
+              <h3>Category Name : {sc.category.name}</h3>
+              <br />
+              <h2>Products Name:</h2>
+              {sc.products.length > 0 ? (
+                sc.products.map((p) => <div>{p.name}</div>)
+              ) : (
+                <div>No product in this subcategory</div>
+              )}
             </Panel>
           ))}
       </Collapse>

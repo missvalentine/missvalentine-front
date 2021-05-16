@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import '../../../components/styles/app.scss';
 import AdminLayout from '../../../components/admin/AdminLayout';
-
+import {
+  allColours,
+  allSizes,
+  colours,
+} from '../../../utilis/customFunctions.js';
 import {
   Input,
   Button,
@@ -11,174 +15,22 @@ import {
   Upload,
   notification,
 } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@ant-design/icons';
 
 import {
   createProduct,
   getAllCategories,
+  getProduct,
+  deleteProduct,
 } from '../../../services/apis/admin.js';
+import Router from 'next/router';
 
 const { Option } = Select;
 
 //constants
-const allSizes = ['28', '30', '32', '34', '36', '38', '40', '42', '44'];
-const allColors = [
-  'Wine',
-  'Carrot',
-  'Nude',
-  'Skin',
-  'Rani',
-  'White',
-  'AliceBlue',
-  'AntiqueWhite',
-  'Aqua',
-  'Aquamarine',
-  'Azure',
-  'Beige',
-  'Bisque',
-  'Black',
-  'BlanchedAlmond',
-  'Blue',
-  'BlueViolet',
-  'Brown',
-  'BurlyWood',
-  'CadetBlue',
-  'Chartreuse',
-  'Chocolate',
-  'Coral',
-  'CornflowerBlue',
-  'Cornsilk',
-  'Crimson',
-  'Cyan',
-  'DarkBlue',
-  'DarkCyan',
-  'DarkGoldenRod',
-  'DarkGray',
-  'DarkGrey',
-  'DarkGreen',
-  'DarkKhaki',
-  'DarkMagenta',
-  'DarkOliveGreen',
-  'DarkOrange',
-  'DarkOrchid',
-  'DarkRed',
-  'DarkSalmon',
-  'DarkSeaGreen',
-  'DarkSlateBlue',
-  'DarkSlateGray',
-  'DarkSlateGrey',
-  'DarkTurquoise',
-  'DarkViolet',
-  'DeepPink',
-  'DeepSkyBlue',
-  'DimGray',
-  'DimGrey',
-  'DodgerBlue',
-  'FireBrick',
-  'FloralWhite',
-  'ForestGreen',
-  'Fuchsia',
-  'Gainsboro',
-  'GhostWhite',
-  'Gold',
-  'GoldenRod',
-  'Gray',
-  'Grey',
-  'Green',
-  'GreenYellow',
-  'HoneyDew',
-  'HotPink',
-  'IndianRed',
-  'Indigo',
-  'Ivory',
-  'Khaki',
-  'Lavender',
-  'LavenderBlush',
-  'LawnGreen',
-  'LemonChiffon',
-  'LightBlue',
-  'LightCoral',
-  'LightCyan',
-  'LightGoldenRodYellow',
-  'LightGray',
-  'LightGrey',
-  'LightGreen',
-  'LightPink',
-  'LightSalmon',
-  'LightSeaGreen',
-  'LightSkyBlue',
-  'LightSlateGray',
-  'LightSlateGrey',
-  'LightSteelBlue',
-  'LightYellow',
-  'Lime',
-  'LimeGreen',
-  'Linen',
-  'Magenta',
-  'Maroon',
-  'MediumAquaMarine',
-  'MediumBlue',
-  'MediumOrchid',
-  'MediumPurple',
-  'MediumSeaGreen',
-  'MediumSlateBlue',
-  'MediumSpringGreen',
-  'MediumTurquoise',
-  'MediumVioletRed',
-  'MidnightBlue',
-  'MintCream',
-  'MistyRose',
-  'Moccasin',
-  'NavajoWhite',
-  'Navy',
-  'OldLace',
-  'Olive',
-  'OliveDrab',
-  'Orange',
-  'OrangeRed',
-  'Orchid',
-  'PaleGoldenRod',
-  'PaleGreen',
-  'PaleTurquoise',
-  'PaleVioletRed',
-  'PapayaWhip',
-  'PeachPuff',
-  'Peru',
-  'Pink',
-  'Plum',
-  'PowderBlue',
-  'Purple',
-  'RebeccaPurple',
-  'Red',
-  'RosyBrown',
-  'RoyalBlue',
-  'SaddleBrown',
-  'Salmon',
-  'SandyBrown',
-  'SeaGreen',
-  'SeaShell',
-  'Sienna',
-  'Silver',
-  'SkyBlue',
-  'SlateBlue',
-  'SlateGray',
-  'SlateGrey',
-  'Snow',
-  'SpringGreen',
-  'SteelBlue',
-  'Tan',
-  'Teal',
-  'Thistle',
-  'Tomato',
-  'Turquoise',
-  'Violet',
-  'Wheat',
-  'WhiteSmoke',
-  'Yellow',
-  'YellowGreen',
-];
+
 export default function create(props) {
-  const { editData } = props;
+  const { pid } = Router.router.query;
 
   const [inputData, setInputData] = useState({
     name: '',
@@ -193,22 +45,33 @@ export default function create(props) {
     images: [],
     errors: '',
   });
+  const [fileList, setFileList] = useState([]);
   const [categories, setCategories] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
 
-  useEffect(() => {
-    if (editData) {
-      let newInputData = { ...inputData };
-      newInputData.sizes = editData.sizes;
-      setInputData(newInputData);
+  const initialSetup = async () => {
+    const res = await getAllCategories();
+    setCategories(res.data.data);
+
+    if (pid && res) {
+      getProduct(pid).then(({ data }) => {
+        let editData = data.data;
+        let cate = res.data.data.filter((c) => c._id === editData.category._id);
+        console.log(cate, res.data.data, editData.category._id);
+        setSubCategories(cate.length > 0 ? cate[0].subcategories : []);
+
+        editData.subCategories = editData.subCategories.map((sc) => sc._id);
+        editData.category = editData.category._id;
+        editData.price = editData.price || '';
+        setInputData(editData);
+      });
+      //
     }
-  }, []);
+  };
 
   useEffect(() => {
-    getAllCategories().then(
-      (res) => res && res.data && setCategories(res.data.data)
-    );
-  }, []);
+    initialSetup();
+  }, [pid]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -224,33 +87,48 @@ export default function create(props) {
     formData.append('colors', JSON.stringify(inputData.colors));
     formData.append('subCategories', JSON.stringify(inputData.subCategories));
 
+    if (pid) {
+      formData.append('isEdit', true);
+      for (var i in inputData.images) {
+        formData.append('oldImages', JSON.stringify(inputData.images[i]));
+      }
+    }
+
     //for Images
-    const fileListAsArray = Array.from(inputData.images);
+    const fileListAsArray = Array.from(fileList);
     for (var i in fileListAsArray) {
       console.log(fileListAsArray[i]);
-      formData.append('images', fileListAsArray[i]);
+      formData.append('images', fileListAsArray[i].originFileObj);
     }
-    createProduct(formData).then(({ data }) => {
-      if (data.success) {
-        setInputData({
-          ...inputData,
-          name: '',
-          // shortDesc: '',
-          // description: '',
-          // category: '',
-          // subCategories: [],
-          // price: '',
-          // sizes: [],
-          // colors: [],
-          // hidden: false,
-          images: [],
-          errors: '',
-        });
-        notification.success({ message: data.message });
-      } else {
-        notification.error({ message: data.message });
-      }
-    });
+
+    createProduct(formData)
+      .then(({ data }) => {
+        if (data && data.success) {
+          setInputData({
+            ...inputData,
+            name: '',
+            shortDesc: '',
+            description: '',
+            category: '',
+            subCategories: [],
+            price: '',
+            sizes: [],
+            colors: [],
+            hidden: false,
+            images: [],
+            errors: '',
+          });
+          if (pid) {
+            deleteProduct(pid).then(({ data }) => {
+              notification.success({ message: 'Product Updated Successfully' });
+              Router.push('/admin/product');
+            });
+          } else notification.success({ message: data.message });
+        } else {
+          notification.error({ message: data.message });
+        }
+      })
+      .catch((err) => notification.error({ message: 'something went wrong' }));
   };
 
   const handleInputChange = (selector) => (event) => {
@@ -272,20 +150,12 @@ export default function create(props) {
     setSubCategories(cate.subcategories);
   };
 
-  const handleImagesChange = (file, fileList) => {
-    setInputData({
-      ...inputData,
-      images: fileList,
-    });
+  const handleImagesChange = ({ file, fileList }) => {
+    setFileList(fileList);
   };
-  const handleImagesRemove = (file) => {
-    const index = inputData.images.indexOf(file);
-    const newFileList = inputData.images.slice();
-    newFileList.splice(index, 1);
-    setInputData({
-      ...inputData,
-      images: newFileList,
-    });
+  const handleImagesRemove = (id) => {
+    const newImages = inputData.images.filter((img) => img._id !== id);
+    setInputData({ ...inputData, images: newImages });
   };
 
   function tagRender(props) {
@@ -307,11 +177,15 @@ export default function create(props) {
     <AdminLayout>
       {categories && categories.length > 0 ? (
         <div>
-          <h3> {editData ? ' Edit ' : 'Enter '} Product Details</h3>
+          <center>
+            <h2> {pid ? ' Edit ' : 'Enter '} Product Details</h2>
+          </center>
           <div className="c-admin-create-product__item">
+            <div>Choose Category</div>
             <Select
               style={{ width: '100%' }}
               placeholder="Please select category"
+              value={inputData.category}
             >
               {categories.map((cate, index) => (
                 <Option
@@ -327,15 +201,20 @@ export default function create(props) {
           </div>
 
           <div className="c-admin-create-product__item">
+            <div>Choose SubCategory (optional)</div>
             <Select
-              // value={inputData.subCategories || []}
+              value={inputData.subCategories}
               onChange={handleInputChange('subCategories')}
               mode="multiple"
               placeholder="Select subcategories"
               style={{ width: '100%' }}
             >
               {subCategories.map((subcategory, index) => (
-                <Option key={index} value={subcategory._id}>
+                <Option
+                  key={index}
+                  name={subcategory.name}
+                  value={subcategory._id}
+                >
                   {subcategory.name}
                 </Option>
               ))}
@@ -343,6 +222,7 @@ export default function create(props) {
           </div>
 
           <div className="c-admin-create-product__item">
+            <div>Enter Name (optional)</div>
             <Input
               id="name"
               placeholder="Enter Product Name"
@@ -350,10 +230,12 @@ export default function create(props) {
               name="name"
               required
               onChange={handleInputChange('name')}
+              value={inputData.name}
             />
           </div>
 
           <div className="c-admin-create-product__item">
+            <div>Enter short description (optional)</div>
             <Input.TextArea
               id="short-desc-input"
               label="Short Description"
@@ -362,35 +244,45 @@ export default function create(props) {
               rows={2}
               onChange={handleInputChange('shortDesc')}
               placeholder="write a short description about the product."
+              value={inputData.shortDesc}
             />
           </div>
 
           <div className="c-admin-create-product__item">
+            <div>Enter full description (optional)</div>
             <Input.TextArea
               label="Description"
               name="description"
               rows={4}
               onChange={handleInputChange('description')}
               placeholder="write a full description about the product."
+              value={inputData.description}
             />
           </div>
 
           <div className="c-admin-create-product__item">
+            <div>Enter price (optional)</div>
+
             <Input
+              prefix="₹"
               label="Price ( ₹ )"
               name="price"
+              type="number"
               placeholder="Please enter price"
               onChange={handleInputChange('price')}
+              value={inputData.price}
             />
           </div>
 
           <div className="c-admin-create-product__item">
+            <div>Choose available sizes (optional)</div>
             <Select
               style={{ width: '100%' }}
               placeholder="Please select Sizes"
               onChange={handleInputChange('sizes')}
               mode="multiple"
               name="sizes"
+              value={inputData.sizes}
             >
               {allSizes.map((size, index) => (
                 <Option key={index} value={size}>
@@ -402,6 +294,7 @@ export default function create(props) {
 
           {/* //colors */}
           <div className="c-admin-create-product__item">
+            <div>Choose available colors (optional)</div>
             <Select
               style={{ width: '100%' }}
               placeholder="Please select Colors"
@@ -410,8 +303,9 @@ export default function create(props) {
               mode="multiple"
               name="colors"
               tagRender={tagRender}
+              value={inputData.colors}
             >
-              {allColors.map((color, index) => (
+              {allColours.map((color, index) => (
                 <Option key={index} value={color}>
                   {color}
                 </Option>
@@ -419,6 +313,7 @@ export default function create(props) {
             </Select>
           </div>
           <div className="c-admin-create-product__item">
+            <div>Enter is Hidden (optional)</div>
             <Checkbox
               checked={inputData.hidden}
               onChange={handleInputChange('hidden')}
@@ -426,24 +321,51 @@ export default function create(props) {
               Is Hidden?
             </Checkbox>
           </div>
-
+          <div className="mt-3 mb-2">Already Images</div>
+          <div className="d-flex">
+            {inputData.images.map((im) => (
+              <div>
+                <img
+                  src={im.data}
+                  className="mx-2"
+                  alt={im._id}
+                  width={100}
+                  height={100}
+                />
+                <div
+                  className="text-center text-danger"
+                  onClick={() => handleImagesRemove(im._id)}
+                >
+                  Delete
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-3">Upload Images (Total Max: 8)</div>
           <Upload
             name="images"
             accept=".jpg, .jpeg, .png"
             multiple
-            listType="picture"
-            beforeUpload={handleImagesChange}
-            onRemove={handleImagesRemove}
-            fileList={inputData.images}
+            // listType="picture"
+            fileList={fileList}
+            listType="picture-card"
+            onChange={handleImagesChange}
+            beforeUpload={() => false}
+            maxCount={8 - inputData.images.length}
           >
-            <Button icon={<UploadOutlined />}>Upload Images</Button>
+            {fileList.length + inputData.images.length <= 8 && (
+              <div>
+                <PlusOutlined />
+                <div style={{ marginTop: 8 }}>Upload Images</div>
+              </div>
+            )}
           </Upload>
 
-          <div className="c-admin-create-product__btn">
+          <center className="c-admin-create-product__btn">
             <Button variant="contained" color="primary" onClick={handleSubmit}>
               Create
             </Button>
-          </div>
+          </center>
         </div>
       ) : (
         <div>Create a Category first</div>

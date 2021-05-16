@@ -1,17 +1,11 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
 import Layout from '../components/Layouts/Layout';
-const LRSection = dynamic(() => import('../components/LRSection'), {
-  ssr: false,
-});
-const Button = dynamic(() => import('../components/form-components/Button'));
+import LRSection from '../components/LRSection';
+import Button from '../components/form-components/Button';
 
-const CategoryProducts = dynamic(
-  () => import('../components/CategoryProducts'),
-  {
-    ssr: false,
-  }
-);
+import CategoryProducts from '../components/CategoryProducts';
+import { projectName } from '../constants/projectSettings';
+
 import categoryList from '../constants/categoryList';
 import { getProducts, getCategories } from '../redux/actions';
 import { connect } from 'react-redux';
@@ -65,11 +59,14 @@ class Home extends React.Component {
 
   render() {
     const { activeCategory, products, isLrSection } = this.state;
-
-    let keywords = categoryList.map((e) => {
+    const kString = 'Buy ladies bras online from a range of sports, push up, padded & more at MissValentine. Find women bras in different colors, fabrics, patterns at best price.'.split(
+      ' '
+    );
+    let keywords = [];
+    keywords.push(kString);
+    keywords = categoryList.map((e) => {
       return Object.values(e);
     });
-
     const homedata = {
       // logo: { images: logoImages },
       banner: [
@@ -93,14 +90,13 @@ class Home extends React.Component {
       ],
     };
 
-    let description = ['bannerContent', 'thirdContent'];
+    let description = [projectName, ...kString];
 
     return (
       <Layout
-        title="Home"
+        title={`Home | ${projectName}`}
         headerTheme="black"
         homeLogo={false}
-        // footerLogo={logoImages[2].src}
         pageClass={'c-home'}
         description={description}
         keywords={keywords}
@@ -169,7 +165,7 @@ class Home extends React.Component {
           <LRSection
             heading={'MissValentine'}
             subHeading={'COMFORT THAT SUITS YOU'}
-            linkText={'Read more'}
+            linkText={!this.state.isLrSection ? 'Read more' : 'Read less'}
             onLinkClick={() => {
               this.setState((prevState) => ({
                 isLrSection: !prevState.isLrSection,
@@ -211,8 +207,9 @@ class Home extends React.Component {
                 />
                 <p class="img-head-text">COMFORT GROWN</p>
                 <p class="img-sub-text">
-                  The extracts used in our products are obtained from
-                  organically grown hemp devoid of any harmful chemical inputs.
+                  The fabric used in our products are given the upmost priority.
+                  MissValentine range is pleasant to touch, and not rough or
+                  hard
                 </p>
               </div>
               <div class="img-wrapper">
@@ -223,38 +220,36 @@ class Home extends React.Component {
                 />
                 <p class="img-head-text">SOFT FABRIC</p>
                 <p class="img-sub-text">
-                  We take great care to ensure that the products reaching you
-                  are completely free of any THC. Only the goodness of hemp for
-                  you.
+                  Velvet is a soft, luxurious fabric that is characterized by a
+                  dense pile of evenly cut fibers that have a smooth nap. Velvet
+                  has a beautiful drape and a unique soft and shiny appearance
+                  due to the characteristics of the short pile fibers.
                 </p>
               </div>
               <div class="img-wrapper">
                 <img src="/images/vegan.svg" class="honest-svg" alt="vegan" />
                 <p class="img-head-text">SIZE THAT SUITS YOU</p>
                 <p class="img-sub-text">
-                  We have a wide range of vegan products infused with the
-                  goodness of CBD, curated keeping you in mind because we care.
+                  We have a wide range of products and sizes to choose from. The
+                  size manual is given so you wear your perfect fit.
                 </p>
               </div>
             </div>
           </section>
         </Fade>
 
-        <Fade>
-          <section className="map-section-wrapper">
-            <HomeMap />
-          </section>
-        </Fade>
-        <Fade>
-          <section className="touch-section-wrapper">
-            <GetinTouch />
-          </section>
-        </Fade>
-        <Fade>
-          <section className="directors-section-wrapper">
-            <OurDirectors />
-          </section>
-        </Fade>
+        <section className="map-section-wrapper">
+          <HomeMap />
+        </section>
+
+        <section className="touch-section-wrapper">
+          <GetinTouch />
+        </section>
+
+        <section className="directors-section-wrapper">
+          <OurDirectors />
+        </section>
+
         <Fade>
           <div
             className="consult-doc-banner-wrapper"

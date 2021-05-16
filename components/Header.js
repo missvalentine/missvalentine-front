@@ -108,6 +108,7 @@ const Header = ({ bg, theme, versions, fixed, homeLogo, logo }) => {
               parent="c-header"
               text={!homeLogo}
               versions={logoVersion}
+              url={logo}
             />
             <Nav parent="c-header" isRight={true} items={rightMenus} />
             <NavMobile

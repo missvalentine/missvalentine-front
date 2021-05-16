@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import { getColorCode } from '../utilis/customFunctions';
 import { useRouter } from 'next/router';
 import '../components/styles/app.scss';
-import { Button } from 'antd';
+import { Button, Skeleton } from 'antd';
 import { HeartOutlined, HeartFilled, HeartTwoTone } from '@ant-design/icons';
 
 export default function Product(props) {
-  const { data, isSelectable, isSelected, handleSelectClick } = props;
+  const {
+    data,
+    isSelectable,
+    isSelected,
+    handleSelectClick,
+    isViewable = true,
+  } = props;
   const { images, name, colors, price, shortDesc } = data;
   const router = useRouter();
   const [showImageNo, setShowImageNo] = useState(0);
@@ -28,6 +34,7 @@ export default function Product(props) {
         className="c-product-card__image-wrapper"
         onClick={() =>
           !isSelected &&
+          isViewable &&
           router.push({
             pathname: `products/${data._id}`,
             state: data,
@@ -43,6 +50,7 @@ export default function Product(props) {
             onMouseLeave={handleOnMouseLeave}
           />
         )}
+
         <div className="c-product-card__image-text">
           {/* <FavoriteBorder /> */}
         </div>
@@ -52,6 +60,7 @@ export default function Product(props) {
           className="c-product-card__details-name"
           onClick={() =>
             !isSelected &&
+            isViewable &&
             router.push({
               pathname: `products/${data._id}`,
               state: data,

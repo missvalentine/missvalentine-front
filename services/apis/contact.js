@@ -12,7 +12,6 @@ export const deleteContact = (id) =>
   useHttp({
     method: 'delete',
     url: `/contact/${id}/${_id}`,
-    data,
   });
 
 export const getAllQuery = (data) =>

@@ -115,9 +115,9 @@
 
 .ant-input:focus,
 .ant-input:hover {
-  outline: none !important;
+  outline: none;
   box-shadow: none;
-  border: none;
+  // border: none;
 }
 .error {
   color: red;

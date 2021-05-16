@@ -11,6 +11,7 @@ const HImgSection = dynamic(() => import('../../components/HImgSection'), {
   ssr: false,
 });
 import { useEffect, useState } from 'react';
+import { Spin } from 'antd';
 import {
   getProductImage,
   getProductAttributes,
@@ -37,14 +38,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import ProductDetail from '../../components/ProductDetail';
 
 import { useRouter } from 'next/router';
-import { connect } from 'react-redux';
-import fetch from 'isomorphic-unfetch';
-import projectSettings from '../../constants/projectSettings';
-import apiList from '../../services/apis/apiList';
-import Error from 'next/error';
-const product = {
-  title: 'CBD Isolate 500 mg',
-};
 import { getProduct } from '../../redux/actions';
 
 const Product = () => {
@@ -61,70 +54,81 @@ const Product = () => {
   const products = useSelector((state) => state.products);
 
   useEffect(() => {
-    console.log('pid', pid);
     dispatch(getProduct(pid));
-  }, []);
+  }, [pid]);
 
   useEffect(() => {
     if (products.product !== null)
       dispatch({ type: 'ADD_TO_RECENTLY_VIEWD', payload: products.product });
   }, [products.product]);
 
+  const title =
+    products.product &&
+    products.product.name &&
+    products.product.name.length > 0 &&
+    (products.product.category.name
+      ? `${products.product.name.toUpperCase()} | ${
+          products.product.category.name
+        }`
+      : products.product.name);
+
   return (
-    <Layout headerTheme="black" fixed={true}>
-      <ProductDetail data={products.product} />
-      {products.products.length > 0 && (
-        <div className="c-product-single__related-section">
-          <div
-            className="row justify-content-center"
-            style={{ maxWidth: '100%' }}
-          >
-            <div className="col-md-6">
-              <Heading
-                style={{
-                  textAlign: 'center',
-                }}
-                versions={['default', 'upper', 'weight-500']}
-              >
-                YOU MAY ALSO LIKE
-              </Heading>
-            </div>
+    <Layout title={title} headerTheme="black" fixed={true}>
+      <Spin spinning={products.product && pid !== products.product._id}>
+        <ProductDetail data={products.product} />
+        {products.products.length > 0 && (
+          <div className="c-product-single__related-section">
+            <div
+              className="row justify-content-center"
+              style={{ maxWidth: '100%' }}
+            >
+              <div className="col-md-6">
+                <Heading
+                  style={{
+                    textAlign: 'center',
+                  }}
+                  versions={['default', 'upper', 'weight-500']}
+                >
+                  YOU MAY ALSO LIKE
+                </Heading>
+              </div>
 
-            <div className="col-12">
-              <ProductSlider
-                parentClass="c-product-single"
-                products={products.products}
-              />
+              <div className="col-12">
+                <ProductSlider
+                  parentClass="c-product-single"
+                  products={products.products}
+                />
+              </div>
             </div>
           </div>
-        </div>
-      )}
-      {products.recentlyViewed.length > 0 && (
-        <div className="c-product-single__related-section">
-          <div
-            className="row justify-content-center"
-            style={{ maxWidth: '100%' }}
-          >
-            <div className="col-md-6">
-              <Heading
-                style={{
-                  textAlign: 'center',
-                }}
-                versions={['default', 'upper', 'weight-500']}
-              >
-                RECENTLY VIEWED
-              </Heading>
-            </div>
+        )}
+        {products.recentlyViewed.length > 0 && (
+          <div className="c-product-single__related-section">
+            <div
+              className="row justify-content-center"
+              style={{ maxWidth: '100%' }}
+            >
+              <div className="col-md-6">
+                <Heading
+                  style={{
+                    textAlign: 'center',
+                  }}
+                  versions={['default', 'upper', 'weight-500']}
+                >
+                  RECENTLY VIEWED
+                </Heading>
+              </div>
 
-            <div className="col-12">
-              <ProductSlider
-                parentClass="c-product-single"
-                products={products.recentlyViewed}
-              />
+              <div className="col-12">
+                <ProductSlider
+                  parentClass="c-product-single"
+                  products={products.recentlyViewed}
+                />
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </Spin>
     </Layout>
   );
 };

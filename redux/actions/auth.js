@@ -10,8 +10,17 @@ export const signIn = (obj) => (dispatch) => {
         });
         localStorage.setItem('auth', JSON.stringify(res.data));
       }
+      return res;
     })
     .catch((err) => {
       console.log({ err });
+      return err;
     });
+};
+export const signOut = () => (dispatch) => {
+  dispatch({
+    type: 'SET_AUTH',
+    payload: {},
+  });
+  localStorage.removeItem('auth');
 };

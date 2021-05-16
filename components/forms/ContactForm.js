@@ -112,7 +112,7 @@ class Contact extends React.Component {
                     >
                       <b>Wholesale Enquiry</b>
                       <br />
-                      Questions about distributing {projectName} CBD.
+                      Questions about distributing {projectName}.
                     </AntRadio>
                     <AntRadio
                       className="c-contact-form__radio"

@@ -1,1 +1,0 @@
-{"ast":null,"code":"export const setMessage = payload => ({\n  type: 'SET_MESSAGE',\n  payload\n});\nexport const showMessage = payload => ({\n  type: 'SHOW_MESSAGE',\n  payload\n});\nexport const closeMessage = payload => ({\n  type: 'CLOSE_MESSAGE',\n  payload\n});","map":null,"metadata":{},"sourceType":"module"}

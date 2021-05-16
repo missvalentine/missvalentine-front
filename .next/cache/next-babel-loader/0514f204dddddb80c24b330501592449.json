@@ -1,1 +1,0 @@
-{"ast":null,"code":"import ReactSVG from 'react-svg';\nvar mobileMenusRight = [// {\n  //     icon: <ReactSVG src=\"/images/cart-icon-1.svg\" />,\n  //     action: \"cart\"\n  // },\n];\nexport default mobileMenusRight;","map":null,"metadata":{},"sourceType":"module"}

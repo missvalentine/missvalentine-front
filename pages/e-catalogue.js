@@ -11,7 +11,7 @@ const Heading = dynamic(() => import('../components/Heading'), {
 import { getCategories, getProducts } from '../redux/actions';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Select, Input, Button, Modal } from 'antd';
+import { Select, Input, Button, Modal, notification } from 'antd';
 import { createContactUs } from '../services/apis/contact';
 import { getSubcategory } from '../services/apis/admin';
 import { Fade } from 'reactstrap';
@@ -77,7 +77,6 @@ export default function ECatalogue() {
     let tempSelectedProducts = [...selectedProducts];
     const isSelected =
       selectedProducts.filter((prd) => prd._id === data._id).length > 0;
-    console.log('isSelected', isSelected);
     if (isSelected) {
       tempSelectedProducts = tempSelectedProducts.filter(
         (prd) => prd._id !== data._id
@@ -91,48 +90,65 @@ export default function ECatalogue() {
   };
 
   const handleSendEnquiry = () => {
-    const contactData = {
-      name: value.name,
-      storeName: value.storeName,
-      phone: value.phoneNumber,
-      address: value.address,
-      city: value.city,
-      state: value.state,
-      products: selectedProducts,
-      callScreen: 'enquiry',
-    };
-    createContactUs(contactData)
-      .then(
-        (res) =>
-          res.data &&
-          Modal.success({
-            title: 'Enquiry Request Registered Successfully!',
+    if (value.phoneNumber === '')
+      notification.error({ message: 'Please provide phone' });
+    else if (value.name === '')
+      notification.error({ message: 'Please provide name' });
+    else if (selectedProducts.length === 0)
+      notification.error({ message: 'Please select Products for enquiry' });
+    else {
+      const contactData = {
+        name: value.name,
+        storeName: value.storeName,
+        phone: value.phoneNumber,
+        address: value.address,
+        city: value.city,
+        state: value.state,
+        products: selectedProducts,
+        callScreen: 'enquiry',
+      };
+      createContactUs(contactData)
+        .then(
+          (res) =>
+            res.data &&
+            Modal.success({
+              title: 'Enquiry Request Registered Successfully!',
+              content: (
+                <div>Please note down Contact ID #{res.data.data._id}</div>
+              ),
+              okText: 'Explore Products',
+              onOk() {
+                Router.push('/');
+              },
+            })
+        )
+        .catch((err) =>
+          Modal.error({
+            title: 'Request Failed!',
             okText: 'Explore Products',
             onOk() {
               Router.push('/');
             },
           })
-      )
-      .catch((err) =>
-        Modal.error({
-          title: 'Request Failed!',
-          okText: 'Explore Products',
-          onOk() {
-            Router.push('/');
-          },
-        })
-      );
+        );
+    }
   };
 
   return (
     <Layout headerVersions={['bg-dark']} headerTheme="black">
       <div className="c-catalogue">
         <Heading versions={['shop-all']}>{'Enquiry Form'}</Heading>
+        <center>
+          <h3>
+            Get a call from our team, to enquire on products based on selected
+            form.
+          </h3>
+        </center>
         <div className="c-catalogue__options">
           <div className="row">
             <div className="col-12 col-lg-4 ">
-              <p>Name</p>
-              <Input.Search
+              <p>Name (required)</p>
+              <Input
                 required
                 placeholder="Enter your name"
                 name="name"
@@ -150,8 +166,9 @@ export default function ECatalogue() {
               />
             </div>
             <div className="col-12 col-lg-4 ">
-              <p>Phone Number</p>
+              <p>Phone Number (required)</p>
               <Input
+                required
                 placeholder="Enter your phone no"
                 name="phoneNumber"
                 value={value.phoneNumber}
@@ -245,17 +262,16 @@ export default function ECatalogue() {
                   className="col-lg-4 col-md-6 my-3"
                   style={{ padding: '0 40px' }}
                 >
-                  <Fade key={el._id}>
-                    <Product
-                      data={el}
-                      isSelectable
-                      isSelected={
-                        selectedProducts.filter((prd) => prd._id === el._id)
-                          .length > 0
-                      }
-                      handleSelectClick={handleSelectClick}
-                    />
-                  </Fade>
+                  <Product
+                    data={el}
+                    isSelectable
+                    isViewable={false}
+                    isSelected={
+                      selectedProducts.filter((prd) => prd._id === el._id)
+                        .length > 0
+                    }
+                    handleSelectClick={handleSelectClick}
+                  />
                 </div>
               ))}
               <div className="col-12 text-center">
@@ -274,17 +290,16 @@ export default function ECatalogue() {
                 className="col-lg-4 col-md-6 my-3"
                 style={{ padding: '0 40px' }}
               >
-                <Fade key={el._id}>
-                  <Product
-                    data={el}
-                    isSelectable
-                    isSelected={
-                      selectedProducts.filter((prd) => prd._id === el._id)
-                        .length > 0
-                    }
-                    handleSelectClick={handleSelectClick}
-                  />
-                </Fade>
+                <Product
+                  data={el}
+                  isViewable={false}
+                  isSelectable
+                  isSelected={
+                    selectedProducts.filter((prd) => prd._id === el._id)
+                      .length > 0
+                  }
+                  handleSelectClick={handleSelectClick}
+                />
               </div>
             ))}
         </div>
