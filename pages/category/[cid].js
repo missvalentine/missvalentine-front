@@ -110,9 +110,7 @@ const Category = (props) => {
               {Category !== null && Category.products.length > 0 ? (
                 Category.products.map((el, i) => (
                   <div key={el._id} className="col-lg-4 col-md-6">
-                    <Fade>
-                      <Product data={el} />
-                    </Fade>
+                    <Product data={el} />
                   </div>
                 ))
               ) : (
@@ -123,7 +121,9 @@ const Category = (props) => {
                       height: 100,
                     }}
                     description={
-                      <h2>Currently no product under {Category.name}</h2>
+                      <h2>
+                        Currently no product under {Category && Category.name}
+                      </h2>
                     }
                   />
                 </center>
