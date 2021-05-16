@@ -36,7 +36,7 @@ export default function Product(props) {
           !isSelected &&
           isViewable &&
           router.push({
-            pathname: `products/${data._id}`,
+            pathname: `/products/${data._id}`,
             state: data,
           })
         }
