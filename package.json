@@ -55,7 +55,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "pure-react-carousel": "1.17.0",
     "rc-queue-anim": "^1.8.5",
-    "react": "16.11.0",
+    "react": "^16.11.0",
     "react-alice-carousel": "^2.1.0",
     "react-animate-on-scroll": "^2.1.5",
     "react-burger-menu": "^3.0.6",

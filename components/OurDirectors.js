@@ -15,11 +15,6 @@ export default function OurDirectors() {
       desc: 'Director, MissValentine',
       img: PawanImage,
     },
-    {
-      name: 'Mr. Siddharth jain',
-      desc: 'Director, MissValentine',
-      img: SiddhartImage,
-    },
   ];
 
   return (
@@ -33,11 +28,11 @@ export default function OurDirectors() {
       <div className="c-directors__cards">
         {directors.map((d, i) => (
           <div key={i} className="c-directors__cards-card">
-            <img
-              alt={'director ' + d.name}
-              className="c-directors__cards-card-img"
-              src={d.img}
-            />
+          {/* <img
+            alt={'director ' + d.name}
+            className="c-directors__cards-card-img"
+            src={d.img}
+          /> */}
             <div className="c-directors__cards-card-name">{d.name}</div>
             <div className="c-directors__cards-card-desc">{d.desc}</div>
           </div>
