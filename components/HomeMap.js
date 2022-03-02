@@ -17,7 +17,7 @@ export default function HomeMap() {
           marginheight="0"
           marginwidth="0"
           className="c-homemap__map-map"
-          src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=28%C2%B047'21.5%22N%2077%C2%B016'33.1%22E+(Missvalentine%20Innerwear%20Pvt.%20Ltd)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=28.787710189819336,77.28255462646484+(MissValentine%20Innerwear)&amp;t=&amp;z=20&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
         ></iframe>
         {/* <a href="https://www.mapsdirections.info/en/measure-map-radius/">
           Radius distance map
@@ -26,7 +26,7 @@ export default function HomeMap() {
           {/* <strong>Missvalentine Innerwear Pvt. Ltd</strong> */}
           <div className="c-homemap__map-address__paper">
             <strong>Office</strong>
-            <br />I -18, sec. A-1, Tronica city, Loni Ghaziabad,
+            <br />G-238, Sector D-1 (P-3), Tronica city, Loni Ghaziabad,
             <br /> Uttar Pradesh 201102
             {/* Gst number 09AAOCM2032R1ZV */}
           </div>
